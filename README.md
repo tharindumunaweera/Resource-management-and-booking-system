@@ -1,1 +1,1 @@
-# Social-network-system for developers
+# Resource mangemrnt and booking system for UCSC
