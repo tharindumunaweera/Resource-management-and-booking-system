@@ -6,6 +6,7 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import Union from "./components/actors/Union";
 
 import "./App.css";
 
@@ -19,6 +20,7 @@ class App extends Component {
           <div className="container">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/union" component={Union} />
           </div>
           <Footer />
         </div>
