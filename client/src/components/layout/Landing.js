@@ -10,15 +10,15 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-12 text-center">
                 <h1 className="display-3 mb-4">
-                  Resource management and Booking system
+                  Resource Management And Information System
                 </h1>
-                <p className="lead"> Most convienient way for booking</p>
+                <p className="lead"> Most Convienient Way For Booking</p>
                 <hr />
                 <Link to="/register" className="btn btn-lg btn-info mr-2">
                   Sign Up
                 </Link>
                 <Link to="/login" className="btn btn-lg btn-light">
-                  Login
+                  Sign In
                 </Link>
               </div>
             </div>

@@ -47,7 +47,7 @@ class Register extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign Up</h1>
               <p className="lead text-center">
-                Create your DevConnector account
+                Create Your Account
               </p>
               <form noValidate onSubmit={this.onSubmit}>
                 <div className="form-group">
@@ -80,8 +80,7 @@ class Register extends Component {
                     <div className="invalid-feedback">{errors.email}</div>
                   )}
                   <small className="form-text text-muted">
-                    This site uses Gravatar so if you want a profile image, use
-                    a Gravatar email
+                   
                   </small>
                 </div>
                 <div className="form-group">
