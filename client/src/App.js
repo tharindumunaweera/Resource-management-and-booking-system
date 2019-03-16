@@ -19,23 +19,30 @@ const style = { //this for Calender
 }
 
 class App extends Component {
+  
+  onDayClick = (e ,day) => {
+    alert(day);
+  }
+
   render() {
     return (
       <Router>
         <div className="App">
-          <Navbar />
-          <Route exact path="/" component={Landing} />
-          <div className="container">
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/union" component={Union} />
-            <Route exact path="/Lecturer" component={Lecturer} />
-            <Route exact path="/Calender" style= {style} width="302px  " component={Calender} />
-          
+            <Navbar />
+            <Route exact path="/" component={Landing} />
+            <div className="container">
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/union" component={Union} />
+                <Route exact path="/Lecturer" component={Lecturer} />
+                        
+            </div>
+                <Calender style= {style} width="302px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
+
+            <Footer />
           </div>
-          <Footer />
-        </div>
       </Router>
+      
     );
   }
 }
