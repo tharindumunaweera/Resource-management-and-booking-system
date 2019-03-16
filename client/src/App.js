@@ -12,6 +12,12 @@ import Calender from "./components/Calender/Calender";
 
 import "./App.css";
 
+
+const style = { //this for Calender
+  position:"relative",
+  margin:"50px auto"
+}
+
 class App extends Component {
   render() {
     return (
@@ -24,7 +30,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/union" component={Union} />
             <Route exact path="/Lecturer" component={Lecturer} />
-            <Route exact path="/Calender" component={Calender} />
+            <Route exact path="/Calender" style= {style} width="302px  " component={Calender} />
           
           </div>
           <Footer />
