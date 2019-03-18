@@ -1,6 +1,22 @@
 import React, { Component } from "react";
 
+import Lecturehalls from "../other/Lecturehalls";
+
 class Union extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showComponent: false
+    };
+    this._onButtonClick = this._onButtonClick.bind(this);
+  }
+
+  _onButtonClick() {
+    this.setState({
+      showComponent: true
+    });
+  }
+
   render() {
     return (
       <div>
@@ -67,7 +83,15 @@ class Union extends Component {
                 </div>
               </li>
             </ul>
+            <br />
+            <input
+              type="button"
+              className="btn btn-block btn-primary "
+              value="button"
+              onClick={this._onButtonClick}
+            />
           </div>
+          {this.state.showComponent ? <Lecturehalls /> : null}
         </div>
       </div>
     );
