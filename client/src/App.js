@@ -16,6 +16,7 @@ import "./App.css";
 const style = { //this for Calender
   position:"relative",
   margin:"50px auto"
+  
 }
 
 class App extends Component {
@@ -33,7 +34,7 @@ class App extends Component {
             <div className="container">
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/union" component={Union} />
+                <Route exact path="/union" component={Union} }  />
                 <Route exact path="/Lecturer" component={Lecturer} />
                         
             </div>
