@@ -14,6 +14,7 @@ import Login from "./components/auth/Login";
 import Union from "./components/actors/Union";
 import Lecturer from "./components/actors/Lecturer";
 import Calender from "./components/Calender/Calender";
+import Dashboard from "./components/dashboard/Dashboard";
 
 import "./App.css";
 
@@ -60,6 +61,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/union" component={Union} />
               <Route exact path="/Lecturer" component={Lecturer} />
+              <Route exact path="/dashboard" component={Dashboard} />
             </div>
             <Calender
               style={style}
