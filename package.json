@@ -21,6 +21,7 @@
     "express": "^4.16.4",
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.0",
+    "mdbreact": "^4.11.1",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.23",
     "mongoose": "^5.4.19",
