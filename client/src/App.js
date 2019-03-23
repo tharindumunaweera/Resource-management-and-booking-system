@@ -43,7 +43,7 @@ class App extends Component {
       <main id="content" className="p-5">
         <Routes />
       </main>
-      <Footer />
+      
     
 
 
@@ -55,12 +55,12 @@ class App extends Component {
             <div className="container">
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
-                <Route exact path="/union" component={Union} }  />
+                <Route exact path="/union" component={Union}  />
                 <Route exact path="/Lecturer" component={Lecturer} />
                 <Route exact path="/Availabilitytable" component={Availabilitytable } />
                 <Route exact path="/BookingForm" component={BookingForm} />
             </div>
-            <Calender style= {style} width="302px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />  
+            {/* <Calender style= {style} width="302px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />   */}
             <Footer />
             
         </div>
