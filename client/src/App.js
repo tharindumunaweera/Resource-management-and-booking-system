@@ -8,12 +8,11 @@ import { Provider } from "react-redux";
 import store from "./store";
 import PrivateRoute from "./components/common/PrivateRoute";
 
-import Routes from '../src/components/Routes';
-import TopNavigation from './components/topNavigation';
-import SideNavigation from './components/sideNavigation';
-import Footer from './components/Footer';
-import './index.css';
-
+import Routes from "../src/components/Routes";
+import TopNavigation from "./components/topNavigation";
+import SideNavigation from "./components/sideNavigation";
+import Footer from "./components/Footer";
+import "./index.css";
 
 import Navbar from "./components/layout/Navbar";
 //import Footer from "./components/layout/Footer";
@@ -30,7 +29,6 @@ import BookingForm from "./components/BookingForm/BookingForm";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
 
-
 import "./App.css";
 
 //check for token
@@ -42,11 +40,6 @@ if (localStorage.jwtToken) {
   //Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
 
-
-const style = { //this for Calender
-  position:"relative",
-  margin:"50px auto"
-  
   // Check for expired token
   const currentTime = Date.now() / 1000;
   if (decoded.exp < currentTime) {
@@ -57,7 +50,6 @@ const style = { //this for Calender
     // Redirect to login
     window.location.href = "/login";
   }
-
 }
 
 const style = {
@@ -73,47 +65,45 @@ class App extends Component {
 
   render() {
     return (
-      <div>
       <div className="flexible-content">
-      <TopNavigation />
-      <SideNavigation />
-      <main id="content" className="p-5">
-        <Routes />
-      </main>
-      
-      </div>
-      
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/union" component={Union} />
-              <Route exact path="/Lecturer" component={Lecturer} />
-              <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-profile"
-                  component={CreateProfile}
-                />
-              </Switch>
-            </div>
-            <Calender
-              style={style}
-              width="302px"
-              onDayClick={(e, day) => this.onDayClick(e, day)}
-            />
+        <TopNavigation />
+        <SideNavigation />
+        <main id="content" className="p-5">
+          <Routes />
+        </main>
 
-            <Footer />
-          </div>
-        </Router>
-      </Provider>
+        <Provider store={store}>
+          <Router>
+            <div className="App">
+              <Navbar />
+              <Route exact path="/" component={Landing} />
+              <div className="container">
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/union" component={Union} />
+                <Route exact path="/Lecturer" component={Lecturer} />
+
+                <Switch>
+                  <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                </Switch>
+                <Switch>
+                  <PrivateRoute
+                    exact
+                    path="/create-profile"
+                    component={CreateProfile}
+                  />
+                </Switch>
+              </div>
+              <Calender
+                style={style}
+                width="302px"
+                onDayClick={(e, day) => this.onDayClick(e, day)}
+              />
+
+              <Footer />
+            </div>
+          </Router>
+        </Provider>
       </div>
     );
   }
