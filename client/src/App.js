@@ -22,7 +22,6 @@ import Login from "./components/auth/Login";
 import Union from "./components/actors/Union";
 import Lecturer from "./components/actors/Lecturer";
 import Calender from "./components/Calender/Calender";
-
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
 
@@ -65,46 +64,49 @@ class App extends Component {
 
   render() {
     return (
+
       <div className="flexible-content">
-        <TopNavigation />
-        <SideNavigation />
-        <main id="content" className="p-5">
-          <Routes />
-        </main>
+      <TopNavigation />
+      <SideNavigation />
+      <main id="content" className="p-5">
+        <Routes />
+      </main>
 
-        <Provider store={store}>
-          <Router>
-            <div className="App">
-              <Navbar />
-              <Route exact path="/" component={Landing} />
-              <div className="container">
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/union" component={Union} />
-                <Route exact path="/Lecturer" component={Lecturer} />
 
-                <Switch>
-                  <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                </Switch>
-                <Switch>
-                  <PrivateRoute
-                    exact
-                    path="/create-profile"
-                    component={CreateProfile}
-                  />
-                </Switch>
-              </div>
-              <Calender
-                style={style}
-                width="302px"
-                onDayClick={(e, day) => this.onDayClick(e, day)}
-              />
-
-              <Footer />
+{/*       
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Navbar />
+            <Route exact path="/" component={Landing} />
+            <div className="container">
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/union" component={Union} />
+              <Route exact path="/Lecturer" component={Lecturer} />
+              <Switch>
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-profile"
+                  component={CreateProfile}
+                />
+              </Switch>
             </div>
-          </Router>
-        </Provider>
-      </div>
+            <Calender
+              style={style}
+              width="302px"
+              onDayClick={(e, day) => this.onDayClick(e, day)}
+            />
+
+            <Footer />
+          </div>
+        </Router>
+      </Provider>  */}
+
+    </div>
     );
   }
 }
