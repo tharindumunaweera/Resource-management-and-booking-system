@@ -8,16 +8,28 @@ import { Provider } from "react-redux";
 import store from "./store";
 import PrivateRoute from "./components/common/PrivateRoute";
 
+import Routes from '../src/components/Routes';
+import TopNavigation from './components/topNavigation';
+import SideNavigation from './components/sideNavigation';
+import Footer from './components/Footer';
+import './index.css';
+
+
 import Navbar from "./components/layout/Navbar";
-import Footer from "./components/layout/Footer";
+//import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Union from "./components/actors/Union";
 import Lecturer from "./components/actors/Lecturer";
 import Calender from "./components/Calender/Calender";
+
+import Availabilitytable from "./components/Tables/Availabilitytable";
+import BookingForm from "./components/BookingForm/BookingForm";
+
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
+
 
 import "./App.css";
 
@@ -30,6 +42,11 @@ if (localStorage.jwtToken) {
   //Set user and isAuthenticated
   store.dispatch(setCurrentUser(decoded));
 
+
+const style = { //this for Calender
+  position:"relative",
+  margin:"50px auto"
+  
   // Check for expired token
   const currentTime = Date.now() / 1000;
   if (decoded.exp < currentTime) {
@@ -40,6 +57,7 @@ if (localStorage.jwtToken) {
     // Redirect to login
     window.location.href = "/login";
   }
+
 }
 
 const style = {
@@ -55,6 +73,16 @@ class App extends Component {
 
   render() {
     return (
+      <div>
+      <div className="flexible-content">
+      <TopNavigation />
+      <SideNavigation />
+      <main id="content" className="p-5">
+        <Routes />
+      </main>
+      
+      </div>
+      
       <Provider store={store}>
         <Router>
           <div className="App">
@@ -86,6 +114,7 @@ class App extends Component {
           </div>
         </Router>
       </Provider>
+      </div>
     );
   }
 }

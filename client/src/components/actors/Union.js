@@ -21,6 +21,7 @@ class Union extends Component {
     return (
       <div>
         <div className="row">
+        
           <div className="col-md-4">
             <h3 className="text-center text-info">Resources</h3>
             <ul className="list-group">
