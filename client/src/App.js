@@ -8,12 +8,11 @@ import { Provider } from "react-redux";
 import store from "./store";
 import PrivateRoute from "./components/common/PrivateRoute";
 
-import Routes from '../src/components/Routes';
-import TopNavigation from './components/topNavigation';
-import SideNavigation from './components/sideNavigation';
-import Footer from './components/Footer';
-import './index.css';
-
+import Routes from "../src/components/Routes";
+import TopNavigation from "./components/topNavigation";
+import SideNavigation from "./components/sideNavigation";
+import Footer from "./components/Footer";
+import "./index.css";
 
 import Navbar from "./components/layout/Navbar";
 //import Footer from "./components/layout/Footer";
@@ -74,7 +73,7 @@ class App extends Component {
       </main>
 
 
-      
+{/*       
       <Provider store={store}>
         <Router>
           <div className="App">
@@ -105,7 +104,7 @@ class App extends Component {
             <Footer />
           </div>
         </Router>
-      </Provider> 
+      </Provider>  */}
 
     </div>
     );
