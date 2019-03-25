@@ -34,12 +34,7 @@ const TopNavigation = () => {
                         Hall Usage
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/404" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="exclamation" className="mr-3"/>
-                        404
-                    </MDBListGroupItem>
-                </NavLink>
+               
             </MDBListGroup>
         </div>
     );

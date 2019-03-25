@@ -59,6 +59,7 @@ const style = {
 };
 
 class App extends Component {
+
   onDayClick = (e, day) => {
     alert(day);
   };
@@ -66,15 +67,18 @@ class App extends Component {
   render() {
     return (
       <div className="flexible-content">
-        <TopNavigation />
-        <SideNavigation />
-        <AvailableLoad />
-        <main id="content" className="p-5">
-          <Routes />
-        </main>
 
-        {/*       
-      <Provider store={store}>
+       <TopNavigation />
+      <SideNavigation />
+      <Lecturer />
+      <main id="content" className="p-5">
+        <Routes />
+      </main>
+      
+      
+    
+      {/* <Provider store={store}>
+
         <Router>
           <div className="App">
             <Navbar />
@@ -95,17 +99,20 @@ class App extends Component {
                 />
               </Switch>
             </div>
+           
+
+            <Footer />
             <Calender
               style={style}
               width="302px"
               onDayClick={(e, day) => this.onDayClick(e, day)}
             />
-
-            <Footer />
           </div>
         </Router>
+
       </Provider>  */}
       </div>
+
     );
   }
 }
