@@ -11,6 +11,7 @@ import PrivateRoute from "./components/common/PrivateRoute";
 import Routes from "../src/components/Routes";
 import TopNavigation from "./components/topNavigation";
 import SideNavigation from "./components/sideNavigation";
+import AvailableLoad from "./components/actors/AvailableLoad";
 import Footer from "./components/Footer";
 import "./index.css";
 
@@ -64,16 +65,15 @@ class App extends Component {
 
   render() {
     return (
-
       <div className="flexible-content">
-      <TopNavigation />
-      <SideNavigation />
-      <main id="content" className="p-5">
-        <Routes />
-      </main>
+        <TopNavigation />
+        <SideNavigation />
+        <AvailableLoad />
+        <main id="content" className="p-5">
+          <Routes />
+        </main>
 
-
-{/*       
+        {/*       
       <Provider store={store}>
         <Router>
           <div className="App">
@@ -105,8 +105,7 @@ class App extends Component {
           </div>
         </Router>
       </Provider>  */}
-
-    </div>
+      </div>
     );
   }
 }
