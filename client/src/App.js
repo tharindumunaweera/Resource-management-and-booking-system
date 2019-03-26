@@ -12,6 +12,7 @@ import Routes from "../src/components/Routes";
 import TopNavigation from "./components/topNavigation";
 import SideNavigation from "./components/sideNavigation";
 import AvailableLoad from "./components/actors/AvailableLoad";
+import Acadamic from "./components/actors/Acadamic";
 import Footer from "./components/Footer";
 import "./index.css";
 
@@ -65,15 +66,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="flexible-content">
-        <TopNavigation />
-        <SideNavigation />
-        <AvailableLoad />
-        <main id="content" className="p-5">
-          <Routes />
-        </main>
+      <Router>
+        <div className="flexible-content">
+          <TopNavigation />
+          <SideNavigation />
+          <Route exact path="/available" component={AvailableLoad} />
+          <Route exact path="/acadamic" component={Acadamic} />
 
-        {/*       
+          <main id="content" className="p-5">
+            <Routes />
+          </main>
+
+          {/*       
       <Provider store={store}>
         <Router>
           <div className="App">
@@ -105,7 +109,8 @@ class App extends Component {
           </div>
         </Router>
       </Provider>  */}
-      </div>
+        </div>
+      </Router>
     );
   }
 }

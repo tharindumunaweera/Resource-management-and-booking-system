@@ -73,7 +73,7 @@ class CreateProfile extends Component {
             onChange={this.onChange}
             error={errors.linkedin}
           />
-          npmnpm
+
           <InputGroup
             placeholder="Instagram profile URL"
             name="facebook"
