@@ -166,7 +166,7 @@ class AvailableLoad extends Component {
 
             <li className="list-group-item">
               <TextFieldGroup
-                placeholder="Hall"
+                placeholder="Hall Name"
                 name="hall"
                 value={this.state.hall}
                 onChange={this.onChange}
@@ -175,9 +175,17 @@ class AvailableLoad extends Component {
 
             <li className="list-group-item">
               <TextAreaFieldGroup
-                placeholder="What the Reason for booking"
+                placeholder="Purpose"
                 name="reason"
-                value={this.state.reason}
+                value={this.state.rpurpose}
+                onChange={this.onChange}
+              />
+            </li>
+            <li className="list-group-item">
+              <TextAreaFieldGroup
+                placeholder="Discription"
+                name="reason"
+                value={this.state.discription}
                 onChange={this.onChange}
               />
             </li>
