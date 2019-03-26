@@ -66,11 +66,11 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className="flexible-content">
-
        <TopNavigation />
       <SideNavigation />
-      <Lecturer />
+      <Route exact path="/lec" component={Lecturer} />
       <main id="content" className="p-5">
         <Routes />
       </main>
@@ -78,7 +78,6 @@ class App extends Component {
       
     
       {/* <Provider store={store}>
-
         <Router>
           <div className="App">
             <Navbar />
@@ -109,10 +108,9 @@ class App extends Component {
             />
           </div>
         </Router>
-
-      </Provider>  */}
-      </div>
-
+      </Provider>   */}
+    </div>
+    </Router>
     );
   }
 }
