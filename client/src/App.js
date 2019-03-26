@@ -67,6 +67,7 @@ class App extends Component {
   render() {
     return (
       <Router>
+<<<<<<< HEAD
         <div className="flexible-content">
           <TopNavigation />
           <SideNavigation />
@@ -79,6 +80,19 @@ class App extends Component {
 
           {/*       
       <Provider store={store}>
+=======
+      <div className="flexible-content">
+       <TopNavigation />
+      <SideNavigation />
+      <Route exact path="/lec" component={Lecturer} />
+      <main id="content" className="p-5">
+        <Routes />
+      </main>
+      
+      
+    
+      {/* <Provider store={store}>
+>>>>>>> 15b95698f7f5f4ba639b942d21b613873574b0c4
         <Router>
           <div className="App">
             <Navbar />
@@ -109,10 +123,16 @@ class App extends Component {
             />
           </div>
         </Router>
+<<<<<<< HEAD
 
       </Provider>  */}
         </div>
       </Router>
+=======
+      </Provider>   */}
+    </div>
+    </Router>
+>>>>>>> 15b95698f7f5f4ba639b942d21b613873574b0c4
     );
   }
 }
