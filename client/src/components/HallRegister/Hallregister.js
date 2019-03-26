@@ -19,40 +19,65 @@ const HallRegister =  () => {
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Hall Name</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="Hall Name"/>
+                      <input type="text" class="form-control" id="inputPassword" placeholder="Hall Name"/>
                     </div>
                 </div>
+
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Location</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputPassword" placeholder="Location"/>
+                      <input type="text" class="form-control" id="inputPassword" placeholder="Location"/>
                     </div>
                 </div>
-                <div>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                    <option selected>Number Of Seats</option>
-                    <option value="1">Less than 100</option>
-                    <option value="2">100  -  200</option>
-                    <option value="3">200  -  300</option>
-                    <option value="3">300  -  400</option>
-                    <option value="3">Greater than 400 </option>
-                </select>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Hall Name</label>
+                    <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" maxlength="8">
+                      <option selected>Number Of Seats</option>
+                      <option value="1">Less than 100</option>
+                      <option value="2">100  -  200</option>
+                      <option value="3">200  -  300</option>
+                      <option value="3">300  -  400</option>
+                      <option value="3">Greater than 400 </option>
+                  </select>
+                    </div>
                 </div>
-                <div>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                    <option selected>Number Of Projecters</option>
-                    <option value="1">0</option>
-                    <option value="2">1</option>
-                    <option value="3">2</option>
-                    <option value="3">3</option>
-                </select>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Projecters</label>
+                    <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Number Of Projecters</option>
+                        <option value="1">0</option>
+                        <option value="2">1</option>
+                        <option value="3">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    </div>
                 </div>
-                <div>
-                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                    <option selected>Number White Boards</option>
-                    <option value="2">1</option>
-                    <option value="3">2</option>
-                </select>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">White Boards</label>
+                    <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                      <option selected>Number White Boards</option>
+                      <option value="2">1</option>
+                      <option value="3">2</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Other Resources</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputPassword" placeholder="Location"/>
+                    </div>
+                </div>
+
+                
+                <div class="card text-right"  >
+                    <button type="button" class="btn btn-primary">Submit</button>
                 </div>
             </form>
            
