@@ -99,15 +99,17 @@ class App extends Component {
                 />
               </Switch>
             </div>
+           
+
+            <Footer />
             <Calender
               style={style}
               width="302px"
               onDayClick={(e, day) => this.onDayClick(e, day)}
             />
-
-            <Footer />
           </div>
         </Router>
+
       </Provider>  */}
         </div>
       </Router>
