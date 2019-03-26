@@ -74,7 +74,8 @@ class App extends Component {
           <Route exact path="/available" component={AvailableLoad} />
           <Route exact path="/acadamic" component={Acadamic} />
           <Route exact path="/lec" component={Lecturer} />
-          <HallRegister/>
+          <Route exact path="/HallRegister" component={HallRegister} />
+          
           <main id="content" className="p-5">
             <Routes />
           </main>
