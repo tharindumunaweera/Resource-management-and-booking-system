@@ -26,6 +26,7 @@ import Lecturer from "./components/actors/Lecturer";
 import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
+import HallRegister from "./components/HallRegister/Hallregister";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
@@ -67,32 +68,20 @@ class App extends Component {
   render() {
     return (
       <Router>
-<<<<<<< HEAD
         <div className="flexible-content">
           <TopNavigation />
           <SideNavigation />
           <Route exact path="/available" component={AvailableLoad} />
           <Route exact path="/acadamic" component={Acadamic} />
-
+          <Route exact path="/lec" component={Lecturer} />
+          <HallRegister/>
           <main id="content" className="p-5">
             <Routes />
           </main>
 
-          {/*       
-      <Provider store={store}>
-=======
-      <div className="flexible-content">
-       <TopNavigation />
-      <SideNavigation />
-      <Route exact path="/lec" component={Lecturer} />
-      <main id="content" className="p-5">
-        <Routes />
-      </main>
-      
-      
+       
     
       {/* <Provider store={store}>
->>>>>>> 15b95698f7f5f4ba639b942d21b613873574b0c4
         <Router>
           <div className="App">
             <Navbar />
@@ -123,16 +112,9 @@ class App extends Component {
             />
           </div>
         </Router>
-<<<<<<< HEAD
-
-      </Provider>  */}
-        </div>
-      </Router>
-=======
       </Provider>   */}
     </div>
     </Router>
->>>>>>> 15b95698f7f5f4ba639b942d21b613873574b0c4
     );
   }
 }
