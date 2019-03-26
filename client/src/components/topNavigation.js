@@ -7,6 +7,7 @@ import {
   MDBCollapse,
   MDBNavItem,
   MDBNavLink,
+  MDBRow,
   MDBIcon
 } from "mdbreact";
 
@@ -42,14 +43,23 @@ class TopNavigation extends Component {
           </MDBNavbarNav>
           <MDBNavbarNav right>
             <MDBNavItem>
-              <a
+            <MDBRow>
+            <a
                 className="border border-light rounded mr-1 nav-link Ripple-parent"
                 rel="noopener noreferrer"
                 target="_blank"
-              >
-                <MDBIcon className="mr-2" />
-                Logout
-              </a>
+            >
+              <i class="far fa-bell"></i>
+            </a>
+           
+            <a
+                className="border border-light rounded mr-1 nav-link Ripple-parent"
+                rel="noopener noreferrer"
+                target="_blank"
+            >
+              Logout
+            </a>
+              </MDBRow>
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
