@@ -110,7 +110,7 @@ class App extends Component {
               style={style}
               width="302px"
               onDayClick={(e, day) => this.onDayClick(e, day)}
-            />
+           />
           </div>
         </Router>
       </Provider>   */}
