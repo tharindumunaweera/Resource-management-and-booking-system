@@ -11,8 +11,8 @@ const HallRegister =  () => {
       <div className="col-sm-7 ">
       <MDBCol md="12">
         <MDBCard className="mt-5">
-          <MDBView className="gradient-card-header blue darken-0">
-            <h4 className="h4-responsive text-white">Hall Register form</h4>
+          <MDBView className="gradient-card-header black darken-0">
+            <h4 className="h4-responsive text-white"><strong>Hall Registration Form</strong></h4>
           </MDBView>
           <MDBCardBody>
             <form>
@@ -31,7 +31,7 @@ const HallRegister =  () => {
                 </div>
 
                 <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Hall Name</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Number Of Seats</label>
                     <div class="col-sm-10">
                     <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" maxlength="8">
                       <option selected>Number Of Seats</option>
@@ -71,13 +71,25 @@ const HallRegister =  () => {
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Other Resources</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword" placeholder="Location"/>
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                      <option selected>Other Resources </option>
+                      <option value="2"></option>
+                      <option value="3"></option>
+                    </select>
                     </div>
                 </div>
 
                 
                 <div class="card text-right"  >
-                    <button type="button" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-primary"><strong>Submit</strong></button>
+                </div>
+
+                <div class="card text-right"  >
+                    <button type="button" class="btn btn-success"><strong>Edit Form</strong></button>
+                </div>
+
+                <div class="card text-right"  >
+                    <button type="button" class="btn btn-danger"><strong>Delete Hall</strong></button>
                 </div>
             </form>
            
