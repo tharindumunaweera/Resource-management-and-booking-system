@@ -17,9 +17,9 @@ const HallRegister =  () => {
           <MDBCardBody>
             <form>
                 <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Hall Name</label>
+                    <label for="inputPassword" class="col-sm-2 col-form-label" >Hall Name</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword" placeholder="Hall Name"/>
+                      <input type="text" class="form-control" id="inputPassword" placeholder="Hall Name"  readonly="readonly"/>
                     </div>
                 </div>
 
