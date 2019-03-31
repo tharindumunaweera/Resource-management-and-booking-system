@@ -26,6 +26,7 @@ import Lecturer from "./components/actors/Lecturer";
 import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
+import HallRegister from "./components/HallRegister/Hallregister";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
@@ -67,7 +68,20 @@ class App extends Component {
 
   render() {
     return (
-      <Provider store={store}>
+      <Router>
+        <div className="flexible-content">
+          <TopNavigation />
+          <SideNavigation />
+          <Route exact path="/available" component={AvailableLoad} />
+          <Route exact path="/acadamic" component={Acadamic} />
+          <Route exact path="/lec" component={Lecturer} />
+          <Route exact path="/HallRegister" component={HallRegister} />
+
+          <main id="content" className="p-5">
+            <Routes />
+          </main>
+
+          {/* <Provider store={store}>
         <Router>
           <div className="App">
             <Navbar />
@@ -102,10 +116,12 @@ class App extends Component {
               style={style}
               width="302px"
               onDayClick={(e, day) => this.onDayClick(e, day)}
-            />
+           />
           </div>
         </Router>
-      </Provider>
+      </Provider>   */}
+        </div>
+      </Router>
     );
   }
 }

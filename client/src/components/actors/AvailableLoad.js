@@ -81,17 +81,25 @@ class AvailableLoad extends Component {
     ];
     return (
       <React.Fragment>
-        <div className="row">
-          <div className="col-sm-3" />
-          <div className="col-sm-4">
-            <h4 className="mb-2">Date</h4>
-            <li className="list-group-item">
+      
+        <MDBRow>
+        <div className="col-sm-3" />
+          <MDBCol md="4">
+            <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header black">
+                <h4 className="h4-responsive text-white">
+                <strong>  Date </strong>
+                </h4>
+              </MDBView>
+              <MDBCardBody style={{width: '100%', height: '500px'}} className="text-center">
+               
+              <li className="list-group-item">
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Time</th>
+                    <th> <strong>Time </strong></th>
 
-                    <th>Availability</th>
+                    <th> <strong> Availability </strong></th>
 
                     <th />
                   </tr>
@@ -104,7 +112,7 @@ class AvailableLoad extends Component {
 
                     <td>
                       <Link className="nav-link" to="/reg">
-                        <strong>Available</strong>
+                        <strong>Not Available</strong>
                       </Link>
                     </td>
                   </tr>
@@ -114,7 +122,7 @@ class AvailableLoad extends Component {
                     </td>
                     <td>
                       <Link className="nav-link" to="/reg">
-                        <strong>Available</strong>
+                        <strong>Not Available</strong>
                       </Link>
                     </td>
                   </tr>
@@ -138,13 +146,33 @@ class AvailableLoad extends Component {
                       </Link>
                     </td>
                   </tr>
+                  <tr>
+                    <td>
+                      <strong>5 - 7 p.m</strong>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to="/reg">
+                        <strong>Not Available</strong>
+                      </Link>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </li>
-          </div>
-          <div className="col-sm-3">
-            <h4 className="mb-2">Make a Booking</h4>
-            <li className="list-group-item">
+
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+          <MDBCol md="4">
+            <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header black">
+                <h4 className="h4-responsive text-white">
+                <strong> Make Booking </strong>
+                </h4>
+              </MDBView>
+              <MDBCardBody style={{width: '100%', height: '600px'}} className="text-center">
+                
+              <li className="list-group-item">
               <SelectListGroup
                 placeholder="Start Time"
                 name="starttime"
@@ -166,7 +194,7 @@ class AvailableLoad extends Component {
 
             <li className="list-group-item">
               <TextFieldGroup
-                placeholder="Hall"
+                placeholder="Hall Name"
                 name="hall"
                 value={this.state.hall}
                 onChange={this.onChange}
@@ -175,20 +203,32 @@ class AvailableLoad extends Component {
 
             <li className="list-group-item">
               <TextAreaFieldGroup
-                placeholder="What the Reason for booking"
+                placeholder="Purpose"
                 name="reason"
-                value={this.state.reason}
+                value={this.state.rpurpose}
+                onChange={this.onChange}
+              />
+            </li>
+            <li className="list-group-item">
+              <TextAreaFieldGroup
+                placeholder="Discription"
+                name="reason"
+                value={this.state.discription}
                 onChange={this.onChange}
               />
             </li>
 
-            <input
-              type="submit"
-              value="Submit"
-              className="btn btn-info btn-block mt-4"
-            />
-          </div>
-        </div>
+           
+             <div class="card text-right"  >
+                    <button type="button" class="btn btn-primary"><strong>Submit</strong></button>
+             </div>
+
+
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+       
       </React.Fragment>
     );
   }
