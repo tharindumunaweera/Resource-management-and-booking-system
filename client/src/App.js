@@ -13,11 +13,11 @@ import TopNavigation from "./components/topNavigation";
 import SideNavigation from "./components/sideNavigation";
 import AvailableLoad from "./components/actors/AvailableLoad";
 import Acadamic from "./components/actors/Acadamic";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 import "./index.css";
 
 import Navbar from "./components/layout/Navbar";
-//import Footer from "./components/layout/Footer";
+import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -29,6 +29,7 @@ import BookingForm from "./components/BookingForm/BookingForm";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
+import EditProfile from "./components/edit-profile/EditProfile";
 
 import "./App.css";
 
@@ -66,33 +67,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-<<<<<<< HEAD
-        <div className="flexible-content">
-          <TopNavigation />
-          <SideNavigation />
-          <Route exact path="/available" component={AvailableLoad} />
-          <Route exact path="/acadamic" component={Acadamic} />
-
-          <main id="content" className="p-5">
-            <Routes />
-          </main>
-
-          {/*       
       <Provider store={store}>
-=======
-      <div className="flexible-content">
-       <TopNavigation />
-      <SideNavigation />
-      <Route exact path="/lec" component={Lecturer} />
-      <main id="content" className="p-5">
-        <Routes />
-      </main>
-      
-      
-    
-      {/* <Provider store={store}>
->>>>>>> 15b95698f7f5f4ba639b942d21b613873574b0c4
         <Router>
           <div className="App">
             <Navbar />
@@ -112,8 +87,15 @@ class App extends Component {
                   component={CreateProfile}
                 />
               </Switch>
+
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-profile"
+                  component={EditProfile}
+                />
+              </Switch>
             </div>
-           
 
             <Footer />
             <Calender
@@ -123,16 +105,7 @@ class App extends Component {
             />
           </div>
         </Router>
-<<<<<<< HEAD
-
-      </Provider>  */}
-        </div>
-      </Router>
-=======
-      </Provider>   */}
-    </div>
-    </Router>
->>>>>>> 15b95698f7f5f4ba639b942d21b613873574b0c4
+      </Provider>
     );
   }
 }
