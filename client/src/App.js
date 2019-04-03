@@ -31,6 +31,8 @@ import HallRegister from "./components/HallRegister/Hallregister";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
+import AddExperience from "./components/add-credentials/AddExperience";
+import AddEducation from "./components/add-credentials/AddEducation";
 
 import "./App.css";
 
@@ -68,20 +70,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className="flexible-content">
-          <TopNavigation />
-          <SideNavigation />
-          <Route exact path="/available" component={AvailableLoad} />
-          <Route exact path="/acadamic" component={Acadamic} />
-          <Route exact path="/lec" component={Lecturer} />
-          <Route exact path="/HallRegister" component={HallRegister} />
-
-          <main id="content" className="p-5">
-            <Routes />
-          </main>
-
-          {/* <Provider store={store}>
+      <Provider store={store}>
         <Router>
           <div className="App">
             <Navbar />
@@ -109,6 +98,22 @@ class App extends Component {
                   component={EditProfile}
                 />
               </Switch>
+
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/add-experience"
+                  component={AddExperience}
+                />
+              </Switch>
+
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/add-education"
+                  component={AddEducation}
+                />
+              </Switch>
             </div>
 
             <Footer />
@@ -116,12 +121,10 @@ class App extends Component {
               style={style}
               width="302px"
               onDayClick={(e, day) => this.onDayClick(e, day)}
-           />
+            />
           </div>
         </Router>
-      </Provider>   */}
-        </div>
-      </Router>
+      </Provider>
     );
   }
 }

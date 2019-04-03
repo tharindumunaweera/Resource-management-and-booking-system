@@ -184,6 +184,7 @@ router.post(
         company: req.body.company,
         location: req.body.location,
         from: req.body.from,
+        to: req.body.to,
         current: req.body.current,
         description: req.body.description
       };
@@ -217,6 +218,7 @@ router.post(
         degree: req.body.degree,
         fieldofstudy: req.body.fieldofstudy,
         from: req.body.from,
+        to: req.body.to,
         current: req.body.current,
         description: req.body.description
       };
@@ -286,8 +288,8 @@ router.delete(
   (req, res) => {
     Profile.findOneAndRemove({ user: req.user.id }).then(() => {
       User.findOneAndRemove({ _id: req.user.id }).then(() => {
-        res.json({ success: true});
-      })
+        res.json({ success: true });
+      });
     });
   }
 );
