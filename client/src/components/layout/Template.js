@@ -1,18 +1,27 @@
-import React from "react";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Routes from "../Routes";
 import SideNavigation from "../sideNavigation";
 import TopNavigation from "../topNavigation";
+
 //import Footer from "./components/Footer";
+//import './index.css';
+
+
 
 const Template = () => {
   return (
-    <div className="flexible-content">
-      <TopNavigation />
-      <SideNavigation />
-      <main id="content" className="p-3">
-        <Routes />
-      </main>
-    </div>
+    <Router>
+      <div className="flexible-content">
+          {/* <TopNavigation /> */}
+          <SideNavigation />
+
+          <main id="content" className="p-5">
+            <Routes />
+          </main>
+      </div>
+    </Router>
+
   );
 };
 
