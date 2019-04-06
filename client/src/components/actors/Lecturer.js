@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   MDBCard,
   MDBCol,
@@ -13,17 +13,25 @@ import {
   MDBBtn,
   MDBIcon
 } from "mdbreact";
+
 import Calender from "../Calender/Calender";
+
 
 const style = {
   //this for Calender
   position: "relative",
-  margin: "50px auto"
+  margin: "20px auto"
 };
 
-const Lecturer = () => {
+class Lecturer extends Component {
+  
+  onDayClick = (e ,day) => {
+    alert("The Day You Select Is : " + day);
+  }
+
+  render(){
   return (
-    <React.Fragment>
+    
       <MDBRow>
         <div className="col-sm-3 " />
         <div className="col-sm-6 ">
@@ -35,7 +43,8 @@ const Lecturer = () => {
               <MDBCardBody
                 style={{ width: "100%", height: "300px" }}
                 className="text-center">
-                <Calender />
+                <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
+
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -95,11 +104,13 @@ const Lecturer = () => {
           </MDBCol>
         </div>
         
+        
 
          
         </MDBRow>
-    </React.Fragment>
+   
   );
 };
+}
 
 export default Lecturer;
