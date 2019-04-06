@@ -28,11 +28,14 @@ import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
 import HallRegister from "./components/HallRegister/Hallregister";
 
+
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
+
+
 
 import "./App.css";
 
@@ -77,6 +80,7 @@ class App extends Component {
         <Route exact path="/acadamic" component={Acadamic} />
         <Route exact path="/lec" component={Lecturer} />
         <Route exact path="/HallRegister" component={HallRegister} />
+        
         
         <main id="content" className="p-5">
           <Routes />
