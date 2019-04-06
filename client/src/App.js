@@ -33,6 +33,8 @@ import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
+import Template from "./components/layout/Template";
+
 
 import "./App.css";
 
@@ -73,15 +75,13 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
+             <Navbar /> 
             <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/union" component={Union} />
-              <Route exact path="/Lecturer" component={Lecturer} />
               <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                <PrivateRoute exact path="/dashboard" component={Template} />
               </Switch>
               <Switch>
                 <PrivateRoute
@@ -116,12 +116,8 @@ class App extends Component {
               </Switch>
             </div>
 
-            <Footer />
-            <Calender
-              style={style}
-              width="302px"
-              onDayClick={(e, day) => this.onDayClick(e, day)}
-            />
+            {/* <Footer /> */}
+           
           </div>
         </Router>
       </Provider>
