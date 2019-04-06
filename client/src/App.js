@@ -64,67 +64,83 @@ const style = {
 };
 
 class App extends Component {
-  onDayClick = (e, day) => {
-    alert(day);
-  };
+ 
 
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/union" component={Union} />
-              <Route exact path="/Lecturer" component={Lecturer} />
-              <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-profile"
-                  component={CreateProfile}
-                />
-              </Switch>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/edit-profile"
-                  component={EditProfile}
-                />
-              </Switch>
+      <Router>
+      <div className="flexible-content">
+        <TopNavigation />
+        <SideNavigation />
+        <Route exact path="/available" component={AvailableLoad} />
+        <Route exact path="/acadamic" component={Acadamic} />
+        <Route exact path="/lec" component={Lecturer} />
+        <Route exact path="/HallRegister" component={HallRegister} />
+        
+        <main id="content" className="p-5">
+          <Routes />
+        </main>
+       </div>
+  </Router>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-experience"
-                  component={AddExperience}
-                />
-              </Switch>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-education"
-                  component={AddEducation}
-                />
-              </Switch>
-            </div>
 
-            <Footer />
-            <Calender
-              style={style}
-              width="302px"
-              onDayClick={(e, day) => this.onDayClick(e, day)}
-            />
-          </div>
-        </Router>
-      </Provider>
+      // <Provider store={store}>
+      //   <Router>
+      //     <div className="App">
+      //       <Navbar />
+      //       <Route exact path="/" component={Landing} />
+      //       <div className="container">
+      //         <Route exact path="/register" component={Register} />
+      //         <Route exact path="/login" component={Login} />
+      //         <Route exact path="/union" component={Union} />
+      //         <Route exact path="/Lecturer" component={Lecturer} />
+      //         <Switch>
+      //           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      //         </Switch>
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/create-profile"
+      //             component={CreateProfile}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/edit-profile"
+      //             component={EditProfile}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/add-experience"
+      //             component={AddExperience}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/add-education"
+      //             component={AddEducation}
+      //           />
+      //         </Switch>
+      //       </div>
+
+      //       <Footer />
+      //       <Calender
+      //         style={style}
+      //         width="302px"
+      //         onDayClick={(e, day) => this.onDayClick(e, day)}
+      //       />
+      //     </div>
+      //   </Router>
+      // </Provider>
     );
   }
 }
