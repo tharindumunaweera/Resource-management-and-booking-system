@@ -263,7 +263,7 @@ class AvailableLoad extends Component {
             </li>
 
             <li className="list-group-item">
-              <TextFieldGroup
+              <TextAreaFieldGroup
                 placeholder="Hall Name"
                 name="hall"
                 value={this.state.hall}
