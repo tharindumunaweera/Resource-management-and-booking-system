@@ -22,7 +22,7 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Union from "./components/actors/Union";
-import Lecturer from "./components/actors/Lecturer";
+import HallBookingForm from "./components/HallBookingForm/HallBookingForm";
 import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
@@ -75,11 +75,11 @@ class App extends Component {
         <SideNavigation />
         <Route exact path="/available" component={AvailableLoad} />
         <Route exact path="/acadamic" component={Acadamic} />
-        <Route exact path="/lec" component={Lecturer} />
+        <Route exact path="/HallBooking" component={HallBookingForm} />
         <Route exact path="/HallRegister" component={HallRegister} />
         
         <main id="content" className="p-5">
-          <Routes />
+          {/* <Routes /> */}
         </main>
        </div>
   </Router>

@@ -8,7 +8,7 @@ tr{
 }
 
 .calender-container{
-    border:2px solid skyblue;
+    border:3px solid skyblue;
 }
 
 .calender{
@@ -19,7 +19,7 @@ tr{
 }
 
 .calender-header{
-    border-bottom:1px dashed skyblue;
+    border-bottom:2px dashed skyblue;
     font-size: 1.6em;
 }
 
@@ -32,15 +32,17 @@ tr{
 .empty-slot,
 .week-day{
     text-align:center;
-    height:40px;
+    height:70px;
 }
 
 .week-day{
-    font-size:0.8em;
+    font-size:1em;
+    font-weight: bold;
 }
 
 .day{
-    font-size:0.8em;
+    font-size:0.9em;
+    font-weight: bold;
 }
 
 .day{
@@ -68,12 +70,13 @@ tr{
 
 .month-popup div{
     padding:0.3em;
+    font-weight: bold;
 }
 
 .nav-month{
     position:absolute;
     top:0.6em;
-    font-size:0.6em;
+    font-size:0.7em;
     right:3px;
 }
 
@@ -86,12 +89,18 @@ tr{
 }
 
 .editor-year{
-    max-width:3.6em;
+    max-width:4em;
 }
 
-.label-month,
+.label-month{
+    color:black;
+    font-weight: bold;
+
+}
 .label-year{
-    font-size:0.6em;
+    font-size:1.5em;
+    color: red;
+    font-weight: bold;
 }
 
 .label-month{

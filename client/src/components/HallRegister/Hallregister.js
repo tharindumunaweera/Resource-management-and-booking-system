@@ -73,7 +73,7 @@ const HallRegister =  () => {
                     <div class="col-sm-10">
                     <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
                       <option selected>Other Resources </option>
-                      <option value="2"></option>
+                      <option value="2">Computer</option>
                       <option value="3"></option>
                     </select>
                     </div>
