@@ -14,7 +14,7 @@ const TopNavigation = () => {
                 <NavLink exact={true} to="/" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="chart-pie" className="mr-3"/>
-                        Dashboard Lec
+                        Dashboard Director
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/profile" activeClassName="activeClass">
@@ -24,6 +24,12 @@ const TopNavigation = () => {
                     </MDBListGroupItem>
                 </NavLink>
               
+                <NavLink to="/maps" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="map" className="mr-3"/>
+                        Hall Usage
+                    </MDBListGroupItem>
+                </NavLink>
                
             </MDBListGroup>
         </div>

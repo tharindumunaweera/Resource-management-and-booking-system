@@ -6,10 +6,6 @@ import TablesPage from './pages/TablesPage';
 import MapsPage from './pages/MapsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
-import HallRegister from "./HallRegister/Hallregister";
-import Lecturer from "./actors/Lecturer";
-import AvailableLoad from "./actors/AvailableLoad";
-import Acadamic from "./actors/Acadamic";
 
 class Routes extends React.Component {
   render() {
@@ -22,11 +18,7 @@ class Routes extends React.Component {
         <Route path='/maps' component={MapsPage} />
         <Route path='/404' component={NotFoundPage} />
 
-        <Route exact path="/available" component={AvailableLoad} />
-        <Route exact path="/acadamic" component={Acadamic} />
-        <Route exact path="/lec" component={Lecturer} />
-        <Route exact path="/HallRegister" component={HallRegister} />
-          
+       
       </Switch>
     );
   }
