@@ -67,10 +67,6 @@ const style = {
 };
 
 class App extends Component {
-  onDayClick = (e, day) => {
-    alert(day);
-  };
-
   render() {
     return (
       <Provider store={store}>
@@ -81,6 +77,8 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/union" component={Union} />
+              <Route exact path="/Lecturer" component={Lecturer} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
@@ -115,13 +113,17 @@ class App extends Component {
                   component={AddEducation}
                 />
               </Switch>
-
               <Switch>
                 <PrivateRoute exact path="/timetable" component={TimeTable} />
               </Switch>
             </div>
 
-            {/* <Footer /> */}
+            <Footer />
+            <Calender
+              style={style}
+              width="302px"
+              onDayClick={(e, day) => this.onDayClick(e, day)}
+            />
           </div>
         </Router>
       </Provider>
