@@ -18,6 +18,11 @@ const ProfileActions = () => {
           <i className="fas fa-graduation-cap text-info mr-1" />
           Add Education
         </Link>
+        <div style={{ marginLeft: "20px" }} />
+        <Link to="/timetable" className="btn btn-light">
+          <i className="fas fa-table text-info mr-2" />
+          Time Table Management
+        </Link>
       </div>
     </div>
   );

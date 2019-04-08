@@ -91,7 +91,7 @@ class AvailableLoad extends Component {
                 <strong>  Date </strong>
                 </h4>
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '500px'}} className="text-center">
+              <MDBCardBody style={{width: '100%', height: '900px'}} className="text-center">
                
               <li className="list-group-item">
               <table className="table">
@@ -107,7 +107,7 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <td>
-                      <strong>8 - 10 a.m</strong>
+                      <strong>8 - 9 a.m</strong>
                     </td>
 
                     <td>
@@ -118,7 +118,7 @@ class AvailableLoad extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <strong>10 - 12 a.m</strong>
+                      <strong>9 - 10 a.m</strong>
                     </td>
                     <td>
                       <Link className="nav-link" to="/reg">
@@ -128,7 +128,7 @@ class AvailableLoad extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <strong>1 - 3 p.m</strong>
+                      <strong>10 - 11 p.m</strong>
                     </td>
                     <td>
                       <Link className="nav-link" to="/reg">
@@ -138,7 +138,7 @@ class AvailableLoad extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <strong>3 - 5 p.m</strong>
+                      <strong>11 - 12 p.m</strong>
                     </td>
                     <td>
                       <Link className="nav-link" to="/reg">
@@ -148,7 +148,67 @@ class AvailableLoad extends Component {
                   </tr>
                   <tr>
                     <td>
-                      <strong>5 - 7 p.m</strong>
+                      <strong>12 - 1 p.m</strong>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to="/reg">
+                        <strong>Not Available</strong>
+                      </Link>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>1 - 2 p.m</strong>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to="/reg">
+                        <strong>Not Available</strong>
+                      </Link>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>2 - 3 p.m</strong>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to="/reg">
+                        <strong>Not Available</strong>
+                      </Link>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>3 - 4 p.m</strong>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to="/reg">
+                        <strong>Not Available</strong>
+                      </Link>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>4 - 5 p.m</strong>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to="/reg">
+                        <strong>Not Available</strong>
+                      </Link>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>5 - 6 p.m</strong>
+                    </td>
+                    <td>
+                      <Link className="nav-link" to="/reg">
+                        <strong>Not Available</strong>
+                      </Link>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>6 - 7 p.m</strong>
                     </td>
                     <td>
                       <Link className="nav-link" to="/reg">
@@ -170,8 +230,18 @@ class AvailableLoad extends Component {
                 <strong> Make Booking </strong>
                 </h4>
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '600px'}} className="text-center">
+              <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
                 
+              <li className="list-group-item">
+              <TextFieldGroup
+                placeholder="Date"
+                name="date"
+                value={this.state.date}
+                onChange={this.onChange}
+              />
+            </li>
+
+
               <li className="list-group-item">
               <SelectListGroup
                 placeholder="Start Time"

@@ -2,6 +2,7 @@ import React from 'react';
 import logo from "../assets/mdb-react.png";
 import { MDBListGroup, MDBListGroupItem, MDBIcon } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
+import HallSelect from "./HallSelect/HallSelect";
 
 const TopNavigation = () => {
     return (
@@ -13,7 +14,7 @@ const TopNavigation = () => {
                 <NavLink exact={true} to="/" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="chart-pie" className="mr-3"/>
-                        Dashboard
+                        Dashboard Lec
                     </MDBListGroupItem>
                 </NavLink>
                 <NavLink to="/profile" activeClassName="activeClass">

@@ -9,8 +9,8 @@ import store from "./store";
 import PrivateRoute from "./components/common/PrivateRoute";
 
 import Routes from "../src/components/Routes";
-import TopNavigation from "./components/topNavigation";
-import SideNavigation from "./components/sideNavigation";
+import TopNavLecturer from "./components/topNavLecturer";
+import SideNavLecturer from "./components/sideNavLecturer";
 import AvailableLoad from "./components/actors/AvailableLoad";
 import Acadamic from "./components/actors/Acadamic";
 //import Footer from "./components/Footer";
@@ -22,17 +22,20 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Union from "./components/actors/Union";
-import HallBookingForm from "./components/HallBookingForm/HallBookingForm";
+import HallRegister from "./components/HallRegister/Hallregister";
 import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
-import HallRegister from "./components/HallRegister/Hallregister";
+import HallSelect from "./components/HallSelect/HallSelect";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
+
+import TimeTable from "./components/timetable/TimeTable";
+import Template from "./components/layout/Template";
 
 import "./App.css";
 
@@ -64,25 +67,27 @@ const style = {
 };
 
 class App extends Component {
- 
-
   render() {
     return (
 
       <Router>
-      <div className="flexible-content">
-        <TopNavigation />
-        <SideNavigation />
-        <Route exact path="/available" component={AvailableLoad} />
-        <Route exact path="/acadamic" component={Acadamic} />
-        <Route exact path="/HallBooking" component={HallBookingForm} />
-        <Route exact path="/HallRegister" component={HallRegister} />
-        
-        <main id="content" className="p-5">
-          {/* <Routes /> */}
-        </main>
-       </div>
-  </Router>
+        <div className="flexible-content">
+            <TopNavLecturer />
+            <SideNavLecturer />
+            <Route exact path="/available" component={AvailableLoad} />
+            {/* <Route exact path="/acadamic" component={Acadamic} /> */}
+            <Route exact path="/HallSelect" component={HallSelect} />
+            <Route exact path="/HallRegister" component={HallRegister} />
+            
+            <main id="content" className="p-5">
+              {/* <Routes /> */}
+            </main>
+        </div>
+      </Router>
+
+      
+
+      
 
 
 

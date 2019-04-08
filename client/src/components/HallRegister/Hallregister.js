@@ -19,7 +19,7 @@ const HallRegister =  () => {
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label" >Hall Name</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword" placeholder="Hall Name"  readonly="readonly"/>
+                      <input type="text" class="form-control" id="inputPassword" placeholder="Hall Name"  />
                     </div>
                 </div>
 

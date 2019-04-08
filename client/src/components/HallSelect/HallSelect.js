@@ -22,7 +22,7 @@ const style = {
   margin: "20px auto"
 };
 
-class HallBookingForm extends Component {
+class HallSelect extends Component {
   
   onDayClick = (e ,day) => {
     alert("The Day You Select Is : " + day);
@@ -111,4 +111,4 @@ class HallBookingForm extends Component {
 };
 }
 
-export default HallBookingForm;
+export default HallSelect;
