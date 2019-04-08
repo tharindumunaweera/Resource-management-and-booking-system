@@ -33,6 +33,8 @@ import AvailableLoad from "./components/commonpages/AvailableLoad";
 import TopNavUnion from "./components/topNavUnion";
 import SideNavUnion from "./components/sideNavUnion";
 
+import TopNavDirector from "./components/topNavDirector";
+import SideNavDirector from "./components/sideNavDirector";
 
 import TopNavAcademicstaff from "./components/topNavAcademicstaff";
 import SideNavAcademicstaff from "./components/sideNavAcademicstaff";
@@ -94,7 +96,9 @@ class App extends Component {
         </div>
       </Router>*/
 
-      <Router>
+
+
+     /* <Router>
         <div className="flexible-content">
             <TopNavAcademicstaff />
             <SideNavAcademicstaff />
@@ -104,7 +108,22 @@ class App extends Component {
              
             </main>
         </div>
+      </Router>*/
+
+      <Router>
+        <div className="flexible-content">
+            <TopNavDirector />
+            <SideNavDirector />
+            
+            
+            
+            <main id="content" className="p-5">
+             
+            </main>
+        </div>
       </Router>
+
+
 
      /* <Router>
         <div className="flexible-content">
