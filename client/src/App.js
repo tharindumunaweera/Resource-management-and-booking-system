@@ -9,8 +9,8 @@ import store from "./store";
 import PrivateRoute from "./components/common/PrivateRoute";
 
 import Routes from "../src/components/Routes";
-import TopNavigation from "./components/topNavigation";
-import SideNavigation from "./components/sideNavigation";
+import TopNavLecturer from "./components/topNavLecturer";
+import SideNavLecturer from "./components/sideNavLecturer";
 import AvailableLoad from "./components/actors/AvailableLoad";
 import Acadamic from "./components/actors/Acadamic";
 //import Footer from "./components/Footer";
@@ -22,11 +22,11 @@ import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Union from "./components/actors/Union";
-import Lecturer from "./components/actors/Lecturer";
+import HallRegister from "./components/HallRegister/Hallregister";
 import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
-import HallRegister from "./components/HallRegister/Hallregister";
+import HallSelect from "./components/HallSelect/HallSelect";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
@@ -69,64 +69,83 @@ const style = {
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/union" component={Union} />
-              <Route exact path="/Lecturer" component={Lecturer} />
-              <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-profile"
-                  component={CreateProfile}
-                />
-              </Switch>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/edit-profile"
-                  component={EditProfile}
-                />
-              </Switch>
+      <Router>
+        <div className="flexible-content">
+            <TopNavLecturer />
+            <SideNavLecturer />
+            <Route exact path="/available" component={AvailableLoad} />
+            {/* <Route exact path="/acadamic" component={Acadamic} /> */}
+            <Route exact path="/HallSelect" component={HallSelect} />
+            <Route exact path="/HallRegister" component={HallRegister} />
+            
+            <main id="content" className="p-5">
+              {/* <Routes /> */}
+            </main>
+        </div>
+      </Router>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-experience"
-                  component={AddExperience}
-                />
-              </Switch>
+      
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-education"
-                  component={AddEducation}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/timetable" component={TimeTable} />
-              </Switch>
-            </div>
+      
 
-            <Footer />
-            <Calender
-              style={style}
-              width="302px"
-              onDayClick={(e, day) => this.onDayClick(e, day)}
-            />
-          </div>
-        </Router>
-      </Provider>
+
+
+      // <Provider store={store}>
+      //   <Router>
+      //     <div className="App">
+      //       <Navbar />
+      //       <Route exact path="/" component={Landing} />
+      //       <div className="container">
+      //         <Route exact path="/register" component={Register} />
+      //         <Route exact path="/login" component={Login} />
+      //         <Route exact path="/union" component={Union} />
+      //         <Route exact path="/Lecturer" component={Lecturer} />
+      //         <Switch>
+      //           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      //         </Switch>
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/create-profile"
+      //             component={CreateProfile}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/edit-profile"
+      //             component={EditProfile}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/add-experience"
+      //             component={AddExperience}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/add-education"
+      //             component={AddEducation}
+      //           />
+      //         </Switch>
+      //       </div>
+
+      //       <Footer />
+      //       <Calender
+      //         style={style}
+      //         width="302px"
+      //         onDayClick={(e, day) => this.onDayClick(e, day)}
+      //       />
+      //     </div>
+      //   </Router>
+      // </Provider>
     );
   }
 }

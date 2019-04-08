@@ -11,7 +11,7 @@ import {
   MDBIcon
 } from "mdbreact";
 
-class TopNavigation extends Component {
+class TopNavLecturer extends Component {
   state = {
     collapse: false
   };
@@ -32,7 +32,7 @@ class TopNavigation extends Component {
     return (
       <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
         <MDBNavbarBrand href="/">
-          <strong>RM & IS</strong>
+          <strong>Lecturer</strong>
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={this.onClick} />
         <MDBCollapse isOpen={this.state.collapse} navbar>
@@ -68,4 +68,4 @@ class TopNavigation extends Component {
   }
 }
 
-export default TopNavigation;
+export default TopNavLecturer;
