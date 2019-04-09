@@ -22,20 +22,34 @@ import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
 
+//lecturer routes
 import TopNavLecturer from "./components/topNavLecturer";
 import SideNavLecturer from "./components/sideNavLecturer";
 import HallSelect from "./components/HallSelect/HallSelect";
 import HallRegister from "./components/HallRegister/Hallregister";
 import AvailableLoad from "./components/commonpages/AvailableLoad";
 
+//union member routes
 import TopNavUnion from "./components/topNavUnion";
 import SideNavUnion from "./components/sideNavUnion";
 
+//director routes
 import TopNavDirector from "./components/topNavDirector";
 import SideNavDirector from "./components/sideNavDirector";
 
+//academic staff routes
 import TopNavAcademicstaff from "./components/topNavAcademicstaff";
 import SideNavAcademicstaff from "./components/sideNavAcademicstaff";
+
+
+//coodinator routes
+import TopNavCoordinator from "./components/topNavCoordinator";
+import SideNavCoordinator from "./components/sideNavCoordinator";
+
+//normal student routes
+import TopNavNormalStudent from "./components/topNavNormalStudent";
+import SideNavNormalStudent from "./components/sideNavNormalStudent";
+
 
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
@@ -79,71 +93,155 @@ const style = {
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              {/* <Route exact path="/union" component={Union} /> */}
-              <Route exact path="/Lecturer" component={Lecturer} />
-              <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-profile"
-                  component={CreateProfile}
-                />
-              </Switch>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/edit-profile"
-                  component={EditProfile}
-                />
-              </Switch>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-experience"
-                  component={AddExperience}
-                />
-              </Switch>
+    /* <Router>
+        <div className="flexible-content">
+            <TopNavLecturer />
+            <SideNavLecturer />
+            <Route exact path="/available" component={AvailableLoad} />
+            <Route exact path="/HallSelect" component={HallSelect} />
+            
+            
+            <main id="content" className="p-5">
+             
+            </main>
+        </div>
+      </Router>*/
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-education"
-                  component={AddEducation}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/timetable" component={TimeTable} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-timetable"
-                  component={CreateTimetable}
-                />
-              </Switch>
-            </div>
 
-            <Footer />
-            <Calender
-              style={style}
-              width="302px"
-              onDayClick={(e, day) => this.onDayClick(e, day)}
-            />
-          </div>
-        </Router>
-      </Provider>
+
+     /* <Router>
+        <div className="flexible-content">
+            <TopNavAcademicstaff />
+            <SideNavAcademicstaff />
+            <Route exact path="/HallRegister" component={HallRegister} />
+            
+            <main id="content" className="p-5">
+             
+            </main>
+        </div>
+      </Router>*/
+
+      /*<Router>
+        <div className="flexible-content">
+            <TopNavDirector />
+            <SideNavDirector />
+            
+            
+            
+            <main id="content" className="p-5">
+             
+            </main>
+        </div>
+      </Router>*/
+
+            
+    /*  <Router>
+        <div className="flexible-content">
+            <TopNavCoordinator />
+            <SideNavCoordinator/>
+            
+            
+            
+            <main id="content" className="p-5">
+            
+            </main>
+        </div>
+      </Router>*/
+
+      <Router>
+        <div className="flexible-content">
+            <TopNavNormalStudent />
+            <SideNavNormalStudent/>
+            
+            
+            
+            <main id="content" className="p-5">
+            
+            </main>
+        </div>
+      </Router>
+
+
+
+     /* <Router>
+        <div className="flexible-content">
+            <TopNavUnion/>
+            <SideNavUnion/>
+            <Route exact path="/available" component={AvailableLoad} />
+            <Route exact path="/HallSelect" component={HallSelect} />
+
+            <main id="content" className="p-5">
+            
+            </main>
+        </div>
+      </Router>*/
+
+
+    
+
+      
+
+      
+
+
+
+      // <Provider store={store}>
+      //   <Router>
+      //     <div className="App">
+      //       <Navbar />
+      //       <Route exact path="/" component={Landing} />
+      //       <div className="container">
+      //         <Route exact path="/register" component={Register} />
+      //         <Route exact path="/login" component={Login} />
+      //         <Route exact path="/union" component={Union} />
+      //         <Route exact path="/Lecturer" component={Lecturer} />
+      //         <Switch>
+      //           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      //         </Switch>
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/create-profile"
+      //             component={CreateProfile}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/edit-profile"
+      //             component={EditProfile}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/add-experience"
+      //             component={AddExperience}
+      //           />
+      //         </Switch>
+
+      //         <Switch>
+      //           <PrivateRoute
+      //             exact
+      //             path="/add-education"
+      //             component={AddEducation}
+      //           />
+      //         </Switch>
+      //       </div>
+
+      //       <Footer />
+      //       <Calender
+      //         style={style}
+      //         width="302px"
+      //         onDayClick={(e, day) => this.onDayClick(e, day)}
+      //       />
+      //     </div>
+      //   </Router>
+      // </Provider>
     );
   }
 }
