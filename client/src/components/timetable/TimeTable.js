@@ -33,7 +33,7 @@ class TimeTable extends Component {
             <p>
               You have not yet setup a Time table, please add add time table
             </p>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
+            <Link to="/create-timetable" className="btn btn-lg btn-info">
               Create Timetable
             </Link>
           </div>

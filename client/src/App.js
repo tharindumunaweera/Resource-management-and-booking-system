@@ -35,6 +35,7 @@ import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
 
 import TimeTable from "./components/timetable/TimeTable";
+import CreateTimetable from "./components/timetable/CreateTimetable";
 import Template from "./components/layout/Template";
 
 import "./App.css";
@@ -115,6 +116,13 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute exact path="/timetable" component={TimeTable} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-timetable"
+                  component={CreateTimetable}
+                />
               </Switch>
             </div>
 
