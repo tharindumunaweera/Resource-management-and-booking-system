@@ -22,6 +22,13 @@ import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
 
+import Lecturer from "./components/actors/Lecturer";
+import AcademicStaff from "./components/actors/AcademicStaff";
+import Director from "./components/actors/Director";
+import Coordinator from "./components/actors/Coordinator";
+import NormalStudent from "./components/actors/NormalStudent";
+import UnionStudent from "./components/actors/UnionStudent";
+
 //lecturer routes
 import TopNavLecturer from "./components/topNavLecturer";
 import SideNavLecturer from "./components/sideNavLecturer";
@@ -94,6 +101,14 @@ class App extends Component {
   render() {
     return (
 
+<<<<<<< HEAD
+    //<Lecturer/>
+    //<AcademicStaff/>
+    //<Director/>  
+    //<Coordinator/>
+    //<NormalStudent/>
+    <UnionStudent/>
+=======
 
     /* <Router>
         <div className="flexible-content">
@@ -122,6 +137,7 @@ class App extends Component {
             </main>
         </div>
       </Router>*/
+>>>>>>> 7711d8205faa016f7ed92e66f141d032c43ffc68
 
       /*<Router>
         <div className="flexible-content">
@@ -137,20 +153,9 @@ class App extends Component {
       </Router>*/
 
             
-    /*  <Router>
-        <div className="flexible-content">
-            <TopNavCoordinator />
-            <SideNavCoordinator/>
-            
-            
-            
-            <main id="content" className="p-5">
-            
-            </main>
-        </div>
-      </Router>*/
+    
 
-      <Router>
+      /*<Router>
         <div className="flexible-content">
             <TopNavNormalStudent />
             <SideNavNormalStudent/>
@@ -161,7 +166,7 @@ class App extends Component {
             
             </main>
         </div>
-      </Router>
+      </Router>*/
 
 
 
