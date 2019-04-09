@@ -10,8 +10,6 @@ import PrivateRoute from "./components/common/PrivateRoute";
 
 import Routes from "../src/components/Routes";
 
-
-
 //import Footer from "./components/Footer";
 import "./index.css";
 
@@ -50,6 +48,7 @@ import SideNavDirector from "./components/sideNavDirector";
 import TopNavAcademicstaff from "./components/topNavAcademicstaff";
 import SideNavAcademicstaff from "./components/sideNavAcademicstaff";
 
+
 //coodinator routes
 import TopNavCoordinator from "./components/topNavCoordinator";
 import SideNavCoordinator from "./components/sideNavCoordinator";
@@ -58,6 +57,7 @@ import SideNavCoordinator from "./components/sideNavCoordinator";
 import TopNavNormalStudent from "./components/topNavNormalStudent";
 import SideNavNormalStudent from "./components/sideNavNormalStudent";
 
+
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
@@ -65,6 +65,7 @@ import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
 
 import TimeTable from "./components/timetable/TimeTable";
+import CreateTimetable from "./components/timetable/CreateTimetable";
 import Template from "./components/layout/Template";
 
 import "./App.css";
@@ -100,12 +101,43 @@ class App extends Component {
   render() {
     return (
 
+<<<<<<< HEAD
     //<Lecturer/>
     //<AcademicStaff/>
     //<Director/>  
     //<Coordinator/>
     //<NormalStudent/>
     <UnionStudent/>
+=======
+
+    /* <Router>
+        <div className="flexible-content">
+            <TopNavLecturer />
+            <SideNavLecturer />
+            <Route exact path="/available" component={AvailableLoad} />
+            <Route exact path="/HallSelect" component={HallSelect} />
+            
+            
+            <main id="content" className="p-5">
+             
+            </main>
+        </div>
+      </Router>*/
+
+
+
+     /* <Router>
+        <div className="flexible-content">
+            <TopNavAcademicstaff />
+            <SideNavAcademicstaff />
+            <Route exact path="/HallRegister" component={HallRegister} />
+            
+            <main id="content" className="p-5">
+             
+            </main>
+        </div>
+      </Router>*/
+>>>>>>> 7711d8205faa016f7ed92e66f141d032c43ffc68
 
       /*<Router>
         <div className="flexible-content">
