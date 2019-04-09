@@ -184,6 +184,7 @@ router.post(
         company: req.body.company,
         location: req.body.location,
         from: req.body.from,
+        to: req.body.to,
         current: req.body.current,
         description: req.body.description
       };
@@ -217,6 +218,7 @@ router.post(
         degree: req.body.degree,
         fieldofstudy: req.body.fieldofstudy,
         from: req.body.from,
+        to: req.body.to,
         current: req.body.current,
         description: req.body.description
       };
@@ -230,15 +232,15 @@ router.post(
 );
 
 // @route DELETE api/profile/experience/:exp_id
-// @desc Delete experience from profile
-// @access Private
+//@desc Delete experience from profile
+//@access Private
 router.delete(
   "/experience/:exp_id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Profile.findOne({ user: req.user.id })
       .then(profile => {
-        // Get remove index
+        //Get remove index
         const removeIndex = profile.experience
           .map(item => item.id)
           .indexOf(req.params.exp_id);
@@ -252,6 +254,27 @@ router.delete(
       .catch(err => res.status(404).json(err));
   }
 );
+
+// router.delete(
+//   "/experience/:exp_id",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     Profile.findOne({ user: req.user.id })
+//       .then(profile => {
+//         // Get remove index
+//         const removeIndex = profile.experience
+//           .map(item => item.id)
+//           .indexOf(req.params.exp_id);
+
+//         // Splice out of array
+//         profile.experience.splice(removeIndex, 1);
+
+//         // Save
+//         profile.save().then(profile => res.json(profile));
+//       })
+//       .catch(err => res.status(404).json(err));
+//   }
+// );
 
 // @route DELETE api/profile/education/:edu_id
 // @desc Delete education from profile
@@ -286,8 +309,8 @@ router.delete(
   (req, res) => {
     Profile.findOneAndRemove({ user: req.user.id }).then(() => {
       User.findOneAndRemove({ _id: req.user.id }).then(() => {
-        res.json({ success: true});
-      })
+        res.json({ success: true });
+      });
     });
   }
 );
