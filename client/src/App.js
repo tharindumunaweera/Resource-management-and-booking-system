@@ -24,21 +24,32 @@ import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
 
+//lecturer routes
 import TopNavLecturer from "./components/topNavLecturer";
 import SideNavLecturer from "./components/sideNavLecturer";
 import HallSelect from "./components/HallSelect/HallSelect";
 import HallRegister from "./components/HallRegister/Hallregister";
 import AvailableLoad from "./components/commonpages/AvailableLoad";
 
+//union member routes
 import TopNavUnion from "./components/topNavUnion";
 import SideNavUnion from "./components/sideNavUnion";
 
+//director routes
 import TopNavDirector from "./components/topNavDirector";
 import SideNavDirector from "./components/sideNavDirector";
 
+//academic staff routes
 import TopNavAcademicstaff from "./components/topNavAcademicstaff";
 import SideNavAcademicstaff from "./components/sideNavAcademicstaff";
 
+//coodinator routes
+import TopNavCoordinator from "./components/topNavCoordinator";
+import SideNavCoordinator from "./components/sideNavCoordinator";
+
+//normal student routes
+import TopNavNormalStudent from "./components/topNavNormalStudent";
+import SideNavNormalStudent from "./components/sideNavNormalStudent";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
@@ -110,7 +121,7 @@ class App extends Component {
         </div>
       </Router>*/
 
-      <Router>
+      /*<Router>
         <div className="flexible-content">
             <TopNavDirector />
             <SideNavDirector />
@@ -119,6 +130,33 @@ class App extends Component {
             
             <main id="content" className="p-5">
              
+            </main>
+        </div>
+      </Router>*/
+
+            
+    /*  <Router>
+        <div className="flexible-content">
+            <TopNavCoordinator />
+            <SideNavCoordinator/>
+            
+            
+            
+            <main id="content" className="p-5">
+            
+            </main>
+        </div>
+      </Router>*/
+
+      <Router>
+        <div className="flexible-content">
+            <TopNavNormalStudent />
+            <SideNavNormalStudent/>
+            
+            
+            
+            <main id="content" className="p-5">
+            
             </main>
         </div>
       </Router>
