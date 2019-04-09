@@ -9,10 +9,7 @@ import store from "./store";
 import PrivateRoute from "./components/common/PrivateRoute";
 
 import Routes from "../src/components/Routes";
-import TopNavigation from "./components/topNavigation";
-import SideNavigation from "./components/sideNavigation";
-import AvailableLoad from "./components/actors/AvailableLoad";
-import Acadamic from "./components/actors/Acadamic";
+
 //import Footer from "./components/Footer";
 import "./index.css";
 
@@ -21,12 +18,24 @@ import Footer from "./components/layout/Footer";
 import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
-import Union from "./components/actors/Union";
-import Lecturer from "./components/actors/Lecturer";
 import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
+
+import TopNavLecturer from "./components/topNavLecturer";
+import SideNavLecturer from "./components/sideNavLecturer";
+import HallSelect from "./components/HallSelect/HallSelect";
 import HallRegister from "./components/HallRegister/Hallregister";
+import AvailableLoad from "./components/commonpages/AvailableLoad";
+
+import TopNavUnion from "./components/topNavUnion";
+import SideNavUnion from "./components/sideNavUnion";
+
+import TopNavDirector from "./components/topNavDirector";
+import SideNavDirector from "./components/sideNavDirector";
+
+import TopNavAcademicstaff from "./components/topNavAcademicstaff";
+import SideNavAcademicstaff from "./components/sideNavAcademicstaff";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
@@ -78,7 +87,7 @@ class App extends Component {
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/union" component={Union} />
+              {/* <Route exact path="/union" component={Union} /> */}
               <Route exact path="/Lecturer" component={Lecturer} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />

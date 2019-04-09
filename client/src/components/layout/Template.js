@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Routes from "../Routes";
-import SideNavigation from "../sideNavigation";
-import TopNavigation from "../topNavigation";
+import SideNavigation from "../sideNavLecturer";
+import TopNavigation from "../topNavLecturer";
 
 //import Footer from "./components/Footer";
 //import './index.css';
