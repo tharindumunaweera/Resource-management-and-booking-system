@@ -101,95 +101,14 @@ class App extends Component {
   render() {
     return (
 
-<<<<<<< HEAD
     //<Lecturer/>
     //<AcademicStaff/>
     //<Director/>  
     //<Coordinator/>
     //<NormalStudent/>
     <UnionStudent/>
-=======
 
-    /* <Router>
-        <div className="flexible-content">
-            <TopNavLecturer />
-            <SideNavLecturer />
-            <Route exact path="/available" component={AvailableLoad} />
-            <Route exact path="/HallSelect" component={HallSelect} />
-            
-            
-            <main id="content" className="p-5">
-             
-            </main>
-        </div>
-      </Router>*/
-
-
-
-     /* <Router>
-        <div className="flexible-content">
-            <TopNavAcademicstaff />
-            <SideNavAcademicstaff />
-            <Route exact path="/HallRegister" component={HallRegister} />
-            
-            <main id="content" className="p-5">
-             
-            </main>
-        </div>
-      </Router>*/
->>>>>>> 7711d8205faa016f7ed92e66f141d032c43ffc68
-
-      /*<Router>
-        <div className="flexible-content">
-            <TopNavDirector />
-            <SideNavDirector />
-            
-            
-            
-            <main id="content" className="p-5">
-             
-            </main>
-        </div>
-      </Router>*/
-
-            
-    
-
-      /*<Router>
-        <div className="flexible-content">
-            <TopNavNormalStudent />
-            <SideNavNormalStudent/>
-            
-            
-            
-            <main id="content" className="p-5">
-            
-            </main>
-        </div>
-      </Router>*/
-
-
-
-     /* <Router>
-        <div className="flexible-content">
-            <TopNavUnion/>
-            <SideNavUnion/>
-            <Route exact path="/available" component={AvailableLoad} />
-            <Route exact path="/HallSelect" component={HallSelect} />
-
-            <main id="content" className="p-5">
-            
-            </main>
-        </div>
-      </Router>*/
-
-
-    
-
-      
-
-      
-
+     
 
 
       // <Provider store={store}>
