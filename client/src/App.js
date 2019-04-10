@@ -78,66 +78,61 @@ class App extends Component {
     //<Director/>  
     //<Coordinator/>
     //<NormalStudent/>
-    <UnionStudent/>
+    //<UnionStudent/>
 
      
 
 
-      // <Provider store={store}>
-      //   <Router>
-      //     <div className="App">
-      //       <Navbar />
-      //       <Route exact path="/" component={Landing} />
-      //       <div className="container">
-      //         <Route exact path="/register" component={Register} />
-      //         <Route exact path="/login" component={Login} />
-      //         <Route exact path="/union" component={Union} />
-      //         <Route exact path="/Lecturer" component={Lecturer} />
-      //         <Switch>
-      //           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-      //         </Switch>
-      //         <Switch>
-      //           <PrivateRoute
-      //             exact
-      //             path="/create-profile"
-      //             component={CreateProfile}
-      //           />
-      //         </Switch>
+       <Provider store={store}>
+         <Router>
+           <div className="App">
+             <Navbar />
+             <Route exact path="/" component={Landing} />
+             <div className="container">
+               <Route exact path="/register" component={Register} />
+               <Route exact path="/login" component={Login} />
+               
+               <Switch>
+                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
+               </Switch>
+               <Switch>
+                 <PrivateRoute
+                   exact
+                   path="/create-profile"
+                   component={CreateProfile}
+                 />
+               </Switch>
 
-      //         <Switch>
-      //           <PrivateRoute
-      //             exact
-      //             path="/edit-profile"
-      //             component={EditProfile}
-      //           />
-      //         </Switch>
+               <Switch>
+                 <PrivateRoute
+                   exact
+                   path="/edit-profile"
+                   component={EditProfile}
+                 />
+               </Switch>
 
-      //         <Switch>
-      //           <PrivateRoute
-      //             exact
-      //             path="/add-experience"
-      //             component={AddExperience}
-      //           />
-      //         </Switch>
+               <Switch>
+                 <PrivateRoute
+                   exact
+                   path="/add-experience"
+                   component={AddExperience}
+                 />
+               </Switch>
 
-      //         <Switch>
-      //           <PrivateRoute
-      //             exact
-      //             path="/add-education"
-      //             component={AddEducation}
-      //           />
-      //         </Switch>
-      //       </div>
+               <Switch>
+                 <PrivateRoute
+                   exact
+                   path="/add-education"
+                   component={AddEducation}
+                 />
+               </Switch>
+             </div>
 
-      //       <Footer />
-      //       <Calender
-      //         style={style}
-      //         width="302px"
-      //         onDayClick={(e, day) => this.onDayClick(e, day)}
-      //       />
-      //     </div>
-      //   </Router>
-      // </Provider>
+             <Footer />
+            
+           </div>
+         </Router>
+       </Provider>
     );
   }
 }
