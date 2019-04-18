@@ -6,32 +6,26 @@ import { GET_TIMETABLE, TIMETABLE_LOADING, GET_ERRORS } from "./types";
 export const getCurrentTimetable = () => dispatch => {
   dispatch(setTimetableLoading());
   axios
-    .get("/api/profile/timetable")
-    .then(res =>
-      dispatch({
-        type: GET_TIMETABLE,
-        payload: res.data
-      })
-    )
+  .get("/api/timetable")
+  .then(res =>
+    dispatch({
+      type: GET_TIMETABLE,
+      payload: res.data
+    })
     .catch(err =>
       dispatch({
         type: GET_TIMETABLE,
         payload: {}
       })
-    );
+    )
+  );
 };
 
 // Create Timetable
-export const createTimetable = (profileData, history) => dispatch => {
+export const createTimetable = (timetableData, history) => dispatch => {
   axios
-    .post("/api/profile/timetable", profileData)
-    .then(res => history.push("/timetable"))
-    .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+    .post("/api/timetable", timetableData)
+    .then(res => history.push("/timetable"));
 };
 
 export const setTimetableLoading = () => {

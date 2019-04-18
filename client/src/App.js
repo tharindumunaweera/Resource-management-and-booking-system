@@ -38,13 +38,25 @@ import TopNavAcademicstaff from "./components/topNavAcademicstaff";
 import SideNavAcademicstaff from "./components/sideNavAcademicstaff";
 
 import Dashboard from "./components/dashboard/Dashboard";
+import Mundashboard from "./components/timetable/Mundashboard";
+import Ninedashboard from "./components/timetable/Ninedashboard";
+
 import CreateProfile from "./components/create-profile/CreateProfile";
+import CreateMun from "./components/create-profile/CreateMun";
+import CreateNine from "./components/create-profile/CreateNine";
+
+import CreateTha from "./components/create-profile/CreateTha";
 import EditProfile from "./components/edit-profile/EditProfile";
+import EditMun from "./components/edit-profile/EditMun";
+import EditNine from "./components/edit-profile/EditNine";
+import EditTha from "./components/edit-profile/EditTha";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
 
 import TimeTable from "./components/timetable/TimeTable";
 import CreateTimetable from "./components/timetable/CreateTimetable";
+import TimetableActions from "./components/timetable/TimetableActions";
+import Thadashboard from "./components/timetable/Thadashboard";
 import Template from "./components/layout/Template";
 
 import "./App.css";
@@ -84,14 +96,30 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
+
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               {/* <Route exact path="/union" component={Union} /> */}
-              <Route exact path="/Lecturer" component={Lecturer} />
+              {/* <Route exact path="/Lecturer" component={Lecturer} /> */}
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/mundashboard"
+                  component={Mundashboard}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/ninedashboard"
+                  component={Ninedashboard}
+                />
+              </Switch>
+
               <Switch>
                 <PrivateRoute
                   exact
@@ -101,11 +129,30 @@ class App extends Component {
               </Switch>
 
               <Switch>
+                <PrivateRoute exact path="/create-mun" component={CreateMun} />
+              </Switch>
+
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-nine"
+                  component={CreateNine}
+                />
+              </Switch>
+
+              <Switch>
                 <PrivateRoute
                   exact
                   path="/edit-profile"
                   component={EditProfile}
                 />
+              </Switch>
+
+              <Switch>
+                <PrivateRoute exact path="/edit-mun" component={EditMun} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/edit-nine" component={EditNine} />
               </Switch>
 
               <Switch>
@@ -123,14 +170,37 @@ class App extends Component {
                   component={AddEducation}
                 />
               </Switch>
-              <Switch>
+              {/* <Switch>
                 <PrivateRoute exact path="/timetable" component={TimeTable} />
-              </Switch>
+              </Switch> */}
               <Switch>
                 <PrivateRoute
                   exact
                   path="/create-timetable"
                   component={CreateTimetable}
+                />
+              </Switch>
+
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/timetableactions"
+                  component={TimetableActions}
+                />
+              </Switch>
+
+              <Switch>
+                <PrivateRoute exact path="/edittha" component={EditTha} />
+              </Switch>
+
+              <Switch>
+                <PrivateRoute exact path="/tha" component={CreateTha} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/thadashboard"
+                  component={Thadashboard}
                 />
               </Switch>
             </div>

@@ -6,6 +6,10 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
+const timetable = require("./routes/api/timetable");
+const tha = require("./routes/api/tha");
+const mun = require("./routes/api/mun");
+const nine = require("./routes/api/nine");
 
 const app = express();
 
@@ -32,6 +36,9 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
+app.use("/api/tha", tha);
+app.use("/api/mun", mun);
+app.use("/api/nine", nine);
 
 const port = process.env.PORT || 5000;
 

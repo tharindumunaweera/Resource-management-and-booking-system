@@ -3,10 +3,16 @@ import authReducer from "./authReducer";
 import errorReducer from "./errorReducer";
 import profileReducer from "./profileReducer";
 import timetableReducer from "./timetableReducer";
+import thaReducer from "./thaReducer";
+import munReducer from "./munReducer";
+import nineReducer from "./nineReducer";
 
 export default combineReducers({
   auth: authReducer,
   errors: errorReducer,
   profile: profileReducer,
-  timetable: timetableReducer
+  timetable: timetableReducer,
+  tha: thaReducer,
+  mun: munReducer,
+  nine: nineReducer
 });
