@@ -6,6 +6,7 @@ import timetableReducer from "./timetableReducer";
 import thaReducer from "./thaReducer";
 import munReducer from "./munReducer";
 import nineReducer from "./nineReducer";
+import tenReducer from "./tenReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
   timetable: timetableReducer,
   tha: thaReducer,
   mun: munReducer,
-  nine: nineReducer
+  nine: nineReducer,
+  ten: tenReducer
 });
