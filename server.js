@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path = require("path");
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
@@ -22,7 +23,7 @@ const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
-  .connect(db)
+  .connect(process.env.MONGODB_URI || db)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
@@ -41,5 +42,13 @@ app.use("/api/mun", mun);
 app.use("/api/nine", nine);
 
 const port = process.env.PORT || 5000;
+
+if(process.env.NODE.ENV === 'production'){
+  app.use(express.static('client/build'));
+
+  app.get('*' , (req,res) => {
+    res.sendFile(path.json(__dirname , 'client' ,'build' , 'index.html'));  //relative path
+  });
+}
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

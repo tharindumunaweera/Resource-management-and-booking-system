@@ -22,20 +22,12 @@ import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
 
-import TopNavLecturer from "./components/topNavLecturer";
-import SideNavLecturer from "./components/sideNavLecturer";
-import HallSelect from "./components/HallSelect/HallSelect";
-import HallRegister from "./components/HallRegister/Hallregister";
-import AvailableLoad from "./components/commonpages/AvailableLoad";
-
-import TopNavUnion from "./components/topNavUnion";
-import SideNavUnion from "./components/sideNavUnion";
-
-import TopNavDirector from "./components/topNavDirector";
-import SideNavDirector from "./components/sideNavDirector";
-
-import TopNavAcademicstaff from "./components/topNavAcademicstaff";
-import SideNavAcademicstaff from "./components/sideNavAcademicstaff";
+import Lecturer from "./components/actors/Lecturer";
+import AcademicStaff from "./components/actors/AcademicStaff";
+import Director from "./components/actors/Director";
+import Coordinator from "./components/actors/Coordinator";
+import NormalStudent from "./components/actors/NormalStudent";
+import UnionStudent from "./components/actors/UnionStudent";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import Mundashboard from "./components/timetable/Mundashboard";
@@ -91,17 +83,22 @@ const style = {
 class App extends Component {
   render() {
     return (
+      //<Lecturer/>
+      //<AcademicStaff/>
+      //<Director/>
+      //<Coordinator/>
+      //<NormalStudent/>
+      //<UnionStudent/>
+
       <Provider store={store}>
         <Router>
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
-
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
-              {/* <Route exact path="/union" component={Union} /> */}
-              {/* <Route exact path="/Lecturer" component={Lecturer} /> */}
+
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
@@ -119,7 +116,6 @@ class App extends Component {
                   component={Ninedashboard}
                 />
               </Switch>
-
               <Switch>
                 <PrivateRoute
                   exact
@@ -127,11 +123,9 @@ class App extends Component {
                   component={CreateProfile}
                 />
               </Switch>
-
               <Switch>
                 <PrivateRoute exact path="/create-mun" component={CreateMun} />
               </Switch>
-
               <Switch>
                 <PrivateRoute
                   exact
@@ -147,7 +141,6 @@ class App extends Component {
                   component={EditProfile}
                 />
               </Switch>
-
               <Switch>
                 <PrivateRoute exact path="/edit-mun" component={EditMun} />
               </Switch>
@@ -170,47 +163,9 @@ class App extends Component {
                   component={AddEducation}
                 />
               </Switch>
-              {/* <Switch>
-                <PrivateRoute exact path="/timetable" component={TimeTable} />
-              </Switch> */}
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-timetable"
-                  component={CreateTimetable}
-                />
-              </Switch>
-
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/timetableactions"
-                  component={TimetableActions}
-                />
-              </Switch>
-
-              <Switch>
-                <PrivateRoute exact path="/edittha" component={EditTha} />
-              </Switch>
-
-              <Switch>
-                <PrivateRoute exact path="/tha" component={CreateTha} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/thadashboard"
-                  component={Thadashboard}
-                />
-              </Switch>
             </div>
 
             <Footer />
-            <Calender
-              style={style}
-              width="302px"
-              onDayClick={(e, day) => this.onDayClick(e, day)}
-            />
           </div>
         </Router>
       </Provider>
