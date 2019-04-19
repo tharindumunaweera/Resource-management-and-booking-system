@@ -29,15 +29,33 @@ import Coordinator from "./components/actors/Coordinator";
 import NormalStudent from "./components/actors/NormalStudent";
 import UnionStudent from "./components/actors/UnionStudent";
 
-
 import Dashboard from "./components/dashboard/Dashboard";
+import Mundashboard from "./components/timetable/Mundashboard";
+import Ninedashboard from "./components/timetable/Ninedashboard";
+import Tendashboard from "./components/timetable/Tendashboard";
+import Elevendashboard from "./components/timetable/Elevendashboard";
+
 import CreateProfile from "./components/create-profile/CreateProfile";
+import CreateMun from "./components/create-profile/CreateMun";
+import CreateNine from "./components/create-profile/CreateNine";
+import CreateTen from "./components/create-profile/CreateTen";
+import CreateEleven from "./components/create-profile/CreateEleven";
+
+import CreateTha from "./components/create-profile/CreateTha";
 import EditProfile from "./components/edit-profile/EditProfile";
+import EditMun from "./components/edit-profile/EditMun";
+import EditNine from "./components/edit-profile/EditNine";
+import EditTen from "./components/edit-profile/EditTen";
+import EditEleven from "./components/edit-profile/EditEleven";
+
+import EditTha from "./components/edit-profile/EditTha";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
 
 import TimeTable from "./components/timetable/TimeTable";
 import CreateTimetable from "./components/timetable/CreateTimetable";
+import TimetableActions from "./components/timetable/TimetableActions";
+import Thadashboard from "./components/timetable/Thadashboard";
 import Template from "./components/layout/Template";
 
 import "./App.css";
@@ -72,69 +90,132 @@ const style = {
 class App extends Component {
   render() {
     return (
+      //<Lecturer/>
+      //<AcademicStaff/>
+      //<Director/>
+      //<Coordinator/>
+      //<NormalStudent/>
+      //<UnionStudent/>
 
-    //<Lecturer/>
-    <AcademicStaff/>
-    //<Director/>  
-    //<Coordinator/>
-    //<NormalStudent/>
-    //<UnionStudent/>
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            <Navbar />
+            <Route exact path="/" component={Landing} />
+            <div className="container">
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
 
-     
+              <Switch>
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/timetableactions"
+                  component={TimetableActions}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/mundashboard"
+                  component={Mundashboard}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/ninedashboard"
+                  component={Ninedashboard}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/tendashboard"
+                  component={Tendashboard}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/elevendashboard"
+                  component={Elevendashboard}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-profile"
+                  component={CreateProfile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/create-mun" component={CreateMun} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/create-ten" component={CreateTen} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-eleven"
+                  component={CreateEleven}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-nine"
+                  component={CreateNine}
+                />
+              </Switch>
 
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-profile"
+                  component={EditProfile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/edit-mun" component={EditMun} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/edit-nine" component={EditNine} />
+              </Switch>
+              <Switch>
+                <PrivateRoute exact path="/edit-ten" component={EditTen} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-eleven"
+                  component={EditEleven}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/add-experience"
+                  component={AddExperience}
+                />
+              </Switch>
 
-      //  <Provider store={store}>
-      //    <Router>
-      //      <div className="App">
-      //        {/* <Navbar /> */}
-      //        <Route exact path="/Navbar" component={Navbar} />
-      //        <Route exact path="/" component={Landing} />
-      //        <div className="container">
-      //          <Route exact path="/register" component={Register} />
-      //          <Route exact path="/login" component={Login} />
-               
-      //          <Switch>
-      //            <PrivateRoute exact path="/dashboard" component={Lecturer} />
-      //          </Switch>
-      //          <Switch>
-      //            <PrivateRoute
-      //              exact
-      //              path="/create-profile"
-      //              component={CreateProfile}
-      //            />
-      //          </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/add-education"
+                  component={AddEducation}
+                />
+              </Switch>
+            </div>
 
-      //          <Switch>
-      //            <PrivateRoute
-      //              exact
-      //              path="/edit-profile"
-      //              component={EditProfile}
-      //            />
-      //          </Switch>
-
-      //          <Switch>
-      //            <PrivateRoute
-      //              exact
-      //              path="/add-experience"
-      //              component={AddExperience}
-      //            />
-      //          </Switch>
-
-      //          <Switch>
-      //            <PrivateRoute
-      //              exact
-      //              path="/add-education"
-      //              component={AddEducation}
-      //            />
-      //          </Switch>
-      //        </div>
-
-      //        {/* <Footer /> */}
-      //        <Route exact path="/Footer" component={Footer} />
-            
-      //      </div>
-      //    </Router>
-      //  </Provider>
+            <Footer />
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }

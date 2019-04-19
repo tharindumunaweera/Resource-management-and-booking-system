@@ -7,6 +7,12 @@ const path = require("path");
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
+const timetable = require("./routes/api/timetable");
+const tha = require("./routes/api/tha");
+const mun = require("./routes/api/mun");
+const nine = require("./routes/api/nine");
+const ten = require("./routes/api/ten");
+const eleven = require("./routes/api/eleven");
 
 const app = express();
 
@@ -33,14 +39,19 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/profile", profile);
 app.use("/api/posts", posts);
+app.use("/api/tha", tha);
+app.use("/api/mun", mun);
+app.use("/api/nine", nine);
+app.use("/api/ten", ten);
+app.use("/api/eleven", eleven);
 
 const port = process.env.PORT || 5000;
 
-if(process.env.NODE.ENV === 'production'){
-  app.use(express.static('client/build'));
+if (process.env.NODE.ENV === "production") {
+  app.use(express.static("client/build"));
 
-  app.get('*' , (req,res) => {
-    res.sendFile(path.json(__dirname , 'client' ,'build' , 'index.html'));  //relative path
+  app.get("*", (req, res) => {
+    res.sendFile(path.json(__dirname, "client", "build", "index.html")); //relative path
   });
 }
 
