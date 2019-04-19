@@ -16,3 +16,5 @@ export const GET_NINE = "GET_NINE";
 export const NINE_LOADING = "NINE_LOADING";
 export const GET_TEN = "GET_TEN";
 export const TEN_LOADING = "TEN_LOADING";
+export const GET_ELEVEN = "GET_ELEVEN";
+export const ELEVEN_LOADING = "ELEVEN_LOADING";

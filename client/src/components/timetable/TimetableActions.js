@@ -22,7 +22,7 @@ const TimetableActions = () => {
               Begining from 10.00 a.m
             </Link>
 
-            <Link to="/time-table" className="btn btn-light">
+            <Link to="/elevendashboard" className="btn btn-light">
               <i className="fas fa-table text-info mr-2" />
               Begining from 11.00 a.m
             </Link>

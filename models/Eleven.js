@@ -8,98 +8,98 @@ const ElevenSchema = new Schema({
     ref: "users"
   },
 
-  Mninetotwelve: {
+  Meleventotwelve: {
     type: [String]
   },
-  Mninetoone: {
+  Meleventoone: {
     type: [String]
   },
-  Mninetotwo: {
+  Meleventotwo: {
     type: [String]
   },
-  Mninetothree: {
+  Meleventothree: {
     type: [String]
   },
-  Mninetofour: {
+  Meleventofour: {
     type: [String]
   },
-  Mninetofive: {
-    type: [String]
-  },
-
-  Tninetotwelve: {
-    type: [String]
-  },
-  Tninetoone: {
-    type: [String]
-  },
-  Tninetotwo: {
-    type: [String]
-  },
-  Tninetothree: {
-    type: [String]
-  },
-  Tninetofour: {
-    type: [String]
-  },
-  Tninetofive: {
+  Meleventofive: {
     type: [String]
   },
 
-  Wninetotwelve: {
+  Televentotwelve: {
     type: [String]
   },
-  Wninetoone: {
+  Televentoone: {
     type: [String]
   },
-  Wninetotwo: {
+  Televentotwo: {
     type: [String]
   },
-  Wninetothree: {
+  Televentothree: {
     type: [String]
   },
-  Wninetofour: {
+  Televentofour: {
     type: [String]
   },
-  Wninetofive: {
-    type: [String]
-  },
-
-  THninetotwelve: {
-    type: [String]
-  },
-  THninetoone: {
-    type: [String]
-  },
-  THninetotwo: {
-    type: [String]
-  },
-  THninetothree: {
-    type: [String]
-  },
-  THninetofour: {
-    type: [String]
-  },
-  THninetofive: {
+  Televentofive: {
     type: [String]
   },
 
-  Fninetotwelve: {
+  Weleventotwelve: {
     type: [String]
   },
-  Fninetoone: {
+  Weleventoone: {
     type: [String]
   },
-  Fninetotwo: {
+  Weleventotwo: {
     type: [String]
   },
-  Fninetothree: {
+  Weleventothree: {
     type: [String]
   },
-  Fninetofour: {
+  Weleventofour: {
     type: [String]
   },
-  Fninetofive: {
+  Weleventofive: {
+    type: [String]
+  },
+
+  THeleventotwelve: {
+    type: [String]
+  },
+  THeleventoone: {
+    type: [String]
+  },
+  THeleventotwo: {
+    type: [String]
+  },
+  THeleventothree: {
+    type: [String]
+  },
+  THeleventofour: {
+    type: [String]
+  },
+  THeleventofive: {
+    type: [String]
+  },
+
+  Feleventotwelve: {
+    type: [String]
+  },
+  Feleventoone: {
+    type: [String]
+  },
+  Feleventotwo: {
+    type: [String]
+  },
+  Feleventothree: {
+    type: [String]
+  },
+  Feleventofour: {
+    type: [String]
+  },
+  Feleventofive: {
     type: [String]
   }
 });

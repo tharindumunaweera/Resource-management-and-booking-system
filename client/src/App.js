@@ -33,17 +33,20 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Mundashboard from "./components/timetable/Mundashboard";
 import Ninedashboard from "./components/timetable/Ninedashboard";
 import Tendashboard from "./components/timetable/Tendashboard";
+import Elevendashboard from "./components/timetable/Elevendashboard";
 
 import CreateProfile from "./components/create-profile/CreateProfile";
 import CreateMun from "./components/create-profile/CreateMun";
 import CreateNine from "./components/create-profile/CreateNine";
 import CreateTen from "./components/create-profile/CreateTen";
+import CreateEleven from "./components/create-profile/CreateEleven";
 
 import CreateTha from "./components/create-profile/CreateTha";
 import EditProfile from "./components/edit-profile/EditProfile";
 import EditMun from "./components/edit-profile/EditMun";
 import EditNine from "./components/edit-profile/EditNine";
 import EditTen from "./components/edit-profile/EditTen";
+import EditEleven from "./components/edit-profile/EditEleven";
 
 import EditTha from "./components/edit-profile/EditTha";
 import AddExperience from "./components/add-credentials/AddExperience";
@@ -137,6 +140,13 @@ class App extends Component {
               <Switch>
                 <PrivateRoute
                   exact
+                  path="/elevendashboard"
+                  component={Elevendashboard}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
                   path="/create-profile"
                   component={CreateProfile}
                 />
@@ -146,6 +156,13 @@ class App extends Component {
               </Switch>
               <Switch>
                 <PrivateRoute exact path="/create-ten" component={CreateTen} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/create-eleven"
+                  component={CreateEleven}
+                />
               </Switch>
               <Switch>
                 <PrivateRoute
@@ -171,7 +188,13 @@ class App extends Component {
               <Switch>
                 <PrivateRoute exact path="/edit-ten" component={EditTen} />
               </Switch>
-
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/edit-eleven"
+                  component={EditEleven}
+                />
+              </Switch>
               <Switch>
                 <PrivateRoute
                   exact
