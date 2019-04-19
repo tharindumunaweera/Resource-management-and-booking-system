@@ -49,7 +49,7 @@ class TopNavLecturer extends Component {
                 rel="noopener noreferrer"
                 target="_blank"
             >
-              <i class="far fa-bell"></i>
+              <i className="far fa-bell"></i>
             </a>
            
             <a
