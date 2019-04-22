@@ -3,6 +3,7 @@ import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, M
 import src1 from '../../assets/img-1.jpg';
 import axios from 'axios';
 import SelectListGroup from "../common/SelectListGroup";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 class HallRegister extends Component {
 
@@ -100,17 +101,27 @@ class HallRegister extends Component {
 
 
   render(){
-
-    const seat = [
-      { label: "Number Of Seats", value: 0 },
-      { label: "Less than 100", value: 1 },
-      { label: "100  -  200", value: 2 },
-      { label: "200  -  300", value: 3 },
-      { label: "300  -  400", value: 4 },
-      { label: "Greater than 400 ", value: 5 },
+    const options = [
+      { label: "* Select Proffessional Status", value: 0 },
+      { label: "Developer", value: "Developer" },
+      { label: "Junior Developer", value: "Junior Developer" },
+      { label: "Senior Developer", value: "Senior Developer" },
+      { label: "Manager", value: "Manager" },
+      { label: "Student or Learning", value: "Student or Learningr" },
+      { label: "Instructor or Teacher", value: "Instructor or Teacher" },
+      { label: "Other", value: "Other" }
     ];
 
-    const projecter = [
+    const option1 = [
+      { label: "Number Of Seats", value: 0 },
+      { label: "Less than 100", value: "Less than 100" },
+      { label: "100  -  200", value: "100  -  200" },
+      { label: "200  -  300", value: "200  -  300" },
+      { label: "300  -  400", value: "300  -  400" },
+      { label: "Greater than 400 ", value: "Greater than 400 " }
+    ];
+
+    const option2 = [
       { label: "Number Of Projecters", value: 0 },
       { label: "0", value: 1 },
       { label: "1", value: 2 },
@@ -118,7 +129,7 @@ class HallRegister extends Component {
       { label: "3", value: 4 },
     ];
 
-    const whiteboard = [
+    const option3 = [
       { label: "Number White Boards", value: 0 },
       { label: "0", value: 1 },
       { label: "1", value: 2 },
@@ -126,7 +137,7 @@ class HallRegister extends Component {
       { label: "3", value: 4 },
     ];
 
-    const other = [
+    const option4 = [
       { label: "Other Resources", value: 0 },
       { label: "Computer", value: "Computer" },
     ];
@@ -148,67 +159,90 @@ class HallRegister extends Component {
                 <div className="form-group row">
                     <label  className="col-sm-2 col-form-label" >Hall Name</label>
                     <div className="col-sm-10">
-                      <input type="text" className="form-control" placeholder="Hall Name" value = {this.state.hallname} onChange = { this.onChangeHallName} />
+                          <TextFieldGroup
+                                  placeholder="Hall Name"
+                                  name="name"
+                                  value={this.state.name}
+                                  onChange={this.onChange}
+                                  //error={errors.handle}
+                                  
+                            />
                     </div>
                 </div>
 
                 <div className="form-group row">
                     <label  className="col-sm-2 col-form-label">Location</label>
                     <div className="col-sm-10">
-                      <input type="text" className="form-control"  placeholder="Location" value = {this.state.location} onChange = { this.onChangeLocation} />
+                        <TextFieldGroup
+                            placeholder="Location"
+                            name="location"
+                            value={this.state.location}
+                            onChange={this.onChange}
+                            //error={errors.handle}
+                            
+                         />
                     </div>
                 </div>
 
                  <div className="form-group row">
                     <label  className="col-sm-2 col-form-label">Number Of Seats</label>
-                    <div className="col-sm-10">
-                      <select className="custom-select my-1 mr-sm-2"  >
-                          <option selected>Number Of Seats</option>
-                          <option value="1">Less than 100</option>
-                          <option value="2">100  -  200</option>
-                          <option value="3">200  -  300</option>
-                          <option value="4">300  -  400</option>
-                          <option value="5">Greater than 400 </option>
-                      </select>
+                      <div className="col-sm-10">
+                          <SelectListGroup
+                              placeholder="Status"
+                              name="status"
+                              value={this.state.seat}
+                              onChange={this.onChange}
+                              options={option1}
+                              //error={errors.status}
+                          />
                     </div>
-                </div>
+                  </div>
 
-                <div className="form-group row">
-                    <label  className="col-sm-2 col-form-label">Projecters</label>
-                    <div className="col-sm-10">
-                    <select className="custom-select my-1 mr-sm-2" >
-                        <option selected>Number Of Projecters</option>
-                        <option value="1">0</option>
-                        <option value="2">1</option>
-                        <option value="3">2</option>
-                        <option value="4">3</option>
-                    </select>
+                  <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label">Number Of Projecters</label>
+                      <div className="col-sm-10">
+                          <SelectListGroup
+                              placeholder=""
+                              name="status"
+                              value={this.state.projecter}
+                              onChange={this.onChange}
+                              options={option2}
+                              //error={errors.status}
+                          />
                     </div>
-                </div>
+                  </div>
 
-                <div className="form-group row">
-                    <label  className="col-sm-2 col-form-label">White Boards</label>
-                    <div className="col-sm-10">
-                    <select className="custom-select my-1 mr-sm-2" >
-                      <option selected>Number White Boards</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                    </select>
+                  <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label">Number Of Whiteboard</label>
+                      <div className="col-sm-10">
+                          <SelectListGroup
+                              placeholder=""
+                              name="status"
+                              value={this.state.whiteboard}
+                              onChange={this.onChange}
+                              options={option3}
+                              //error={errors.status}
+                          />
                     </div>
-                </div>
-
-                <div className="form-group row">
-                    <label  className="col-sm-2 col-form-label">Other Resources</label>
-                    <div className="col-sm-10">
-                    <select className="custom-select my-1 mr-sm-2" >
-                      <option selected>Other Resources </option>
-                      <option value="1">Computer</option>
-                      <option value="2"></option>
-                    </select>
-                    </div>
-                </div> 
-
+                  </div>
                 
+                  <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label">Other Resources</label>
+                      <div className="col-sm-10">
+                          <SelectListGroup
+                              placeholder=""
+                              name="status"
+                              value={this.state.other}
+                              onChange={this.onChange}
+                              options={option4}
+                              //error={errors.status}
+                          />
+                    </div>
+                  </div>
+
+               
+
+               
                 <div className="card text-right"  >
                     <button type="submit" className="btn btn-primary"><strong>Submit</strong></button>
                 </div>
