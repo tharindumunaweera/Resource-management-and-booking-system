@@ -30,6 +30,7 @@ import NormalStudent from "./components/actors/NormalStudent";
 import UnionStudent from "./components/actors/UnionStudent";
 
 import Dashboard from "./components/dashboard/Dashboard";
+import Refdashboard from "./components/dashboard/Refdashboard";
 import Mundashboard from "./components/timetable/Mundashboard";
 import Ninedashboard from "./components/timetable/Ninedashboard";
 import Tendashboard from "./components/timetable/Tendashboard";
@@ -108,6 +109,13 @@ class App extends Component {
 
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/refdashboard"
+                  component={Refdashboard}
+                />
               </Switch>
               <Switch>
                 <PrivateRoute

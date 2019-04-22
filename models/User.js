@@ -15,6 +15,11 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+  role: {
+    type: String,
+    required: true
+    // roles available to this proj: admin, moderator, subscriber
+  },
   avatar: {
     type: String
   },
