@@ -88,9 +88,9 @@ const HallRegister =  () => {
                     <button type="button" class="btn btn-success"><strong>Edit Form</strong></button>
                 </div>
 
-                <div class="card text-right"  >
+                {/* <div class="card text-right"  >
                     <button type="button" class="btn btn-danger"><strong>Delete Hall</strong></button>
-                </div>
+                </div> */}
             </form>
            
          </MDBCardBody>
