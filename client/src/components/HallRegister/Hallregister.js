@@ -1,32 +1,136 @@
 import React ,  {Component} from 'react';
 import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from 'mdbreact';
 import src1 from '../../assets/img-1.jpg';
+import axios from 'axios';
+import SelectListGroup from "../common/SelectListGroup";
 
 class HallRegister extends Component {
 
   constructor(props){
     super(props);
 
-    this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
-    this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
-    this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
+    this.onChangeHallName = this.onChangeHallName.bind(this);
+    this.onChangeLocation = this.onChangeLocation.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-        todo_description: '',
-        todo_responsible: '',
-        todo_priority: '',
+        hallname: '',
+        location: '',
+        seat: '',
+        projecter:'',
+        whiteboard:'',
+        other:'',
         todo_completed:false
     }
+  }
+
+  onChangeHallName(e){
+    this.setState({
+        hallname:e.target.value
+    });
+  }
+
+  onChangeLocation(e){
+      this.setState({
+        location:e.target.value
+      });
+  }
+
+  onChangeSeat(e){
+    this.setState({
+      seat:e.target.value
+    });
+  }
+
+  onChangeProjecter(e){
+    this.setState({
+      projecter:e.target.value
+    });
+  }
+
+  onChangeWhiteboard(e){
+    this.setState({
+      whiteboard:e.target.value
+    });
+  }
+
+  onChangeOther(e){
+    this.setState({
+      other:e.target.value
+    });
+  }
+
+  onSubmit(e){
+    e.preventDefault();
+
+    console.log(`Form Submitted:`);
+    console.log(`HallName: ${this.state.hallname}`);
+    console.log(`Location: ${this.state.location}`);
+    console.log(`Seat: ${this.state.seat}`);
+    console.log(`Projecter: ${this.state.projecter}`);
+    console.log(`Whiteboard: ${this.state.whiteboard}`);
+    console.log(`Other: ${this.state.other}`);
+    console.log(`Completed: ${this.state.todo_completed}`);
+
+    const newTodo = {
+        hallname:this.state.hallname,
+        location:this.state.location,
+        seat:this.state.seat,
+        projecter:this.state.projecter,
+        whiteboard:this.state.whiteboard,
+        other:this.state.other,
+        todo_completed:this.state.todo_completed
+    }
+
+   // axios.post('http://localhost:4000/todos/add',newTodo).then(res => console.log(res.data));
+
+    this.setState({
+        hallname: '',
+        location: '',
+        seat: '',
+        projecter:'',
+        whiteboard:'',
+        other:'',
+        todo_completed:false
+    });
+
+   
 }
 
 
 
-
-
-
-
   render(){
+
+    const seat = [
+      { label: "Number Of Seats", value: 0 },
+      { label: "Less than 100", value: 1 },
+      { label: "100  -  200", value: 2 },
+      { label: "200  -  300", value: 3 },
+      { label: "300  -  400", value: 4 },
+      { label: "Greater than 400 ", value: 5 },
+    ];
+
+    const projecter = [
+      { label: "Number Of Projecters", value: 0 },
+      { label: "0", value: 1 },
+      { label: "1", value: 2 },
+      { label: "2", value: 3 },
+      { label: "3", value: 4 },
+    ];
+
+    const whiteboard = [
+      { label: "Number White Boards", value: 0 },
+      { label: "0", value: 1 },
+      { label: "1", value: 2 },
+      { label: "2", value: 3 },
+      { label: "3", value: 4 },
+    ];
+
+    const other = [
+      { label: "Other Resources", value: 0 },
+      { label: "Computer", value: "Computer" },
+    ];
+
   return (
     <React.Fragment>
          
@@ -39,81 +143,82 @@ class HallRegister extends Component {
             <h4 className="h4-responsive text-white"><strong>Hall Registration Form</strong></h4>
           </MDBView>
           <MDBCardBody>
-            <form>
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label" >Hall Name</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword" placeholder="Hall Name"  />
+            <form onSubmit = {this.onSubmit}>
+
+                <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label" >Hall Name</label>
+                    <div className="col-sm-10">
+                      <input type="text" className="form-control" placeholder="Hall Name" value = {this.state.hallname} onChange = { this.onChangeHallName} />
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Location</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputPassword" placeholder="Location"/>
+                <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label">Location</label>
+                    <div className="col-sm-10">
+                      <input type="text" className="form-control"  placeholder="Location" value = {this.state.location} onChange = { this.onChangeLocation} />
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Number Of Seats</label>
-                    <div class="col-sm-10">
-                      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" maxlength="8">
+                 <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label">Number Of Seats</label>
+                    <div className="col-sm-10">
+                      <select className="custom-select my-1 mr-sm-2"  >
                           <option selected>Number Of Seats</option>
                           <option value="1">Less than 100</option>
                           <option value="2">100  -  200</option>
                           <option value="3">200  -  300</option>
-                          <option value="3">300  -  400</option>
-                          <option value="3">Greater than 400 </option>
+                          <option value="4">300  -  400</option>
+                          <option value="5">Greater than 400 </option>
                       </select>
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Projecters</label>
-                    <div class="col-sm-10">
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label">Projecters</label>
+                    <div className="col-sm-10">
+                    <select className="custom-select my-1 mr-sm-2" >
                         <option selected>Number Of Projecters</option>
                         <option value="1">0</option>
                         <option value="2">1</option>
                         <option value="3">2</option>
-                        <option value="3">3</option>
+                        <option value="4">3</option>
                     </select>
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">White Boards</label>
-                    <div class="col-sm-10">
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label">White Boards</label>
+                    <div className="col-sm-10">
+                    <select className="custom-select my-1 mr-sm-2" >
                       <option selected>Number White Boards</option>
-                      <option value="2">1</option>
-                      <option value="3">2</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
                     </select>
                     </div>
                 </div>
 
-                <div class="form-group row">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Other Resources</label>
-                    <div class="col-sm-10">
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <div className="form-group row">
+                    <label  className="col-sm-2 col-form-label">Other Resources</label>
+                    <div className="col-sm-10">
+                    <select className="custom-select my-1 mr-sm-2" >
                       <option selected>Other Resources </option>
-                      <option value="2">Computer</option>
-                      <option value="3"></option>
+                      <option value="1">Computer</option>
+                      <option value="2"></option>
                     </select>
                     </div>
-                </div>
+                </div> 
 
                 
-                <div class="card text-right"  >
-                    <button type="button" class="btn btn-primary"><strong>Submit</strong></button>
+                <div className="card text-right"  >
+                    <button type="submit" className="btn btn-primary"><strong>Submit</strong></button>
                 </div>
 
-                <div class="card text-right"  >
-                    <button type="button" class="btn btn-success"><strong>Edit Form</strong></button>
+                <div className="card text-right"  >
+                    <button type="submit" className="btn btn-success"><strong>Edit Form</strong></button>
                 </div>
 
-                {/* <div class="card text-right"  >
-                    <button type="button" class="btn btn-danger"><strong>Delete Hall</strong></button>
+                {/* <div className="card text-right"  >
+                    <button type="button" className="btn btn-danger"><strong>Delete Hall</strong></button>
                 </div> */}
             </form>
            

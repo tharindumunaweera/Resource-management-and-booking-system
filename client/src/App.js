@@ -95,8 +95,8 @@ class App extends Component {
     return (
 
       
-      <Lecturer/>
-      //<AcademicStaff/>
+      //<Lecturer/>
+      <AcademicStaff/>
       //<Director/>
       //<Coordinator/>
       //<NormalStudent/>
