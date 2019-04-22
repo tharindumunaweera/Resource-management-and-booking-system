@@ -19,13 +19,43 @@ class Login extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      const { user } = this.props.auth;
+      if (user.role == "Ref") {
+        this.props.history.push("/refdashboard");
+      }
+      if (user.role == "Acadamic") {
+        this.props.history.push("/dashboard");
+      }
+      if (user.role == "Director") {
+        this.props.history.push("/dirdashboard");
+      }
+      if (user.role == "Coordinator") {
+        this.props.history.push("/coordashboard");
+      }
+      if (user.role == "Lecturer") {
+        this.props.history.push("/lecdashboard");
+      }
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      const { user } = this.props.auth;
+      if (user.role == "Ref") {
+        this.props.history.push("/refdashboard");
+      }
+      if (user.role == "Acadamic") {
+        this.props.history.push("/dashboard");
+      }
+      if (user.role == "Director") {
+        this.props.history.push("/dirdashboard");
+      }
+      if (user.role == "Coordinator") {
+        this.props.history.push("/coordashboard");
+      }
+      if (user.role == "Lecturer") {
+        this.props.history.push("/lecdashboard");
+      }
     }
 
     if (nextProps.errors) {

@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { registeruser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
+import SelectListGroup from "../common/SelectListGroup";
 
 class Register extends Component {
   constructor() {
@@ -13,6 +14,7 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
+      role: "",
       errors: {}
     };
 
@@ -42,6 +44,7 @@ class Register extends Component {
     const newUser = {
       name: this.state.name,
       email: this.state.email,
+      role: this.state.role,
       password: this.state.password,
       password2: this.state.password2
     };
@@ -51,6 +54,15 @@ class Register extends Component {
 
   render() {
     const { errors } = this.state; //const errors = this.state.errors;
+
+    const options = [
+      { label: "* Select Actor", value: 0 },
+      { label: "Acadamic", value: "Acadamic" },
+      { label: "Ref", value: "Ref" },
+      { label: "Lecturer", value: "Lecturer" },
+      { label: "Director", value: "Director" },
+      { label: "Coordinator", value: "Coordinatorr" }
+    ];
 
     return (
       <div className="register">
@@ -75,6 +87,14 @@ class Register extends Component {
                   onChange={this.onChange}
                   error={errors.email}
                   info="This site uses Gravatar so if you want a profile image,use a Gravatar email"
+                />
+                <SelectListGroup
+                  placeholder="Actor"
+                  name="role"
+                  value={this.state.role}
+                  onChange={this.onChange}
+                  options={options}
+                  error={errors.role}
                 />
                 <TextFieldGroup
                   placeholder="Password"

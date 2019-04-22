@@ -1,8 +1,32 @@
-import React from 'react'
+import React ,  {Component} from 'react';
 import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from 'mdbreact';
 import src1 from '../../assets/img-1.jpg';
 
-const HallRegister =  () => {
+class HallRegister extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
+    this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
+    this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
+    this.state = {
+        todo_description: '',
+        todo_responsible: '',
+        todo_priority: '',
+        todo_completed:false
+    }
+}
+
+
+
+
+
+
+
+  render(){
   return (
     <React.Fragment>
          
@@ -33,14 +57,14 @@ const HallRegister =  () => {
                 <div class="form-group row">
                     <label for="inputPassword" class="col-sm-2 col-form-label">Number Of Seats</label>
                     <div class="col-sm-10">
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" maxlength="8">
-                      <option selected>Number Of Seats</option>
-                      <option value="1">Less than 100</option>
-                      <option value="2">100  -  200</option>
-                      <option value="3">200  -  300</option>
-                      <option value="3">300  -  400</option>
-                      <option value="3">Greater than 400 </option>
-                  </select>
+                      <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" maxlength="8">
+                          <option selected>Number Of Seats</option>
+                          <option value="1">Less than 100</option>
+                          <option value="2">100  -  200</option>
+                          <option value="3">200  -  300</option>
+                          <option value="3">300  -  400</option>
+                          <option value="3">Greater than 400 </option>
+                      </select>
                     </div>
                 </div>
 
@@ -102,6 +126,7 @@ const HallRegister =  () => {
 
     </React.Fragment>
   );
+              }
 }
 
 export default HallRegister;

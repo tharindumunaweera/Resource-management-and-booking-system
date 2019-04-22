@@ -3,9 +3,11 @@ import React, { Component } from 'react'
 class HallEdit extends Component {
   render() {
     return (
-      <div>
-        <h1>Edit</h1>
-      </div>
+      <React.Fragment>
+        <div>
+          <h1>HallEdit</h1>
+        </div>
+      </React.Fragment>
     )
   }
 }
