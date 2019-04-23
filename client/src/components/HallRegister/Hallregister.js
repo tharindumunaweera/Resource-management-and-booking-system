@@ -4,6 +4,8 @@ import src1 from '../../assets/img-1.jpg';
 import axios from 'axios';
 import SelectListGroup from "../common/SelectListGroup";
 import TextFieldGroup from "../common/TextFieldGroup";
+import InputGroup from "../common/InputGroup";
+import PropTypes from "prop-types";
 
 class HallRegister extends Component {
 
@@ -12,6 +14,10 @@ class HallRegister extends Component {
 
     this.onChangeHallName = this.onChangeHallName.bind(this);
     this.onChangeLocation = this.onChangeLocation.bind(this);
+    this.onChangeSeat= this.onChangeSeat.bind(this);
+    this.onChangeProjecter = this.onChangeProjecter.bind(this);
+    this.onChangeWhiteboard = this.onChangeWhiteboard.bind(this);
+    this.onChangeOther = this.onChangeOther.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
@@ -23,6 +29,8 @@ class HallRegister extends Component {
         other:'',
         todo_completed:false
     }
+
+    
   }
 
   onChangeHallName(e){
@@ -101,17 +109,7 @@ class HallRegister extends Component {
 
 
   render(){
-    const options = [
-      { label: "* Select Proffessional Status", value: 0 },
-      { label: "Developer", value: "Developer" },
-      { label: "Junior Developer", value: "Junior Developer" },
-      { label: "Senior Developer", value: "Senior Developer" },
-      { label: "Manager", value: "Manager" },
-      { label: "Student or Learning", value: "Student or Learningr" },
-      { label: "Instructor or Teacher", value: "Instructor or Teacher" },
-      { label: "Other", value: "Other" }
-    ];
-
+  
     const option1 = [
       { label: "Number Of Seats", value: 0 },
       { label: "Less than 100", value: "Less than 100" },
@@ -123,18 +121,18 @@ class HallRegister extends Component {
 
     const option2 = [
       { label: "Number Of Projecters", value: 0 },
-      { label: "0", value: 1 },
-      { label: "1", value: 2 },
-      { label: "2", value: 3 },
-      { label: "3", value: 4 },
+      { label: "0", value: "0" },
+      { label: "1", value: "1" },
+      { label: "2", value: "2" },
+      { label: "3", value: "3" },
     ];
 
     const option3 = [
       { label: "Number White Boards", value: 0 },
-      { label: "0", value: 1 },
-      { label: "1", value: 2 },
-      { label: "2", value: 3 },
-      { label: "3", value: 4 },
+      { label: "0", value: "0" },
+      { label: "1", value: "1" },
+      { label: "2", value: "2" },
+      { label: "3", value: "3" },
     ];
 
     const option4 = [
@@ -162,7 +160,7 @@ class HallRegister extends Component {
                           <TextFieldGroup
                                   placeholder="Hall Name"
                                   name="name"
-                                  value={this.state.name}
+                                  value={this.state.hallname}
                                   onChange={this.onChange}
                                   //error={errors.handle}
                                   
@@ -188,8 +186,8 @@ class HallRegister extends Component {
                     <label  className="col-sm-2 col-form-label">Number Of Seats</label>
                       <div className="col-sm-10">
                           <SelectListGroup
-                              placeholder="Status"
-                              name="status"
+                              placeholder="seat"
+                              name="seat"
                               value={this.state.seat}
                               onChange={this.onChange}
                               options={option1}
@@ -203,7 +201,7 @@ class HallRegister extends Component {
                       <div className="col-sm-10">
                           <SelectListGroup
                               placeholder=""
-                              name="status"
+                              name="projecter"
                               value={this.state.projecter}
                               onChange={this.onChange}
                               options={option2}
@@ -217,7 +215,7 @@ class HallRegister extends Component {
                       <div className="col-sm-10">
                           <SelectListGroup
                               placeholder=""
-                              name="status"
+                              name="whiteboard"
                               value={this.state.whiteboard}
                               onChange={this.onChange}
                               options={option3}
@@ -231,7 +229,7 @@ class HallRegister extends Component {
                       <div className="col-sm-10">
                           <SelectListGroup
                               placeholder=""
-                              name="status"
+                              name="other"
                               value={this.state.other}
                               onChange={this.onChange}
                               options={option4}
