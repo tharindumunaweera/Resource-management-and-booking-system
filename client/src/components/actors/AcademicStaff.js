@@ -22,7 +22,7 @@ const Academicstaff =  () => {
             <Route exact path="/available" component={AvailableLoad} />
             <Route exact path="/HallSelect" component={HallSelect} />
             <Route exact path="/Hallregister" component={Hallregister} />
-            <Route path="/HallEdit" exact component = {HallEdit} />
+            <Route path="/HallEdit/:id" exact component = {HallEdit} />
             <Route path="/HallList" exact component = {HallList} />
 
             <main id="content" className="p-5">
