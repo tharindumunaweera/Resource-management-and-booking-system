@@ -93,10 +93,16 @@ const style = {
 class App extends Component {
   render() {
     return (
+<<<<<<< HEAD
+      //<AcademicStaff />
+
+      //<Lecturer/>
+=======
 
       
       //<Lecturer/>
       <AcademicStaff/>
+>>>>>>> bd0e49f96033697d17841eafa313364d35d7e3aa
       //<Director/>
       //<Coordinator/>
       //<NormalStudent/>
