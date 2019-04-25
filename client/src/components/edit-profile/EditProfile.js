@@ -13,20 +13,20 @@ class CreateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displaySocialInputs: false,
+      // displaySocialInputs: false,
       handle: "",
-      company: "",
-      website: "",
-      location: "",
+      // company: "",
+      // website: "",
+      // location: "",
       status: "",
       skills: "",
-      githubusername: "",
+      // githubusername: "",
       bio: "",
-      twitter: "",
-      facebook: "",
-      linkedin: "",
-      youtube: "",
-      instagram: "",
+      // twitter: "",
+      // facebook: "",
+      // linkedin: "",
+      // youtube: "",
+      // instagram: "",
       errors: {}
     };
 
@@ -50,45 +50,45 @@ class CreateProfile extends Component {
       const skillsCSV = profile.skills.join(",");
 
       //If profile field doesnt exist, make empty string
-      profile.company = !isEmpty(profile.company) ? profile.company : "";
-      profile.website = !isEmpty(profile.website) ? profile.website : "";
-      profile.location = !isEmpty(profile.location) ? profile.location : "";
-      profile.githubusername = !isEmpty(profile.githubusername)
-        ? profile.githubusername
-        : "";
+      // profile.company = !isEmpty(profile.company) ? profile.company : "";
+      // profile.website = !isEmpty(profile.website) ? profile.website : "";
+      // profile.location = !isEmpty(profile.location) ? profile.location : "";
+      // profile.githubusername = !isEmpty(profile.githubusername)
+      //   ? profile.githubusername
+      //   : "";
       profile.bio = !isEmpty(profile.bio) ? profile.bio : "";
-      profile.social = !isEmpty(profile.social) ? profile.social : {};
-      profile.twitter = !isEmpty(profile.social.twitter)
-        ? profile.social.twitter
-        : "";
-      profile.facebook = !isEmpty(profile.social.facebook)
-        ? profile.social.facebook
-        : "";
-      profile.linkedin = !isEmpty(profile.social.linkedin)
-        ? profile.social.linkedin
-        : "";
-      profile.youtube = !isEmpty(profile.social.youtube)
-        ? profile.social.youtube
-        : "";
-      profile.instagram = !isEmpty(profile.social.instagram)
-        ? profile.social.instagram
-        : "";
+      // profile.social = !isEmpty(profile.social) ? profile.social : {};
+      // profile.twitter = !isEmpty(profile.social.twitter)
+      //   ? profile.social.twitter
+      //   : "";
+      // profile.facebook = !isEmpty(profile.social.facebook)
+      //   ? profile.social.facebook
+      //   : "";
+      // profile.linkedin = !isEmpty(profile.social.linkedin)
+      //   ? profile.social.linkedin
+      //   : "";
+      // profile.youtube = !isEmpty(profile.social.youtube)
+      //   ? profile.social.youtube
+      //   : "";
+      // profile.instagram = !isEmpty(profile.social.instagram)
+      //   ? profile.social.instagram
+      //   : "";
 
       // Set  component fields state
       this.setState({
         handle: profile.handle,
-        company: profile.company,
-        website: profile.website,
-        location: profile.location.location,
+        // company: profile.company,
+        // website: profile.website,
+        // location: profile.location.location,
         status: profile.status,
         skills: skillsCSV,
-        githubusername: profile.githubusername,
-        bio: profile.bio,
-        twitter: profile.twitter,
-        facebook: profile.facebook,
-        linkedin: profile.linkedin,
-        youtube: profile.youtube,
-        instagram: profile.instagram
+        // githubusername: profile.githubusername,
+        bio: profile.bio
+        // twitter: profile.twitter,
+        // facebook: profile.facebook,
+        // linkedin: profile.linkedin,
+        // youtube: profile.youtube,
+        // instagram: profile.instagram
       });
     }
   }
@@ -98,18 +98,18 @@ class CreateProfile extends Component {
 
     const profileData = {
       handle: this.state.handle,
-      company: this.state.company,
-      website: this.state.website,
-      location: this.state.location,
+      // company: this.state.company,
+      // website: this.state.website,
+      // location: this.state.location,
       status: this.state.status,
       skills: this.state.skills,
-      githubusername: this.state.githubusername,
-      bio: this.state.bio,
-      twitter: this.state.twitter,
-      facebook: this.state.facebook,
-      linkedin: this.state.linkedin,
-      youtube: this.state.youtube,
-      instagram: this.state.instagram
+      // githubusername: this.state.githubusername,
+      bio: this.state.bio
+      // twitter: this.state.twitter,
+      // facebook: this.state.facebook,
+      // linkedin: this.state.linkedin,
+      // youtube: this.state.youtube,
+      // instagram: this.state.instagram
     };
 
     this.props.createProfile(profileData, this.props.history);
@@ -124,45 +124,45 @@ class CreateProfile extends Component {
 
     let socialInputs;
 
-    if (displaySocialInputs) {
-      socialInputs = (
-        <div>
-          <InputGroup
-            placeholder="Twitter profile URL"
-            name="twitter"
-            icon="fab fa-twitter"
-            value={this.state.twitter}
-            onChange={this.onChange}
-            error={errors.twitter}
-          />
-          <InputGroup
-            placeholder="Facebook profile URL"
-            name="facebook"
-            icon="fab fa-facebook"
-            value={this.state.facebook}
-            onChange={this.onChange}
-            error={errors.facebook}
-          />
-          <InputGroup
-            placeholder="Linkedin profile URL"
-            name="linkedin"
-            icon="fab fa-linkedin"
-            value={this.state.linkedin}
-            onChange={this.onChange}
-            error={errors.linkedin}
-          />
+    // if (displaySocialInputs) {
+    //   socialInputs = (
+    //     <div>
+    //       <InputGroup
+    //         placeholder="Twitter profile URL"
+    //         name="twitter"
+    //         icon="fab fa-twitter"
+    //         value={this.state.twitter}
+    //         onChange={this.onChange}
+    //         error={errors.twitter}
+    //       />
+    //       <InputGroup
+    //         placeholder="Facebook profile URL"
+    //         name="facebook"
+    //         icon="fab fa-facebook"
+    //         value={this.state.facebook}
+    //         onChange={this.onChange}
+    //         error={errors.facebook}
+    //       />
+    //       <InputGroup
+    //         placeholder="Linkedin profile URL"
+    //         name="linkedin"
+    //         icon="fab fa-linkedin"
+    //         value={this.state.linkedin}
+    //         onChange={this.onChange}
+    //         error={errors.linkedin}
+    //       />
 
-          <InputGroup
-            placeholder="Instagram profile URL"
-            name="facebook"
-            icon="fab fa-instagram"
-            value={this.state.instagram}
-            onChange={this.onChange}
-            error={errors.instagram}
-          />
-        </div>
-      );
-    }
+    //       <InputGroup
+    //         placeholder="Instagram profile URL"
+    //         name="facebook"
+    //         icon="fab fa-instagram"
+    //         value={this.state.instagram}
+    //         onChange={this.onChange}
+    //         error={errors.instagram}
+    //       />
+    //     </div>
+    //   );
+    // }
 
     // Select options for status
     const options = [
@@ -202,7 +202,7 @@ class CreateProfile extends Component {
                   error={errors.status}
                   info="Give us idea about your possition in acadamic branch"
                 />
-                <TextFieldGroup
+                {/* <TextFieldGroup
                   placeholder="Company"
                   name="company"
                   value={this.state.company}
@@ -222,7 +222,7 @@ class CreateProfile extends Component {
                   value={this.state.location}
                   onChange={this.onChange}
                   error={errors.location}
-                />
+                /> */}
                 <TextFieldGroup
                   placeholder="* Skills"
                   name="skills"
@@ -231,13 +231,13 @@ class CreateProfile extends Component {
                   error={errors.skills}
                   info="please use comma seperated values (eg: HTML,CSS,JavaScript,PHP)"
                 />
-                <TextFieldGroup
+                {/* <TextFieldGroup
                   placeholder="Github Username"
                   name="githubusername"
                   value={this.state.githubusername}
                   onChange={this.onChange}
                   error={errors.company}
-                />
+                /> */}
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
                   name="bio"
@@ -246,7 +246,7 @@ class CreateProfile extends Component {
                   error={errors.bio}
                 />
 
-                <div className="mb-3">
+                {/* <div className="mb-3">
                   <button
                     type="button"
                     onClick={() => {
@@ -260,7 +260,7 @@ class CreateProfile extends Component {
                   </button>
                   <span className="text-muted">Optional</span>
                 </div>
-                {socialInputs}
+                {socialInputs} */}
                 <input
                   type="submit"
                   value="Submit"

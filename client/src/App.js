@@ -91,8 +91,9 @@ const style = {
 class App extends Component {
   render() {
     return (
+      //<AcademicStaff />
+
       //<Lecturer/>
-      //<AcademicStaff/>
       //<Director/>
       //<Coordinator/>
       //<NormalStudent/>

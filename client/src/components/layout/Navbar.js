@@ -17,9 +17,21 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <Link className="nav-link" to="/dashboard">
+          {user.role === "Ref" ? (
+            <Link className="nav-link" to="/refdashboard">
+              Ref Dashboard
+            </Link>
+          ) : null}
+
+          {user.role === "Acadamic" ? (
+            <Link className="nav-link" to="/dashboard">
+              Dashboard
+            </Link>
+          ) : null}
+
+          {/* <Link className="nav-link" to="/dashboard">
             Dashboard
-          </Link>
+          </Link> */}
         </li>
         <li className="nav-item">
           <a
@@ -56,33 +68,37 @@ class Navbar extends Component {
     );
 
     return (
-      <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
-        <div className="container">
-          <Link className="navbar-brand" to="/">
-            RM&IS
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#mobile-nav"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
+      <div style={{ marginLeft: "0px" }}>
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4 ">
+          <div className="col-sm-2" />
+          <div className="container">
+            <div className="col-sm-1" />
+            <Link className="navbar-brand" to="/">
+              RM&IS
+            </Link>
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#mobile-nav"
+            >
+              <span className="navbar-toggler-icon" />
+            </button>
 
-          <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  {" "}
-                  Lecture Time Table
-                </Link>
-              </li>
-            </ul>
-            {isAuthenticated ? authLinks : guestLinks}
+            <div className="collapse navbar-collapse" id="mobile-nav">
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/profiles">
+                    {" "}
+                    Lecture Time Table
+                  </Link>
+                </li>
+              </ul>
+              {isAuthenticated ? authLinks : guestLinks}
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     );
   }
 }

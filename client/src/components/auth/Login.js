@@ -56,6 +56,7 @@ class Login extends Component {
       if (user.role == "Lecturer") {
         this.props.history.push("/lecdashboard");
       }
+      //this.props.history.push("/dashboard");
     }
 
     if (nextProps.errors) {
