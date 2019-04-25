@@ -289,8 +289,8 @@ class AvailableLoad extends Component {
             </li>
 
            
-             <div class="card text-right"  >
-                    <button type="button" class="btn btn-primary"><strong>Submit</strong></button>
+             <div className="card text-right"  >
+                    <button type="button" className="btn btn-primary"><strong>Submit</strong></button>
              </div>
 
 
