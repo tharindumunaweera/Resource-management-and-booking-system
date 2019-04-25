@@ -68,13 +68,13 @@ if (process.env.NODE.ENV === "production") {
 
 hallRegRouts.route('/:id').get(function(req,res){
   let id = req.params.id;
-  Todo.findById(id, function(err , todo){
+  Hallreg.findById(id, function(err , todo){
       res.json(todo);
   });
 });
 
 hallRegRouts.route('/add').post(function(req,res){
-  let todo = new Todo(req.body);
+  let todo = new Hallreg(req.body);
   todo.save()
       .then(todo =>{
           res.status(200).json({'todo':'todo added successfully'});
@@ -85,15 +85,18 @@ hallRegRouts.route('/add').post(function(req,res){
 });
 
 hallRegRouts.route('/update/:id').post(function(req,res){
-  Todo.findById(req.params.id , function(err , todo){
+  Hallreg.findById(req.params.id , function(err , todo){
       if(!todo)
           res.status(404).send('data is not found');
       else
-          todo.todo_description = req.body.todo_description;
-          todo.todo_responsible = req.body.todo_responsible;
-          todo.todo_priority = req.body.todo_priority;
-          todo.todo_completed = req.body.todo_completed;
+          todo.hallname = req.body.hallname;
+          todo.location = req.body.location;
+          todo.seat = req.body.seat;
+          todo.projecter = req.body.projecter;
+          todo.whiteboard = req.body.whiteboard;
+          todo.other = req.body.other;
 
+        
           todo.save().then(todo => {
               res.json('Todo Updated');
           })
@@ -102,6 +105,8 @@ hallRegRouts.route('/update/:id').post(function(req,res){
           });
   });
 });
+
+app.use('/',hallRegRouts);
 
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
