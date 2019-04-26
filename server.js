@@ -66,15 +66,27 @@ if (process.env.NODE.ENV === "production") {
 
 //hallreg routs
 
+hallRegRouts.route('/').get(function(req,res){
+  HallRegisterSchema.find(function(err , todos){
+      if(err){
+          console.log(err);
+      }else{
+          res.json(todos);
+      }
+  });
+});
+
+
+
 hallRegRouts.route('/:id').get(function(req,res){
   let id = req.params.id;
-  Hallreg.findById(id, function(err , todo){
+  HallRegisterSchema.findById(id, function(err , todo){
       res.json(todo);
   });
 });
 
 hallRegRouts.route('/add').post(function(req,res){
-  let todo = new Hallreg(req.body);
+  let todo = new HallRegisterSchema(req.body);
   todo.save()
       .then(todo =>{
           res.status(200).json({'todo':'todo added successfully'});
@@ -85,7 +97,7 @@ hallRegRouts.route('/add').post(function(req,res){
 });
 
 hallRegRouts.route('/update/:id').post(function(req,res){
-  Hallreg.findById(req.params.id , function(err , todo){
+  HallRegisterSchema.findById(req.params.id , function(err , todo){
       if(!todo)
           res.status(404).send('data is not found');
       else
@@ -106,7 +118,7 @@ hallRegRouts.route('/update/:id').post(function(req,res){
   });
 });
 
-app.use('/',hallRegRouts);
+app.use('/todos',hallRegRouts);
 
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
