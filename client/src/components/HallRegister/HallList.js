@@ -9,13 +9,15 @@ const Todo = props => (
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.hallname}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.location}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.seat}</td>
-         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.projecter}</td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.projecter}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.whiteboard}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.other}</td> 
 
 
         <td>
-            <Link to={"/HallEdit/" + props.todo._id    } color={'red'}><strong>Edit</strong></Link> 
+        {/* <button type="button" class="btn btn-info">Edit</button> */}
+        {/* <a class="button" href="#">Button</a> */}
+     <Link className="btn btn-success" to={"/HallEdit/" + props.todo._id    } color={'red'}><strong>Edit</strong></Link> 
         </td>
         
     </tr>

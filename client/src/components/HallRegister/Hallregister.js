@@ -169,6 +169,15 @@ class HallRegister extends Component {
       { label: "Computer", value: "Computer" }
     ];
 
+    const option5 = [
+      { label: "Floor", value: 0 },
+      { label: "1 Floor", value: "1 Floor" },
+      { label: "2 Floor", value: "2 Floor" },
+      { label: "3 Floor", value: "3 Floor" },
+      { label: "4 Floor", value: "4 Floor" },
+      { label: "5 Floor", value: "5 Floor" }
+    ];
+
     return (
       <React.Fragment>
         <MDBRow>
@@ -203,11 +212,12 @@ class HallRegister extends Component {
                         Location
                       </label>
                       <div className="col-sm-10">
-                        <TextFieldGroup
+                        <SelectListGroup
                           placeholder="Location"
                           name="location"
                           value={this.state.location}
                           onChange={this.onChange}
+                          options={option5}
                           //error={errors.handle}
                         />
                       </div>
@@ -283,11 +293,11 @@ class HallRegister extends Component {
                       </button>
                     </div>
 
-                    <div className="card text-right">
+                    {/* <div className="card text-right">
                       <button type="submit" className="btn btn-success">
                         <strong>Edit Form</strong>
                       </button>
-                    </div>
+                    </div> */}
 
                     {/* <div className="card text-right"  >
                     <button type="button" className="btn btn-danger"><strong>Delete Hall</strong></button>

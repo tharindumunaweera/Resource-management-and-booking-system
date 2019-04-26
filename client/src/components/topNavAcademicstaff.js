@@ -11,6 +11,8 @@ import {
   MDBIcon
 } from "mdbreact";
 
+//import './topnavsearchbar.css';
+
 class TopNavLecturer extends Component {
   state = {
     collapse: false
@@ -34,14 +36,18 @@ class TopNavLecturer extends Component {
         <MDBNavbarBrand href="/">
           <strong>Academicstaff</strong>
         </MDBNavbarBrand>
+
         <MDBNavbarToggler onClick={this.onClick} />
+
         <MDBCollapse isOpen={this.state.collapse} navbar>
-          <MDBNavbarNav left>
+
+          <MDBNavbarNav center >
             <MDBNavItem active>
-              <MDBNavLink to="#">Home</MDBNavLink>
+            <input type="text" name="search" placeholder="Search.."/>
             </MDBNavItem>
           </MDBNavbarNav>
-          <MDBNavbarNav right>
+
+          <MDBNavbarNav>
             <MDBNavItem>
             <MDBRow>
             <a
@@ -51,7 +57,13 @@ class TopNavLecturer extends Component {
             >
               <i className="far fa-bell"></i>
             </a>
+            </MDBRow>
+            </MDBNavItem>
+          </MDBNavbarNav>
            
+          <MDBNavbarNav right>
+            <MDBNavItem>
+            <MDBRow>
             <a
                 className="border border-light rounded mr-1 nav-link Ripple-parent"
                 rel="noopener noreferrer"
