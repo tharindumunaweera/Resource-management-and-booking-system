@@ -93,17 +93,17 @@ class HallRegister extends Component {
      console.log(`Other: ${this.state.other}`);
      console.log(`Completed: ${this.state.todo_completed}`);
 
-    // const newTodo = {
-    //   hallname: this.state.hallname,
-    //   location: this.state.location,
-    //   seat: this.state.seat,
-    //   projecter: this.state.projecter,
-    //   whiteboard: this.state.whiteboard,
-    //   other: this.state.other,
-    //   todo_completed: this.state.todo_completed
-    // };
+     const newTodo = {
+       hallname: this.state.hallname,
+       location: this.state.location,
+       seat: this.state.seat,
+       projecter: this.state.projecter,
+       whiteboard: this.state.whiteboard,
+       other: this.state.other,
+       todo_completed: this.state.todo_completed
+     };
 
-    // axios.post('http://localhost:4000/todos/add',newTodo).then(res => console.log(res.data));
+     axios.post('http://localhost:5000/todos/add',newTodo).then(res => console.log(res.data));
 
      this.setState({
       hallname: "",
