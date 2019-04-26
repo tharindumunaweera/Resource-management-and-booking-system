@@ -33,6 +33,11 @@ class Navbar extends Component {
               Lecurer Dashboard
             </Link>
           ) : null}
+          {user.role === "Coordinator" ? (
+            <Link className="nav-link" to="/coordashboard">
+              Coordinator Dashboard
+            </Link>
+          ) : null}
           {/* <Link className="nav-link" to="/dashboard">
             Dashboard
           </Link> */}
