@@ -148,7 +148,7 @@ export default class HallEdit extends Component{
                 <MDBCard className="mt-5">
                   <MDBView className="gradient-card-header black darken-0">
                     <h4 className="h4-responsive text-white">
-                      <strong>Hall Registration Edit Form</strong>
+                      <strong>Hall Edit Form</strong>
                     </h4>
                   </MDBView>
                   <MDBCardBody>
@@ -254,15 +254,7 @@ export default class HallEdit extends Component{
                         </button>
                       </div>
   
-                      {/* <div className="card text-right">
-                        <button type="submit" className="btn btn-success">
-                          <strong>Edit Form</strong>
-                        </button>
-                      </div> */}
-  
-                      {/* <div className="card text-right"  >
-                      <button type="button" className="btn btn-danger"><strong>Delete Hall</strong></button>
-                  </div> */}
+                     
                     </form>
                   </MDBCardBody>
                 </MDBCard>

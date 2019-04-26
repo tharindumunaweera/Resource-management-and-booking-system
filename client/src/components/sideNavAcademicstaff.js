@@ -22,22 +22,28 @@ const TopNavigation = () => {
                 
                 <NavLink to="/profile" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="user" className="mr-3"/>
+                        <MDBIcon icon="far fa-clock" className="mr-3"/>
                         Time Tables
                     </MDBListGroupItem>
                 </NavLink>
 
                 <NavLink to="/HallSelect" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="map" className="mr-3"/>
-                        Hall Select
+                        <MDBIcon icon="far fa-check-circle" className="mr-3"/>
+                        Hall Booking
                     </MDBListGroupItem>
                 </NavLink>
               
                 <NavLink to="/Hallregister" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="map" className="mr-3"/>
+                        <MDBIcon icon="far fa-registered" className="mr-3"/>
                         Hall Register
+                    </MDBListGroupItem>
+                </NavLink>
+                <NavLink to="/HallList" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="fas fa-list-alt" className="mr-3"/>
+                        Hall List
                     </MDBListGroupItem>
                 </NavLink>
                
