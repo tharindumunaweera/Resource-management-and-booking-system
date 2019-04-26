@@ -13,7 +13,7 @@ const Todo = props => (
 
 
         <td>
-            <Link to={"/edit/" + props.todo._id}>Edit</Link>
+            <Link to={"/HallEdit/" + props.todo._id}>Edit</Link>
         </td>
         
     </tr>
@@ -62,9 +62,9 @@ export default class HallList extends Component{
                         <tr>
                             <th>Hall Name</th>
                             <th>Location</th>
-                            <th>Number Of Seats</th>
-                            <th>Number Of Projecters</th>
-                            <th>Number Of Whietboards</th>
+                            <th>Seats</th>
+                            <th>Projecters</th>
+                            <th>Whietboards</th>
                             <th>Others</th>
                         </tr>
                     </thead>
