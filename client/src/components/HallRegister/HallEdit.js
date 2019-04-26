@@ -128,6 +128,15 @@ export default class HallEdit extends Component{
         { label: "Other Resources", value: 0 },
         { label: "Computer", value: "Computer" }
       ];
+
+      const option5 = [
+        { label: "Floor", value: 0 },
+        { label: "1 Floor", value: "1 Floor" },
+        { label: "2 Floor", value: "2 Floor" },
+        { label: "3 Floor", value: "3 Floor" },
+        { label: "4 Floor", value: "4 Floor" },
+        { label: "5 Floor", value: "5 Floor" }
+      ];
   
 
         return(
@@ -160,19 +169,20 @@ export default class HallEdit extends Component{
                       </div>
   
                       <div className="form-group row">
-                        <label className="col-sm-2 col-form-label">
-                          Location
-                        </label>
-                        <div className="col-sm-10">
-                          <TextFieldGroup
-                            placeholder="Location"
-                            name="location"
-                            value={this.state.location}
-                            onChange={this.onChange}
-                            //error={errors.handle}
-                          />
-                        </div>
+                      <label className="col-sm-2 col-form-label">
+                        Location
+                      </label>
+                      <div className="col-sm-10">
+                        <SelectListGroup
+                          placeholder="Location"
+                          name="location"
+                          value={this.state.location}
+                          onChange={this.onChange}
+                          options={option5}
+                          //error={errors.handle}
+                        />
                       </div>
+                    </div>
   
                       <div className="form-group row">
                         <label className="col-sm-2 col-form-label">
@@ -239,8 +249,8 @@ export default class HallEdit extends Component{
                       </div>
   
                       <div className="card text-right">
-                        <button type="submit" className="btn btn-primary">
-                          <strong>Submit</strong>
+                        <button type="submit" className="btn btn-info">
+                          <strong>Update</strong>
                         </button>
                       </div>
   

@@ -9,7 +9,7 @@ const Todo = props => (
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.hallname}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.location}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.seat}</td>
-         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.projecter}</td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.projecter}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.whiteboard}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.other}</td> 
 
