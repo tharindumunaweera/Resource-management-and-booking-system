@@ -1,19 +1,21 @@
 import React ,  {Component} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import './index.css';
 
 const Todo = props => (
     <tr>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.hallname}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.location}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.seat}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.projecter}</td>
+         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.projecter}</td>
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.whiteboard}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.other}</td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.other}</td> 
 
 
         <td>
-            <Link to={"/HallEdit/" + props.todo._id}>Edit</Link>
+            <Link to={"/HallEdit/" + props.todo._id    } color={'red'}><strong>Edit</strong></Link> 
         </td>
         
     </tr>
@@ -55,24 +57,37 @@ export default class HallList extends Component{
 
     render(){
         return(
-            <div>
-               <h3>Hall LIST</h3>
+            
+                 <MDBRow>
+          <div className="col-sm-4 " />
+          <div className="col-sm-7 ">
+            <MDBCol md="30">
+              <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header black darken-0">
+                  <h4 className="h4-responsive text-white">
+                    <strong>Hall List</strong>
+                  </h4>
+                </MDBView>
                <table className="table table-striped" style={{marginTop :20}}>
                     <thead>
                         <tr>
-                            <th>Hall Name</th>
-                            <th>Location</th>
-                            <th>Seats</th>
-                            <th>Projecters</th>
-                            <th>Whietboards</th>
-                            <th>Others</th>
+                            <th><strong>Hall Name</strong></th>
+                            <th><strong>Location</strong></th>
+                            <th><strong>Seats</strong></th>
+                            <th><strong>Projecters</strong></th>
+                            <th><strong>Whietboards</strong></th>
+                            <th><strong>Others</strong></th> 
                         </tr>
                     </thead>
                     <tbody>
                         { this.todoList() }
                     </tbody>
                </table>
-            </div>
+               </MDBCard>
+            </MDBCol>
+          </div>
+        </MDBRow>
+            
         )
     }
 }
