@@ -85,23 +85,13 @@ class HallRegister extends Component {
     e.preventDefault();
 
     console.log("submit");
-<<<<<<< HEAD
-    // console.log(`HallName: ${this.state.hallname}`);
-    // console.log(`Location: ${this.state.location}`);
-    // console.log(`Seat: ${this.state.seat}`);
-    // console.log(`Projecter: ${this.state.projecter}`);
-    // console.log(`Whiteboard: ${this.state.whiteboard}`);
-    // console.log(`Other: ${this.state.other}`);
-    // console.log(`Completed: ${this.state.todo_completed}`);
-=======
-     console.log(`HallName: ${this.state.hallname}`);
-     console.log(`Location: ${this.state.location}`);
-     console.log(`Seat: ${this.state.seat}`);
-     console.log(`Projecter: ${this.state.projecter}`);
-     console.log(`Whiteboard: ${this.state.whiteboard}`);
-     console.log(`Other: ${this.state.other}`);
-     console.log(`Completed: ${this.state.todo_completed}`);
->>>>>>> bd0e49f96033697d17841eafa313364d35d7e3aa
+    //  console.log(`HallName: ${this.state.hallname}`);
+    //  console.log(`Location: ${this.state.location}`);
+    //  console.log(`Seat: ${this.state.seat}`);
+    //  console.log(`Projecter: ${this.state.projecter}`);
+    //  console.log(`Whiteboard: ${this.state.whiteboard}`);
+    //  console.log(`Other: ${this.state.other}`);
+    //  console.log(`Completed: ${this.state.todo_completed}`);
 
     // const newTodo = {
     //   hallname: this.state.hallname,
@@ -115,27 +105,15 @@ class HallRegister extends Component {
 
     // axios.post('http://localhost:4000/todos/add',newTodo).then(res => console.log(res.data));
 
-<<<<<<< HEAD
-    // this.setState({
-    //   hallname: "",
-    //   location: "",
-    //   seat: "",
-    //   projecter: "",
-    //   whiteboard: "",
-    //   other: "",
-    //   todo_completed: false
-    // });
-=======
-     this.setState({
+    this.setState({
       hallname: "",
-       location: "",
-       seat: "",
-       projecter: "",
-       whiteboard: "",
-       other: "",
-       todo_completed: false
-     });
->>>>>>> bd0e49f96033697d17841eafa313364d35d7e3aa
+      location: "",
+      seat: "",
+      projecter: "",
+      whiteboard: "",
+      other: "",
+      todo_completed: false
+    });
   }
 
   onChange(e) {
@@ -194,11 +172,7 @@ class HallRegister extends Component {
                       <div className="col-sm-10">
                         <TextFieldGroup
                           placeholder="Hall Name"
-<<<<<<< HEAD
-                          name="name"
-=======
                           name="hallname"
->>>>>>> bd0e49f96033697d17841eafa313364d35d7e3aa
                           value={this.state.hallname}
                           onChange={this.onChange}
                           //error={errors.handle}

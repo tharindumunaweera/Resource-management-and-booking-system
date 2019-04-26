@@ -123,12 +123,19 @@ class CreateProfile extends Component {
     ];
 
     const options1 = [
-      { label: "* Select Possion In Union", value: 0 },
+      { label: "* Select Possition In Union", value: 0 },
       { label: "Member", value: "Member" },
       { label: "President", value: "President" },
       { label: "Vice President", value: "Vice President" },
       { label: "Treasure", value: "Treasure" },
       { label: "Secreatry", value: "Secreatry" }
+    ];
+
+    const options2 = [
+      { label: "* Select Possition", value: 0 },
+      { label: "Professor", value: "Professor" },
+      { label: "Lecturer", value: "Lecturer" },
+      { label: "Instructor", value: "Instructor" }
     ];
 
     let dashboardContent;

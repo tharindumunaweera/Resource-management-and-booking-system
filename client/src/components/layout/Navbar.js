@@ -25,10 +25,14 @@ class Navbar extends Component {
 
           {user.role === "Acadamic" ? (
             <Link className="nav-link" to="/dashboard">
-              Dashboard
+              Acadamic Dashboard
             </Link>
           ) : null}
-
+          {user.role === "Lecturer" ? (
+            <Link className="nav-link" to="/lecdashboard">
+              Lecurer Dashboard
+            </Link>
+          ) : null}
           {/* <Link className="nav-link" to="/dashboard">
             Dashboard
           </Link> */}

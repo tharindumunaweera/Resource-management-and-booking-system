@@ -121,48 +121,7 @@ class CreateProfile extends Component {
 
   render() {
     const { errors, displaySocialInputs } = this.state;
-
-    let socialInputs;
-
-    // if (displaySocialInputs) {
-    //   socialInputs = (
-    //     <div>
-    //       <InputGroup
-    //         placeholder="Twitter profile URL"
-    //         name="twitter"
-    //         icon="fab fa-twitter"
-    //         value={this.state.twitter}
-    //         onChange={this.onChange}
-    //         error={errors.twitter}
-    //       />
-    //       <InputGroup
-    //         placeholder="Facebook profile URL"
-    //         name="facebook"
-    //         icon="fab fa-facebook"
-    //         value={this.state.facebook}
-    //         onChange={this.onChange}
-    //         error={errors.facebook}
-    //       />
-    //       <InputGroup
-    //         placeholder="Linkedin profile URL"
-    //         name="linkedin"
-    //         icon="fab fa-linkedin"
-    //         value={this.state.linkedin}
-    //         onChange={this.onChange}
-    //         error={errors.linkedin}
-    //       />
-
-    //       <InputGroup
-    //         placeholder="Instagram profile URL"
-    //         name="facebook"
-    //         icon="fab fa-instagram"
-    //         value={this.state.instagram}
-    //         onChange={this.onChange}
-    //         error={errors.instagram}
-    //       />
-    //     </div>
-    //   );
-    // }
+    const { user } = this.props.auth;
 
     // Select options for status
     const options = [
@@ -176,6 +135,102 @@ class CreateProfile extends Component {
       { label: "Other", value: "Other" }
     ];
 
+    const options1 = [
+      { label: "* Select Possition In Union", value: 0 },
+      { label: "Member", value: "Member" },
+      { label: "President", value: "President" },
+      { label: "Vice President", value: "Vice President" },
+      { label: "Treasure", value: "Treasure" },
+      { label: "Secreatry", value: "Secreatry" }
+    ];
+
+    const options2 = [
+      { label: "* Select Possition", value: 0 },
+      { label: "Professor", value: "Professor" },
+      { label: "Lecturer", value: "Lecturer" },
+      { label: "Instructor", value: "Instructor" }
+    ];
+
+    let dashboardContent;
+
+    if (user.role == "Ref") {
+      dashboardContent = (
+        <div>
+          <TextFieldGroup
+            placeholder="* Profile handle"
+            name="handle"
+            value={this.state.handle}
+            onChange={this.onChange}
+            error={errors.handle}
+            info="A unique handle for your profile URL. your full name,company name"
+          />
+          <SelectListGroup
+            placeholder="Status"
+            name="status"
+            value={this.state.status}
+            onChange={this.onChange}
+            options={options1}
+            error={errors.status}
+            info="Give us idea about your possition in acadamic branch"
+          />
+          <TextFieldGroup
+            placeholder="* Skills"
+            name="skills"
+            value={this.state.skills}
+            onChange={this.onChange}
+            error={errors.skills}
+            info="please use comma seperated values (eg: HTML,CSS,JavaScript,PHP)"
+          />
+          <TextAreaFieldGroup
+            placeholder="Short Bio"
+            name="bio"
+            value={this.state.bio}
+            onChange={this.onChange}
+            error={errors.bio}
+          />
+        </div>
+      );
+    }
+
+    if (user.role == "Acadamic") {
+      dashboardContent = (
+        <div>
+          <TextFieldGroup
+            placeholder="* Profile handle"
+            name="handle"
+            value={this.state.handle}
+            onChange={this.onChange}
+            error={errors.handle}
+            info="A unique handle for your profile URL. your full name,company name"
+          />
+          <SelectListGroup
+            placeholder="Status"
+            name="status"
+            value={this.state.status}
+            onChange={this.onChange}
+            options={options}
+            error={errors.status}
+            info="Give us idea about your possition in acadamic branch"
+          />
+          <TextFieldGroup
+            placeholder="* Skills"
+            name="skills"
+            value={this.state.skills}
+            onChange={this.onChange}
+            error={errors.skills}
+            info="please use comma seperated values (eg: HTML,CSS,JavaScript,PHP)"
+          />
+          <TextAreaFieldGroup
+            placeholder="Short Bio"
+            name="bio"
+            value={this.state.bio}
+            onChange={this.onChange}
+            error={errors.bio}
+          />
+        </div>
+      );
+    }
+
     return (
       <div className="create-profile">
         <div className="container">
@@ -185,82 +240,7 @@ class CreateProfile extends Component {
 
               <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="* Profile handle"
-                  name="handle"
-                  value={this.state.handle}
-                  onChange={this.onChange}
-                  error={errors.handle}
-                  info="A unique handle for your profile URL. your full name,company name"
-                />
-                <SelectListGroup
-                  placeholder="Status"
-                  name="status"
-                  value={this.state.status}
-                  onChange={this.onChange}
-                  options={options}
-                  error={errors.status}
-                  info="Give us idea about your possition in acadamic branch"
-                />
-                {/* <TextFieldGroup
-                  placeholder="Company"
-                  name="company"
-                  value={this.state.company}
-                  onChange={this.onChange}
-                  error={errors.company}
-                />
-                <TextFieldGroup
-                  placeholder="Website"
-                  name="website"
-                  value={this.state.website}
-                  onChange={this.onChange}
-                  error={errors.website}
-                />
-                <TextFieldGroup
-                  placeholder="Location"
-                  name="location"
-                  value={this.state.location}
-                  onChange={this.onChange}
-                  error={errors.location}
-                /> */}
-                <TextFieldGroup
-                  placeholder="* Skills"
-                  name="skills"
-                  value={this.state.skills}
-                  onChange={this.onChange}
-                  error={errors.skills}
-                  info="please use comma seperated values (eg: HTML,CSS,JavaScript,PHP)"
-                />
-                {/* <TextFieldGroup
-                  placeholder="Github Username"
-                  name="githubusername"
-                  value={this.state.githubusername}
-                  onChange={this.onChange}
-                  error={errors.company}
-                /> */}
-                <TextAreaFieldGroup
-                  placeholder="Short Bio"
-                  name="bio"
-                  value={this.state.bio}
-                  onChange={this.onChange}
-                  error={errors.bio}
-                />
-
-                {/* <div className="mb-3">
-                  <button
-                    type="button"
-                    onClick={() => {
-                      this.setState(prevState => ({
-                        displaySocialInputs: !prevState.displaySocialInputs
-                      }));
-                    }}
-                    className="btn btn-light"
-                  >
-                    Add Social Network Links
-                  </button>
-                  <span className="text-muted">Optional</span>
-                </div>
-                {socialInputs} */}
+                {dashboardContent}
                 <input
                   type="submit"
                   value="Submit"
@@ -276,6 +256,7 @@ class CreateProfile extends Component {
 }
 
 CreateProfile.propTypes = {
+  auth: PropTypes.object.isRequired,
   createProfile: PropTypes.func.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
@@ -283,6 +264,7 @@ CreateProfile.propTypes = {
 };
 
 const mapStateToProps = state => ({
+  auth: state.auth,
   profile: state.profile,
   errors: state.errors
 });
