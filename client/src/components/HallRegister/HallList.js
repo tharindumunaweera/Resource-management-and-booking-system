@@ -15,7 +15,9 @@ const Todo = props => (
 
 
         <td>
-            <Link to={"/HallEdit/" + props.todo._id    } color={'red'}><strong>Edit</strong></Link> 
+        {/* <button type="button" class="btn btn-info">Edit</button> */}
+        {/* <a class="button" href="#">Button</a> */}
+     <Link className="btn btn-success" to={"/HallEdit/" + props.todo._id    } color={'red'}><strong>Edit</strong></Link> 
         </td>
         
     </tr>
