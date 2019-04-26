@@ -40,6 +40,7 @@ const TopNavigation = () => {
                         Hall Register
                     </MDBListGroupItem>
                 </NavLink>
+                
                 <NavLink to="/HallList" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="fas fa-list-alt" className="mr-3"/>
