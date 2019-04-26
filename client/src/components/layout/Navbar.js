@@ -38,6 +38,12 @@ class Navbar extends Component {
               Coordinator Dashboard
             </Link>
           ) : null}
+
+          {user.role === "Director" ? (
+            <Link className="nav-link" to="/coordashboard">
+              Director Dashboard
+            </Link>
+          ) : null}
           {/* <Link className="nav-link" to="/dashboard">
             Dashboard
           </Link> */}

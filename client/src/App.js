@@ -33,6 +33,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Refdashboard from "./components/dashboard/Refdashboard";
 import Lecdashboard from "./components/dashboard/Lecdashboard";
 import Coordashboard from "./components/dashboard/Coordashboard";
+import Dirdashboard from "./components/dashboard/Dirdashboard";
 import Mundashboard from "./components/timetable/Mundashboard";
 import Ninedashboard from "./components/timetable/Ninedashboard";
 import Tendashboard from "./components/timetable/Tendashboard";
@@ -136,6 +137,13 @@ class App extends Component {
                   exact
                   path="/coordashboard"
                   component={Coordashboard}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/dirdashboard"
+                  component={Dirdashboard}
                 />
               </Switch>
               <Switch>
