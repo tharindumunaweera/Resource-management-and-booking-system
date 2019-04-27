@@ -60,7 +60,7 @@ export default class HallList extends Component{
     render(){
         return(
             
-                 <MDBRow>
+       <MDBRow>
           <div className="col-sm-4 " />
           <div className="col-sm-7 ">
             <MDBCol md="30">
