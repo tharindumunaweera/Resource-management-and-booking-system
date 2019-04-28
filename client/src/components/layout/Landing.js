@@ -12,7 +12,7 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-12 text-center">
                 <h1 className="display-3 mb-4">
-                  Resource Management And Information System
+                  <strong>Resource Management And Information System</strong>
                 </h1>
                 <p className="lead"> Most Convienient Way For Booking</p>
                 <hr />

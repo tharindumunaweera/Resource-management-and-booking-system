@@ -107,7 +107,7 @@ class App extends Component {
           <div className="App">
             {/* <Navbar /> */}
             <Route exact path="/" component={Landing} />
-            <div className="container">
+            {/* <div className="container "> */}
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
 
@@ -246,7 +246,7 @@ class App extends Component {
                   component={AddEducation}
                 />
               </Switch>
-            </div>
+            {/* </div> */}
 
             {/* <Footer /> */}
           </div>
