@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { loginuser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
 import Navbar from "../layout/Navbar";
+import Footer from "../layout/Footer";
 
 class Login extends Component {
   
@@ -88,10 +89,11 @@ class Login extends Component {
     return (
       
       
-     <div>
-      <Navbar />
+     
       <div className="login">
         <div className="container">
+        <div class="card mb-5 border-10">
+        <Navbar />
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign In</h1>
@@ -121,9 +123,11 @@ class Login extends Component {
               </form>
             </div>
           </div>
+          <Footer/>
         </div>
       </div>
       </div>
+    
     );
   }
 }

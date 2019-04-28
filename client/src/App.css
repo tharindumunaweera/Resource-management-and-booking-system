@@ -36,5 +36,5 @@ img {
 }
 
 .form-control::placeholder {
-  color: #bbb !important;
+  color: rgb(128, 122, 122) !important;
 }

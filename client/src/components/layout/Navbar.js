@@ -71,12 +71,12 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <Link className="nav-link" to="/register">
-            Sign Up
+            <strong>Sign Up</strong>
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/login">
-            Sign In
+            <strong>Sign In</strong>
           </Link>
         </li>
       </ul>
@@ -89,7 +89,7 @@ class Navbar extends Component {
           <div className="container">
             <div className="col-sm-1" />
             <Link className="navbar-brand" to="/">
-              RM&IS
+             <strong> RMIS </strong>
             </Link>
             <button
               className="navbar-toggler"
@@ -103,10 +103,10 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/profiles">
+                  {/* <Link className="nav-link" to="/profiles">
                     {" "}
                     Lecture Time Table
-                  </Link>
+                  </Link> */}
                 </li>
               </ul>
               {isAuthenticated ? authLinks : guestLinks}
