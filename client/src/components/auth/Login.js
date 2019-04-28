@@ -88,9 +88,8 @@ class Login extends Component {
 
     return (
       
-      
-     
       <div className="login">
+        <div className=" landing-inner  ">
         <div className="container">
         <div class="card mb-5 border-10">
         <Navbar />
@@ -125,6 +124,7 @@ class Login extends Component {
           </div>
           <Footer/>
         </div>
+      </div>
       </div>
       </div>
     
