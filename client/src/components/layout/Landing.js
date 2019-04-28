@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 class Landing extends Component {
   render() {
     return (
+      <div>
       <div className="landing">
         <div className="dark-overlay landing-inner text-light">
           <div className="container">
@@ -23,7 +25,11 @@ class Landing extends Component {
               </div>
             </div>
           </div>
+        
         </div>
+      
+      </div>
+      <Footer/>
       </div>
     );
   }

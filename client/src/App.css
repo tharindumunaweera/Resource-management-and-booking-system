@@ -5,9 +5,9 @@ img {
 .landing {
   position: relative;
   background: url("./img/ucsc1.jpg") no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-position: center;
-  height: 100vh;
+  height: 94vh;
 
   margin-top: -24px;
   margin-bottom: -50px;
@@ -36,5 +36,31 @@ img {
 }
 
 .form-control::placeholder {
-  color: #bbb !important;
+  color: rgb(128, 122, 122) !important;
+}
+
+.register{
+  position: relative;
+  background: url("./img/back.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 127vh;
+  width: 100%;
+  
+
+  margin-top: -24px;
+  margin-bottom: -40px;
+}
+
+
+.login{
+  position: relative;
+  background: url("./img/back.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 104vh;
+ 
+
+  margin-top: -24px;
+  margin-bottom: -40px;
 }
