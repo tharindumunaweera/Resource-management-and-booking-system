@@ -94,12 +94,8 @@ const style = {
 class App extends Component {
   render() {
     return (
-      //<AcademicStaff />
-
+      
       //<Lecturer/>
-
-      //<Lecturer/>
-      //<AcademicStaff/>
       // <AcademicStaff/>
       //<Director/>
       //<Coordinator/>
@@ -109,14 +105,14 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
+            {/* <Navbar /> */}
             <Route exact path="/" component={Landing} />
             <div className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
 
               <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                <PrivateRoute exact path="/dashboard" component={Lecturer} />
               </Switch>
               <Switch>
                 <PrivateRoute
@@ -129,7 +125,7 @@ class App extends Component {
                 <PrivateRoute
                   exact
                   path="/lecdashboard"
-                  component={Lecdashboard}
+                  component={Lecturer}
                 />
               </Switch>
               <Switch>
@@ -249,7 +245,7 @@ class App extends Component {
               </Switch>
             </div>
 
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </Router>
       </Provider>

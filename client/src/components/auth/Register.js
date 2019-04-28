@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { registeruser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
+import Navbar from "../layout/Navbar";
+import Footer from "../layout/Footer";
 
 class Register extends Component {
   constructor() {
@@ -65,8 +67,11 @@ class Register extends Component {
     ];
 
     return (
+     
       <div className="register">
         <div className="container">
+        <div class="card mb-5 border-10">
+        <Navbar />
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Sign Up</h1>
@@ -116,7 +121,11 @@ class Register extends Component {
               </form>
             </div>
           </div>
+          <Footer/>
         </div>
+       
+      </div>
+     
       </div>
     );
   }
