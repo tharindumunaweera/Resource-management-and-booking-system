@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginuser } from "../../actions/authActions";
@@ -91,13 +92,13 @@ class Login extends Component {
       <div className="login">
         <div className=" landing-inner  ">
         <div className="container">
-        <div class="card mb-5 border-10">
+        <div className="card mb-5 border-10">
         <Navbar />
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign In</h1>
+              <h1 className="display-4 text-center"> <strong> Sign In </strong> </h1>
               <p className="lead text-center">
-                Sign in to your DevConnector account
+                Sign In to your RMIS account
               </p>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup

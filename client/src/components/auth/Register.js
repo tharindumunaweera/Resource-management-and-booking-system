@@ -58,7 +58,7 @@ class Register extends Component {
     const { errors } = this.state; //const errors = this.state.errors;
 
     const options = [
-      { label: "* Select Actor", value: 0 },
+      { label: "Select Actor", value: 0 },
       { label: "Acadamic", value: "Acadamic" },
       { label: "Ref", value: "Ref" },
       { label: "Lecturer", value: "Lecturer" },
@@ -68,15 +68,15 @@ class Register extends Component {
 
     return (
      
-      <div className="register">
+      <div className="register  ">
         <div className=" landing-inner">
         <div className="container">
-        <div class="card mb-5 border-10">
+        <div className="card mb-5 border-10">
         <Navbar />
           <div className="row">
             <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">Create Your Account</p>
+              <h1 className="display-4 text-center"><strong>Sign Up</strong></h1>
+              <p className="lead text-center">Create Your RMIS Account</p>
               <form noValidate onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="Name"
