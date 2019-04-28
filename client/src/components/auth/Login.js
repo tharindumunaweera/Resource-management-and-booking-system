@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginuser } from "../../actions/authActions";
 import TextFieldGroup from "../common/TextFieldGroup";
+import Navbar from "../layout/Navbar";
 
 class Login extends Component {
+  
   constructor() {
     super();
     this.state = {
@@ -80,9 +82,14 @@ class Login extends Component {
   }
 
   render() {
+    
     const { errors } = this.state;
 
     return (
+      
+      
+     <div>
+      <Navbar />
       <div className="login">
         <div className="container">
           <div className="row">
@@ -115,6 +122,7 @@ class Login extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }

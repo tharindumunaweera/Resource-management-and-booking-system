@@ -23,6 +23,12 @@ const TopNavigation = () => {
                         Time Tables
                     </MDBListGroupItem>
                 </NavLink>
+                <NavLink to="/HallSelect" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="user" className="mr-3"/>
+                        Hall Select
+                    </MDBListGroupItem>
+                </NavLink>
               
                
             </MDBListGroup>
