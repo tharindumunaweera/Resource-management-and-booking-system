@@ -108,144 +108,136 @@ class App extends Component {
             {/* <Navbar /> */}
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
 
-              <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/refdashboard"
-                  component={Refdashboard}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/lecdashboard" component={Lecturer} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/coordashboard"
-                  component={Coordashboard}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/dirdashboard"
-                  component={Dirdashboard}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/timetableactions"
-                  component={TimetableActions}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/mundashboard"
-                  component={Mundashboard}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/ninedashboard"
-                  component={Ninedashboard}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/tendashboard"
-                  component={Tendashboard}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/elevendashboard"
-                  component={Elevendashboard}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-profile"
-                  component={CreateProfile}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/createbooking"
-                  component={CreateBooking}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/create-mun" component={CreateMun} />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/create-ten" component={CreateTen} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-eleven"
-                  component={CreateEleven}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/create-nine"
-                  component={CreateNine}
-                />
-              </Switch>
+            <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/refdashboard"
+                component={Refdashboard}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/lecdashboard" component={Lecturer} />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/coordashboard"
+                component={Coordashboard}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/dirdashboard"
+                component={Dirdashboard}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/timetableactions"
+                component={TimetableActions}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/mundashboard"
+                component={Mundashboard}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/ninedashboard"
+                component={Ninedashboard}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/tendashboard"
+                component={Tendashboard}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/elevendashboard"
+                component={Elevendashboard}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/create-profile"
+                component={CreateProfile}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/createbooking"
+                component={CreateBooking}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/create-mun" component={CreateMun} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/create-ten" component={CreateTen} />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/create-eleven"
+                component={CreateEleven}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/create-nine" component={CreateNine} />
+            </Switch>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/edit-profile"
-                  component={EditProfile}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/edit-mun" component={EditMun} />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/edit-nine" component={EditNine} />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/edit-ten" component={EditTen} />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/edit-eleven"
-                  component={EditEleven}
-                />
-              </Switch>
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-experience"
-                  component={AddExperience}
-                />
-              </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/edit-profile"
+                component={EditProfile}
+              />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/edit-mun" component={EditMun} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/edit-nine" component={EditNine} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/edit-ten" component={EditTen} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/edit-eleven" component={EditEleven} />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/add-experience"
+                component={AddExperience}
+              />
+            </Switch>
 
-              <Switch>
-                <PrivateRoute
-                  exact
-                  path="/add-education"
-                  component={AddEducation}
-                />
-              </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/add-education"
+                component={AddEducation}
+              />
+            </Switch>
             {/* </div> */}
 
             {/* <Footer /> */}
