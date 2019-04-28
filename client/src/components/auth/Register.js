@@ -69,6 +69,7 @@ class Register extends Component {
     return (
      
       <div className="register">
+        <div className=" landing-inner">
         <div className="container">
         <div class="card mb-5 border-10">
         <Navbar />
@@ -125,8 +126,9 @@ class Register extends Component {
         </div>
        
       </div>
-     
+     </div>
       </div>
+
     );
   }
 }
