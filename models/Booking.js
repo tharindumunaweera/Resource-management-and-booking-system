@@ -11,13 +11,13 @@ const BookingSchema = new Schema({
   hallname: {
     type: String
   },
-  date: {
+  bookdate: {
     type: String
   },
-  book: {
-    type: Boolean,
-    default: false
-  },
+  //   book: {
+  //     type: Boolean,
+  //     default: false
+  //   },
 
   date: {
     type: Date,

@@ -41,6 +41,7 @@ import Elevendashboard from "./components/timetable/Elevendashboard";
 
 import CreateProfile from "./components/create-profile/CreateProfile";
 import CreateMun from "./components/create-profile/CreateMun";
+import CreateBooking from "./components/create-profile/CreateBooking";
 import CreateNine from "./components/create-profile/CreateNine";
 import CreateTen from "./components/create-profile/CreateTen";
 import CreateEleven from "./components/create-profile/CreateEleven";
@@ -94,7 +95,6 @@ const style = {
 class App extends Component {
   render() {
     return (
-      
       //<Lecturer/>
       // <AcademicStaff/>
       //<Director/>
@@ -112,7 +112,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
 
               <Switch>
-                <PrivateRoute exact path="/dashboard" component={Lecturer} />
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
               </Switch>
               <Switch>
                 <PrivateRoute
@@ -122,11 +122,7 @@ class App extends Component {
                 />
               </Switch>
               <Switch>
-                <PrivateRoute
-                  exact
-                  path="/lecdashboard"
-                  component={Lecturer}
-                />
+                <PrivateRoute exact path="/lecdashboard" component={Lecturer} />
               </Switch>
               <Switch>
                 <PrivateRoute
@@ -182,6 +178,13 @@ class App extends Component {
                   exact
                   path="/create-profile"
                   component={CreateProfile}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/createbooking"
+                  component={CreateBooking}
                 />
               </Switch>
               <Switch>
