@@ -5,6 +5,7 @@ import src1 from '../../assets/img-1.jpg';
 //import Lecturer from '../Tables/Availabilitytable';
 import TopNavCoordinator from "../topNavCoordinator";
 import SideNavCoordinator from "../sideNavCoordinator";
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile"
 
 
 
@@ -15,6 +16,7 @@ const Coordinator =  () => {
         <div className="flexible-content">
             <TopNavCoordinator/>
             <SideNavCoordinator/>
+            <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
             
 
             <main id="content" className="p-5">
