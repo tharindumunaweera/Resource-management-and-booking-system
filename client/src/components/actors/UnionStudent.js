@@ -21,15 +21,18 @@ import SideNavUnion from "../sideNavUnion";
 import Navbar from "../layout/Navbar";
 import HallSelect from "../HallSelect/HallSelect";
 import AvailableLoad from "../commonpages/AvailableLoad";
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
 
 const UnionStudent = () => {
   return (
     <React.Fragment>
       <Router>
         <div className="flexible-content">
+          <TopNavUnion />
           <SideNavUnion />
           <Route exact path="/available" component={AvailableLoad} />
           <Route exact path="/HallSelect" component={HallSelect} />
+          <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
 
           <main id="content" className="p-5" />
         </div>

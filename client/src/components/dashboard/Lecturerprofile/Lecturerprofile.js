@@ -52,7 +52,7 @@ class Lecturerprofile extends Component {
         // User is logged in but has no profile
         dashboardContent = (
           <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
+            <p className="lead text-muted"><strong>Welcome {user.name}</strong></p>
             <p>You have not yet setup a profile, please add some info</p>
             <Link to="/create-profile" className="btn btn-lg btn-info">
               Create Profile
@@ -68,7 +68,7 @@ class Lecturerprofile extends Component {
           <div className="row">
             <div class="col-sm-3" />
             <div className="col-sm-8">
-              <h1 className="display-4">Dashboard</h1>
+              
               {dashboardContent}
             </div>
           </div>

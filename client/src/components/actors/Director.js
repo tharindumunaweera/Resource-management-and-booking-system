@@ -5,6 +5,7 @@ import src1 from '../../assets/img-1.jpg';
 //import Lecturer from '../Tables/Availabilitytable';
 import TopNavDirector from "../topNavDirector";
 import SideNavDirector from "../sideNavDirector";
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
 
 
 
@@ -15,6 +16,7 @@ const Director =  () => {
         <div className="flexible-content">
             <TopNavDirector/>
             <SideNavDirector/>
+            <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
             
 
             <main id="content" className="p-5">

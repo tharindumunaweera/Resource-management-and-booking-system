@@ -7,7 +7,7 @@ import TopNavLecturer from "../topNavLecturer";
 import SideNavLecturer from "../sideNavLecturer";
 import HallSelect from "../HallSelect/HallSelect";
 import AvailableLoad from "../commonpages/AvailableLoad";
-import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile"
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
 
 const Lecturer =  () => {
   return (

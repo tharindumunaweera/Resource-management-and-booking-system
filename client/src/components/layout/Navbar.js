@@ -19,31 +19,31 @@ class Navbar extends Component {
         <li className="nav-item">
           {user.role === "Ref" ? (
             <Link className="nav-link" to="/refdashboard">
-              Ref Dashboard
+              {/* Ref Dashboard */}
             </Link>
           ) : null}
 
           {user.role === "Acadamic" ? (
             <Link className="nav-link" to="/dashboard">
-              Acadamic Dashboard
+              {/* Acadamic Dashboard */}
             </Link>
           ) : null}
 
           {user.role === "Lecturer" ? (
             <Link className="nav-link" to="/lecdashboard">
-              Lecurer Dashboard
+              {/* Lecurer Dashboard */}
             </Link>
           ) : null}
 
           {user.role === "Coordinator" ? (
             <Link className="nav-link" to="/coordashboard">
-              Coordinator Dashboard
+              {/* Coordinator Dashboard */}
             </Link>
           ) : null}
 
           {user.role === "Director" ? (
             <Link className="nav-link" to="/coordashboard">
-              Director Dashboard
+              {/* Director Dashboard */}
             </Link>
           ) : null}
 
@@ -52,7 +52,7 @@ class Navbar extends Component {
           </Link> */}
         </li>
         
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a
             href="#"
             onClick={this.onLogoutClick.bind(this)}
@@ -67,7 +67,7 @@ class Navbar extends Component {
             />{" "}
             Logout
           </a>
-        </li>
+        </li> */}
       </ul>
     );
 
