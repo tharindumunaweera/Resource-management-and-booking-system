@@ -28,7 +28,7 @@ class Login extends Component {
         this.props.history.push("/refdashboard");
       }
       if (user.role == "Acadamic") {
-        this.props.history.push("/dashboard");
+        this.props.history.push("/academicdashboard");
       }
       if (user.role == "Director") {
         this.props.history.push("/dirdashboard");
@@ -49,7 +49,7 @@ class Login extends Component {
         this.props.history.push("/refdashboard");
       }
       if (user.role == "Acadamic") {
-        this.props.history.push("/dashboard");
+        this.props.history.push("/academicdashboard");
       }
       if (user.role == "Director") {
         this.props.history.push("/dirdashboard");

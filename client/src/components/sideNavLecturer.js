@@ -3,6 +3,7 @@ import logo from "../assets/mdb-react.png";
 import { MDBListGroup, MDBListGroupItem, MDBIcon } from 'mdbreact';
 import { NavLink } from 'react-router-dom';
 import HallSelect from "./HallSelect/HallSelect";
+import Lecturer from "./dashboard/Lecdashboard";
 
 
 const TopNavigation = () => {
@@ -12,24 +13,28 @@ const TopNavigation = () => {
                 <img alt="MDB React Logo" className="img-fluid" src={logo}/>
             </a>
             <MDBListGroup className="list-group-flush">
+
                 <NavLink exact={true} to="/" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="chart-pie" className="mr-3"/>
                         Dashboard Lec
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink exact={true}   to="" activeClassName="activeClass">
+
+                <NavLink   to="/Lecturerprofile" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="far fa-user-circle" className="mr-3"/>
                         Edit Profile
                     </MDBListGroupItem>
                 </NavLink>
+
                 <NavLink to="/profile" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="far fa-clock" className="mr-3"/>
                         Time Tables
                     </MDBListGroupItem>
                 </NavLink>
+                
                 <NavLink to="/HallSelect" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="far fa-check-circle" className="mr-3"/>
