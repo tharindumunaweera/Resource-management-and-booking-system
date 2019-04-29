@@ -50,29 +50,29 @@ class TopNavLecturer extends Component {
         <li className="nav-item">
           {user.role === "Ref" ? (
             <Link className="nav-link" to="/refdashboard">
-              Ref Dashboard
+              {/* Ref Dashboard */}
             </Link>
           ) : null}
 
           {user.role === "Acadamic" ? (
             <Link className="nav-link" to="/dashboard">
-              Acadamic Dashboard
+              {/* Acadamic Dashboard */}
             </Link>
           ) : null}
           {user.role === "Lecturer" ? (
             <Link className="nav-link" to="/lecdashboard">
-              Lecurer Dashboard
+              {/* Lecurer Dashboard */}
             </Link>
           ) : null}
           {user.role === "Coordinator" ? (
             <Link className="nav-link" to="/coordashboard">
-              Coordinator Dashboard
+              {/* Coordinator Dashboard */}
             </Link>
           ) : null}
 
           {user.role === "Director" ? (
             <Link className="nav-link" to="/coordashboard">
-              Director Dashboard
+              {/* Director Dashboard */}
             </Link>
           ) : null}
           {/* <Link className="nav-link" to="/dashboard">
@@ -80,10 +80,10 @@ class TopNavLecturer extends Component {
           </Link> */}
         </li>
         <li className="nav-item">
-          <a
-            href="#"
+          <a  className="border border-light rounded mr-1 nav-link Ripple-parent"
+            href="#"  
             onClick={this.onLogoutClick.bind(this)}
-            className="nav-link"
+            // className="nav-link"
           >
             <img
               className="rounded-circle"
@@ -92,7 +92,7 @@ class TopNavLecturer extends Component {
               style={{ width: "25px", marginRight: "5 PX" }}
               title="You must have a Gravatar connected to ypur email to dispaly image"
             />{" "}
-            Logout
+             <strong>Logout</strong>
           </a>
         </li>
       </ul>
@@ -113,10 +113,11 @@ class TopNavLecturer extends Component {
       </ul>
     );
 
+
     return (
       <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
         <MDBNavbarBrand href="/">
-          <strong>Lecturer</strong>
+          <strong>Lecturer Dashboard</strong>
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={this.onClick} />
         <MDBCollapse isOpen={this.state.collapse} navbar>
@@ -135,21 +136,51 @@ class TopNavLecturer extends Component {
             >
               <i className="far fa-bell"></i>
             </a>
-           
-            <a
-                className="border border-light rounded mr-1 nav-link Ripple-parent"
-                rel="noopener noreferrer"
-                target="_blank"
+            
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#mobile-nav"
             >
-              Logout
-            </a>
+              <span className="navbar-toggler-icon" />
+            </button>
+
+            <div className="collapse navbar-collapse" id="mobile-nav">
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                  {/* <Link className="nav-link" to="/profiles">
+                    {" "}
+                    Lecture Time Table
+                  </Link> */}
+                </li>
+              </ul>
+              {isAuthenticated ? authLinks : guestLinks}
+            </div>
+
               </MDBRow>
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
+      
       </MDBNavbar>
+
+      
     );
   }
 }
 
-export default TopNavLecturer;
+TopNavLecturer.propTypes = {
+  logoutUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(
+  mapStateToProps,
+  { logoutUser, clearCurrentProfile }
+)( TopNavLecturer);
+
