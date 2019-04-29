@@ -33,7 +33,6 @@ const Academicstaff = () => {
       <Router>
         <div className="flexible-content">
           <TopNavAcademicstaff />
-          <Acadamicdashboard />
           <SideNavAcademicstaff />
           {/* <Route exact path="/HallRegister" component={HallRegister} /> */}
          
