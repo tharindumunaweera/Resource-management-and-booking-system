@@ -7,6 +7,7 @@ import TopNavLecturer from "../topNavLecturer";
 import SideNavLecturer from "../sideNavLecturer";
 import HallSelect from "../HallSelect/HallSelect";
 import AvailableLoad from "../commonpages/AvailableLoad";
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile"
 
 const Lecturer =  () => {
   return (
@@ -17,6 +18,7 @@ const Lecturer =  () => {
             <SideNavLecturer/>
             <Route exact path="/available" component={AvailableLoad} />
             <Route exact path="/HallSelect" component={HallSelect} />
+            <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
 
             <main id="content" className="p-5">
             
