@@ -41,6 +41,7 @@ import Elevendashboard from "./components/timetable/Elevendashboard";
 
 import CreateProfile from "./components/create-profile/CreateProfile";
 import CreateMun from "./components/create-profile/CreateMun";
+import CreateBooking from "./components/create-profile/CreateBooking";
 import CreateNine from "./components/create-profile/CreateNine";
 import CreateTen from "./components/create-profile/CreateTen";
 import CreateEleven from "./components/create-profile/CreateEleven";
@@ -94,7 +95,6 @@ const style = {
 class App extends Component {
   render() {
     return (
-      
       //<Lecturer/>
       // <AcademicStaff/>
       //<Director/>
@@ -108,6 +108,7 @@ class App extends Component {
             {/* <Navbar /> */}
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
+
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
 
@@ -243,6 +244,8 @@ class App extends Component {
                   component={AddEducation}
                 />
               </Switch>
+
+           
             {/* </div> */}
 
             {/* <Footer /> */}
