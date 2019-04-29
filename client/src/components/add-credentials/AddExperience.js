@@ -66,6 +66,7 @@ class AddExperience extends Component {
       <div className="add-experience">
         <div className="container">
           <div className="row">
+            <div class="col-sm-3" />
             <div className="col-md-8 m-auto">
               <Link to="/dashboard" className="btn btn-light">
                 Go Back

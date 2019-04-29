@@ -8,7 +8,6 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 
 class Login extends Component {
-  
   constructor() {
     super();
     this.state = {
@@ -84,51 +83,54 @@ class Login extends Component {
   }
 
   render() {
-    
     const { errors } = this.state;
 
     return (
-      
       <div className="login">
         <div className=" landing-inner  ">
-        <div className="container">
-        <div className="card mb-5 border-10">
-        <Navbar />
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center"> <strong> Sign In </strong> </h1>
-              <p className="lead text-center">
-                Sign In to your RMIS account
-              </p>
-              <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="Email Address"
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  error={errors.email}
-                />
+          <div className="container">
+            <div className="card mb-5 border-10">
+              <Navbar />
+              <div className="row">
+                <div className="col-md-8 m-auto">
+                  <h1 className="display-4 text-center">
+                    {" "}
+                    <strong> Sign In </strong>{" "}
+                  </h1>
+                  <p className="lead text-center">
+                    Sign In to your RMIS account
+                  </p>
+                  <form onSubmit={this.onSubmit}>
+                    <TextFieldGroup
+                      placeholder="Email Address"
+                      name="email"
+                      type="email"
+                      value={this.state.email}
+                      onChange={this.onChange}
+                      error={errors.email}
+                    />
 
-                <TextFieldGroup
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  error={errors.password}
-                />
+                    <TextFieldGroup
+                      placeholder="Password"
+                      name="password"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.onChange}
+                      error={errors.password}
+                    />
 
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
+                    <input
+                      type="submit"
+                      className="btn btn-info btn-block mt-4"
+                    />
+                  </form>
+                </div>
+              </div>
+              <Footer />
             </div>
           </div>
-          <Footer/>
         </div>
       </div>
-      </div>
-      </div>
-    
     );
   }
 }

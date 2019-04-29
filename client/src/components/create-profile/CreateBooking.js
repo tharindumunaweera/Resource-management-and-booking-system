@@ -47,11 +47,12 @@ class CreateBooking extends Component {
       <div className="add-experience">
         <div className="container">
           <div className="row">
+            <div class="col-sm-3" />
             <div className="col-md-8 m-auto">
               <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
-              <h1 className="display-4 text-center">Add Experience</h1>
+              <h1 className="display-4 text-center">Add Bokking</h1>
               <p className="lead text-center">
                 Add any job or exprience that you had past or current
               </p>

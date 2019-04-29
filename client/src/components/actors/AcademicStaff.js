@@ -25,7 +25,12 @@ import AvailableLoad from "../commonpages/AvailableLoad";
 import Hallregister from "../HallRegister/Hallregister";
 import HallList from "../HallRegister/HallList";
 import HallEdit from "../HallRegister/HallEdit";
-import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile"
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
+import Dashboard from "../dashboard/Dashboard";
+import EditProfile from "../edit-profile/EditProfile";
+import CreateBooking from "../create-profile/CreateBooking";
+import AddExperience from "../add-credentials/AddExperience";
+import AddEducation from "../add-credentials/AddEducation";
 
 const Academicstaff = () => {
   return (
@@ -33,15 +38,21 @@ const Academicstaff = () => {
       <Router>
         <div className="flexible-content">
           <TopNavAcademicstaff />
+
           <SideNavAcademicstaff />
           {/* <Route exact path="/HallRegister" component={HallRegister} /> */}
-         
+
           <Route exact path="/available" component={AvailableLoad} />
           <Route exact path="/HallSelect" component={HallSelect} />
           <Route exact path="/HallRegister" component={Hallregister} />
           <Route path="/HallEdit/:id" exact component={HallEdit} />
           <Route path="/HallList" exact component={HallList} />
           <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/editprofile" component={EditProfile} />
+          <Route exact path="/createbooking" component={CreateBooking} />
+          <Route exact path="/add-experience" component={AddExperience} />
+          <Route exact path="/add-education" component={AddEducation} />
 
           <main id="content" className="p-5" />
         </div>
