@@ -25,6 +25,7 @@ import AvailableLoad from "../commonpages/AvailableLoad";
 import Hallregister from "../HallRegister/Hallregister";
 import HallList from "../HallRegister/HallList";
 import HallEdit from "../HallRegister/HallEdit";
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile"
 
 const Academicstaff = () => {
   return (
@@ -34,24 +35,14 @@ const Academicstaff = () => {
           <TopNavAcademicstaff />
           <Acadamicdashboard />
           <SideNavAcademicstaff />
-          <TopNavAcademicstaff />
-          <SideNavAcademicstaff />
-          <Route exact path="/available" component={AvailableLoad} />
-          <Route exact path="/HallSelect" component={HallSelect} />
-          {/* <Route exact path="/Hallregister" component={Hallregister} /> */}
-          <Route path="/HallEdit/:id" exact component={HallEdit} />
-          <Route path="/HallList" exact component={HallList} />
-
-          <Route exact path="/available" component={AvailableLoad} />
-          <Route exact path="/HallSelect" component={HallSelect} />
           {/* <Route exact path="/HallRegister" component={HallRegister} /> */}
-          <TopNavAcademicstaff />
-          <SideNavAcademicstaff />
+         
           <Route exact path="/available" component={AvailableLoad} />
           <Route exact path="/HallSelect" component={HallSelect} />
           <Route exact path="/HallRegister" component={Hallregister} />
           <Route path="/HallEdit/:id" exact component={HallEdit} />
           <Route path="/HallList" exact component={HallList} />
+          <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
 
           <main id="content" className="p-5" />
         </div>

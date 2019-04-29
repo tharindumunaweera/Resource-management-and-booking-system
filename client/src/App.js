@@ -111,23 +111,23 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
 
-              <Switch>
+               {/* <Switch>
                 <PrivateRoute exact path="/dashboard" component={Lecturer} />
-              </Switch>
+              </Switch>  */}
               <Switch>
                 <PrivateRoute
                   exact
-                  path="/refdashboard"
+                  path="/academicdashboard"
                   component={AcademicStaff}
                 />
               </Switch>
-              {/* <Switch>
+              <Switch>
                 <PrivateRoute
                   exact
                   path="/lecdashboard"
                   component={Lecturer}
                 />
-              </Switch> */}
+              </Switch> 
               <Switch>
                 <PrivateRoute
                   exact

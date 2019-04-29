@@ -19,6 +19,13 @@ const TopNavigation = () => {
                         Dashboard 
                     </MDBListGroupItem>
                 </NavLink>
+
+                <NavLink   to="/Lecturerprofile" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="far fa-user-circle" className="mr-3"/>
+                        Edit Profile
+                    </MDBListGroupItem>
+                </NavLink>
                 
                 <NavLink to="/profile" activeClassName="activeClass">
                     <MDBListGroupItem>
