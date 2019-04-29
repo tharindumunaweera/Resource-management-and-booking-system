@@ -28,11 +28,13 @@ class Navbar extends Component {
               Acadamic Dashboard
             </Link>
           ) : null}
+
           {user.role === "Lecturer" ? (
             <Link className="nav-link" to="/lecdashboard">
               Lecurer Dashboard
             </Link>
           ) : null}
+
           {user.role === "Coordinator" ? (
             <Link className="nav-link" to="/coordashboard">
               Coordinator Dashboard
@@ -44,10 +46,12 @@ class Navbar extends Component {
               Director Dashboard
             </Link>
           ) : null}
+
           {/* <Link className="nav-link" to="/dashboard">
             Dashboard
           </Link> */}
         </li>
+        
         <li className="nav-item">
           <a
             href="#"
