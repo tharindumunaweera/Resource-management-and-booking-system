@@ -131,7 +131,7 @@ class App extends Component {
               />
             </Switch>
             <Switch>
-              <PrivateRoute exact path="/lecdashboard" component={Lecturer} />
+              <PrivateRoute exact path="/Lecturer" component={Lecturer} />
             </Switch>
             <Switch>
               <PrivateRoute

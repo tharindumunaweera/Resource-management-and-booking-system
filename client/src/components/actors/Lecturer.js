@@ -18,7 +18,7 @@ const Lecturer =  () => {
             <SideNavLecturer/>
             <Route exact path="/available" component={AvailableLoad} />
             <Route exact path="/HallSelect" component={HallSelect} />
-            <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
+            <Route exact path="/Lecturer" component={Lecturerprofile} />
 
             <main id="content" className="p-5">
             
