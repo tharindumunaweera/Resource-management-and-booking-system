@@ -13,12 +13,12 @@ const TopNavigation = () => {
             </a>
             <MDBListGroup className="list-group-flush">
 
-                <NavLink exact={true} to="/" activeClassName="activeClass">
+                {/* <NavLink exact={true} to="/" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="chart-pie" className="mr-3"/>
                         Dashboard 
                     </MDBListGroupItem>
-                </NavLink>
+                </NavLink> */}
 
                 <NavLink   to="/Lecturerprofile" activeClassName="activeClass">
                     <MDBListGroupItem>

@@ -26,6 +26,7 @@ import Hallregister from "../HallRegister/Hallregister";
 import HallList from "../HallRegister/HallList";
 import HallEdit from "../HallRegister/HallEdit";
 import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile"
+import CreateProfile from "../create-profile/CreateProfile";
 
 const Academicstaff = () => {
   return (
@@ -42,6 +43,7 @@ const Academicstaff = () => {
           <Route path="/HallEdit/:id" exact component={HallEdit} />
           <Route path="/HallList" exact component={HallList} />
           <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
+          <Route exact path="/CreateProfile" component={CreateProfile} />
 
           <main id="content" className="p-5" />
         </div>
