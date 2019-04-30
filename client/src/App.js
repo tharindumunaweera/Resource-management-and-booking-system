@@ -119,7 +119,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute
                 exact
-                path="/academicdashboard"
+                path="/AcademicStaff"
                 component={AcademicStaff}
               />
             </Switch>
