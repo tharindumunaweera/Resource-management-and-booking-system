@@ -32,7 +32,7 @@ const UnionStudent = () => {
           <SideNavUnion />
           <Route exact path="/available" component={AvailableLoad} />
           <Route exact path="/HallSelect" component={HallSelect} />
-          <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
+          <Route exact path="/UnionStudent" component={Lecturerprofile} />
 
           <main id="content" className="p-5" />
         </div>

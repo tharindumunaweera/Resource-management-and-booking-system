@@ -126,7 +126,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute
                 exact
-                path="/refdashboard"
+                path="/UnionStudent"
                 component={UnionStudent}
               />
             </Switch>
