@@ -119,14 +119,14 @@ class App extends Component {
             <Switch>
               <PrivateRoute
                 exact
-                path="/academicdashboard"
+                path="/AcademicStaff"
                 component={AcademicStaff}
               />
             </Switch>
             <Switch>
               <PrivateRoute
                 exact
-                path="/refdashboard"
+                path="/UnionStudent"
                 component={UnionStudent}
               />
             </Switch>
@@ -141,7 +141,7 @@ class App extends Component {
               />
             </Switch>
             <Switch>
-              <PrivateRoute exact path="/dirdashboard" component={Director} />
+              <PrivateRoute exact path="/Director" component={Director} />
             </Switch>
             <Switch>
               <PrivateRoute

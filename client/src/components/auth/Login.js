@@ -24,13 +24,13 @@ class Login extends Component {
     if (this.props.auth.isAuthenticated) {
       const { user } = this.props.auth;
       if (user.role == "Ref") {
-        this.props.history.push("/refdashboard");
+        this.props.history.push("/UnionStudent");
       }
       if (user.role == "Acadamic") {
-        this.props.history.push("/academicdashboard");
+        this.props.history.push("/AcademicStaff");
       }
       if (user.role == "Director") {
-        this.props.history.push("/dirdashboard");
+        this.props.history.push("/Director");
       }
       if (user.role == "Coordinator") {
         this.props.history.push("/Coordinator");
@@ -45,13 +45,13 @@ class Login extends Component {
     if (nextProps.auth.isAuthenticated) {
       const { user } = this.props.auth;
       if (user.role == "Ref") {
-        this.props.history.push("/refdashboard");
+        this.props.history.push("/UnionStudent");
       }
       if (user.role == "Acadamic") {
-        this.props.history.push("/academicdashboard");
+        this.props.history.push("/AcademicStaff");
       }
       if (user.role == "Director") {
-        this.props.history.push("/dirdashboard");
+        this.props.history.push("/Director");
       }
       if (user.role == "Coordinator") {
         this.props.history.push("/Coordinator");

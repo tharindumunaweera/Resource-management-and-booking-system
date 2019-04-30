@@ -116,7 +116,7 @@ class TopNavLecturer extends Component {
 
     return (
       <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
-        <MDBNavbarBrand href="/">
+        <MDBNavbarBrand href="/AcademicStaff">
           <strong>AcademicStaff Dashboard</strong>
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={this.onClick} />
