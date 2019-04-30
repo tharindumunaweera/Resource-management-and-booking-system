@@ -235,6 +235,7 @@ class CreateProfile extends Component {
       <div className="create-profile">
         <div className="container">
           <div className="row">
+            <div class="col-sm-3" />
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Edit Your Profile</h1>
 
