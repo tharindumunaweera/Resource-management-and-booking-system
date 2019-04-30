@@ -36,7 +36,7 @@ class Login extends Component {
         this.props.history.push("/coordashboard");
       }
       if (user.role == "Lecturer") {
-        this.props.history.push("/lecdashboard");
+        this.props.history.push("/Lecturer");
       }
     }
   }
@@ -57,7 +57,7 @@ class Login extends Component {
         this.props.history.push("/coordashboard");
       }
       if (user.role == "Lecturer") {
-        this.props.history.push("/lecdashboard");
+        this.props.history.push("/Lecturer");
       }
       //this.props.history.push("/dashboard");
     }
