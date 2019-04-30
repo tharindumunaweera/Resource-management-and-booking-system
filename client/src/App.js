@@ -136,7 +136,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute
                 exact
-                path="/coordashboard"
+                path="/Coordinator"
                 component={Coordinator}
               />
             </Switch>
