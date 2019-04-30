@@ -141,7 +141,7 @@ class App extends Component {
               />
             </Switch>
             <Switch>
-              <PrivateRoute exact path="/dirdashboard" component={Director} />
+              <PrivateRoute exact path="/Director" component={Director} />
             </Switch>
             <Switch>
               <PrivateRoute
