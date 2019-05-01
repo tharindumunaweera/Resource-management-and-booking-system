@@ -30,13 +30,13 @@ class Login extends Component {
         this.props.history.push("/academicdashboard");
       }
       if (user.role == "Director") {
-        this.props.history.push("/dirdashboard");
+        this.props.history.push("/Director");
       }
       if (user.role == "Coordinator") {
-        this.props.history.push("/coordashboard");
+        this.props.history.push("/Coordinator");
       }
       if (user.role == "Lecturer") {
-        this.props.history.push("/lecdashboard");
+        this.props.history.push("/Lecturer");
       }
     }
   }
@@ -45,19 +45,19 @@ class Login extends Component {
     if (nextProps.auth.isAuthenticated) {
       const { user } = this.props.auth;
       if (user.role == "Ref") {
-        this.props.history.push("/refdashboard");
+        this.props.history.push("/UnionStudent");
       }
       if (user.role == "Acadamic") {
-        this.props.history.push("/academicdashboard");
+        this.props.history.push("/AcademicStaff");
       }
       if (user.role == "Director") {
-        this.props.history.push("/dirdashboard");
+        this.props.history.push("/Director");
       }
       if (user.role == "Coordinator") {
-        this.props.history.push("/coordashboard");
+        this.props.history.push("/Coordinator");
       }
       if (user.role == "Lecturer") {
-        this.props.history.push("/lecdashboard");
+        this.props.history.push("/Lecturer");
       }
       //this.props.history.push("/dashboard");
     }

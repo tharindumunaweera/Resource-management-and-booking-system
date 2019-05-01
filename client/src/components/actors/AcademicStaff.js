@@ -47,7 +47,7 @@ const Academicstaff = () => {
           <Route exact path="/HallRegister" component={Hallregister} />
           <Route path="/HallEdit/:id" exact component={HallEdit} />
           <Route path="/HallList" exact component={HallList} />
-          <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
+          <Route exact path="/AcademicStaff" component={Lecturerprofile} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/editprofile" component={EditProfile} />
           <Route exact path="/createbooking" component={CreateBooking} />

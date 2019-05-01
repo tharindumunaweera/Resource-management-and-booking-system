@@ -16,7 +16,7 @@ const Director =  () => {
         <div className="flexible-content">
             <TopNavDirector/>
             <SideNavDirector/>
-            <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
+            <Route exact path="/Director" component={Lecturerprofile} />
             
 
             <main id="content" className="p-5">

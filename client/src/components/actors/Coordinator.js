@@ -16,7 +16,7 @@ const Coordinator =  () => {
         <div className="flexible-content">
             <TopNavCoordinator/>
             <SideNavCoordinator/>
-            <Route exact path="/Lecturerprofile" component={Lecturerprofile} />
+            <Route exact path="/Coordinator" component={Lecturerprofile} />
             
 
             <main id="content" className="p-5">
