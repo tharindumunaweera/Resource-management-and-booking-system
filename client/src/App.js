@@ -56,6 +56,7 @@ import EditEleven from "./components/edit-profile/EditEleven";
 import EditTha from "./components/edit-profile/EditTha";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
+import profiles from "./components/profiles/Profiles";
 
 import TimeTable from "./components/timetable/TimeTable";
 import CreateTimetable from "./components/timetable/CreateTimetable";
@@ -64,6 +65,7 @@ import Thadashboard from "./components/timetable/Thadashboard";
 import Template from "./components/layout/Template";
 
 import "./App.css";
+import Profiles from "./components/profiles/Profiles";
 
 //check for token
 if (localStorage.jwtToken) {
@@ -111,19 +113,27 @@ class App extends Component {
 
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-
-            {/* <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch> */}
+            <Route exact path="/profiles" component={Profiles} />
 
             <Switch>
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/refdashboard"
+                component={Refdashboard}
+              />
+            </Switch>
+
+            {/* <Switch>
               <PrivateRoute
                 exact
                 path="/academicdashboard"
                 component={Dashboard}
               />
-            </Switch>
-            <Switch>
+            </Switch> */}
+            {/* <Switch>
               <PrivateRoute
                 exact
                 path="/refdashboard"
@@ -131,7 +141,7 @@ class App extends Component {
                 path="/UnionStudent"
                 component={UnionStudent}
               />
-            </Switch>
+            </Switch> */}
             <Switch>
               <PrivateRoute exact path="/Lecturer" component={Lecturer} />
             </Switch>
