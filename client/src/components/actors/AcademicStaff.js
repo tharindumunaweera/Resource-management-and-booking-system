@@ -33,6 +33,7 @@ import AddExperience from "../add-credentials/AddExperience";
 import AddEducation from "../add-credentials/AddEducation";
 import CreateProfile from "../create-profile/CreateProfile";
 import TimetableActions from "../timetable/TimetableActions";
+// import TimeTable from "../timetable/TimeTable";
 
 const Academicstaff = () => {
   return (
@@ -57,6 +58,7 @@ const Academicstaff = () => {
           <Route exact path="/add-education" component={AddEducation} />
           <Route exact path="/CreateProfile" component={CreateProfile} />
           <Route exact path="/timetableactions" component={TimetableActions}/>
+          {/* <Route exact path="/time-table" component={TimeTable}/> */}
 
 
           <main id="content" className="p-5" />
