@@ -6,6 +6,13 @@ import src1 from '../../assets/img-1.jpg';
 import TopNavCoordinator from "../topNavCoordinator";
 import SideNavCoordinator from "../sideNavCoordinator";
 import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile"
+import Dashboard from "../dashboard/Dashboard";
+import EditProfile from "../edit-profile/EditProfile";
+import CreateBooking from "../create-profile/CreateBooking";
+import AddExperience from "../add-credentials/AddExperience";
+import AddEducation from "../add-credentials/AddEducation";
+import CreateProfile from "../create-profile/CreateProfile";
+import TimetableActions from "../timetable/TimetableActions";
 
 
 
@@ -16,7 +23,17 @@ const Coordinator =  () => {
         <div className="flexible-content">
             <TopNavCoordinator/>
             <SideNavCoordinator/>
+
             <Route exact path="/Coordinator" component={Lecturerprofile} />
+
+            {/*profile creation routs  */}
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/editprofile" component={EditProfile} />
+            <Route exact path="/createbooking" component={CreateBooking} />
+            <Route exact path="/add-experience" component={AddExperience} />
+            <Route exact path="/add-education" component={AddEducation} />
+            <Route exact path="/CreateProfile" component={CreateProfile} />
+            <Route exact path="/timetableactions" component={TimetableActions}/>
             
 
             <main id="content" className="p-5">

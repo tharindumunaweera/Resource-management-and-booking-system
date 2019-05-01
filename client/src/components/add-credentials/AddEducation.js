@@ -5,6 +5,8 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addEducation } from "../../actions/profileActions";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+
 
 class AddEducation extends Component {
   constructor(props) {
@@ -63,19 +65,23 @@ class AddEducation extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="add-education">
-        <div className="container">
-          <div className="row">
-            <div class="col-sm-3" />
-            <div className="col-md-8 m-auto">
-              <Link to="/dashboard" className="btn btn-light">
+
+
+      <React.Fragment>
+      <MDBRow>
+        <div className="col-sm-4 " />
+        <div className="col-sm-7 ">
+          <MDBCol md="12">
+          <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
-              <h1 className="display-4 text-center">Add Education</h1>
-              <p className="lead text-center">
-                Add any school,bootcamp, etc that you have attended
-              </p>
-              <small className="d block pb-3">* = required fields</small>
+            <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header black darken-0">
+                <h4 className="h4-responsive text-white">
+                  <strong>Add Education</strong>
+                </h4>
+              </MDBView>
+              <MDBCardBody>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* School"
@@ -143,10 +149,103 @@ class AddEducation extends Component {
                   className="btn btn-info btn-block mt-4"
                 />
               </form>
-            </div>
-          </div>
+
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
         </div>
-      </div>
+      </MDBRow>
+    </React.Fragment>
+
+
+
+
+
+      // <div className="add-education">
+      //   <div className="container">
+      //     <div className="row">
+      //       <div class="col-sm-3" />
+      //       <div className="col-md-8 m-auto">
+      //         <Link to="/dashboard" className="btn btn-light">
+      //           Go Back
+      //         </Link>
+      //         <h1 className="display-4 text-center">Add Education</h1>
+      //         <p className="lead text-center">
+      //           Add any school,bootcamp, etc that you have attended
+      //         </p>
+      //         <small className="d block pb-3">* = required fields</small>
+      //         <form onSubmit={this.onSubmit}>
+      //           <TextFieldGroup
+      //             placeholder="* School"
+      //             name="school"
+      //             value={this.state.school}
+      //             onChange={this.onChange}
+      //             error={errors.school}
+      //           />
+      //           <TextFieldGroup
+      //             placeholder="* Degree or certification"
+      //             name="degree"
+      //             value={this.state.degree}
+      //             onChange={this.onChange}
+      //             error={errors.degree}
+      //           />
+      //           <TextFieldGroup
+      //             placeholder="* Field of study "
+      //             name="fieldofstudy"
+      //             value={this.state.fieldofstudy}
+      //             onChange={this.onChange}
+      //             error={errors.fieldofstudy}
+      //           />
+      //           <h6>* From Date</h6>
+      //           <TextFieldGroup
+      //             name="from"
+      //             type="date"
+      //             value={this.state.from}
+      //             onChange={this.onChange}
+      //             error={errors.from}
+      //           />
+      //           <h6>To Date</h6>
+      //           <TextFieldGroup
+      //             name="to"
+      //             type="date"
+      //             value={this.state.to}
+      //             onChange={this.onChange}
+      //             error={errors.to}
+      //             disabled={this.state.disabled ? "disabled" : ""}
+      //           />
+      //           <div className="form-check mb-4">
+      //             <input
+      //               type="checkbox"
+      //               className="form-check-input"
+      //               name="current"
+      //               value={this.state.current}
+      //               checked={this.state.current}
+      //               onChange={this.onCheck}
+      //               id="current"
+      //             />
+      //             <label htmlFor="current" className="form-check-label">
+      //               Current Job
+      //             </label>
+      //           </div>
+      //           <TextAreaFieldGroup
+      //             placeholder="Programme Description"
+      //             name="description"
+      //             value={this.state.description}
+      //             onChange={this.onChange}
+      //             error={errors.description}
+      //             info="Tell us about the program that you were in"
+      //           />
+      //           <input
+      //             type="submit"
+      //             value="submit"
+      //             className="btn btn-info btn-block mt-4"
+      //           />
+      //         </form>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </div>
+
     );
   }
 }
