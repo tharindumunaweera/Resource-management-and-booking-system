@@ -19,7 +19,7 @@ const ProfileActions = () => {
           Add Education
         </Link>
         <div style={{ marginLeft: "20px" }} />
-        <Link to="/hallregister" className="btn btn-light">
+        <Link to="/timetableactions" className="btn btn-light">
           <i className="fas fa-table text-info mr-2" />
           Time Table Management
         </Link>
