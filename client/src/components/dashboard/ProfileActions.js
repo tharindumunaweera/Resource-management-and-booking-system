@@ -5,10 +5,10 @@ const ProfileActions = () => {
   return (
     <div>
       <div className="btn-group mb-4" role="group">
-        {/* <Link to="/edit-profile" className="btn btn-light">
+        <Link to="/edit-profile" className="btn btn-light">
           <i className="fas fa-user-circle text-info mr-1" /> Edit Profile
         </Link>
-        <div style={{ marginLeft: "20px" }} /> */}
+        <div style={{ marginLeft: "20px" }} />
         <Link to="/add-experience" className="btn btn-light">
           <i className="fab fa-black-tie text-info mr-1" />
           Add Experience
@@ -19,7 +19,7 @@ const ProfileActions = () => {
           Add Education
         </Link>
         <div style={{ marginLeft: "20px" }} />
-        <Link to="/hallregister" className="btn btn-light">
+        <Link to="/timetableactions" className="btn btn-light">
           <i className="fas fa-table text-info mr-2" />
           Time Table Management
         </Link>
