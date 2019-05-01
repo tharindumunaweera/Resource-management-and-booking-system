@@ -8,6 +8,7 @@ import InputGroup from "../common/InputGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { createProfile } from "../../actions/profileActions";
 import { userInfo } from "os";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
 
 class CreateProfile extends Component {
   constructor(props) {
@@ -219,17 +220,20 @@ class CreateProfile extends Component {
     }
 
     return (
-      <div className="create-profile">
-        <div className="container">
-          <div className="row">
-            <div class="col-sm-3" />
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Create Your Profile</h1>
-              <p className="lead text-center">
-                Let's get some information to make profile
-              </p>
-              <small className="d-block pb-3">* = required fields</small>
-              <form onSubmit={this.onSubmit}>
+
+      <React.Fragment>
+        <MDBRow>
+          <div className="col-sm-4 " />
+          <div className="col-sm-7 ">
+            <MDBCol md="12">
+              <MDBCard className="mt-5">
+                <MDBView className="gradient-card-header black darken-0">
+                  <h4 className="h4-responsive text-white">
+                    <strong>Create Profile</strong>
+                  </h4>
+                </MDBView>
+                <MDBCardBody>
+                <form onSubmit={this.onSubmit}>
                 {dashboardContent}
                 <input
                   type="submit"
@@ -237,10 +241,39 @@ class CreateProfile extends Component {
                   className="btn btn-info btn-block mt-4"
                 />
               </form>
-            </div>
+               </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
           </div>
-        </div>
-      </div>
+        </MDBRow>
+      </React.Fragment>
+
+
+
+
+
+      // <div className="create-profile">
+      //   <div className="container">
+      //     <div className="row">
+      //       <div className="col-sm-3" />
+      //       <div className="col-md-8 m-auto">
+      //         <h1 className="display-4 text-center">Create Your Profile</h1>
+      //         <p className="lead text-center">
+      //           Let's get some information to make profile
+      //         </p>
+      //         <small className="d-block pb-3">* = required fields</small>
+      //         <form onSubmit={this.onSubmit}>
+      //           {dashboardContent}
+      //           <input
+      //             type="submit"
+      //             value="Submit"
+      //             className="btn btn-info btn-block mt-4"
+      //           />
+      //         </form>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </div>
     );
   }
 }
