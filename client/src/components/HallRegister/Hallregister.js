@@ -1,18 +1,6 @@
 import React, { Component } from "react";
-import {
-  MDBCard,
-  MDBCol,
-  MDBRow,
-  MDBView,
-  MDBMask,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardFooter,
-  MDBBtn,
-  MDBIcon
-} from "mdbreact";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+
 import src1 from "../../assets/img-1.jpg";
 import axios from "axios";
 import SelectListGroup from "../common/SelectListGroup";

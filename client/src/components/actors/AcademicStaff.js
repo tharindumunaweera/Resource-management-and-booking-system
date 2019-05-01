@@ -22,15 +22,23 @@ import SideNavAcademicstaff from "../sideNavAcademicstaff";
 import Navbar from "../layout/Navbar";
 import HallSelect from "../HallSelect/HallSelect";
 import AvailableLoad from "../commonpages/AvailableLoad";
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
+
+{/*hall register routs  */}
 import Hallregister from "../HallRegister/Hallregister";
 import HallList from "../HallRegister/HallList";
 import HallEdit from "../HallRegister/HallEdit";
-import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
+
+
+{/*profile creation routs  */}
 import Dashboard from "../dashboard/Dashboard";
 import EditProfile from "../edit-profile/EditProfile";
 import CreateBooking from "../create-profile/CreateBooking";
 import AddExperience from "../add-credentials/AddExperience";
 import AddEducation from "../add-credentials/AddEducation";
+import CreateProfile from "../create-profile/CreateProfile";
+import TimetableActions from "../timetable/TimetableActions";
+// import TimeTable from "../timetable/TimeTable";
 
 const Academicstaff = () => {
   return (
@@ -53,6 +61,10 @@ const Academicstaff = () => {
           <Route exact path="/createbooking" component={CreateBooking} />
           <Route exact path="/add-experience" component={AddExperience} />
           <Route exact path="/add-education" component={AddEducation} />
+          <Route exact path="/CreateProfile" component={CreateProfile} />
+          <Route exact path="/timetableactions" component={TimetableActions}/>
+          {/* <Route exact path="/time-table" component={TimeTable}/> */}
+
 
           <main id="content" className="p-5" />
         </div>
