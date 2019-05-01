@@ -22,10 +22,15 @@ import SideNavAcademicstaff from "../sideNavAcademicstaff";
 import Navbar from "../layout/Navbar";
 import HallSelect from "../HallSelect/HallSelect";
 import AvailableLoad from "../commonpages/AvailableLoad";
+import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
+
+{/*hall register routs  */}
 import Hallregister from "../HallRegister/Hallregister";
 import HallList from "../HallRegister/HallList";
 import HallEdit from "../HallRegister/HallEdit";
-import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
+
+
+{/*profile creation routs  */}
 import Dashboard from "../dashboard/Dashboard";
 import EditProfile from "../edit-profile/EditProfile";
 import CreateBooking from "../create-profile/CreateBooking";
