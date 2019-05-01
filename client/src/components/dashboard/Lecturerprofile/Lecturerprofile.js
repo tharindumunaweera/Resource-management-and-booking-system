@@ -54,7 +54,7 @@ class Lecturerprofile extends Component {
           <div>
             <div className="card mb-5 border-1 text-right display-10 text-center"><strong>Welcome {user.name}</strong>
             <p>You have not yet setup a profile, please create your profile</p></div>
-            <Link to="/create-profile" className="btn btn-lg btn-info">
+            <Link to="/CreateProfile" className="btn btn-lg btn-info">
               Create Profile
             </Link>
           </div>
