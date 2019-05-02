@@ -120,130 +120,144 @@ router.post(
     //   profileFields.Fninetofour = req.body.Fninetofour.split(",");
     // if (req.body.Fninetofive)
     //   profileFields.Fninetofive = req.body.Fninetofive.split(",");
+    if (typeof req.body.Meighttonine !== "undefined") {
+      profileFields.Meighttonine = req.body.Meighttonine.split(",");
+    }
     if (typeof req.body.Mninetoten !== "undefined") {
       profileFields.Mninetoten = req.body.Mninetoten.split(",");
     }
-    if (typeof req.body.Mninetoeleven !== "undefined") {
-      profileFields.Mninetoeleven = req.body.Mninetoeleven.split(",");
+    if (typeof req.body.Mtentoeleven !== "undefined") {
+      profileFields.Mtentoeleven = req.body.Mtentoeleven.split(",");
     }
-    if (typeof req.body.Mninetotwelve !== "undefined") {
-      profileFields.Mninetotwelve = req.body.Mninetotwelve.split(",");
+    if (typeof req.body.Meleventotwelve !== "undefined") {
+      profileFields.Meleventotwelve = req.body.Meleventotwelve.split(",");
     }
-    if (typeof req.body.Mninetoone !== "undefined") {
-      profileFields.Mninetoone = req.body.Mninetoone.split(",");
+    if (typeof req.body.Mtwelvetoone !== "undefined") {
+      profileFields.Mtwelvetoone = req.body.Mtwelvetoone.split(",");
     }
-    if (typeof req.body.Mninetotwo !== "undefined") {
-      profileFields.Mninetotwo = req.body.Mninetotwo.split(",");
+    if (typeof req.body.Monetotwo !== "undefined") {
+      profileFields.Monetotwo = req.body.Monetotwo.split(",");
     }
-    if (typeof req.body.Mninetothree !== "undefined") {
-      profileFields.Mninetothree = req.body.Mninetothree.split(",");
+    if (typeof req.body.Mtwotothree !== "undefined") {
+      profileFields.Mtwotothree = req.body.Mtwotothree.split(",");
     }
-    if (typeof req.body.Mninetofour !== "undefined") {
-      profileFields.Mninetofour = req.body.Mninetofour.split(",");
+    if (typeof req.body.Mthreetofour !== "undefined") {
+      profileFields.Mthreetofour = req.body.Mthreetofour.split(",");
     }
-    if (typeof req.body.Mninetofive !== "undefined") {
-      profileFields.Mninetofive = req.body.Mninetofive.split(",");
+    if (typeof req.body.Mfourtofive !== "undefined") {
+      profileFields.Mfourtofive = req.body.Mfourtofive.split(",");
     }
 
+    if (typeof req.body.Teighttonine !== "undefined") {
+      profileFields.Teighttonine = req.body.Teighttonine.split(",");
+    }
     if (typeof req.body.Tninetoten !== "undefined") {
       profileFields.Tninetoten = req.body.Tninetoten.split(",");
     }
-    if (typeof req.body.Tninetoeleven !== "undefined") {
-      profileFields.Tninetoeleven = req.body.Tninetoeleven.split(",");
+    if (typeof req.body.Ttentoeleven !== "undefined") {
+      profileFields.Ttentoeleven = req.body.Ttentoeleven.split(",");
     }
-    if (typeof req.body.Tninetotwelve !== "undefined") {
-      profileFields.Tninetotwelve = req.body.Tninetotwelve.split(",");
+    if (typeof req.body.Televentotwelve !== "undefined") {
+      profileFields.Televentotwelve = req.body.Televentotwelve.split(",");
     }
-    if (typeof req.body.Tninetoone !== "undefined") {
-      profileFields.Tninetoone = req.body.Tninetoone.split(",");
+    if (typeof req.body.Ttwelvetoone !== "undefined") {
+      profileFields.Ttwelvetoone = req.body.Ttwelvetoone.split(",");
     }
-    if (typeof req.body.Tninetotwo !== "undefined") {
-      profileFields.Tninetotwo = req.body.Tninetotwo.split(",");
+    if (typeof req.body.Tonetotwo !== "undefined") {
+      profileFields.Tonetotwo = req.body.Tonetotwo.split(",");
     }
-    if (typeof req.body.Tninetothree !== "undefined") {
-      profileFields.Tninetothree = req.body.Tninetothree.split(",");
+    if (typeof req.body.Ttwotothree !== "undefined") {
+      profileFields.Ttwotothree = req.body.Ttwotothree.split(",");
     }
-    if (typeof req.body.Tninetofour !== "undefined") {
-      profileFields.Tninetofour = req.body.Tninetofour.split(",");
+    if (typeof req.body.Tthreetofour !== "undefined") {
+      profileFields.Tthreetofour = req.body.Tthreetofour.split(",");
     }
-    if (typeof req.body.Tninetofive !== "undefined") {
-      profileFields.Tninetofive = req.body.Tninetofive.split(",");
+    if (typeof req.body.Tfourtofive !== "undefined") {
+      profileFields.Tfourtofive = req.body.Tfourtofive.split(",");
     }
 
+    if (typeof req.body.Weighttonine !== "undefined") {
+      profileFields.Weighttonine = req.body.Weighttonine.split(",");
+    }
     if (typeof req.body.Wninetoten !== "undefined") {
       profileFields.Wninetoten = req.body.Wninetoten.split(",");
     }
-    if (typeof req.body.Wninetoeleven !== "undefined") {
-      profileFields.Wninetoeleven = req.body.Wninetoeleven.split(",");
+    if (typeof req.body.Wtentoeleven !== "undefined") {
+      profileFields.Wtentoeleven = req.body.Wtentoeleven.split(",");
     }
-    if (typeof req.body.Wninetotwelve !== "undefined") {
-      profileFields.Wninetotwelve = req.body.Wninetotwelve.split(",");
+    if (typeof req.body.Weleventotwelve !== "undefined") {
+      profileFields.Weleventotwelve = req.body.Weleventotwelve.split(",");
     }
-    if (typeof req.body.Wninetoone !== "undefined") {
-      profileFields.Wninetoone = req.body.Wninetoone.split(",");
+    if (typeof req.body.Wtwelvetoone !== "undefined") {
+      profileFields.Wtwelvetoone = req.body.Wtwelvetoone.split(",");
     }
-    if (typeof req.body.Wninetotwo !== "undefined") {
-      profileFields.Wninetotwo = req.body.Wninetotwo.split(",");
+    if (typeof req.body.Wonetotwo !== "undefined") {
+      profileFields.Wonetotwo = req.body.Wonetotwo.split(",");
     }
-    if (typeof req.body.Wninetothree !== "undefined") {
-      profileFields.Wninetothree = req.body.Wninetothree.split(",");
+    if (typeof req.body.Wtwotothree !== "undefined") {
+      profileFields.Wtwotothree = req.body.Wtwotothree.split(",");
     }
-    if (typeof req.body.Wninetofour !== "undefined") {
-      profileFields.Wninetofour = req.body.Wninetofour.split(",");
+    if (typeof req.body.Wthreetofour !== "undefined") {
+      profileFields.Wthreetofour = req.body.Wthreetofour.split(",");
     }
-    if (typeof req.body.Wninetofive !== "undefined") {
-      profileFields.Wninetofive = req.body.Wninetofive.split(",");
+    if (typeof req.body.Wfourtofive !== "undefined") {
+      profileFields.Wfourtofive = req.body.Wfourtofive.split(",");
     }
 
+    if (typeof req.body.THeighttonine !== "undefined") {
+      profileFields.THeighttonine = req.body.THeighttonine.split(",");
+    }
     if (typeof req.body.THninetoten !== "undefined") {
       profileFields.THninetoten = req.body.THninetoten.split(",");
     }
+    if (typeof req.body.THtentoeleven !== "undefined") {
+      profileFields.THtentoeleven = req.body.THtentoeleven.split(",");
+    }
+    if (typeof req.body.THeleventotwelve !== "undefined") {
+      profileFields.THeleventotwelve = req.body.THeleventotwelve.split(",");
+    }
+    if (typeof req.body.THtwelvetoone !== "undefined") {
+      profileFields.THtwelvetoone = req.body.THtwelvetoone.split(",");
+    }
+    if (typeof req.body.THonetotwo !== "undefined") {
+      profileFields.THonetotwo = req.body.THonetotwo.split(",");
+    }
+    if (typeof req.body.THtwotothree !== "undefined") {
+      profileFields.THtwotothree = req.body.THtwotothree.split(",");
+    }
+    if (typeof req.body.THthreetofour !== "undefined") {
+      profileFields.THthreetofour = req.body.THthreetofour.split(",");
+    }
+    if (typeof req.body.THfourtofive !== "undefined") {
+      profileFields.THfourtofive = req.body.THfourtofive.split(",");
+    }
 
-    if (typeof req.body.THninetoeleven !== "undefined") {
-      profileFields.THninetoeleven = req.body.THninetoeleven.split(",");
+    if (typeof req.body.Feighttonine !== "undefined") {
+      profileFields.Feighttonine = req.body.Feighttonine.split(",");
     }
-    if (typeof req.body.THninetotwelve !== "undefined") {
-      profileFields.THninetotwelve = req.body.THninetotwelve.split(",");
-    }
-    if (typeof req.body.THninetoone !== "undefined") {
-      profileFields.THninetoone = req.body.THninetoone.split(",");
-    }
-    if (typeof req.body.THninetotwo !== "undefined") {
-      profileFields.THninetotwo = req.body.THninetotwo.split(",");
-    }
-    if (typeof req.body.THninetothree !== "undefined") {
-      profileFields.THninetothree = req.body.THninetothree.split(",");
-    }
-    if (typeof req.body.THninetofour !== "undefined") {
-      profileFields.THninetofour = req.body.THninetofour.split(",");
-    }
-    if (typeof req.body.THninetofive !== "undefined") {
-      profileFields.THninetofive = req.body.THninetofive.split(",");
-    }
-
     if (typeof req.body.Fninetoten !== "undefined") {
       profileFields.Fninetoten = req.body.Fninetoten.split(",");
     }
-    if (typeof req.body.Fninetoeleven !== "undefined") {
-      profileFields.Fninetoeleven = req.body.Fninetoeleven.split(",");
+    if (typeof req.body.Ftentoeleven !== "undefined") {
+      profileFields.Ftentoeleven = req.body.Ftentoeleven.split(",");
     }
-    if (typeof req.body.Fninetotwelve !== "undefined") {
-      profileFields.Fninetotwelve = req.body.Fninetotwelve.split(",");
+    if (typeof req.body.Feleventotwelve !== "undefined") {
+      profileFields.Feleventotwelve = req.body.Feleventotwelve.split(",");
     }
-    if (typeof req.body.Fninetoone !== "undefined") {
-      profileFields.Fninetoone = req.body.Fninetoone.split(",");
+    if (typeof req.body.Ftwelvetoone !== "undefined") {
+      profileFields.Ftwelvetoone = req.body.Ftwelvetoone.split(",");
     }
-    if (typeof req.body.Fninetotwo !== "undefined") {
-      profileFields.Fninetotwo = req.body.Fninetotwo.split(",");
+    if (typeof req.body.Fonetotwo !== "undefined") {
+      profileFields.Fonetotwo = req.body.Fonetotwo.split(",");
     }
-    if (typeof req.body.Fninetothree !== "undefined") {
-      profileFields.Fninetothree = req.body.Fninetothree.split(",");
+    if (typeof req.body.Ftwotothree !== "undefined") {
+      profileFields.Ftwotothree = req.body.Ftwotothree.split(",");
     }
-    if (typeof req.body.Fninetofour !== "undefined") {
-      profileFields.Fninetofour = req.body.Fninetofour.split(",");
+    if (typeof req.body.Fthreetofour !== "undefined") {
+      profileFields.Fthreetofour = req.body.Fthreetofour.split(",");
     }
-    if (typeof req.body.Fninetofive !== "undefined") {
-      profileFields.Fninetofive = req.body.Fninetofive.split(",");
+    if (typeof req.body.Ffourtofive !== "undefined") {
+      profileFields.Ffourtofive = req.body.Ffourtofive.split(",");
     }
 
     // Skills - Split into array

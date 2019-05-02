@@ -7,128 +7,141 @@ const NineSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "users"
   },
+  Meighttonine: {
+    type: [String]
+  },
   Mninetoten: {
     type: [String]
   },
-  Mninetoeleven: {
+  Mtentoeleven: {
     type: [String]
   },
-  Mninetotwelve: {
+  Meleventotwelve: {
     type: [String]
   },
-  Mninetoone: {
+  Mtwelvetoone: {
     type: [String]
   },
-  Mninetotwo: {
+  Monetotwo: {
     type: [String]
   },
-  Mninetothree: {
+  Mtwotothree: {
     type: [String]
   },
-  Mninetofour: {
+  Mthreetofour: {
     type: [String]
   },
-  Mninetofive: {
+  Mfourtofive: {
     type: [String]
   },
 
+  Teighttonine: {
+    type: [String]
+  },
   Tninetoten: {
     type: [String]
   },
-  Tninetoeleven: {
+  Ttentoeleven: {
     type: [String]
   },
-  Tninetotwelve: {
+  Televentotwelve: {
     type: [String]
   },
-  Tninetoone: {
+  Ttwelvetoone: {
     type: [String]
   },
-  Tninetotwo: {
+  Tonetotwo: {
     type: [String]
   },
-  Tninetothree: {
+  Ttwotothree: {
     type: [String]
   },
-  Tninetofour: {
+  Tthreetofour: {
     type: [String]
   },
-  Tninetofive: {
+  Tfourtofive: {
+    type: [String]
+  },
+
+  Weighttonine: {
     type: [String]
   },
   Wninetoten: {
     type: [String]
   },
-
-  Wninetoeleven: {
+  Wtentoeleven: {
     type: [String]
   },
-  Wninetotwelve: {
+  Weleventotwelve: {
     type: [String]
   },
-  Wninetoone: {
+  Wtwelvetoone: {
     type: [String]
   },
-  Wninetotwo: {
+  Wonetotwo: {
     type: [String]
   },
-  Wninetothree: {
+  Wtwotothree: {
     type: [String]
   },
-  Wninetofour: {
+  Wthreetofour: {
     type: [String]
   },
-  Wninetofive: {
+  Wfourtofive: {
     type: [String]
   },
-
+  THeighttonine: {
+    type: [String]
+  },
   THninetoten: {
     type: [String]
   },
-  THninetoeleven: {
+  THtentoeleven: {
     type: [String]
   },
-  THninetotwelve: {
+  THeleventotwelve: {
     type: [String]
   },
-  THninetoone: {
+  THtwelvetoone: {
     type: [String]
   },
-  THninetotwo: {
+  THonetotwo: {
     type: [String]
   },
-  THninetothree: {
+  THtwotothree: {
     type: [String]
   },
-  THninetofour: {
+  THthreetofour: {
     type: [String]
   },
-  THninetofive: {
+  THfourtofive: {
     type: [String]
   },
-
+  Feighttonine: {
+    type: [String]
+  },
   Fninetoten: {
     type: [String]
   },
-  Fninetoeleven: {
+  Ftentoeleven: {
     type: [String]
   },
-  Fninetotwelve: {
+  Feleventotwelve: {
     type: [String]
   },
-  Fninetoone: {
+  Ftwelvetoone: {
     type: [String]
   },
-  Fninetotwo: {
+  Fonetotwo: {
     type: [String]
   },
-  Fninetothree: {
+  Ftwotothree: {
     type: [String]
   },
-  Fninetofour: {
+  Fthreetofour: {
     type: [String]
   },
-  Fninetofive: {
+  Ffourtofive: {
     type: [String]
   }
 });
