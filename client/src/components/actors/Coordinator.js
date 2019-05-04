@@ -28,12 +28,12 @@ const Coordinator =  () => {
 
             {/*profile creation routs  */}
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/editprofile" component={EditProfile} />
-            <Route exact path="/createbooking" component={CreateBooking} />
-            <Route exact path="/add-experience" component={AddExperience} />
-            <Route exact path="/add-education" component={AddEducation} />
-            <Route exact path="/CreateProfile" component={CreateProfile} />
-            <Route exact path="/timetableactions" component={TimetableActions}/>
+          <Route exact path="/editprofile" component={EditProfile} />
+          <Route exact path="/createbooking" component={CreateBooking} />
+          <Route exact path="/add-experience" component={AddExperience} />
+          <Route exact path="/add-education" component={AddEducation} />
+          <Route exact path="/CreateProfile" component={CreateProfile} />
+          <Route exact path="/timetableactions" component={TimetableActions}/>
             
 
             <main id="content" className="p-5">

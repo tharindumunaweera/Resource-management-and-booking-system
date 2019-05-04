@@ -228,6 +228,7 @@ class AvailableLoad extends Component {
               <MDBView className="gradient-card-header black">
                 <h4 className="h4-responsive text-white">
                 <strong> Make Booking </strong>
+                
                 </h4>
               </MDBView>
               <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">

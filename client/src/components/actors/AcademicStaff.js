@@ -23,14 +23,10 @@ import Navbar from "../layout/Navbar";
 import HallSelect from "../HallSelect/HallSelect";
 import AvailableLoad from "../commonpages/AvailableLoad";
 import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
-
-{/*hall register routs  */}
 import Hallregister from "../HallRegister/Hallregister";
 import HallList from "../HallRegister/HallList";
 import HallEdit from "../HallRegister/HallEdit";
 
-
-{/*profile creation routs  */}
 import Dashboard from "../dashboard/Dashboard";
 import EditProfile from "../edit-profile/EditProfile";
 import CreateBooking from "../create-profile/CreateBooking";
@@ -56,6 +52,7 @@ const Academicstaff = () => {
           <Route path="/HallEdit/:id" exact component={HallEdit} />
           <Route path="/HallList" exact component={HallList} />
           <Route exact path="/AcademicStaff" component={Lecturerprofile} />
+
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/editprofile" component={EditProfile} />
           <Route exact path="/createbooking" component={CreateBooking} />
