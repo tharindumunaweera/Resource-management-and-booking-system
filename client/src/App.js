@@ -45,6 +45,7 @@ import CreateBooking from "./components/create-profile/CreateBooking";
 import CreateNine from "./components/create-profile/CreateNine";
 import CreateTen from "./components/create-profile/CreateTen";
 import CreateEleven from "./components/create-profile/CreateEleven";
+import Example from "./components/create-profile/Example";
 
 import CreateTha from "./components/create-profile/CreateTha";
 import EditProfile from "./components/edit-profile/EditProfile";
@@ -223,6 +224,10 @@ class App extends Component {
                 path="/edit-profile"
                 component={EditProfile}
               />
+            </Switch>
+
+            <Switch>
+              <PrivateRoute exact path="/example" component={Example} />
             </Switch>
             <Switch>
               <PrivateRoute exact path="/edit-mun" component={EditMun} />

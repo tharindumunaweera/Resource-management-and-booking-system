@@ -28,6 +28,10 @@ const ProfileActions = () => {
           <i className="fas fa-table text-info mr-2" />
           Booking
         </Link>
+        <Link to="/example" className="btn btn-light">
+          <i className="fas fa-table text-info mr-2" />
+          Example
+        </Link>
       </div>
     </div>
   );
