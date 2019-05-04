@@ -57,22 +57,187 @@ class Example extends Component {
   // }
 
   render() {
-    let socialInputs;
+    let eightInputs;
+    let nineInputs;
+    let tenInputs;
+    let elevenInputs;
+    let twelveInputs;
+    let oneInputs;
+    let twoInputs;
+    let threeInputs;
+    let fourInputs;
+    let fiveInputs;
+
     const { nine } = this.props.nine;
 
+    // if (this.state.dayofweek == "Monday") {
+    //   socialInputs = (
+    //     <div>
+    //       {nine.Meighttonine.slice(0, 4).map((skill, index) => (
+    //         <span key={index} className="list-group-item">
+    //           {/* <i className="fa fa-check pr-1" /> */}
+    //           {skill === this.state.hallname ? "Avaialable" : null}
+    //         </span>
+    //       ))}
+    //     </div>
+    //   );
+    // }
+
     if (this.state.dayofweek == "Monday") {
-      socialInputs = (
-        <div>
-          <ul className="list-group">
-            {nine.Meighttonine.slice(0, 4).map((skill, index) => (
-              <li key={index} className="list-group-item">
-                {/* <i className="fa fa-check pr-1" /> */}
-                {skill === this.state.hallname ? "Avaialable" : null}
-              </li>
-            ))}
-          </ul>
-        </div>
-      );
+      let i;
+
+      for (i = 0; i <= nine.Meighttonine.length; i++) {
+        if (nine.Meighttonine[i] == this.state.hallname) {
+          eightInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">08.00 a.m-09.00 a.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      for (i = 0; i <= nine.Mninetoten.length; i++) {
+        if (nine.Mninetoten[i] == this.state.hallname) {
+          nineInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">09.00 a.m-10.00 a.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      for (i = 0; i <= nine.Mtentoeleven.length; i++) {
+        if (nine.Mtentoeleven[i] == this.state.hallname) {
+          tenInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">10.00 a.m-11.00 a.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      for (i = 0; i <= nine.Meleventotwelve.length; i++) {
+        if (nine.Meleventotwelve[i] == this.state.hallname) {
+          elevenInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">11.00 a.m-12.00 p.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      for (i = 0; i <= nine.Mtwelvetoone.length; i++) {
+        if (nine.Mtwelvetoone[i] == this.state.hallname) {
+          twelveInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">12.00 p.m-01.00 p.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      for (i = 0; i <= nine.Monetotwo.length; i++) {
+        if (nine.Monetotwo[i] == this.state.hallname) {
+          oneInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">01.00 p.m-02.00 p.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      for (i = 0; i <= nine.Mtwotothree.length; i++) {
+        if (nine.Mtwotothree[i] == this.state.hallname) {
+          twoInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">02.00 p.m-03.00 p.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      for (i = 0; i <= nine.Mthreetofour.length; i++) {
+        if (nine.Mthreetofour[i] == this.state.hallname) {
+          threeInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">03.00 p.m-04.00 p.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
+
+      for (i = 0; i <= nine.Mfourtofive.length; i++) {
+        if (nine.Mfourtofive[i] == this.state.hallname) {
+          fourInputs = (
+            <div>
+              <table class="table table-light table-striped">
+                <tbody>
+                  <tr>
+                    <th scope="row">04.00 p.m-05.00 p.m</th>
+                    <td>Avaialable</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+      }
     }
 
     const options = [
@@ -118,7 +283,14 @@ class Example extends Component {
                   </button>
                   <span className="text-muted">Optional</span>
                 </div> */}
-                {socialInputs}
+                {eightInputs}
+                {nineInputs}
+                {tenInputs}
+                {elevenInputs}
+                {twelveInputs}
+                {oneInputs}
+                {twoInputs}
+                {threeInputs}
                 <input
                   type="submit"
                   value="Submit"
