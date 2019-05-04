@@ -36,15 +36,23 @@ import CreateProfile from "../create-profile/CreateProfile";
 import TimetableActions from "../timetable/TimetableActions";
 // import TimeTable from "../timetable/TimeTable";
 
-const Academicstaff = () => {
-  return (
-    <React.Fragment>
-      <Router>
-        <div className="flexible-content">
-          <TopNavAcademicstaff />
+//           <SideNavAcademicstaff />
+//           {/* <Route exact path="/HallRegister" component={HallRegister} /> */}
 
-          <SideNavAcademicstaff />
-          {/* <Route exact path="/HallRegister" component={HallRegister} /> */}
+//           <Route exact path="/available" component={AvailableLoad} />
+//           <Route exact path="/HallSelect" component={HallSelect} />
+//           <Route exact path="/HallRegister" component={Hallregister} />
+//           <Route path="/HallEdit/:id" exact component={HallEdit} />
+//           <Route path="/HallList" exact component={HallList} />
+//           <Route exact path="/AcademicStaff" component={Lecturerprofile} />
+//           <Route exact path="/dashboard" component={Dashboard} />
+//           <Route exact path="/editprofile" component={EditProfile} />
+//           <Route exact path="/createbooking" component={CreateBooking} />
+//           <Route exact path="/add-experience" component={AddExperience} />
+//           <Route exact path="/add-education" component={AddEducation} />
+//           <Route exact path="/CreateProfile" component={CreateProfile} />
+//           <Route exact path="/timetableactions" component={TimetableActions}/>
+//           {/* <Route exact path="/time-table" component={TimeTable}/> */}
 
           <Route exact path="/available" component={AvailableLoad} />
           <Route exact path="/HallSelect" component={HallSelect} />
@@ -61,13 +69,5 @@ const Academicstaff = () => {
           <Route exact path="/CreateProfile" component={CreateProfile} />
           <Route exact path="/timetableactions" component={TimetableActions}/>
           {/* <Route exact path="/time-table" component={TimeTable}/> */}
-
-
-          <main id="content" className="p-5" />
-        </div>
-      </Router>
-    </React.Fragment>
-  );
-};
-
-export default Academicstaff;
+          
+          export default Academicstaff;

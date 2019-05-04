@@ -45,6 +45,7 @@ import CreateBooking from "./components/create-profile/CreateBooking";
 import CreateNine from "./components/create-profile/CreateNine";
 import CreateTen from "./components/create-profile/CreateTen";
 import CreateEleven from "./components/create-profile/CreateEleven";
+import Example from "./components/create-profile/Example";
 
 import CreateTha from "./components/create-profile/CreateTha";
 import EditProfile from "./components/edit-profile/EditProfile";
@@ -56,6 +57,7 @@ import EditEleven from "./components/edit-profile/EditEleven";
 import EditTha from "./components/edit-profile/EditTha";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
+import profiles from "./components/profiles/Profiles";
 
 import TimeTable from "./components/timetable/TimeTable";
 import CreateTimetable from "./components/timetable/CreateTimetable";
@@ -64,6 +66,7 @@ import Thadashboard from "./components/timetable/Thadashboard";
 import Template from "./components/layout/Template";
 
 import "./App.css";
+import Profiles from "./components/profiles/Profiles";
 
 //check for token
 if (localStorage.jwtToken) {
@@ -105,40 +108,46 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            {/* <Navbar /> */}
+            <Navbar />
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
 
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
-
-             <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>  
+            <Route exact path="/profiles" component={Profiles} />
 
             <Switch>
-              <PrivateRoute
-                exact
-                path="/AcademicStaff"
-                component={AcademicStaff}
-              />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
             <Switch>
               <PrivateRoute
                 exact
+                path="/refdashboard"
+                component={Refdashboard}
+              />
+            </Switch>
+
+            {/* <Switch>
+              <PrivateRoute
+                exact
+                path="/academicdashboard"
+                component={Dashboard}
+              />
+            </Switch> */}
+            {/* <Switch>
+              <PrivateRoute
+                exact
+                path="/refdashboard"
+                component={Refdashboard}
                 path="/UnionStudent"
                 component={UnionStudent}
               />
-            </Switch>
+            </Switch> */}
             <Switch>
               <PrivateRoute exact path="/Lecturer" component={Lecturer} />
             </Switch>
             <Switch>
-              <PrivateRoute
-                exact
-                path="/Coordinator"
-                component={Coordinator}
-              />
+              <PrivateRoute exact path="/Coordinator" component={Coordinator} />
             </Switch>
             <Switch>
               <PrivateRoute exact path="/Director" component={Director} />
@@ -186,6 +195,13 @@ class App extends Component {
               />
             </Switch>
             <Switch>
+              <PrivateRoute
+                exact
+                path="/createbooking"
+                component={CreateBooking}
+              />
+            </Switch>
+            <Switch>
               <PrivateRoute exact path="/create-mun" component={CreateMun} />
             </Switch>
             <Switch>
@@ -208,6 +224,10 @@ class App extends Component {
                 path="/edit-profile"
                 component={EditProfile}
               />
+            </Switch>
+
+            <Switch>
+              <PrivateRoute exact path="/example" component={Example} />
             </Switch>
             <Switch>
               <PrivateRoute exact path="/edit-mun" component={EditMun} />

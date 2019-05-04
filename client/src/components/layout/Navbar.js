@@ -19,13 +19,13 @@ class Navbar extends Component {
         <li className="nav-item">
           {user.role === "Ref" ? (
             <Link className="nav-link" to="/refdashboard">
-              {/* Ref Dashboard */}
+              Ref Dashboard
             </Link>
           ) : null}
 
           {user.role === "Acadamic" ? (
             <Link className="nav-link" to="/dashboard">
-              {/* Acadamic Dashboard */}
+              Acadamic Dashboard
             </Link>
           ) : null}
 
@@ -51,8 +51,8 @@ class Navbar extends Component {
             Dashboard
           </Link> */}
         </li>
-        
-        {/* <li className="nav-item">
+
+        <li className="nav-item">
           <a
             href="#"
             onClick={this.onLogoutClick.bind(this)}
@@ -67,7 +67,7 @@ class Navbar extends Component {
             />{" "}
             Logout
           </a>
-        </li> */}
+        </li>
       </ul>
     );
 
@@ -93,7 +93,7 @@ class Navbar extends Component {
           <div className="container">
             <div className="col-sm-1" />
             <Link className="navbar-brand" to="/">
-             <strong> RMIS </strong>
+              <strong> RMIS </strong>
             </Link>
             <button
               className="navbar-toggler"
@@ -107,10 +107,10 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  {/* <Link className="nav-link" to="/profiles">
+                  <Link className="nav-link" to="/profiles">
                     {" "}
-                    Lecture Time Table
-                  </Link> */}
+                    Profiles
+                  </Link>
                 </li>
               </ul>
               {isAuthenticated ? authLinks : guestLinks}
