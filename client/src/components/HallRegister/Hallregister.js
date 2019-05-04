@@ -184,6 +184,8 @@ class HallRegister extends Component {
                       <label className="col-sm-2 col-form-label">
                         Hall Name
                       </label>
+                     
+                      
                       <div className="col-sm-10">
                         <TextFieldGroup
                           placeholder="Hall Name"

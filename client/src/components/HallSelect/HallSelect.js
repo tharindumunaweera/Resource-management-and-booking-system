@@ -1,18 +1,5 @@
 import React, { Component } from "react";
-import {
-  MDBCard,
-  MDBCol,
-  MDBRow,
-  MDBView,
-  MDBMask,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardFooter,
-  MDBBtn,
-  MDBIcon
-} from "mdbreact";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
 
 import Calender from "../Calender/Calender";
 
@@ -52,6 +39,7 @@ class HallSelect extends Component {
             <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black darken-2">
                 <h4 className="h4-responsive text-white">Available Seats</h4>
+                
               </MDBView>
               <MDBCardBody
                 style={{ width: "100%", height: "400px" }}
