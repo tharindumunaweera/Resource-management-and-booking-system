@@ -32,29 +32,29 @@ class Example extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  componentWillReceiveProps(nextProps) {
-    let socialInputs;
-    if (nextProps.nine.nine) {
-      const nine = nextProps.nine.nine;
+  // componentWillReceiveProps(nextProps) {
+  //   let socialInputs;
+  //   if (nextProps.nine.nine) {
+  //     const nine = nextProps.nine.nine;
 
-      // const MninetotenCSV = nine.Mninetoten.join(",");
-      const MeighttonineCSV = nine.Meighttonine.join(",");
-      if (this.state.dayofweek == "Monday") {
-        socialInputs = (
-          <div>
-            <ul className="list-group">
-              {nine.Meighttonine.slice(0, 4).map((skill, index) => (
-                <li key={index} className="list-group-item">
-                  {/* <i className="fa fa-check pr-1" /> */}
-                  {skill === "E001" ? skill : null}
-                </li>
-              ))}
-            </ul>
-          </div>
-        );
-      }
-    }
-  }
+  //     // const MninetotenCSV = nine.Mninetoten.join(",");
+  //     const MeighttonineCSV = nine.Meighttonine.join(",");
+  //     if (this.state.dayofweek == "Monday") {
+  //       socialInputs = (
+  //         <div>
+  //           <ul className="list-group">
+  //             {nine.Meighttonine.slice(0, 4).map((skill, index) => (
+  //               <li key={index} className="list-group-item">
+  //                 {/* <i className="fa fa-check pr-1" /> */}
+  //                 {skill === "E001" ? skill : null}
+  //               </li>
+  //             ))}
+  //           </ul>
+  //         </div>
+  //       );
+  //     }
+  //   }
+  // }
 
   render() {
     let socialInputs;
@@ -67,7 +67,7 @@ class Example extends Component {
             {nine.Meighttonine.slice(0, 4).map((skill, index) => (
               <li key={index} className="list-group-item">
                 {/* <i className="fa fa-check pr-1" /> */}
-                {skill === this.state.hallname ? skill : "unavailable"}
+                {skill === this.state.hallname ? "Avaialable" : null}
               </li>
             ))}
           </ul>
