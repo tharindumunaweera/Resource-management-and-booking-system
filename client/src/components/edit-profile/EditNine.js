@@ -4,6 +4,8 @@ import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
 import { createNine, getCurrentNine } from "../../actions/nineActions";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+
 
 class CreateNine extends Component {
   constructor(props) {
@@ -247,12 +249,20 @@ class CreateNine extends Component {
     // Select options for status
 
     return (
+      <MDBRow>
+      <div className="col-sm-3 " />
+      <div className="col-sm-9">
+        <MDBCol md="20">
+          <MDBCard className="mt-5">
+          <MDBView className="gradient-card-header black darken-0">
+                  <h4 className="h4-responsive text-white">
+                    <strong>Hall Registration Form</strong>
+                  </h4>
+                </MDBView>
       <div className="create-nine">
-        <h1 className="display-4 text-center">Create Your Profile</h1>
-        <p className="lead text-center">
-          Let's get some information to make profile
-        </p>
-        <small className="d-block pb-3">* = required fields</small>
+       
+       
+      
         <form onSubmit={this.onSubmit}>
           <table class="table table-dark table-striped">
             <thead>
@@ -709,6 +719,11 @@ class CreateNine extends Component {
           />
         </form>
       </div>
+    
+      </MDBCard>
+            </MDBCol>
+          </div>
+        </MDBRow>
     );
   }
 }

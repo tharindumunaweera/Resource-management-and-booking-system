@@ -24,6 +24,8 @@ import TimetableActions from "../timetable/TimetableActions";
 import ProfileActions from "../dashboard/ProfileActions";
 import Example from "../create-profile/Example";
 import CreateNine from "../create-profile/CreateNine";
+import Ninedashboard from "../timetable/Ninedashboard";
+import EditNine from "../edit-profile/EditNine";
 
 // import TimeTable from "../timetable/TimeTable";
 // import React from "react";
@@ -94,6 +96,10 @@ import CreateNine from "../create-profile/CreateNine";
           <Route exact path="/ProfileActions" component={ProfileActions}/>
           <Route exact path="/Example" component={Example}/>
           <Route exact path="/CreateNine" component={CreateNine}/>
+          <Route exact path="/Ninedashboard" component={ Ninedashboard}/>
+          <Route exact path="/EditNine" component={ EditNine}/>
+
+          
 
           {/* <Route exact path="/time-table" component={TimeTable}/> */}
            <main id="content" className="p-5" />
