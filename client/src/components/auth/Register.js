@@ -72,10 +72,10 @@ class Register extends Component {
      
       <div className="register  ">
         <div className=" landing-inner">
-        <div className="container">
+        <div className="  container">
         <div className="card mb-5 border-10">
         <Navbar />
-          <div className="row">
+          <div className=" row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center"><strong>Sign Up</strong></h1>
               <p className="lead text-center">Create Your RMIS Account</p>
