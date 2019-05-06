@@ -27,47 +27,7 @@ import CreateNine from "../create-profile/CreateNine";
 import Ninedashboard from "../timetable/Ninedashboard";
 import EditNine from "../edit-profile/EditNine";
 
-// import TimeTable from "../timetable/TimeTable";
-// import React from "react";
-// import Acadamicdashboard from "../dashboard/Dashboard";
-// import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-// import {
-//   MDBCard,
-//   MDBCol,
-//   MDBRow,
-//   MDBView,
-//   MDBMask,
-//   MDBCardImage,
-//   MDBCardBody,
-//   MDBCardTitle,
-//   MDBCardText,
-//   MDBCardFooter,
-//   MDBBtn,
-//   MDBIcon
-// } from "mdbreact";
-// import src1 from "../../assets/img-1.jpg";
-// //import Lecturer from '../Tables/Availabilitytable';
-// import TopNavAcademicstaff from "../topNavAcademicstaff";
-// import SideNavAcademicstaff from "../sideNavAcademicstaff";
-// import Navbar from "../layout/Navbar";
-// import HallSelect from "../HallSelect/HallSelect";
-// import AvailableLoad from "../commonpages/AvailableLoad";
-// import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
 
-// {/*hall register routs  */}
-// import Hallregister from "../HallRegister/Hallregister";
-// import HallList from "../HallRegister/HallList";
-// import HallEdit from "../HallRegister/HallEdit";
-
-// {/*profile creation routs  */}
-// import Dashboard from "../dashboard/Dashboard";
-// import EditProfile from "../edit-profile/EditProfile";
-// import CreateBooking from "../create-profile/CreateBooking";
-// import AddExperience from "../add-credentials/AddExperience";
-// import AddEducation from "../add-credentials/AddEducation";
-// import CreateProfile from "../create-profile/CreateProfile";
-// import TimetableActions from "../timetable/TimetableActions";
-// // import TimeTable from "../timetable/TimeTable";
 
  const Academicstaff = () => {
    return (
@@ -98,6 +58,7 @@ import EditNine from "../edit-profile/EditNine";
           <Route exact path="/CreateNine" component={CreateNine}/>
           <Route exact path="/Ninedashboard" component={ Ninedashboard}/>
           <Route exact path="/EditNine" component={ EditNine}/>
+         
 
           
 
