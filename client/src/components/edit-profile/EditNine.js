@@ -256,7 +256,7 @@ class CreateNine extends Component {
           <MDBCard className="mt-5">
           <MDBView className="gradient-card-header black darken-0">
                   <h4 className="h4-responsive text-white">
-                    <strong>Hall Registration Form</strong>
+                    <strong>Time Table</strong>
                   </h4>
                 </MDBView>
       <div className="create-nine">
