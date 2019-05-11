@@ -70,47 +70,6 @@ class CreateProfile extends Component {
   render() {
     const { errors, displaySocialInputs } = this.state;
     const { user } = this.props.auth;
-
-    // if (displaySocialInputs) {
-    //   socialInputs = (
-    //     <div>
-    //       <InputGroup
-    //         placeholder="Twitter profile URL"
-    //         name="twitter"
-    //         icon="fab fa-twitter"
-    //         value={this.state.twitter}
-    //         onChange={this.onChange}
-    //         error={errors.twitter}
-    //       />
-    //       <InputGroup
-    //         placeholder="Facebook profile URL"
-    //         name="facebook"
-    //         icon="fab fa-facebook"
-    //         value={this.state.facebook}
-    //         onChange={this.onChange}
-    //         error={errors.facebook}
-    //       />
-    //       <InputGroup
-    //         placeholder="Linkedin profile URL"
-    //         name="linkedin"
-    //         icon="fab fa-linkedin"
-    //         value={this.state.linkedin}
-    //         onChange={this.onChange}
-    //         error={errors.linkedin}
-    //       />
-
-    //       <InputGroup
-    //         placeholder="Instagram profile URL"
-    //         name="facebook"
-    //         icon="fab fa-instagram"
-    //         value={this.state.instagram}
-    //         onChange={this.onChange}
-    //         error={errors.instagram}
-    //       />
-    //     </div>
-    //   );
-    // }
-
     // Select options for status
     const options = [
       { label: "* Select Proffessional Status", value: 0 },
