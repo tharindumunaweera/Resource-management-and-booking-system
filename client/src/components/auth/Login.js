@@ -104,7 +104,7 @@ class Login extends Component {
                     <strong> Sign In </strong>{" "}
                   </h1>
                   <p className="lead text-center">
-                    Sign In to your RMIS account
+                   <strong> Sign In To Your RMIS Account</strong>
                   </p>
                   <form onSubmit={this.onSubmit}>
                     <TextFieldGroup
