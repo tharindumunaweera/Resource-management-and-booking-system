@@ -14,6 +14,7 @@ import AddEducation from "../add-credentials/AddEducation";
 import CreateProfile from "../create-profile/CreateProfile";
 import TimetableActions from "../timetable/TimetableActions";
 import ViewHallList from "../HallRegister/ViewHallList";
+import ViewNine from "../edit-profile/ViewNine";
 
 
 const Director =  () => {
@@ -34,7 +35,7 @@ const Director =  () => {
           <Route exact path="/CreateProfile" component={CreateProfile} />
           <Route exact path="/timetableactions" component={TimetableActions}/>
           <Route exact path="/ViewHallList" component={ViewHallList}/>
-            
+          <Route exact path="/ViewNine" component={ ViewNine }/>
 
             <main id="content" className="p-5">
             
