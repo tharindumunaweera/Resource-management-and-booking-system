@@ -26,6 +26,7 @@ import Example from "../create-profile/Example";
 import CreateNine from "../create-profile/CreateNine";
 import Ninedashboard from "../timetable/Ninedashboard";
 import EditNine from "../edit-profile/EditNine";
+import ViewNine from "../edit-profile/ViewNine";
 
 
 
@@ -58,7 +59,7 @@ import EditNine from "../edit-profile/EditNine";
           <Route exact path="/CreateNine" component={CreateNine}/>
           <Route exact path="/Ninedashboard" component={ Ninedashboard}/>
           <Route exact path="/EditNine" component={ EditNine}/>
-         
+          <Route exact path="/ViewNine" component={ ViewNine }/>
 
           
 

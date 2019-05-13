@@ -24,7 +24,7 @@ class Login extends Component {
     if (this.props.auth.isAuthenticated) {
       const { user } = this.props.auth;
       if (user.role == "Ref") {
-        this.props.history.push("/refdashboard");
+        this.props.history.push("/UnionStudent");
       }
       // if (user.role == "Acadamic") {
       //   this.props.history.push("/dashboard");
@@ -48,7 +48,7 @@ class Login extends Component {
     if (nextProps.auth.isAuthenticated) {
       const { user } = this.props.auth;
       if (user.role == "Ref") {
-        this.props.history.push("/refdashboard");
+        this.props.history.push("/UnionStudent");
       }
       // if (user.role == "Acadamic") {
       //   this.props.history.push("/dashboard");
