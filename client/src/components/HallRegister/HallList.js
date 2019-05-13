@@ -63,7 +63,7 @@ export default class HallList extends Component{
        <MDBRow>
           <div className="col-sm-4 " />
           <div className="col-sm-7 ">
-            <MDBCol md="30">
+            <MDBCol md="32">
               <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black darken-0">
                   <h4 className="h4-responsive text-white">

@@ -171,7 +171,7 @@ class HallRegister extends Component {
         <MDBRow>
           <div className="col-sm-4 " />
           <div className="col-sm-7 ">
-            <MDBCol md="12">
+            <MDBCol md="13">
               <MDBCard className="mt-5">
                 <MDBView className="gradient-card-header black darken-0">
                   <h4 className="h4-responsive text-white">
@@ -182,10 +182,8 @@ class HallRegister extends Component {
                   <form onSubmit={this.onSubmit}>
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                        Hall Name
+                       <strong> Hall Name</strong>
                       </label>
-                     
-                      
                       <div className="col-sm-10">
                         <TextFieldGroup
                           placeholder="Hall Name"
@@ -199,7 +197,7 @@ class HallRegister extends Component {
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                        Location
+                       <strong> Location</strong>
                       </label>
                       <div className="col-sm-10">
                         <SelectListGroup
@@ -215,7 +213,7 @@ class HallRegister extends Component {
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                        Number Of Seats
+                       <strong> Number Of Seats </strong>
                       </label>
                       <div className="col-sm-10">
                         <SelectListGroup
@@ -231,7 +229,7 @@ class HallRegister extends Component {
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                        Number Of Projecters
+                      <strong>  Number Of Projecters </strong>
                       </label>
                       <div className="col-sm-10">
                         <SelectListGroup
@@ -247,7 +245,7 @@ class HallRegister extends Component {
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                        Number Of Whiteboard
+                       <strong> Number Of Whiteboards </strong>
                       </label>
                       <div className="col-sm-10">
                         <SelectListGroup
@@ -263,7 +261,7 @@ class HallRegister extends Component {
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                        Other Resources
+                      <strong>  Other Resources </strong>
                       </label>
                       <div className="col-sm-10">
                         <SelectListGroup
