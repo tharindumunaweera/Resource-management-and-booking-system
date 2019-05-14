@@ -7,6 +7,7 @@ const passport = require("passport");
 const User = require("../../models/User");
 const Hallreg = require("../../models/Hallreg");
 
+const validaterHallregisterInput = require("../../validation/hallregister");
 
 router.get(
   "/",
@@ -32,7 +33,13 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    // const { errors, isValid } = validaterHallregisterInput(req.body);
 
+    // //Check validation
+    // if (!isValid) {
+    //   //Return any errors with 400 status
+    //   return res.status(400).json(errors);
+    // }
 
 
     //Get fields

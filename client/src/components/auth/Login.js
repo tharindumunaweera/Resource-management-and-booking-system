@@ -26,12 +26,12 @@ class Login extends Component {
       if (user.role == "Ref") {
         this.props.history.push("/UnionStudent");
       }
-      // if (user.role == "Acadamic") {
-      //   this.props.history.push("/dashboard");
-      // }
       if (user.role == "Acadamic") {
-        this.props.history.push("/AcademicStaff");
+        this.props.history.push("/dashboard");
       }
+      // if (user.role == "Acadamic") {
+      //   this.props.history.push("/AcademicStaff");
+      // }
       if (user.role == "Director") {
         this.props.history.push("/Director");
       }
@@ -104,7 +104,7 @@ class Login extends Component {
                     <strong> Sign In </strong>{" "}
                   </h1>
                   <p className="lead text-center">
-                   <strong> Sign In To Your RMIS Account</strong>
+                    <strong> Sign In To Your RMIS Account</strong>
                   </p>
                   <form onSubmit={this.onSubmit}>
                     <TextFieldGroup

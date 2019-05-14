@@ -20,11 +20,11 @@ const HallRegisterSchema = new Schema({
     required: true
   },
   projecter: {
-    type: String,
+    type: Number,
     required: true
   },
   whiteboard: {
-    type: String,
+    type: Number,
     required: true
   },
   other: {

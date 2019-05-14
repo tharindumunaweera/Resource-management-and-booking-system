@@ -13,20 +13,21 @@ class CreateHallreg extends Component {
             hallname: '',
             location: '',
             seat: 0,
-            projecter: '',
-            whiteboard: '',
-            other: ''
+            projecter: 0,
+            whiteboard: 0,
+            other: '',
+            // errors: {}
         };
 
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    //   componentWillReceiveProps(nextProps) {
-    //     if (nextProps.errors) {
-    //       this.setState({ errors: nextProps.errors });
-    //     }
-    //   }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+            this.setState({ errors: nextProps.errors });
+        }
+    }
 
     onSubmit(e) {
         e.preventDefault();
@@ -49,7 +50,7 @@ class CreateHallreg extends Component {
     }
 
     render() {
-        // const { errors, displaySocialInputs } = this.state;
+        // const { errors } = this.state;
 
 
 
@@ -64,21 +65,23 @@ class CreateHallreg extends Component {
                             <h1 className="display-4 text-center">Create Your Profile</h1>
                             <p className="lead text-center">
                                 Let's get some information to make your profile stand out
-              </p>
+                            </p>
                             <small className="d-block pb-3">* = required fields</small>
                             <form onSubmit={this.onSubmit}>
                                 <TextFieldGroup
-                                    placeholder=""
+                                    placeholder="Hall name"
                                     name="hallname"
                                     value={this.state.hallname}
                                     onChange={this.onChange}
 
+
                                 />
                                 <TextFieldGroup
-                                    placeholder=""
+                                    placeholder="location"
                                     name="location"
                                     value={this.state.location}
                                     onChange={this.onChange}
+
 
                                 />
                                 <TextFieldGroup
@@ -87,29 +90,32 @@ class CreateHallreg extends Component {
                                     name="seat"
                                     value={this.state.seat}
                                     onChange={this.onChange}
-                                    info="Could be your own company or one you work for"
+
                                 />
                                 <TextFieldGroup
                                     placeholder="projecter"
+                                    type="number"
                                     name="projecter"
                                     value={this.state.projecter}
                                     onChange={this.onChange}
 
-                                    info="Could be your own website or a company one"
+
                                 />
                                 <TextFieldGroup
                                     placeholder="whiteboard"
+                                    type="number"
                                     name="whiteboard"
                                     value={this.state.whiteboard}
                                     onChange={this.onChange}
 
-                                    info="City or city & state suggested (eg. Boston, MA)"
+
                                 />
                                 <TextFieldGroup
                                     placeholder="other"
                                     name="other"
                                     value={this.state.other}
                                     onChange={this.onChange}
+
                                 />
 
                                 <input
@@ -128,11 +134,12 @@ class CreateHallreg extends Component {
 
 CreateHallreg.propTypes = {
     hallreg: PropTypes.object.isRequired,
-
+    errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
     hallreg: state.hallreg,
+    errors: state.errors
 
 });
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { GET_HALLREG, HALLREG_LOADING } from "./types";
+import { GET_HALLREG, HALLREG_LOADING, GET_ERRORS, } from "./types";
 
 export const getCurrentHallreg = () => dispatch => {
   dispatch(setHallregLoading());
@@ -23,7 +23,13 @@ export const getCurrentHallreg = () => dispatch => {
 export const createHallreg = (profileData, history) => dispatch => {
   axios
     .post("/api/hallreg", profileData)
-    .then(res => history.push("/dashboard"));
+    .then(res => history.push("/dashboard"))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
 };
 
 export const setHallregLoading = () => {
