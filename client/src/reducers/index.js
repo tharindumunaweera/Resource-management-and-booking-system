@@ -8,6 +8,7 @@ import munReducer from "./munReducer";
 import nineReducer from "./nineReducer";
 import tenReducer from "./tenReducer";
 import elevenReducer from "./elevenReducer";
+import hallregReducer from "./hallregReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -18,5 +19,6 @@ export default combineReducers({
   mun: munReducer,
   nine: nineReducer,
   ten: tenReducer,
-  eleven: elevenReducer
+  eleven: elevenReducer,
+  hallreg: hallregReducer
 });

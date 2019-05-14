@@ -16,6 +16,7 @@ const nine = require("./routes/api/nine");
 const ten = require("./routes/api/ten");
 const eleven = require("./routes/api/eleven");
 const booking = require("./routes/api/booking");
+const hallreg = require("./routes/api/hallreg");
 
 //hallregistration model
 const HallRegisterSchema = require("./models/Hallreg");
@@ -53,6 +54,7 @@ app.use("/api/nine", nine);
 app.use("/api/ten", ten);
 app.use("/api/eleven", eleven);
 app.use("/api/booking", booking);
+app.use("/api/hallreg", hallreg);
 
 const port = process.env.PORT || 5000;
 
@@ -66,8 +68,8 @@ if (process.env.NODE.ENV === "production") {
 
 //hallreg routs
 
-hallRegRouts.route("/").get(function(req, res) {
-  HallRegisterSchema.find(function(err, todos) {
+hallRegRouts.route("/").get(function (req, res) {
+  HallRegisterSchema.find(function (err, todos) {
     if (err) {
       console.log(err);
     } else {
@@ -76,14 +78,14 @@ hallRegRouts.route("/").get(function(req, res) {
   });
 });
 
-hallRegRouts.route("/:id").get(function(req, res) {
+hallRegRouts.route("/:id").get(function (req, res) {
   let id = req.params.id;
-  HallRegisterSchema.findById(id, function(err, todo) {
+  HallRegisterSchema.findById(id, function (err, todo) {
     res.json(todo);
   });
 });
 
-hallRegRouts.route("/add").post(function(req, res) {
+hallRegRouts.route("/add").post(function (req, res) {
   let todo = new HallRegisterSchema(req.body);
   todo
     .save()
@@ -95,8 +97,8 @@ hallRegRouts.route("/add").post(function(req, res) {
     });
 });
 
-hallRegRouts.route("/update/:id").post(function(req, res) {
-  HallRegisterSchema.findById(req.params.id, function(err, todo) {
+hallRegRouts.route("/update/:id").post(function (req, res) {
+  HallRegisterSchema.findById(req.params.id, function (err, todo) {
     if (!todo) res.status(404).send("data is not found");
     else todo.hallname = req.body.hallname;
     todo.location = req.body.location;
@@ -119,12 +121,12 @@ hallRegRouts.route("/update/:id").post(function(req, res) {
 app.use("/todos", hallRegRouts);
 
 //server static assets if in production
-if(process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production') {
   //set static folder
   app.use(express.static('client/build'));
 
-  app.get('*',(req,res) => {
-    res.sendFile(path.resolve(__dirname , 'client' , 'build' , 'index.html'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 

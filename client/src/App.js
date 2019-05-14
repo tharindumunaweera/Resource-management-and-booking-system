@@ -46,6 +46,7 @@ import CreateNine from "./components/create-profile/CreateNine";
 import CreateTen from "./components/create-profile/CreateTen";
 import CreateEleven from "./components/create-profile/CreateEleven";
 import Example from "./components/create-profile/Example";
+import CreateHallreg from "./components/HallRegister/Hallreg";
 
 import CreateTha from "./components/create-profile/CreateTha";
 import EditProfile from "./components/edit-profile/EditProfile";
@@ -201,6 +202,14 @@ class App extends Component {
                 component={CreateBooking}
               />
             </Switch>
+            <Switch>
+              <PrivateRoute
+                exact
+                path="/create-hallreg"
+                component={CreateHallreg}
+              />
+            </Switch>
+
             <Switch>
               <PrivateRoute exact path="/create-mun" component={CreateMun} />
             </Switch>

@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const HallRegisterSchema = new Schema({
-  
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "users"
+  },
   hallname: {
     type: String,
     required: true
@@ -13,7 +16,7 @@ const HallRegisterSchema = new Schema({
     required: true
   },
   seat: {
-    type: String,
+    type: Number,
     required: true
   },
   projecter: {
@@ -28,7 +31,7 @@ const HallRegisterSchema = new Schema({
     type: String,
     required: true
   },
- 
+
 });
 
-module.exports =  mongoose.model("HallRegisterSchema", HallRegisterSchema);
+module.exports = mongoose.model("HallRegisterSchema", HallRegisterSchema);

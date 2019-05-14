@@ -881,7 +881,7 @@ class Example extends Component {
       <div className="Example">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto">
+            <div className="col-sm-4 style">
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder=""
@@ -896,8 +896,9 @@ class Example extends Component {
                   onChange={this.onChange}
                   options={options}
                 />
-
-                {/* <div className="mb-3">
+              </form>
+            </div>
+            {/* <div className="mb-3">
                   <button
                     type="button"
                     onClick={() => {
@@ -911,6 +912,8 @@ class Example extends Component {
                   </button>
                   <span className="text-muted">Optional</span>
                 </div> */}
+            <div className="col-sm-4 style">
+              <div className="card card-body bg-light mb-3">
                 {eightInputs}
                 {nineInputs}
                 {tenInputs}
@@ -920,13 +923,13 @@ class Example extends Component {
                 {twoInputs}
                 {threeInputs}
                 {fourInputs}
-                {/* <input
+              </div>
+            </div>
+            {/* <input
                   type="submit"
                   value="Submit"
                   className="btn btn-info btn-block mt-4"
                 /> */}
-              </form>
-            </div>
           </div>
         </div>
       </div>

@@ -32,6 +32,10 @@ const ProfileActions = () => {
           <i className="fas fa-table text-info mr-2" />
           Example
         </Link>
+        <Link to="/create-hallreg" className="btn btn-light">
+          <i className="fas fa-table text-info mr-2" />
+          hallreg
+        </Link>
       </div>
     </div>
   );
