@@ -16,7 +16,7 @@ const TopNavigation = () => {
 
                 
 
-                <NavLink to="/profile" activeClassName="activeClass">
+                <NavLink to="/ViewNine" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="far fa-clock" className="mr-3"/>
                         Time Tables
@@ -27,6 +27,13 @@ const TopNavigation = () => {
                     <MDBListGroupItem>
                         <MDBIcon icon="far fa-check-circle" className="mr-3"/>
                         Hall Booking
+                    </MDBListGroupItem>
+                </NavLink>
+
+                <NavLink to="/ViewHallList" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="far fa-check-circle" className="mr-3"/>
+                        Hall List
                     </MDBListGroupItem>
                 </NavLink>
               

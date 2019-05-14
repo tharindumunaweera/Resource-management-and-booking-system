@@ -1,18 +1,5 @@
 import React, { Component } from "react";
-import {
-  MDBCard,
-  MDBCol,
-  MDBRow,
-  MDBView,
-  MDBMask,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardFooter,
-  MDBBtn,
-  MDBIcon
-} from "mdbreact";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
 
 import Calender from "../Calender/Calender";
 
@@ -52,6 +39,7 @@ class HallSelect extends Component {
             <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black darken-2">
                 <h4 className="h4-responsive text-white">Available Seats</h4>
+                
               </MDBView>
               <MDBCardBody
                 style={{ width: "100%", height: "400px" }}
@@ -61,36 +49,36 @@ class HallSelect extends Component {
                   <ul className="list-group">
                     <li className="list-group-item">
                       
-                    <div className="form__group">
+                    <div className="form__group" align="left">
                    <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline">Less Than 100</label>
+                   <label for="macLab" className="form__label form__label--inline"> Less Than 100</label>
                      </div>
                     </li>
                     <li className="list-group-item">
                      
-                      <div className="form__group">
+                      <div className="form__group" align="left">
                    <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline">100    -    200</label>
+                   <label for="macLab" className="form__label form__label--inline"> 100    -    200</label>
                      </div>
                      
                     </li>
                     <li className="list-group-item">
                       
-                    <div className="form__group">
+                    <div className="form__group" align="left">
                    <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline">200    -    300</label>
+                   <label for="macLab" className="form__label form__label--inline"> 200    -    300</label>
                      </div>
                     </li>
                     <li className="list-group-item">
                       
-                    <div className="form__group">
+                    <div className="form__group" align="left">
                    <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline">300    -    400</label>
+                   <label for="macLab" className="form__label form__label--inline"> 300    -    400</label>
                      </div>
                     </li>
                     <li className="list-group-item">
                        
-                    <div className="form__group">
+                    <div className="form__group" align="left">
                    <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
                    <label for="macLab" className="form__label form__label--inline">Greater than 400</label>
                      </div>

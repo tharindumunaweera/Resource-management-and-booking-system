@@ -24,10 +24,13 @@ class Login extends Component {
     if (this.props.auth.isAuthenticated) {
       const { user } = this.props.auth;
       if (user.role == "Ref") {
-        this.props.history.push("/refdashboard");
+        this.props.history.push("/UnionStudent");
       }
+      // if (user.role == "Acadamic") {
+      //   this.props.history.push("/dashboard");
+      // }
       if (user.role == "Acadamic") {
-        this.props.history.push("/dashboard");
+        this.props.history.push("/AcademicStaff");
       }
       if (user.role == "Director") {
         this.props.history.push("/Director");
@@ -45,10 +48,13 @@ class Login extends Component {
     if (nextProps.auth.isAuthenticated) {
       const { user } = this.props.auth;
       if (user.role == "Ref") {
-        this.props.history.push("/refdashboard");
+        this.props.history.push("/UnionStudent");
       }
+      // if (user.role == "Acadamic") {
+      //   this.props.history.push("/dashboard");
+      // }
       if (user.role == "Acadamic") {
-        this.props.history.push("/dashboard");
+        this.props.history.push("/AcademicStaff");
       }
       if (user.role == "Director") {
         this.props.history.push("/Director");
@@ -98,7 +104,7 @@ class Login extends Component {
                     <strong> Sign In </strong>{" "}
                   </h1>
                   <p className="lead text-center">
-                    Sign In to your RMIS account
+                   <strong> Sign In To Your RMIS Account</strong>
                   </p>
                   <form onSubmit={this.onSubmit}>
                     <TextFieldGroup

@@ -26,6 +26,9 @@ img {
   height: 100%;
 }
 
+
+
+
 .card-form {
   opacity: 0.9;
 }
@@ -64,3 +67,9 @@ img {
   margin-top: -24px;
   margin-bottom: -40px;
 }
+/* 
+.rounded {
+  border-radius:  15px 50px 30px 5px;
+
+   without a background or border applied you won't be able to see if its rounded 
+} */

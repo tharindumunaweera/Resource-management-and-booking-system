@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile, deleteAccount } from "../../actions/profileActions";
-import Spinner from "../common/Spinner";
+import Spinner from "../common/spin.svg";
 import ProfileActions from "./ProfileActions";
 import Experience from "./Experience";
 
@@ -23,7 +23,7 @@ class Dashboard extends Component {
     let dashboardContent;
 
     if (profile === null || loading) {
-      dashboardContent = <Spinner />;
+      dashboardContent = <Spinner/>;
     } else {
       // check if log in user has profile data
       if (Object.keys(profile).length > 0) {

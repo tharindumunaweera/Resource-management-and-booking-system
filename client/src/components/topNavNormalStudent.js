@@ -38,7 +38,7 @@ class TopNavLecturer extends Component {
         <MDBCollapse isOpen={this.state.collapse} navbar>
           <MDBNavbarNav left>
             <MDBNavItem active>
-              <MDBNavLink to="#">Home</MDBNavLink>
+              {/* <MDBNavLink to="#">Home</MDBNavLink> */}
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav right>

@@ -14,11 +14,9 @@ const Todo = props => (
         <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.other}</td> 
 
 
-        <td>
-        {/* <button type="button" class="btn btn-info">Edit</button> */}
-        {/* <a class="button" href="#">Button</a> */}
+        {/* <td>
      <Link className="btn btn-success" to={"/HallEdit/" + props.todo._id    } color={'red'}><strong>Edit</strong></Link> 
-        </td>
+        </td> */}
         
     </tr>
 )

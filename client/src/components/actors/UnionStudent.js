@@ -29,6 +29,8 @@ import AddExperience from "../add-credentials/AddExperience";
 import AddEducation from "../add-credentials/AddEducation";
 import CreateProfile from "../create-profile/CreateProfile";
 import TimetableActions from "../timetable/TimetableActions";
+import ViewHallList from "../HallRegister/ViewHallList";
+import ViewNine from "../edit-profile/ViewNine";
 
 const UnionStudent = () => {
   return (
@@ -49,6 +51,8 @@ const UnionStudent = () => {
            <Route exact path="/add-education" component={AddEducation} />
            <Route exact path="/CreateProfile" component={CreateProfile} />
            <Route exact path="/timetableactions" component={TimetableActions}/>
+           <Route exact path="/ViewHallList" component={ViewHallList}/>
+           <Route exact path="/ViewNine" component={ ViewNine }/>
 
           <main id="content" className="p-5" />
         </div>

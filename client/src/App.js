@@ -109,7 +109,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
+             {/* <Navbar /> */}
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
 
@@ -120,13 +120,13 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
-            <Switch>
+            {/* <Switch>
               <PrivateRoute
                 exact
                 path="/refdashboard"
                 component={Refdashboard}
               />
-            </Switch>
+            </Switch> */}
 
             {/* <Switch>
               <PrivateRoute
@@ -153,6 +153,13 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/Director" component={Director} />
             </Switch>
+            <Switch>
+              <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
+            </Switch>   
+            <Switch>
+              <PrivateRoute exact path="/UnionStudent" component={UnionStudent} />
+            </Switch>
+
             <Switch>
               <PrivateRoute
                 exact
@@ -223,6 +230,7 @@ class App extends Component {
                 component={CreateEleven}
               />
             </Switch>
+
             <Switch>
               <PrivateRoute exact path="/create-nine" component={CreateNine} />
             </Switch>
@@ -238,18 +246,23 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/example" component={Example} />
             </Switch>
+
             <Switch>
               <PrivateRoute exact path="/edit-mun" component={EditMun} />
             </Switch>
+
             <Switch>
               <PrivateRoute exact path="/edit-nine" component={EditNine} />
             </Switch>
+
             <Switch>
               <PrivateRoute exact path="/edit-ten" component={EditTen} />
             </Switch>
+
             <Switch>
               <PrivateRoute exact path="/edit-eleven" component={EditEleven} />
             </Switch>
+            
             <Switch>
               <PrivateRoute
                 exact
