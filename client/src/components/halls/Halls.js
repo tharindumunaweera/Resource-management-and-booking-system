@@ -21,6 +21,8 @@ class Halls extends Component {
         this.onChange = this.onChange.bind(this);
 
         this.onCheck = this.onCheck.bind(this);
+        this.onCheck1 = this.onCheck1.bind(this);
+        this.onCheck2 = this.onCheck2.bind(this);
     }
 
 
@@ -42,10 +44,33 @@ class Halls extends Component {
 
     }
 
+    onCheck1(e) {
+
+        this.setState({
+
+            current2: !this.state.current2
+        });
+
+
+    }
+
+    onCheck2(e) {
+
+        this.setState({
+
+            current3: !this.state.current3
+        });
+
+
+    }
+
+
+
     render() {
-        let hallItems;
+        let hallItems; let hallItems1; let hallItems2;
+        const { hallregs, loading } = this.props.hallreg;
         if (this.state.current1 === true) {
-            const { hallregs, loading } = this.props.hallreg;
+
 
 
             if (hallregs === null || loading) {
@@ -53,13 +78,48 @@ class Halls extends Component {
             } else {
                 if (hallregs.length > 0) {
                     hallItems = hallregs.map(hallreg => (
-                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="68" />
+                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="50" />
                     ));
                 } else {
                     hallItems = <h4>No profiles found...</h4>;
                 }
             }
         }
+
+        if (this.state.current2 === true) {
+
+
+
+            if (hallregs === null || loading) {
+                hallItems1 = <Spinner />;
+            } else {
+                if (hallregs.length > 0) {
+                    hallItems1 = hallregs.map(hallreg => (
+                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="100" />
+                    ));
+                } else {
+                    hallItems1 = <h4>No profiles found...</h4>;
+                }
+            }
+        }
+
+        if (this.state.current3 === true) {
+
+
+
+            if (hallregs === null || loading) {
+                hallItems2 = <Spinner />;
+            } else {
+                if (hallregs.length > 0) {
+                    hallItems2 = hallregs.map(hallreg => (
+                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="100" />
+                    ));
+                } else {
+                    hallItems2 = <h4>No profiles found...</h4>;
+                }
+            }
+        }
+
 
         return (
             <div className="halls">
@@ -76,13 +136,47 @@ class Halls extends Component {
                                     onChange={this.onCheck}
                                     id="current1"
                                 />
-                                <label htmlFor="current" className="form-check-label">
+                                <label htmlFor="current1" className="form-check-label">
                                     Above 50
                                 </label>
                             </div>
+
+                            <div className="form-check mb-4">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    name="current2"
+                                    value={this.state.current2}
+                                    checked={this.state.current2}
+                                    onChange={this.onCheck1}
+                                    id="current2"
+                                />
+                                <label htmlFor="current2" className="form-check-label">
+                                    Above 100
+                                </label>
+                            </div>
+
+                            <div className="form-check mb-4">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    name="current3"
+                                    value={this.state.current3}
+                                    checked={this.state.current3}
+                                    onChange={this.onCheck2}
+                                    id="current3"
+                                />
+                                <label htmlFor="current3" className="form-check-label">
+                                    Above 150
+                                </label>
+                            </div>
+
+
                         </div>
                         <div className="col-sm-4 style">
                             {hallItems}
+                            {hallItems1}
+                            {hallItems2}
                         </div>
 
                     </div>
