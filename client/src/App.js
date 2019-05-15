@@ -59,6 +59,7 @@ import EditTha from "./components/edit-profile/EditTha";
 import AddExperience from "./components/add-credentials/AddExperience";
 import AddEducation from "./components/add-credentials/AddEducation";
 import profiles from "./components/profiles/Profiles";
+import halls from "./components/halls/Halls";
 
 import TimeTable from "./components/timetable/TimeTable";
 import CreateTimetable from "./components/timetable/CreateTimetable";
@@ -109,7 +110,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            {/* <Navbar /> */}
+            <Navbar />
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
 
@@ -119,6 +120,9 @@ class App extends Component {
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/halls-reg" component={halls} />
             </Switch>
             {/* <Switch>
               <PrivateRoute
@@ -153,9 +157,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/Director" component={Director} />
             </Switch>
-            {/* <Switch>
-              <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
-            </Switch>    */}
+
             <Switch>
               <PrivateRoute exact path="/UnionStudent" component={UnionStudent} />
             </Switch>

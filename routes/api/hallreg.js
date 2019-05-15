@@ -29,6 +29,22 @@ router.get(
 );
 
 
+router.get("/all", passport.authenticate("jwt", { session: false }), (req, res) => {
+  const errors = {};
+
+  Hallreg.find()
+    .populate("user", ["name", "avatar"])
+    .then(hallregs => {
+      if (!hallregs) {
+        errors.nohallreg = "There are no halls";
+        return res.status(404).json(errors);
+      }
+
+      res.json(hallregs);
+    })
+    .catch(err => res.status(404).json({ Profile: "There are no halls " }));
+});
+
 router.post(
   "/",
   passport.authenticate("jwt", { session: false }),

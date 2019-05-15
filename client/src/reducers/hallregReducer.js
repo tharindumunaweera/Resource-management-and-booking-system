@@ -1,6 +1,7 @@
-import { GET_HALLREG, HALLREG_LOADING } from "../actions/types";
+import { GET_HALLREG, HALLREG_LOADING, GET_HALLREGS } from "../actions/types";
 
 const initialState = {
+  hallregs: null,
   hallreg: null,
   loading: false
 };
@@ -16,6 +17,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         hallreg: action.payload,
+        loading: false
+      };
+    case GET_HALLREGS:
+      return {
+        ...state,
+        hallregs: action.payload,
         loading: false
       };
     default:
