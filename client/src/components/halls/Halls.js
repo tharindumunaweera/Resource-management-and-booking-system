@@ -71,6 +71,21 @@ class Halls extends Component {
         const { hallregs, loading } = this.props.hallreg;
         if (this.state.current1 === true) {
 
+            if (this.state.current2 === true) {
+                this.setState({
+
+                    current2: !this.state.current2
+                });
+
+            }
+
+            if (this.state.current3 === true) {
+                this.setState({
+
+                    current3: !this.state.current3
+                });
+
+            }
 
 
             if (hallregs === null || loading) {
@@ -88,7 +103,21 @@ class Halls extends Component {
 
         if (this.state.current2 === true) {
 
+            if (this.state.current1 === true) {
+                this.setState({
 
+                    current1: !this.state.current1
+                });
+
+            }
+
+            if (this.state.current3 === true) {
+                this.setState({
+
+                    current3: !this.state.current3
+                });
+
+            }
 
             if (hallregs === null || loading) {
                 hallItems1 = <Spinner />;
@@ -105,7 +134,21 @@ class Halls extends Component {
 
         if (this.state.current3 === true) {
 
+            if (this.state.current1 === true) {
+                this.setState({
 
+                    current1: !this.state.current1
+                });
+
+            }
+
+            if (this.state.current2 === true) {
+                this.setState({
+
+                    current2: !this.state.current2
+                });
+
+            }
 
             if (hallregs === null || loading) {
                 hallItems2 = <Spinner />;

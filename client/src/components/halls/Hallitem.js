@@ -8,36 +8,40 @@ class Hallitem extends Component {
         const { hallreg } = this.props;
 
         return (
-            <div className="card card-body bg-light mb-3">
-                <div className="row">
-                    {/* <div className="col-2">
+            <div>
+                {hallreg.seat >= this.props.seat1 ? (
+                    <div className="card card-body bg-light mb-3">
+                        <div className="row">
+                            {/* <div className="col-2">
              <img src={profile.user.avatar} alt="" className="rounded-circle" />
            </div> */}
-                    <div className="col-lg-6 col-md-4 col-8">
-                        {hallreg.seat >= this.props.seat1 ? (
-                            <div>
-                                <h3>{hallreg.hallname}</h3>
-                                <p>
-                                    {hallreg.location}
-                                </p>
-                                <p>
-                                    {hallreg.seat}
-                                </p>
-                                <p>
-                                    {hallreg.projecter}
-                                </p>
-                                <p>
-                                    {hallreg.whiteboard}
-                                </p>
-                            </div>
-                        ) : null}
+                            <div className="col-lg-6 col-md-4 col-8">
 
-                        {/* <Link to={`/profile/${profile.handle}`} className="btn btn-info">
+                                <div>
+                                    <h3>{hallreg.hallname}</h3>
+                                    <p>
+                                        {hallreg.location}
+                                    </p>
+                                    <p>
+                                        {hallreg.seat}
+                                    </p>
+                                    <p>
+                                        {hallreg.projecter}
+                                    </p>
+                                    <p>
+                                        {hallreg.whiteboard}
+                                    </p>
+                                </div>
+
+
+                                {/* <Link to={`/profile/${profile.handle}`} className="btn btn-info">
                View Profile
              </Link> */}
-                    </div>
+                            </div>
 
-                </div>
+                        </div>
+                    </div>
+                ) : null}
             </div>
         );
     }
