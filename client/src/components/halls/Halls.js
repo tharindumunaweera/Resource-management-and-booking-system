@@ -67,8 +67,9 @@ class Halls extends Component {
 
 
     render() {
-        let hallItems; let hallItems1; let hallItems2;
+        let hallItems0; let hallItems1; let hallItems2;
         const { hallregs, loading } = this.props.hallreg;
+
         if (this.state.current1 === true) {
 
             if (this.state.current2 === true) {
@@ -89,14 +90,14 @@ class Halls extends Component {
 
 
             if (hallregs === null || loading) {
-                hallItems = <Spinner />;
+                hallItems0 = <Spinner />;
             } else {
                 if (hallregs.length > 0) {
-                    hallItems = hallregs.map(hallreg => (
+                    hallItems0 = hallregs.map(hallreg => (
                         <Hallitem key={hallreg._id} hallreg={hallreg} seat1="50" />
                     ));
                 } else {
-                    hallItems = <h4>No profiles found...</h4>;
+                    hallItems0 = <h4>No profiles found...</h4>;
                 }
             }
         }
@@ -155,7 +156,7 @@ class Halls extends Component {
             } else {
                 if (hallregs.length > 0) {
                     hallItems2 = hallregs.map(hallreg => (
-                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="100" />
+                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="150" />
                     ));
                 } else {
                     hallItems2 = <h4>No profiles found...</h4>;
@@ -216,10 +217,11 @@ class Halls extends Component {
 
 
                         </div>
-                        <div className="col-sm-4 style">
-                            {hallItems}
+                        <div className="col-sm-6 style">
+                            {hallItems0}
                             {hallItems1}
                             {hallItems2}
+
                         </div>
 
                     </div>

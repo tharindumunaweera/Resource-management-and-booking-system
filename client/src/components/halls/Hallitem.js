@@ -9,7 +9,7 @@ class Hallitem extends Component {
 
         return (
             <div>
-                {hallreg.seat >= this.props.seat1 ? (
+                {hallreg.seat > this.props.seat1 ? (
                     <div className="card card-body bg-light mb-3">
                         <div className="row">
                             {/* <div className="col-2">
@@ -18,18 +18,18 @@ class Hallitem extends Component {
                             <div className="col-lg-6 col-md-4 col-8">
 
                                 <div>
-                                    <h3>{hallreg.hallname}</h3>
+                                    <h3>Hall Name: {hallreg.hallname}</h3>
                                     <p>
-                                        {hallreg.location}
+                                        Location: {hallreg.location}
                                     </p>
                                     <p>
-                                        {hallreg.seat}
+                                        Number of seats: {hallreg.seat}
                                     </p>
                                     <p>
-                                        {hallreg.projecter}
+                                        Number of Projectors: {hallreg.projecter}
                                     </p>
                                     <p>
-                                        {hallreg.whiteboard}
+                                        Number of Whiteboards: {hallreg.whiteboard}
                                     </p>
                                 </div>
 
