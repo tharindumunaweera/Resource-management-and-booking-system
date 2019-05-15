@@ -14,7 +14,7 @@ class Hallitem extends Component {
              <img src={profile.user.avatar} alt="" className="rounded-circle" />
            </div> */}
                     <div className="col-lg-6 col-md-4 col-8">
-                        {hallreg.seat >= 66 ? (
+                        {hallreg.seat >= this.props.seat1 ? (
                             <div>
                                 <h3>{hallreg.hallname}</h3>
                                 <p>

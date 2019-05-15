@@ -9,19 +9,17 @@ class Halls extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            company: "",
-            title: "",
-            location: "",
-            from: "",
-            to: "",
-            current: false,
-            description: "",
-            errors: {},
-            disabled: false
+            // seat1: 50,
+            //  seat2: 100,
+            //  seat3: 150,
+            current1: false,
+            current2: false,
+            current3: false,
+
         };
 
         this.onChange = this.onChange.bind(this);
-        this.onSubmit = this.onSubmit.bind(this);
+
         this.onCheck = this.onCheck.bind(this);
     }
 
@@ -30,33 +28,63 @@ class Halls extends Component {
         this.props.getHallregs();
     }
 
-    render() {
-        const { hallregs, loading } = this.props.hallreg;
-        let hallItems;
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+    }
 
-        if (hallregs === null || loading) {
-            hallItems = <Spinner />;
-        } else {
-            if (hallregs.length > 0) {
-                hallItems = hallregs.map(hallreg => (
-                    <Hallitem key={hallreg._id} hallreg={hallreg} />
-                ));
+    onCheck(e) {
+
+        this.setState({
+
+            current1: !this.state.current1
+        });
+
+
+    }
+
+    render() {
+        let hallItems;
+        if (this.state.current1 === true) {
+            const { hallregs, loading } = this.props.hallreg;
+
+
+            if (hallregs === null || loading) {
+                hallItems = <Spinner />;
             } else {
-                hallItems = <h4>No profiles found...</h4>;
+                if (hallregs.length > 0) {
+                    hallItems = hallregs.map(hallreg => (
+                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="68" />
+                    ));
+                } else {
+                    hallItems = <h4>No profiles found...</h4>;
+                }
             }
         }
 
         return (
-            <div className="profiles">
+            <div className="halls">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
-                            <h1 className="display-4 text-center">halls</h1>
-                            <p className="lead text-center">
-                                Browse and connect with profiles
-              </p>
+                        <div className="col-sm-4 style">
+                            <div className="form-check mb-4">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    name="current1"
+                                    value={this.state.current1}
+                                    checked={this.state.current1}
+                                    onChange={this.onCheck}
+                                    id="current1"
+                                />
+                                <label htmlFor="current" className="form-check-label">
+                                    Above 50
+                                </label>
+                            </div>
+                        </div>
+                        <div className="col-sm-4 style">
                             {hallItems}
                         </div>
+
                     </div>
                 </div>
             </div>

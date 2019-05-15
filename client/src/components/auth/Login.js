@@ -23,22 +23,22 @@ class Login extends Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       const { user } = this.props.auth;
-      if (user.role == "Ref") {
+      if (user.role === "Ref") {
         this.props.history.push("/UnionStudent");
       }
-      if (user.role == "Acadamic") {
+      if (user.role === "Acadamic") {
         this.props.history.push("/dashboard");
       }
       // if (user.role == "Acadamic") {
       //   this.props.history.push("/AcademicStaff");
       // }
-      if (user.role == "Director") {
+      if (user.role === "Director") {
         this.props.history.push("/Director");
       }
-      if (user.role == "Coordinator") {
+      if (user.role === "Coordinator") {
         this.props.history.push("/Coordinator");
       }
-      if (user.role == "Lecturer") {
+      if (user.role === "Lecturer") {
         this.props.history.push("/Lecturer");
       }
     }
