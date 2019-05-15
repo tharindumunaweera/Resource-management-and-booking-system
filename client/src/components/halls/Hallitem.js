@@ -14,19 +14,24 @@ class Hallitem extends Component {
              <img src={profile.user.avatar} alt="" className="rounded-circle" />
            </div> */}
                     <div className="col-lg-6 col-md-4 col-8">
-                        <h3>{hallreg.hallname}</h3>
-                        <p>
-                            {hallreg.location}
-                        </p>
-                        <p>
-                            {hallreg.seat}
-                        </p>
-                        <p>
-                            {hallreg.projecter}
-                        </p>
-                        <p>
-                            {hallreg.whiteboard}
-                        </p>
+                        {hallreg.seat >= 66 ? (
+                            <div>
+                                <h3>{hallreg.hallname}</h3>
+                                <p>
+                                    {hallreg.location}
+                                </p>
+                                <p>
+                                    {hallreg.seat}
+                                </p>
+                                <p>
+                                    {hallreg.projecter}
+                                </p>
+                                <p>
+                                    {hallreg.whiteboard}
+                                </p>
+                            </div>
+                        ) : null}
+
                         {/* <Link to={`/profile/${profile.handle}`} className="btn btn-info">
                View Profile
              </Link> */}

@@ -6,6 +6,26 @@ import Hallitem from "./Hallitem";
 import { getHallregs } from "../../actions/hallregActions";
 
 class Halls extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            company: "",
+            title: "",
+            location: "",
+            from: "",
+            to: "",
+            current: false,
+            description: "",
+            errors: {},
+            disabled: false
+        };
+
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onCheck = this.onCheck.bind(this);
+    }
+
+
     componentDidMount() {
         this.props.getHallregs();
     }
