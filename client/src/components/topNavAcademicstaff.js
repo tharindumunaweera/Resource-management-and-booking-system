@@ -41,7 +41,7 @@ class TopNavLecturer extends Component {
   };
 
   onLogoutClick(e) {
-    alert("Do You Want To LogOut ?  "  );
+    alert("Do You Want To LogOut   "  );
     e.preventDefault();
     this.props.clearCurrentProfile();
     this.props.logoutUser();

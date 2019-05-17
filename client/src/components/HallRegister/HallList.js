@@ -74,8 +74,8 @@ export default class HallList extends Component{
                     <thead>
                         <tr>
                             <th><strong>Hall Name</strong></th>
-                            <th><strong>Location</strong></th>
                             <th><strong>Seats</strong></th>
+                            <th><strong>Location</strong></th>
                             <th><strong>Projecters</strong></th>
                             <th><strong>Whietboards</strong></th>
                             <th><strong>Others</strong></th> 
