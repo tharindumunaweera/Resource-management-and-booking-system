@@ -19,6 +19,11 @@ import { logoutUser } from "../actions/authActions";
 import { clearCurrentProfile } from "../actions/profileActions";
 
 class TopNavLecturer extends Component {
+
+  // onDayClick = (e ,day) => {
+  //   alert("Do You Want To LogOut ?  : " + day);
+  // }
+
   state = {
     collapse: false
   };
@@ -36,6 +41,7 @@ class TopNavLecturer extends Component {
   };
 
   onLogoutClick(e) {
+    alert("Do You Want To LogOut ?  "  );
     e.preventDefault();
     this.props.clearCurrentProfile();
     this.props.logoutUser();
