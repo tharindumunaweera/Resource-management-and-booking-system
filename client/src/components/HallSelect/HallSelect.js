@@ -183,8 +183,8 @@ onCheck2(e) {
 
 
   return (
-    
-      <MDBRow>
+    <React.Fragment>
+      {/* <MDBRow>
         <div className="col-sm-3 " />
         <div className="col-sm-6 ">
           <MDBCol md="8">
@@ -230,10 +230,7 @@ onCheck2(e) {
                                 </label>
                             </div>
                       
-                    {/* <div className="form__group" align="left">
-                   <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline"> Less Than 100</label>
-                     </div> */}
+                   
                     </li>
                     <li className="list-group-item">
 
@@ -251,11 +248,7 @@ onCheck2(e) {
                                     Above 100
                                 </label>
                             </div>
-                     
-                      {/* <div className="form__group" align="left">
-                   <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline"> 100    -    200</label>
-                     </div> */}
+                    
                      
                     </li>
                     <li className="list-group-item">
@@ -275,46 +268,92 @@ onCheck2(e) {
                                 </label>
                             </div>
                       
-                    {/* <div className="form__group" align="left">
-                   <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline"> 200    -    300</label>
-                     </div> */}
+                   
 
                     </li>
                     <li className="list-group-item">
-{/*                       
-                    <div className="form__group" align="left">
-                   <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline"> 300    -    400</label>
-                     </div> */}
+
 
                     </li>
                     <li className="list-group-item">
                        
-                    {/* <div className="form__group" align="left">
-                   <input type="checkbox" id="macLab" name="macLab" className="form__input--checkbox" />
-                   <label for="macLab" className="form__label form__label--inline">Greater than 400</label>
-                     </div> */}
+                   
 
                     </li>
-                    <div className="col-sm-6 style">
-                            {hallItems0}
-                            {hallItems1}
-                            {hallItems2}
-
-                        </div>
+                   
                   </ul>
                   <br />
                 </div>
               </MDBCardBody>
+              
             </MDBCard>
+            <div className="col-sm-6 style">
+                            {hallItems0}
+                            {hallItems1}
+                            {hallItems2}
+
+                     </div>
+
           </MDBCol>
+
         </div>
         
+        </MDBRow> */}
 
-         
+<MDBRow>
+          <MDBCol md="6">
+            <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header blue darken-2">
+                <h4 className="h4-responsive text-white">
+                  Regular map
+                </h4>
+              </MDBView>
+              <MDBCardBody style={{width: '100%', height: '300px'}} className="text-center">
+               
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+          <MDBCol md="6">
+            <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header blue darken-2">
+                <h4 className="h4-responsive text-white">
+                  Hybrid map
+                </h4>
+              </MDBView>
+              <MDBCardBody style={{width: '100%', height: '300px'}} className="text-center">
+               
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
         </MDBRow>
-   
+        <MDBRow>
+          <MDBCol md="6">
+            <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header blue darken-2">
+                <h4 className="h4-responsive text-white">
+                Satellite map
+                </h4>
+              </MDBView>
+              <MDBCardBody style={{width: '100%', height: '300px'}} className="text-center">
+               
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+          <MDBCol md="6">
+            <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header blue darken-2">
+                <h4 className="h4-responsive text-white">
+                  Terrain map
+                </h4>
+              </MDBView>
+              <MDBCardBody style={{width: '100%', height: '300px'}} className="text-center">
+               
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+        </MDBRow>
+
+        </React.Fragment>
   );
 };
 }
