@@ -167,7 +167,22 @@ export default class HallEdit extends Component{
                           />
                         </div>
                       </div>
-  
+
+                      <div className="form-group row">
+                        <label className="col-sm-2 col-form-label">
+                          <strong>Number Of Seats</strong>
+                        </label>
+                        <div className="col-sm-10">
+                          <TextFieldGroup
+                            placeholder="Number Of Seats"
+                            name="seat"
+                            value={this.state.seat}
+                            onChange={this.onChange}
+                            //error={errors.handle}
+                          />
+                        </div>
+                      </div>
+
                       <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
                        <strong> Location</strong>
@@ -184,7 +199,7 @@ export default class HallEdit extends Component{
                       </div>
                     </div>
   
-                      <div className="form-group row">
+                      {/* <div className="form-group row">
                         <label className="col-sm-2 col-form-label">
                          <strong> Number Of Seats</strong>
                         </label>
@@ -198,7 +213,7 @@ export default class HallEdit extends Component{
                             //error={errors.status}
                           />
                         </div>
-                      </div>
+                      </div> */}
   
                       <div className="form-group row">
                         <label className="col-sm-2 col-form-label">
