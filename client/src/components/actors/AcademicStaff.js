@@ -13,6 +13,9 @@ import Lecturerprofile from "../dashboard/Lecturerprofile/Lecturerprofile";
 import Hallregister from "../HallRegister/Hallregister";
 import HallList from "../HallRegister/HallList";
 import HallEdit from "../HallRegister/HallEdit";
+import Hallreg from "../HallRegister/Hallreg";
+
+
 
 import Dashboard from "../dashboard/Dashboard";
 import EditProfile from "../edit-profile/EditProfile";
@@ -27,6 +30,8 @@ import CreateNine from "../create-profile/CreateNine";
 import Ninedashboard from "../timetable/Ninedashboard";
 import EditNine from "../edit-profile/EditNine";
 import ViewNine from "../edit-profile/ViewNine";
+import Hallitem from "../halls/Hallitem";
+import Halls from "../halls/Halls";
 
 
 
@@ -60,6 +65,9 @@ import ViewNine from "../edit-profile/ViewNine";
           <Route exact path="/Ninedashboard" component={ Ninedashboard}/>
           <Route exact path="/EditNine" component={ EditNine}/>
           <Route exact path="/ViewNine" component={ ViewNine }/>
+          <Route exact path="/Hallitem" component={ Hallitem }/>
+          <Route exact path="/Halls" component={ Halls }/>
+          <Route exact path="/Hallreg" component={ Hallreg }/>
 
           
 
