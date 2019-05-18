@@ -19,18 +19,22 @@ class Hallitem extends Component {
                             {/* <div className="col-2">
              <img src={profile.user.avatar} alt="" className="rounded-circle" />
            </div> */}
-                            <div className="col-lg-6 col-md-4 col-8">
+                            <div className="col-lg-8 col-md-5 col-10">
 
                                 <div>
+
+                                    <strong>Hall Name: {hallreg.hallname}</strong>
+
                                     <Link to="/example">
                                         <h3>Hall Name: {hallreg.hallname} </h3>
 
                                     </Link>
-                                    <p>
-                                        Location: {hallreg.location}
-                                    </p>
+
                                     <p>
                                         Number of seats: {hallreg.seat}
+                                    </p>
+                                    <p>
+                                        Location: {hallreg.location}
                                     </p>
                                     <p>
                                         Number of Projectors: {hallreg.projecter}

@@ -299,60 +299,133 @@ onCheck2(e) {
         </div>
         
         </MDBRow> */}
-
+ {/* <div className="col-sm-4" /> */}
+ 
+        {/* <div className="col-sm-10 " > */}
 <MDBRow>
-          <MDBCol md="6">
-            <MDBCard className="mt-5">
-              <MDBView className="gradient-card-header blue darken-2">
-                <h4 className="h4-responsive text-white">
-                  Regular map
-                </h4>
+  <div className="col-sm-4" /> 
+          <MDBCol md="4">
+            <MDBCard className="mt-4">
+              <MDBView className="gradient-card-header black darken-2">
+              <h4 className="h4-responsive text-white">Calender</h4>
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '300px'}} className="text-center">
-               
+              <MDBCardBody style={{width: '100%', height: '350px'}} className="text-center">
+              <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
-          <MDBCol md="6">
-            <MDBCard className="mt-5">
-              <MDBView className="gradient-card-header blue darken-2">
+          <MDBCol md="4">
+            <MDBCard className="mt-4">
+              <MDBView className="gradient-card-header black darken-2">
                 <h4 className="h4-responsive text-white">
                   Hybrid map
                 </h4>
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '300px'}} className="text-center">
-               
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </MDBRow>
-        <MDBRow>
-          <MDBCol md="6">
-            <MDBCard className="mt-5">
-              <MDBView className="gradient-card-header blue darken-2">
-                <h4 className="h4-responsive text-white">
-                Satellite map
-                </h4>
-              </MDBView>
-              <MDBCardBody style={{width: '100%', height: '300px'}} className="text-center">
-               
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="6">
-            <MDBCard className="mt-5">
-              <MDBView className="gradient-card-header blue darken-2">
-                <h4 className="h4-responsive text-white">
-                  Terrain map
-                </h4>
-              </MDBView>
-              <MDBCardBody style={{width: '100%', height: '300px'}} className="text-center">
+              <MDBCardBody style={{width: '100%', height: '350px'}} className="text-center">
+              <div className="col-sm-30 style" align="left">
+                            {hallItems0}
+                            {hallItems1}
+                            {hallItems2}
+
+                     </div>
                
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         </MDBRow>
 
+
+        <MDBRow>
+          <div className="col-sm-4" /> 
+          <MDBCol md="4">
+            <MDBCard className="mt-4">
+              <MDBView className="gradient-card-header black darken-2">
+              <h4 className="h4-responsive text-white">Available Seats</h4>
+              </MDBView>
+              <MDBCardBody style={{width: '100%', height: '400px'}} className="text-center">
+              <div className="col-md-12">
+                  <ul className="list-group">
+                    <li className="list-group-item">
+
+                    <div className="form-check mb-4">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    name="current1"
+                                    value={this.state.current1}
+                                    checked={this.state.current1}
+                                    onChange={this.onCheck}
+                                    id="current1"
+                                />
+                                <label htmlFor="current1" className="form-check-label">
+                                    Above 50
+                                </label>
+                            </div>
+                      
+                   
+                    </li>
+                    <li className="list-group-item">
+
+                    <div className="form-check mb-4">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    name="current2"
+                                    value={this.state.current2}
+                                    checked={this.state.current2}
+                                    onChange={this.onCheck1}
+                                    id="current2"
+                                />
+                                <label htmlFor="current2" className="form-check-label">
+                                    Above 100
+                                </label>
+                            </div>
+                    
+                     
+                    </li>
+                    <li className="list-group-item">
+
+                    <div className="form-check mb-4">
+                                <input
+                                    type="checkbox"
+                                    className="form-check-input"
+                                    name="current3"
+                                    value={this.state.current3}
+                                    checked={this.state.current3}
+                                    onChange={this.onCheck2}
+                                    id="current3"
+                                />
+                                <label htmlFor="current3" className="form-check-label">
+                                    Above 150
+                                </label>
+                            </div>
+                      
+                   
+
+                    </li>
+                    <li className="list-group-item">
+
+
+                    </li>
+                    <li className="list-group-item">
+                       
+                   
+
+                    </li>
+                   
+                  </ul>
+                  <br />
+                </div>
+
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+
+          <MDBCol md="5">
+           
+          </MDBCol>
+        </MDBRow>
+        
         </React.Fragment>
   );
 };
