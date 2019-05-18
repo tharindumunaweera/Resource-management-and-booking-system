@@ -898,12 +898,14 @@ class Example extends Component {
             <div className="col-sm-4 style">
               <form onSubmit={this.onSubmit}>
                 {/* <h1>{this.state.lat}</h1> */}
+                <h6>You Selected Hall</h6>
                 <TextFieldGroup
                   placeholder=""
                   name="hallname"
                   value={this.state.hallname}
                   onChange={this.onChange}
                 />
+                <h6>Put Your Booking Date</h6>
                 <SelectListGroup
                   placeholder=""
                   name="dayofweek"
