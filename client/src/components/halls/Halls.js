@@ -20,7 +20,7 @@ class Halls extends Component {
 
         this.onChange = this.onChange.bind(this);
 
-        this.onCheck = this.onCheck.bind(this);
+        this.onCheck0 = this.onCheck0.bind(this);
         this.onCheck1 = this.onCheck1.bind(this);
         this.onCheck2 = this.onCheck2.bind(this);
     }
@@ -34,7 +34,7 @@ class Halls extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    onCheck(e) {
+    onCheck0(e) {
 
         this.setState({
 
@@ -177,7 +177,7 @@ class Halls extends Component {
                                     name="current1"
                                     value={this.state.current1}
                                     checked={this.state.current1}
-                                    onChange={this.onCheck}
+                                    onChange={this.onCheck0}
                                     id="current1"
                                 />
                                 <label htmlFor="current1" className="form-check-label">

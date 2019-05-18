@@ -886,7 +886,7 @@ class Example extends Component {
                 <TextFieldGroup
                   placeholder=""
                   name="hallname"
-                  value={this.state.hallname}
+                  value={this.props.name}
                   onChange={this.onChange}
                 />
                 <SelectListGroup

@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import isEmpty from "../../validation/is-empty";
 
 class Hallitem extends Component {
+
+
+
     render() {
         const { hallreg } = this.props;
 
@@ -18,7 +22,14 @@ class Hallitem extends Component {
                             <div className="col-lg-8 col-md-5 col-10">
 
                                 <div>
+
                                     <strong>Hall Name: {hallreg.hallname}</strong>
+
+                                    <Link to="/example">
+                                        <h3>Hall Name: {hallreg.hallname} </h3>
+
+                                    </Link>
+
                                     <p>
                                         Number of seats: {hallreg.seat}
                                     </p>
