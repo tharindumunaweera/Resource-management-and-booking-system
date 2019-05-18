@@ -26,12 +26,12 @@ class Login extends Component {
       if (user.role === "Ref") {
         this.props.history.push("/UnionStudent");
       }
-      // if (user.role === "Acadamic") {
-      //   this.props.history.push("/dashboard");
-      // }
-       if (user.role == "Acadamic") {
-         this.props.history.push("/AcademicStaff");
-       }
+      if (user.role === "Acadamic") {
+        this.props.history.push("/dashboard");
+      }
+      //  if (user.role == "Acadamic") {
+      //    this.props.history.push("/AcademicStaff");
+      //  }
       if (user.role === "Director") {
         this.props.history.push("/Director");
       }

@@ -13,7 +13,8 @@ class Example extends Component {
     this.state = {
       // displaySocialInputs: false,
       dayofweek: "",
-      hallname: ""
+      hallname: "",
+
     };
 
     this.onChange = this.onChange.bind(this);
@@ -25,8 +26,21 @@ class Example extends Component {
   }
 
   componentDidMount() {
-    this.props.getCurrentNine();
+    this.props.getCurrentNine()
+
+    const { handle } = this.props.match.params
+    const { name } = this.props.location.state
+
+    this.setState({
+      hallname: name
+    });
   }
+
+  // componentWillReceiveProps() {
+  //   this.setState({
+  //     hallname: this.props.name
+  //   });
+  // }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -883,10 +897,11 @@ class Example extends Component {
           <div className="row">
             <div className="col-sm-4 style">
               <form onSubmit={this.onSubmit}>
+                {/* <h1>{this.state.lat}</h1> */}
                 <TextFieldGroup
                   placeholder=""
                   name="hallname"
-                  value={this.props.name}
+                  value={this.state.hallname}
                   onChange={this.onChange}
                 />
                 <SelectListGroup

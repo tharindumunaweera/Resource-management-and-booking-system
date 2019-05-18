@@ -3,10 +3,24 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import isEmpty from "../../validation/is-empty";
+import Example from "../create-profile/Example";
 
 class Hallitem extends Component {
+    // constructor(props) {
+    //     super(props);
 
 
+    //     // this.onHandle = this.onHandle.bind(this);
+    // }
+
+    // onHandle() {
+    //     let ren;
+    //     ren = (
+    //         <div>
+    //             <Example name="tharindu" />
+    //         </div>
+    //     )
+    // }
 
     render() {
         const { hallreg } = this.props;
@@ -22,10 +36,24 @@ class Hallitem extends Component {
                             <div className="col-lg-6 col-md-4 col-8">
 
                                 <div>
-                                    <Link to="/example">
+                                    <Link to={{
+                                        pathname: './example',
+                                        state: {
+                                            name: hallreg.hallname
+                                        }
+                                    }}>
                                         <h3>Hall Name: {hallreg.hallname} </h3>
-
                                     </Link>
+
+                                    {/* <button
+                                        type="button"
+                                        onClick={this.onHandle}
+
+
+                                        className="btn btn-light"np
+                                    >
+                                        Add Social Network Links
+                                        </button> */}
                                     <p>
                                         Location: {hallreg.location}
                                     </p>
@@ -38,6 +66,7 @@ class Hallitem extends Component {
                                     <p>
                                         Number of Whiteboards: {hallreg.whiteboard}
                                     </p>
+
                                 </div>
 
 
