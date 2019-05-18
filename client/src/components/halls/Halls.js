@@ -94,7 +94,7 @@ class Halls extends Component {
             } else {
                 if (hallregs.length > 0) {
                     hallItems0 = hallregs.map(hallreg => (
-                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="50" />
+                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="0"  seat2="100" />
                     ));
                 } else {
                     hallItems0 = <h4>No profiles found...</h4>;
@@ -125,7 +125,7 @@ class Halls extends Component {
             } else {
                 if (hallregs.length > 0) {
                     hallItems1 = hallregs.map(hallreg => (
-                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="100" />
+                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="100" seat2="200" />
                     ));
                 } else {
                     hallItems1 = <h4>No profiles found...</h4>;
@@ -156,7 +156,7 @@ class Halls extends Component {
             } else {
                 if (hallregs.length > 0) {
                     hallItems2 = hallregs.map(hallreg => (
-                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="150" />
+                        <Hallitem key={hallreg._id} hallreg={hallreg} seat1="200" seat2="300" />
                     ));
                 } else {
                     hallItems2 = <h4>No profiles found...</h4>;
@@ -181,7 +181,7 @@ class Halls extends Component {
                                     id="current1"
                                 />
                                 <label htmlFor="current1" className="form-check-label">
-                                    Above 50
+                                    0 - 100
                                 </label>
                             </div>
 
