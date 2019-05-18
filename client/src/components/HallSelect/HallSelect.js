@@ -8,6 +8,7 @@ import { getHallregs } from "../../actions/hallregActions";
 
 
 import Calender from "../Calender/Calender";
+import { weekdays } from "moment";
 
 const style = {
   //this for Calender
@@ -18,7 +19,7 @@ const style = {
 class Halls extends Component {
   
   onDayClick = (e ,day) => {
-    alert("The Day You Select Is : " + day);
+    alert("The Day You Select Is : " + day );
   }
 
   constructor(props) {
@@ -156,7 +157,7 @@ onCheck4(e) {
                     <Hallitem key={hallreg._id} hallreg={hallreg} seat1="0" seat2="50"/>
                 ));
             } else {
-                hallItems0 = <h4>No profiles found...</h4>;
+                hallItems0 = <h4>Not Found Halls...</h4>;
             }
         }
     }
@@ -204,7 +205,7 @@ onCheck4(e) {
                     <Hallitem key={hallreg._id} hallreg={hallreg} seat1="50" seat2="100"/>
                 ));
             } else {
-                hallItems1 = <h4>No profiles found...</h4>;
+                hallItems1 = <h4>Not Found Halls...</h4>;
             }
         }
     }
@@ -252,7 +253,7 @@ onCheck4(e) {
                     <Hallitem key={hallreg._id} hallreg={hallreg} seat1="100" seat2="150" />
                 ));
             } else {
-                hallItems2 = <h4>No profiles found...</h4>;
+                hallItems2 = <h4>Not Found Halls...</h4>;
             }
         }
     }
@@ -300,7 +301,7 @@ onCheck4(e) {
                   <Hallitem key={hallreg._id} hallreg={hallreg} seat1="150" seat2="200" />
               ));
           } else {
-              hallItems3 = <h4>No profiles found...</h4>;
+              hallItems3 = <h4>Not Found Halls...</h4>;
           }
       }
   }
@@ -348,7 +349,7 @@ onCheck4(e) {
                 <Hallitem key={hallreg._id} hallreg={hallreg} seat1="200" seat2="500" />
             ));
         } else {
-            hallItems4 = <h4>No profiles found...</h4>;
+            hallItems4 = <h4>Not Found Halls...</h4>;
         }
     }
 }
@@ -356,124 +357,7 @@ onCheck4(e) {
 
   return (
     <React.Fragment>
-      {/* <MDBRow>
-        <div className="col-sm-3 " />
-        <div className="col-sm-6 ">
-          <MDBCol md="8">
-            <MDBCard className="mt-5">
-              <MDBView className="gradient-card-header black darken-2">
-                <h4 className="h4-responsive text-white">Calender</h4>
-              </MDBView>
-              <MDBCardBody
-                style={{ width: "100%", height: "350px" }}
-                className="text-center">
-                <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
-
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-
-          <MDBCol md="8">
-            <MDBCard className="mt-5">
-              <MDBView className="gradient-card-header black darken-2">
-                <h4 className="h4-responsive text-white">Available Seats</h4>
-                
-              </MDBView>
-              <MDBCardBody
-                style={{ width: "100%", height: "400px" }}
-                className="text-center"
-              >
-                <div className="col-md-12">
-                  <ul className="list-group">
-                    <li className="list-group-item">
-
-                    <div className="form-check mb-4">
-                                <input
-                                    type="checkbox"
-                                    className="form-check-input"
-                                    name="current1"
-                                    value={this.state.current1}
-                                    checked={this.state.current1}
-                                    onChange={this.onCheck}
-                                    id="current1"
-                                />
-                                <label htmlFor="current1" className="form-check-label">
-                                    Above 50
-                                </label>
-                            </div>
-                      
-                   
-                    </li>
-                    <li className="list-group-item">
-
-                    <div className="form-check mb-4">
-                                <input
-                                    type="checkbox"
-                                    className="form-check-input"
-                                    name="current2"
-                                    value={this.state.current2}
-                                    checked={this.state.current2}
-                                    onChange={this.onCheck1}
-                                    id="current2"
-                                />
-                                <label htmlFor="current2" className="form-check-label">
-                                    Above 100
-                                </label>
-                            </div>
-                    
-                     
-                    </li>
-                    <li className="list-group-item">
-
-                    <div className="form-check mb-4">
-                                <input
-                                    type="checkbox"
-                                    className="form-check-input"
-                                    name="current3"
-                                    value={this.state.current3}
-                                    checked={this.state.current3}
-                                    onChange={this.onCheck2}
-                                    id="current3"
-                                />
-                                <label htmlFor="current3" className="form-check-label">
-                                    Above 150
-                                </label>
-                            </div>
-                      
-                   
-
-                    </li>
-                    <li className="list-group-item">
-
-
-                    </li>
-                    <li className="list-group-item">
-                       
-                   
-
-                    </li>
-                   
-                  </ul>
-                  <br />
-                </div>
-              </MDBCardBody>
-              
-            </MDBCard>
-            <div className="col-sm-6 style">
-                            {hallItems0}
-                            {hallItems1}
-                            {hallItems2}
-
-                     </div>
-
-          </MDBCol>
-
-        </div>
-        
-        </MDBRow> */}
- {/* <div className="col-sm-4" /> */}
- 
-        {/* <div className="col-sm-10 " > */}
+     
 <MDBRow>
   <div className="col-sm-4" /> 
           <MDBCol md="4">
