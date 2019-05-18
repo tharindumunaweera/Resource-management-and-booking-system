@@ -13,7 +13,7 @@ class Hallitem extends Component {
 
         return (
             <div>
-                {hallreg.seat > this.props.seat1 ? (
+                {(this.props.seat1 <= hallreg.seat) && (hallreg.seat< this.props.seat2) ? (
                     <div className="card card-body bg-light mb-3">
                         <div className="row">
                             {/* <div className="col-2">
@@ -23,10 +23,10 @@ class Hallitem extends Component {
 
                                 <div>
 
-                                    <strong>Hall Name: {hallreg.hallname}</strong>
+                                    
 
-                                    <Link to="/example">
-                                        <h3>Hall Name: {hallreg.hallname} </h3>
+                                    <Link to="/available">
+                                    <strong>Hall Name: {hallreg.hallname} </strong>
 
                                     </Link>
 
