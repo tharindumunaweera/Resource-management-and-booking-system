@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import TextFieldGroup from "../common/TextFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
+import { withRouter } from "react-router-dom";
+import { getCurrentNine, deleteAccount } from "../../actions/nineActions";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import {
   MDBCard,
   MDBCol,
@@ -30,6 +34,20 @@ class AvailableLoad extends Component {
 
     this.onChange = this.onChange.bind(this);
   }
+
+  componentDidMount() {
+    this.props.getCurrentNine()
+
+    const { handle } = this.props.match.params
+    const { name } = this.props.location.state
+
+    this.setState({
+      hallname: name
+    });
+  }
+
+
+
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -232,6 +250,17 @@ class AvailableLoad extends Component {
                 </h4>
               </MDBView>
               <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
+
+
+              <li className="list-group-item">
+            <TextFieldGroup
+                  editable= "false"
+                  placeholder=""
+                  name="hallname"
+                  value={this.state.hallname}
+                  onChange={this.onChange}
+                />
+            </li>
                 
               <li className="list-group-item">
               <TextFieldGroup
@@ -263,14 +292,6 @@ class AvailableLoad extends Component {
               />
             </li>
 
-            <li className="list-group-item">
-              <TextAreaFieldGroup
-                placeholder="Hall Name"
-                name="hall"
-                value={this.state.hall}
-                onChange={this.onChange}
-              />
-            </li>
 
             <li className="list-group-item">
               <TextAreaFieldGroup
@@ -304,5 +325,17 @@ class AvailableLoad extends Component {
     );
   }
 }
+AvailableLoad.propTypes = {
+  getCurrentNine: PropTypes.func.isRequired,
+  nine: PropTypes.object.isRequired
+};
 
-export default AvailableLoad;
+const mapStateToProps = state => ({
+  nine: state.nine
+});
+
+export default connect(
+  mapStateToProps,
+  { getCurrentNine }
+)(withRouter(AvailableLoad));
+
