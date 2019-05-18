@@ -27,13 +27,13 @@ class Hallitem extends Component {
 
         return (
             <div>
-                {hallreg.seat > this.props.seat1 ? (
+                {(this.props.seat1 <= hallreg.seat) && (hallreg.seat < this.props.seat2) ? (
                     <div className="card card-body bg-light mb-3">
                         <div className="row">
                             {/* <div className="col-2">
              <img src={profile.user.avatar} alt="" className="rounded-circle" />
            </div> */}
-                            <div className="col-lg-6 col-md-4 col-8">
+                            <div className="col-lg-8 col-md-5 col-10">
 
                                 <div>
                                     <Link to={{
@@ -55,10 +55,10 @@ class Hallitem extends Component {
                                         Add Social Network Links
                                         </button> */}
                                     <p>
-                                        Location: {hallreg.location}
+                                        Number of seats: {hallreg.seat}
                                     </p>
                                     <p>
-                                        Number of seats: {hallreg.seat}
+                                        Location: {hallreg.location}
                                     </p>
                                     <p>
                                         Number of Projectors: {hallreg.projecter}
