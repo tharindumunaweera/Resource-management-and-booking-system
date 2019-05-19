@@ -28,7 +28,7 @@ class Example extends Component {
   componentDidMount() {
     this.props.getCurrentNine()
 
-    const { handle } = this.props.match.params
+    // const { handle } = this.props.match.params
     const { name } = this.props.location.state
 
     this.setState({
@@ -81,6 +81,7 @@ class Example extends Component {
     let threeInputs;
     let fourInputs;
     let fiveInputs;
+    let eightnine;
 
     const { nine } = this.props.nine;
 
@@ -99,9 +100,12 @@ class Example extends Component {
 
     if (this.state.dayofweek == "Monday") {
       let i;
+      let eight = false;
+      let nines = false;
 
       for (i = 0; i <= nine.Meighttonine.length; i++) {
         if (nine.Meighttonine[i] == this.state.hallname) {
+          eight = true;
           eightInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -117,8 +121,12 @@ class Example extends Component {
         }
       }
 
+
+
+
       for (i = 0; i <= nine.Mninetoten.length; i++) {
         if (nine.Mninetoten[i] == this.state.hallname) {
+          nines = true;
           nineInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -132,6 +140,21 @@ class Example extends Component {
             </div>
           );
         }
+      }
+
+      if ((eight === true) && (nines === true)) {
+        eightnine = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-10.00 a.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
       }
 
       for (i = 0; i <= nine.Mtentoeleven.length; i++) {
@@ -932,6 +955,7 @@ class Example extends Component {
             <div className="col-sm-4 style">
               <div className="card card-body bg-light mb-3">
                 {eightInputs}
+                {eightnine}
                 {nineInputs}
                 {tenInputs}
                 {elevenInputs}
