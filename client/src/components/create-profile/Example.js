@@ -82,6 +82,14 @@ class Example extends Component {
     let fourInputs;
     let fiveInputs;
     let eightnine;
+    let nineten;
+    let teneleven;
+    let eleventwelve;
+    let twelveone;
+    let onetwo;
+    let twothree;
+    let threefour;
+    let fourfive;
 
     const { nine } = this.props.nine;
 
@@ -102,6 +110,14 @@ class Example extends Component {
       let i;
       let eight = false;
       let nines = false;
+      let ten = false;
+      let eleven = false;
+      let twelve = false;
+      let one = false;
+      let two = false;
+      let three = false;
+      let four = false;
+      let five = false;
 
       for (i = 0; i <= nine.Meighttonine.length; i++) {
         if (nine.Meighttonine[i] == this.state.hallname) {
@@ -122,8 +138,6 @@ class Example extends Component {
       }
 
 
-
-
       for (i = 0; i <= nine.Mninetoten.length; i++) {
         if (nine.Mninetoten[i] == this.state.hallname) {
           nines = true;
@@ -142,23 +156,10 @@ class Example extends Component {
         }
       }
 
-      if ((eight === true) && (nines === true)) {
-        eightnine = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-10.00 a.m</th>
-                  <td>Avaialable</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
-      }
 
       for (i = 0; i <= nine.Mtentoeleven.length; i++) {
         if (nine.Mtentoeleven[i] == this.state.hallname) {
+          ten = true;
           tenInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -174,8 +175,12 @@ class Example extends Component {
         }
       }
 
+
+
+
       for (i = 0; i <= nine.Meleventotwelve.length; i++) {
         if (nine.Meleventotwelve[i] == this.state.hallname) {
+          eleven = true;
           elevenInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -191,8 +196,11 @@ class Example extends Component {
         }
       }
 
+
+
       for (i = 0; i <= nine.Mtwelvetoone.length; i++) {
         if (nine.Mtwelvetoone[i] == this.state.hallname) {
+          twelve = true;
           twelveInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -208,8 +216,11 @@ class Example extends Component {
         }
       }
 
+
+
       for (i = 0; i <= nine.Monetotwo.length; i++) {
         if (nine.Monetotwo[i] == this.state.hallname) {
+          one = true;
           oneInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -275,6 +286,68 @@ class Example extends Component {
           );
         }
       }
+
+      if ((eight === true) && (nines === true)) {
+        eightnine = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-10.00 a.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((nines === true) && (ten === true)) {
+        nineten = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">09.00 a.m-11.00 a.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((ten === true) && (eleven === true)) {
+        teneleven = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">10.00 a.m-12.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((eleven === true) && (twelve === true)) {
+        eleventwelve = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">11.00 a.m-01.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+
     }
 
     if (this.state.dayofweek == "Tuesday") {
@@ -589,6 +662,8 @@ class Example extends Component {
           );
         }
       }
+
+
     }
 
     if (this.state.dayofweek == "Thursday") {
@@ -957,8 +1032,11 @@ class Example extends Component {
                 {eightInputs}
                 {eightnine}
                 {nineInputs}
+                {nineten}
                 {tenInputs}
+                {teneleven}
                 {elevenInputs}
+                {eleventwelve}
                 {twelveInputs}
                 {oneInputs}
                 {twoInputs}
