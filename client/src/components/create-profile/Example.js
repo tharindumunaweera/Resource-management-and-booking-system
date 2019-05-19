@@ -81,7 +81,15 @@ class Example extends Component {
     let threeInputs;
     let fourInputs;
     let fiveInputs;
+
     let eightnine;
+    let eightten;
+    let eighteleven;
+    let eighttwelve;
+    let eightone;
+    let eighttwo;
+    let eightthree;
+    let eightfour;
     let nineten;
     let teneleven;
     let eleventwelve;
@@ -238,6 +246,7 @@ class Example extends Component {
 
       for (i = 0; i <= nine.Mtwotothree.length; i++) {
         if (nine.Mtwotothree[i] == this.state.hallname) {
+          two = true;
           twoInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -255,6 +264,7 @@ class Example extends Component {
 
       for (i = 0; i <= nine.Mthreetofour.length; i++) {
         if (nine.Mthreetofour[i] == this.state.hallname) {
+          three = true;
           threeInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -272,6 +282,7 @@ class Example extends Component {
 
       for (i = 0; i <= nine.Mfourtofive.length; i++) {
         if (nine.Mfourtofive[i] == this.state.hallname) {
+          four = true
           fourInputs = (
             <div>
               <table class="table table-light table-striped">
@@ -294,6 +305,111 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-10.00 a.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((eight === true) && (nines === true) && (ten === true)) {
+        eightten = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-11.00 a.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((eight === true) && (nines === true) && (ten === true) && (eleven === true)) {
+        eighteleven = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-12.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true)) {
+        eighttwelve = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-01.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true)) {
+        eightone = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-02.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true) && (two === true)) {
+        eighttwo = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-03.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true) && (two === true) && (three === true)) {
+        eightthree = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-04.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true) && (two === true) && (three === true) && (four === true)) {
+        eightfour = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">08.00 a.m-05.00 p.m</th>
                   <td>Avaialable</td>
                 </tr>
               </tbody>
@@ -339,6 +455,66 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-01.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((twelve === true) && (one === true)) {
+        twelveone = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">12.00 p.m-02.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((one === true) && (two === true)) {
+        onetwo = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">01.00 p.m-03.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((two === true) && (three === true)) {
+        twothree = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">02.00 p.m-04.00 p.m</th>
+                  <td>Avaialable</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        );
+      }
+
+      if ((three === true) && (four === true)) {
+        threefour = (
+          <div>
+            <table class="table table-light table-striped">
+              <tbody>
+                <tr>
+                  <th scope="row">03.00 p.m-05.00 p.m</th>
                   <td>Avaialable</td>
                 </tr>
               </tbody>
@@ -1031,6 +1207,14 @@ class Example extends Component {
               <div className="card card-body bg-light mb-3">
                 {eightInputs}
                 {eightnine}
+                {eightten}
+                {eighteleven}
+                {eighttwelve}
+                {eightone}
+                {eighttwo}
+                {eightthree}
+                {eightfour}
+
                 {nineInputs}
                 {nineten}
                 {tenInputs}
@@ -1038,9 +1222,13 @@ class Example extends Component {
                 {elevenInputs}
                 {eleventwelve}
                 {twelveInputs}
+                {twelveone}
                 {oneInputs}
+                {onetwo}
                 {twoInputs}
+                {twothree}
                 {threeInputs}
+                {threefour}
                 {fourInputs}
               </div>
             </div>
