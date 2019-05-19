@@ -161,15 +161,19 @@ export default class Calender extends React.Component {
         );
     }
 
-    onDayClick = (e, day) => {
-        this.setState({
-            selectedDay: day
-        }, () => {
-            console.log("SELECTED DAY: ", this.state.selectedDay);
-        });
+     onDayClick = (e, day) => {
+         this.setState({
+             selectedDay: day
+         }, () => {
+             console.log("SELECTED DAY: ", this.state.selectedDay);
+         });
 
-        this.props.onDayClick && this.props.onDayClick(e, day);
-    }
+         this.props.onDayClick && this.props.onDayClick(e, day);
+     }
+
+   
+
+    
 
     render() {
         // Map the weekdays i.e Sun, Mon, Tue etc as <td>
