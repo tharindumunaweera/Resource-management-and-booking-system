@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Spinner from "../common/Spinner";
 import Hallitem from "../halls/Hallitem";
 import { getHallregs } from "../../actions/hallregActions";
+import moment from 'moment';
 
 
 import Calender from "../Calender/Calender";
@@ -363,7 +364,7 @@ onCheck4(e) {
           <MDBCol md="4">
             <MDBCard className="mt-4">
               <MDBView className="gradient-card-header black darken-2">
-              <h4 className="h4-responsive text-white">Calender</h4>
+              <h4 className="h4-responsive text-white">Calender.....{moment().format('MMMM D YYYY')}</h4>
               </MDBView>
               <MDBCardBody style={{width: '100%', height: '350px'}} className="text-center">
               <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
@@ -400,7 +401,7 @@ onCheck4(e) {
                   <ul className="list-group">
                     <li className="list-group-item">
 
-                    <div className="form-check mb-4">
+                    <div className="form-check mb-4" align="left">
                                 <input
                                     type="checkbox"
                                     className="form-check-input"
@@ -411,7 +412,7 @@ onCheck4(e) {
                                     id="current1"
                                 />
                                 <label htmlFor="current1" className="form-check-label">
-                                    0 - 50
+                                   <strong> Greater than 0 - Less than 50 </strong>
                                 </label>
                             </div>
                       
@@ -419,7 +420,7 @@ onCheck4(e) {
                     </li>
                     <li className="list-group-item">
 
-                    <div className="form-check mb-4">
+                    <div className="form-check mb-4" align="left">
                                 <input
                                     type="checkbox"
                                     className="form-check-input"
@@ -430,7 +431,7 @@ onCheck4(e) {
                                     id="current2"
                                 />
                                 <label htmlFor="current2" className="form-check-label">
-                                    50 - 100
+                                <strong>Greater than 50 - Less than 100</strong>
                                 </label>
                             </div>
                     
@@ -438,7 +439,7 @@ onCheck4(e) {
                     </li>
                     <li className="list-group-item">
 
-                    <div className="form-check mb-4">
+                    <div className="form-check mb-4" align="left">
                                 <input
                                     type="checkbox"
                                     className="form-check-input"
@@ -449,7 +450,7 @@ onCheck4(e) {
                                     id="current3"
                                 />
                                 <label htmlFor="current3" className="form-check-label">
-                                    100 - 150
+                                <strong>Greater than 100 - Less than 150</strong>
                                 </label>
                             </div>
                       
@@ -457,7 +458,7 @@ onCheck4(e) {
 
                     </li>
                     <li className="list-group-item">
-                    <div className="form-check mb-4">
+                    <div className="form-check mb-4" align="left">
                                 <input
                                     type="checkbox"
                                     className="form-check-input"
@@ -468,13 +469,13 @@ onCheck4(e) {
                                     id="current4"
                                 />
                                 <label htmlFor="current4" className="form-check-label">
-                                    150 - 200
+                                <strong>Greater than 150 - Less than 200</strong>
                                 </label>
                             </div>
 
                     </li>
                     <li className="list-group-item">
-                    <div className="form-check mb-4">
+                    <div className="form-check mb-4" align="left">
                                 <input
                                     type="checkbox"
                                     className="form-check-input"
@@ -485,7 +486,7 @@ onCheck4(e) {
                                     id="current5"
                                 />
                                 <label htmlFor="current5" className="form-check-label">
-                                    Greater 200
+                                   <strong> Greater 200</strong>
                                 </label>
                             </div>
                    

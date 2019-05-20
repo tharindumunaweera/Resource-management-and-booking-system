@@ -23,6 +23,7 @@
     "express": "^4.16.4",
     "google-map-react": "^1.1.2",
     "gravatar": "^1.8.0",
+    "html-pdf": "^2.2.0",
     "jsonwebtoken": "^8.5.0",
     "jwt-decode": "^2.2.0",
     "mdbreact": "^4.11.1",
