@@ -1,5 +1,5 @@
 
-module.exports = ({ hallname, date, starttime, endtime, purpose, discription  }) => {
+module.exports = ({ hallname, date, starttime, endtime, purpose, discription ,name , studentid , phonenumber }) => {
     const today = new Date();
 return `
     <!doctype html>
@@ -87,7 +87,7 @@ return `
                    <td colspan="2">
                       <table>
                       <td class="title"  align = "center"><img  src="http://ucsc.cmb.ac.lk/wp-content/uploads/2016/03/UCSC_logo.jpg"
-                               style="width:0%; max-width:156px;" ></td>
+                               style="width:40%; max-width:120px;" ></td>
                          <tr>
                             
                            
@@ -104,19 +104,7 @@ return `
                       </table>
                    </td>
                 </tr>
-                <tr class="information">
-                   <td colspan="2">
-                      <table>
-                         <tr>
-                           
-                         </tr>
-                      </table>
-                   </td>
-                </tr>
-                  <tr class="heading">
-                    <td></td>
-                    <td></td>
-                 </tr>
+
                 <tr class="item">
                    <td><strong>Hall Name :</strong> ${hallname}</td>
                 </tr>
@@ -130,7 +118,7 @@ return `
                   <td><strong>End Time :</strong> ${endtime}</td>
                 </tr>
                 <tr class="item">
-                  <td><strong>Purpose : </strong>${purpose}</td>
+                  <td><strong>Purpose : </strong> ${purpose}</td>
                 </tr>
                 <tr class="item">
                   <td><strong>Discription :</strong> ${discription}</td>
@@ -143,16 +131,16 @@ return `
              <td>I undertake the responsibility of booking and will take care of all assets in the room during the booking.I will not change assets in the hall (technical settings or physical locations) without permission.I agree to pay compensation to UCSC due to the damages.</td>
              <br />
              <br />
-             <td>Name Of Applicant :</td>
+             <td><strong>Name Of Applicant :</strong> ${name}</td>
              <br />
-             <td>Registration Number :</td>
+             <td><strong>Registration Number :</strong> ${studentid}</td>
              <br />
-             <td>Phone Number :</td>
+             <td><strong>Phone Number :</strong> ${phonenumber}</td>
              <br />
              <hr/>
-             <td>Approval Of Coordinator :</td>
+             <td><strong>Approval Of Coordinator :</strong> </td>
              <br/>
-             <td>Approval Of Director :</td>
+             <td><strong>Approval Of Director :</strong> </td>
           </div>
        </body>
     </html>
