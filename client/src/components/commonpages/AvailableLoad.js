@@ -21,7 +21,10 @@ class AvailableLoad extends Component {
       starttime: "",
       endtime: "",
       purpose: "",
-      discription:""
+      discription:"",
+      name:"",
+      studentid:"",
+      phonenumber:""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -252,7 +255,7 @@ createAndDownloadPdf = () => {
                 
                 </h4>
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
+              <MDBCardBody style={{width: '100%', height: '1000px'}} className="text-center">
 
 
               <li className="list-group-item">
@@ -312,6 +315,35 @@ createAndDownloadPdf = () => {
                 onChange={this.handleChange}
               />
             </li>
+          
+            <li className="list-group-item">
+            <TextFieldGroup
+                  editable= "false"
+                  placeholder="Applicant Name"
+                  name="name"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+            </li>
+            <li className="list-group-item">
+            <TextFieldGroup
+                  editable= "false"
+                  placeholder="StudentId / LecturerId"
+                  name="studentid"
+                  value={this.state.studentid}
+                  onChange={this.handleChange}
+                />
+            </li>
+            <li className="list-group-item">
+            <TextFieldGroup
+                  editable= "false"
+                  placeholder="Phone Number"
+                  name="phonenumber"
+                  value={this.state.phonenumber}
+                  onChange={this.handleChange}
+                />
+            </li>
+
 
            
              <div className="card text-right"  >
