@@ -37,7 +37,7 @@ class Hallitem extends Component {
 
                                 <div>
                                     <Link to={{
-                                        pathname: './available',
+                                        pathname: './example',
                                         state: {
                                             name: hallreg.hallname
                                         }

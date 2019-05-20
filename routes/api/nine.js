@@ -9,11 +9,11 @@ const User = require("../../models/User");
 
 router.get(
   "/",
-  passport.authenticate("jwt", { session: false }),
+
   (req, res) => {
     const errors = {};
 
-    Nine.findOne({ user: req.user.id })
+    Nine.findOne()
       .populate("user", ["name", "avatar"])
       .then(nine => {
         if (!nine) {
@@ -28,7 +28,7 @@ router.get(
 
 router.post(
   "/",
-  passport.authenticate("jwt", { session: false }),
+
   (req, res) => {
     //Check validation
 
