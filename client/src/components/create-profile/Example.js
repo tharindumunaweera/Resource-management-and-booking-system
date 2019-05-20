@@ -26,9 +26,9 @@ class Example extends Component {
   }
 
   componentDidMount() {
-    this.props.getCurrentNine()
+    this.props.getCurrentNine()////////////////////////////////////////////////////////////////
 
-    const { handle } = this.props.match.params/////////////////////////////////////////////////
+    const { handle } = this.props.match.params
     const { name } = this.props.location.state
 
     this.setState({
