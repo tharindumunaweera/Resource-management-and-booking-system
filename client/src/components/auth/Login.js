@@ -27,7 +27,7 @@ class Login extends Component {
         this.props.history.push("/UnionStudent");
       }
       if (user.role === "Acadamic") {
-        this.props.history.push("/AcademicStaff");
+        this.props.history.push("/dashboard");
       }
       //  if (user.role == "Acadamic") {
       //    this.props.history.push("/AcademicStaff");
