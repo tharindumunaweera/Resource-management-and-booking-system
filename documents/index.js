@@ -1,5 +1,5 @@
 
-module.exports = ({ name, price1, price2, receiptId }) => {
+module.exports = ({ hallname, date, starttime, endtime, purpose, discription  }) => {
     const today = new Date();
 return `
     <!doctype html>
@@ -87,7 +87,7 @@ return `
                    <td colspan="2">
                       <table>
                       <td class="title"  align = "center"><img  src="http://ucsc.cmb.ac.lk/wp-content/uploads/2016/03/UCSC_logo.jpg"
-                               style="width:100%; max-width:156px;" ></td>
+                               style="width:0%; max-width:156px;" ></td>
                          <tr>
                             
                            
@@ -118,24 +118,22 @@ return `
                     <td></td>
                  </tr>
                 <tr class="item">
-                   <td>Hall Name :</td>
-                   <td>${price2}$</td>
+                   <td><strong>Hall Name :</strong> ${hallname}</td>
                 </tr>
                 <tr class="item">
-                   <td>Start Time :</td>
-                   <td>${price2}$</td>
+                   <td><strong>Booking Date : </strong>${date}</td>
                 </tr>
                 <tr class="item">
-                  <td>End Time :</td>
-                  <td>${price2}$</td>
+                   <td><strong>Start Time :</strong> ${starttime}</td>
                 </tr>
                 <tr class="item">
-                  <td>Reason :</td>
-                  <td>${price2}$</td>
+                  <td><strong>End Time :</strong> ${endtime}</td>
                 </tr>
                 <tr class="item">
-                  <td>Discription :</td>
-                  <td>${price2}$</td>
+                  <td><strong>Purpose : </strong>${purpose}</td>
+                </tr>
+                <tr class="item">
+                  <td><strong>Discription :</strong> ${discription}</td>
                 </tr>
              </table>
              <br/>

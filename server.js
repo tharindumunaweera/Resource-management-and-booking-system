@@ -5,6 +5,8 @@ const passport = require("passport");
 const path = require("path");
 const cors = require("cors");
 const hallRegRouts = express.Router();
+const pdf = require('html-pdf');
+
 
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
@@ -17,6 +19,8 @@ const ten = require("./routes/api/ten");
 const eleven = require("./routes/api/eleven");
 const booking = require("./routes/api/booking");
 const hallreg = require("./routes/api/hallreg");
+
+const pdfTemplate = require('./documents'); 
 
 //hallregistration model
 const HallRegisterSchema = require("./models/Hallreg");
@@ -129,5 +133,24 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
+
+// pdf create routs
+
+//POST -PDF generation and fetching of the data
+app.post('/create-pdf' , (req , res) => {
+  pdf.create(pdfTemplate(req.body) , {} ).toFile('result.pdf' , (err) =>{
+      if(err){
+          res.send(Promise.reject());
+      }
+      res.send(Promise.resolve());
+  });
+});
+
+//GET -send the generated pdf to the client
+app.get('/fetch-pdf' , (req , res) => {
+  res.sendFile(`${__dirname}/result.pdf`)
+})
+
+
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

@@ -7,29 +7,21 @@ import { withRouter } from "react-router-dom";
 import { getCurrentNine, deleteAccount } from "../../actions/nineActions";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import {
-  MDBCard,
-  MDBCol,
-  MDBRow,
-  MDBView,
-  MDBMask,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardFooter,
-  MDBBtn,
-  MDBIcon
+import axios from 'axios'
+import { saveAs } from 'file-saver'
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon
 } from "mdbreact";
 
 class AvailableLoad extends Component {
   constructor() {
     super();
     this.state = {
+      hallname:"",
+      date:"",
       starttime: "",
       endtime: "",
-      reason: "",
-      hall: ""
+      purpose: "",
+      discription:""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -46,7 +38,18 @@ class AvailableLoad extends Component {
     });
   }
 
+//pdf creation
+handleChange = ({ target: { value , name }}) => this.setState({ [name]: value}) ;
 
+createAndDownloadPdf = () => {
+  axios.post('/create-pdf' , this.state)
+     .then(() => axios.get('fetch-pdf', {responseType: 'blob'}))
+     .then((res) =>{
+       const pdfBlob = new Blob([res.data] , {type:'application/pdf'});
+
+       saveAs(pdfBlob , 'BookingForm.pdf');
+     })
+}
 
 
   onChange(e) {
@@ -258,7 +261,7 @@ class AvailableLoad extends Component {
                   placeholder=""
                   name="hallname"
                   value={this.state.hallname}
-                  onChange={this.onChange}
+                  onChange={this.handleChange}
                 />
             </li>
                 
@@ -267,7 +270,7 @@ class AvailableLoad extends Component {
                 placeholder="Date"
                 name="date"
                 value={this.state.date}
-                onChange={this.onChange}
+                onChange={this.handleChange}
               />
             </li>
 
@@ -277,7 +280,7 @@ class AvailableLoad extends Component {
                 placeholder="Start Time"
                 name="starttime"
                 value={this.state.starttime}
-                onChange={this.onChange}
+                onChange={this.handleChange}
                 options={startTime}
               />
             </li>
@@ -287,7 +290,7 @@ class AvailableLoad extends Component {
                 placeholder="End Time"
                 name="endtime"
                 value={this.state.endtime}
-                onChange={this.onChange}
+                onChange={this.handleChange}
                 options={endTime}
               />
             </li>
@@ -296,23 +299,26 @@ class AvailableLoad extends Component {
             <li className="list-group-item">
               <TextAreaFieldGroup
                 placeholder="Purpose"
-                name="reason"
-                value={this.state.rpurpose}
-                onChange={this.onChange}
+                name="purpose"
+                value={this.state.purpose}
+                onChange={this.handleChange}
               />
             </li>
             <li className="list-group-item">
               <TextAreaFieldGroup
                 placeholder="Discription"
-                name="reason"
+                name="discription"
                 value={this.state.discription}
-                onChange={this.onChange}
+                onChange={this.handleChange}
               />
             </li>
 
            
              <div className="card text-right"  >
                     <button type="button" className="btn btn-primary"><strong>Submit</strong></button>
+             </div>
+             <div className="card text-right"  >
+                    <button type="button" className="btn btn-success" onClick= {this.createAndDownloadPdf}><strong>PDF Generate</strong></button>
              </div>
 
 
