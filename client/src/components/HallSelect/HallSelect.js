@@ -20,7 +20,7 @@ const style = {
 class Halls extends Component {
   
   onDayClick = (e ,day) => {
-    alert("The Day You Select Is : " + day );
+    alert("The Day You Select Is : " + day);
   }
 
   constructor(props) {
