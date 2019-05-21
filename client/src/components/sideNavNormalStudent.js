@@ -11,12 +11,14 @@ const TopNavigation = () => {
                 <img alt="MDB React Logo" className="img-fluid" src={logo}/>
             </a>
             <MDBListGroup className="list-group-flush">
-                <NavLink exact={true} to="/Register" activeClassName="activeClass">
+
+                <NavLink  to="/register" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="chart-pie" className="mr-3"/>
                        User Registration
                     </MDBListGroupItem>
                 </NavLink>
+                
                 <NavLink to="/profile" activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="user" className="mr-3"/>
