@@ -5,6 +5,7 @@ import src1 from '../../assets/img-1.jpg';
 //import Lecturer from '../Tables/Availabilitytable';
 import TopNavNormalStudent from "../topNavNormalStudent";
 import SideNavNormalStudent from "../sideNavNormalStudent";
+import Register from "../auth/Register";
 
 
 
@@ -16,7 +17,7 @@ const Admin =  () => {
             <TopNavNormalStudent/>
             <SideNavNormalStudent/>
             
-
+            <Route exact path="/Register" component={ Register}/>
             <main id="content" className="p-5">
             
             </main>
