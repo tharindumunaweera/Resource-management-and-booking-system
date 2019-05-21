@@ -10,8 +10,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
-import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon
-} from "mdbreact";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
 
 class AvailableLoad extends Component {
   constructor() {

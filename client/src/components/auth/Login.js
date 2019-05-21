@@ -41,6 +41,9 @@ class Login extends Component {
       if (user.role === "Lecturer") {
         this.props.history.push("/Lecturer");
       }
+      if (user.role === "Admin") {
+        this.props.history.push("/Admin");
+      }
     }
   }
 
@@ -64,6 +67,9 @@ class Login extends Component {
       }
       if (user.role == "Lecturer") {
         this.props.history.push("/Lecturer");
+      }
+      if (user.role === "Admin") {
+        this.props.history.push("/Admin");
       }
       //this.props.history.push("/dashboard");
     }
