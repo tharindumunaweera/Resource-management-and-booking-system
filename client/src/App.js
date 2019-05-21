@@ -26,8 +26,9 @@ import Lecturer from "./components/actors/Lecturer";
 import AcademicStaff from "./components/actors/AcademicStaff";
 import Director from "./components/actors/Director";
 import Coordinator from "./components/actors/Coordinator";
-import NormalStudent from "./components/actors/NormalStudent";
+import NormalStudent from "./components/actors/Admin";
 import UnionStudent from "./components/actors/UnionStudent";
+import Admin from "./components/actors/Admin";
 
 import Dashboard from "./components/dashboard/Dashboard";
 import Refdashboard from "./components/dashboard/Refdashboard";
@@ -110,7 +111,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar />
+            {/* <Navbar /> */}
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
 
@@ -161,9 +162,12 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/UnionStudent" component={UnionStudent} />
             </Switch>
-             {/* <Switch>
+           <Switch>
               <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
-            </Switch>   */}
+            </Switch>   
+            <Switch>
+              <PrivateRoute exact path="/Admin" component={Admin} />
+            </Switch>   
 
             <Switch>
               <PrivateRoute

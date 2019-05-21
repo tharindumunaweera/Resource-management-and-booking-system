@@ -172,8 +172,6 @@ export default class Calender extends React.Component {
          this.props.onDayClick && this.props.onDayClick(e, day);
      }
 
-   
-
     
 
     render() {

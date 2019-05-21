@@ -8,7 +8,7 @@ import SideNavNormalStudent from "../sideNavNormalStudent";
 
 
 
-const NormalStudent =  () => {
+const Admin =  () => {
   return (
     <React.Fragment>
          <Router>
@@ -27,4 +27,4 @@ const NormalStudent =  () => {
   );
 }
 
-export default NormalStudent;
+export default Admin;
