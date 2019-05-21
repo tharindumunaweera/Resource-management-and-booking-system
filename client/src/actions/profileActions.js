@@ -41,6 +41,18 @@ export const createProfile = (profileData, history) => dispatch => {
     );
 };
 
+export const createProfileref = (profileData, history) => dispatch => {
+  axios
+    .post("/api/profile", profileData)
+    .then(res => history.push("/refdashboard"))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 // Add experience
 export const addExperience = (expData, history) => dispatch => {
   axios

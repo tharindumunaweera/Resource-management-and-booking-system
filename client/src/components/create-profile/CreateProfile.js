@@ -7,8 +7,9 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import InputGroup from "../common/InputGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { createProfile } from "../../actions/profileActions";
+import { createProfileref } from "../../actions/profileActions";
 import { userInfo } from "os";
-import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 
 class CreateProfile extends Component {
   constructor(props) {
@@ -35,13 +36,17 @@ class CreateProfile extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
       this.setState({ errors: nextProps.errors });
     }
+
   }
 
   onSubmit(e) {
+    const { user } = this.props.auth;
     e.preventDefault();
 
     const profileData = {
@@ -60,7 +65,14 @@ class CreateProfile extends Component {
       // instagram: this.state.instagram
     };
 
-    this.props.createProfile(profileData, this.props.history);
+    if (user.role == "Acadamic") {
+      this.props.createProfile(profileData, this.props.history);
+    }
+    if (user.role == "Ref") {
+      this.props.createProfileref(profileData, this.props.history);
+    }
+
+
   }
 
   onChange(e) {
@@ -192,15 +204,15 @@ class CreateProfile extends Component {
                   </h4>
                 </MDBView>
                 <MDBCardBody>
-                <form onSubmit={this.onSubmit}>
-                {dashboardContent}
-                <input
-                  type="submit"
-                  value="Submit"
-                  className="btn btn-info btn-block mt-4"
-                />
-              </form>
-               </MDBCardBody>
+                  <form onSubmit={this.onSubmit}>
+                    {dashboardContent}
+                    <input
+                      type="submit"
+                      value="Submit"
+                      className="btn btn-info btn-block mt-4"
+                    />
+                  </form>
+                </MDBCardBody>
               </MDBCard>
             </MDBCol>
           </div>
@@ -251,5 +263,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { createProfile }
+  { createProfile, createProfileref }
 )(withRouter(CreateProfile));

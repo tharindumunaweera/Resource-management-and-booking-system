@@ -27,18 +27,6 @@ const ProfileActions = () => {
           Time Table Management
         </Link>
         <div style={{ marginLeft: "20px" }} />
-        <Link to="/createbooking" className="btn btn-light">
-          <i className="fas fa-table text-info mr-2" />
-          Booking
-        </Link>
-        <Link to="/example" className="btn btn-light">
-          <i className="fas fa-table text-info mr-2" />
-          Example
-        </Link>
-        <Link to="/handle" className="btn btn-light">
-          <i className="fas fa-table text-info mr-2" />
-          ALL hALLS
-        </Link>
         <Link to="/create-hallreg" className="btn btn-light">
           <i className="fas fa-table text-info mr-2" />
           hallreg
@@ -47,5 +35,7 @@ const ProfileActions = () => {
     </div>
   );
 };
+
+
 
 export default ProfileActions;
