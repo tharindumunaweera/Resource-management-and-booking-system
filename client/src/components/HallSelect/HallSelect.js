@@ -19,9 +19,9 @@ const style = {
 
 class Halls extends Component {
   
-  onDayClick = (e ,day) => {
-    alert("The Day You Select Is : " + day);
-  }
+//   onDayClick = (e ,day) => {
+//     alert("The Day You Select Is : " + day);
+//   }
 
   constructor(props) {
     super(props);
@@ -364,39 +364,10 @@ onCheck4(e) {
           <MDBCol md="4">
             <MDBCard className="mt-4">
               <MDBView className="gradient-card-header black darken-2">
-              <h4 className="h4-responsive text-white">Calender.....{moment().format('MMMM D YYYY')}</h4>
-              </MDBView>
-              <MDBCardBody style={{width: '100%', height: '350px'}} className="text-center">
-              <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol md="4">
-           
-              <MDBCardBody style={{width: '100%', height: '350px'}} className="text-center">
-              <div className="col-sm-30 style" align="left">
-                            {hallItems0}
-                            {hallItems1}
-                            {hallItems2}
-                            {hallItems3}
-                            {hallItems4}
-
-                     </div>
-               
-              </MDBCardBody>
-           
-          </MDBCol>
-        </MDBRow>
-
-
-        <MDBRow>
-          <div className="col-sm-4" /> 
-          <MDBCol md="4">
-            <MDBCard className="mt-4">
-              <MDBView className="gradient-card-header black darken-2">
               <h4 className="h4-responsive text-white">Available Seats</h4>
               </MDBView>
               <MDBCardBody style={{width: '100%', height: '400px'}} className="text-center">
+              {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />          {moment().format('MMMM D YYYY')} */}
               <div className="col-md-12">
                   <ul className="list-group">
                     <li className="list-group-item">
@@ -500,10 +471,33 @@ onCheck4(e) {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
+          <MDBCol md="4">
+           
+              <MDBCardBody style={{width: '100%', height: '350px'}} className="text-center">
+              <div className="col-sm-30 style" align="left">
+                            {hallItems0}
+                            {hallItems1}
+                            {hallItems2}
+                            {hallItems3}
+                            {hallItems4}
 
-          <MDBCol md="5">
+                     </div>
+               
+              </MDBCardBody>
            
           </MDBCol>
+        </MDBRow>
+
+
+        <MDBRow>
+          <div className="col-sm-4" /> 
+            <MDBCol md="4">
+            
+                </MDBCol>
+
+                <MDBCol md="5">
+            
+            </MDBCol>
         </MDBRow>
         
         </React.Fragment>
