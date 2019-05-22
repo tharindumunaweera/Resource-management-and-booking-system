@@ -107,6 +107,7 @@ createAndDownloadPdf = () => {
       <React.Fragment>
       
         <MDBRow>
+          <h1>sahan</h1>
         <div className="col-sm-3" />
           <MDBCol md="4">
             <MDBCard className="mt-5">
@@ -117,133 +118,10 @@ createAndDownloadPdf = () => {
               </MDBView>
               <MDBCardBody style={{width: '100%', height: '900px'}} className="text-center">
                
-              <li className="list-group-item">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th> <strong>Time </strong></th>
 
-                    <th> <strong> Availability </strong></th>
 
-                    <th />
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <strong>8 - 9 a.m</strong>
-                    </td>
 
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>9 - 10 a.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>10 - 11 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>11 - 12 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>12 - 1 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>1 - 2 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>2 - 3 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>3 - 4 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>4 - 5 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>5 - 6 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <strong>6 - 7 p.m</strong>
-                    </td>
-                    <td>
-                      <Link className="nav-link" to="/reg">
-                        <strong>Not Available</strong>
-                      </Link>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </li>
-
+              
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
