@@ -162,7 +162,7 @@ class App extends Component {
             {/* <Switch>
               <PrivateRoute exact path="/UnionStudent" component={UnionStudent} />
             </Switch> */}
-            {/* <Switch>
+             <Switch>
               <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
             </Switch>    */}
             <Switch>

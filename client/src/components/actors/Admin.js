@@ -17,7 +17,7 @@ const Admin =  () => {
             <TopNavNormalStudent/>
             <SideNavNormalStudent/>
             
-            <Route exact path="/Register" component={ Register}/>
+            <Route exact path="/register" component={ Register}/>
             <main id="content" className="p-5">
             
             </main>

@@ -41,8 +41,9 @@ import Halls from "../halls/Halls";
        <Router>
          <div className="flexible-content">
            <TopNavAcademicstaff />
-
-           <SideNavAcademicstaff />
+           
+            <SideNavAcademicstaff /> 
+          
            {/* <Route exact path="/HallRegister" component={HallRegister} /> */}
 
           <Route exact path="/available" component={AvailableLoad} />
