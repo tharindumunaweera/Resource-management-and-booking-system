@@ -6,6 +6,7 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { getCurrentNine, deleteAccount } from "../../actions/nineActions";
+import CreateBooking from "./CreateBooking";
 
 class Example extends Component {
   constructor(props) {
@@ -14,15 +15,25 @@ class Example extends Component {
       // displaySocialInputs: false,
       dayofweek: "",
       hallname: "",
-
+      btnclick: false
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.bookingload = this.bookingload.bind(this);
   }
 
   onSubmit(e) {
     e.preventDefault();
+  }
+
+
+
+  bookingload() {
+    this.setState({
+
+      btnclick: !this.state.btnclick
+    });
   }
 
   componentDidMount() {
@@ -142,6 +153,8 @@ class Example extends Component {
     let four = false;
     let five = false;
 
+
+
     const { nine } = this.props.nine;
 
     // if (this.state.dayofweek == "Monday") {
@@ -170,7 +183,7 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">08.00 a.m-09.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><button type="button" onClick={this.bookingload}>Avaialable</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -208,7 +221,7 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">10.00 a.m-11.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td>Available</td>
                   </tr>
                 </tbody>
               </table>
@@ -3832,6 +3845,7 @@ class Example extends Component {
                 {fourInputs}
               </div>
             </div>
+
             {/* <input
                   type="submit"
                   value="Submit"

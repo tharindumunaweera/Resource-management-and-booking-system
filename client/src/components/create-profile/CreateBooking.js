@@ -7,15 +7,18 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { createBooking } from "../../actions/bookingActions";
 
+
 class CreateBooking extends Component {
   constructor(props) {
     super(props);
     this.state = {
       hallname: "",
       bookdate: "",
-      starttime: "",
-      endtime: "",
+      booktime: "",
       reason: "",
+      nameofapplicant: "",
+      indexnostudent: "",
+      teacherid: "",
       errors: {}
     };
 
@@ -35,9 +38,11 @@ class CreateBooking extends Component {
     const bookingData = {
       hallname: this.state.hallname,
       bookdate: this.state.bookdate,
-      starttime: this.state.starttime,
-      endtime: this.state.endtime,
-      reason: this.state.reason
+      booktime: this.state.booktime,
+      reason: this.state.reason,
+      nameofapplicant: this.state.nameofapplicant,
+      indexnostudent: this.state.indexnostudent,
+      teacherid: this.state.teacherid
     };
 
     this.props.createBooking(bookingData, this.props.history);
@@ -50,30 +55,7 @@ class CreateBooking extends Component {
   render() {
     const { errors } = this.state;
 
-    const options1 = [
-      { label: "* Select Start time", value: 0 },
-      { label: "08:00 a.m", value: "08:00 a.m" },
-      { label: "09:00 a.m", value: "09:00 a.m" },
-      { label: "10:00 a.m", value: "10:00 a.m" },
-      { label: "11.00 a.m", value: "11.00 a.m" },
-      { label: "12:00 p.m", value: "12:00 p.m" },
-      { label: "01:00 p.m", value: "01:00 p.m" },
-      { label: "03:00 p.m", value: "03:00 p.m" },
-      { label: "04:00 p.m", value: "04:00 p.m" },
-      { label: "05:00 p.m", value: "05:00 p.m" }
-    ];
 
-    const options2 = [
-      { label: "* Select End time", value: 0 },
-      { label: "09:00 a.m", value: "09:00 a.m" },
-      { label: "10:00 a.m", value: "10:00 a.m" },
-      { label: "11.00 a.m", value: "11.00 a.m" },
-      { label: "12:00 p.m", value: "12:00 p.m" },
-      { label: "01:00 p.m", value: "01:00 p.m" },
-      { label: "03:00 p.m", value: "03:00 p.m" },
-      { label: "04:00 p.m", value: "04:00 p.m" },
-      { label: "05:00 p.m", value: "05:00 p.m" }
-    ];
 
     return (
       <div className="add-experience">
@@ -106,24 +88,35 @@ class CreateBooking extends Component {
                   error={errors.bookdate}
                 />
 
-                <SelectListGroup
-                  placeholder="start time"
-                  name="starttime"
-                  value={this.state.starttime}
+                <TextFieldGroup
+                  placeholder="Booking time"
+                  name="booktime"
+                  value={this.state.booktime}
                   onChange={this.onChange}
-                  options={options1}
                 />
-                <SelectListGroup
-                  placeholder="end time"
-                  name="endtime"
-                  value={this.state.endtime}
-                  onChange={this.onChange}
-                  options={options2}
-                />
+
                 <TextAreaFieldGroup
                   placeholder="Reason"
                   name="reason"
                   value={this.state.reason}
+                  onChange={this.onChange}
+                />
+                <TextAreaFieldGroup
+                  placeholder="Name Of Applicant"
+                  name="nameofapplicant"
+                  value={this.state.nameofapplicant}
+                  onChange={this.onChange}
+                />
+                <TextAreaFieldGroup
+                  placeholder="Id of Student Applicant"
+                  name="indexnostudent"
+                  value={this.state.indexnostudent}
+                  onChange={this.onChange}
+                />
+                <TextAreaFieldGroup
+                  placeholder="Lecturer ID"
+                  name="teacherid"
+                  value={this.state.teacherid}
                   onChange={this.onChange}
                 />
                 <input
