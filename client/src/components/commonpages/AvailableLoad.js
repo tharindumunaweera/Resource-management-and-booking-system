@@ -11,6 +11,14 @@ import PropTypes from "prop-types";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
 import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import Calender from "../Calender/Calender";
+import { weekdays } from "moment";
+
+const style = {
+  //this for Calender
+  position: "relative",
+  margin: "20px auto"
+};
 
 class AvailableLoad extends Component {
   constructor() {
@@ -107,10 +115,9 @@ createAndDownloadPdf = () => {
       <React.Fragment>
       
         <MDBRow>
-          <h1>sahan</h1>
-        <div className="col-sm-3" />
+        <div className="col-sm-4" />
           <MDBCol md="4">
-            <MDBCard className="mt-5">
+            <MDBCard className="mt-4">
               
               <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
 
@@ -140,17 +147,18 @@ createAndDownloadPdf = () => {
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
+
           <MDBCol md="4">
             <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black">
-                <h4 className="h4-responsive text-white">
+                {/* <h4 className="h4-responsive text-white">
                 <strong> Make Booking </strong>
                 
-                </h4>
+                </h4> */}
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '1000px'}} className="text-center">
+              <MDBCardBody style={{width: '100%', height: '100px'}} className="text-center">
 
-
+{/* 
               <li className="list-group-item">
             <TextFieldGroup
                   editable= "false"
@@ -238,6 +246,7 @@ createAndDownloadPdf = () => {
             </li>
 
 
+        
            
              <div className="card text-right"  >
                     <button type="button" className="btn btn-primary"><strong>Submit</strong></button>
@@ -246,11 +255,30 @@ createAndDownloadPdf = () => {
                     <button type="button" className="btn btn-success" onClick= {this.createAndDownloadPdf}><strong>PDF Generate</strong></button>
              </div>
 
-
+ */}
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         </MDBRow>
+
+        <MDBRow>
+            <div className="col-sm-4" /> 
+              <MDBCol md="4">
+              <MDBCard className="mt-4">
+                  <MDBView className="gradient-card-header black darken-2">
+                  <h4 className="h4-responsive text-white">Calender</h4>
+                  </MDBView>
+                  <MDBCardBody style={{width: '100%', height: '400px'}} className="text-center">
+                  <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
+                  </MDBCardBody>
+                  </MDBCard>
+                
+                  </MDBCol>
+
+                <MDBCol md="5">
+              
+                </MDBCol>
+           </MDBRow>
        
       </React.Fragment>
     );
