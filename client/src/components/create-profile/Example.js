@@ -6569,7 +6569,7 @@ class Example extends Component {
                 <h6>You Selected Hall</h6>
                 <TextFieldGroup
                   placeholder=""
-                  name="hallname"////////////////////////////////////////////////////////////////////////
+                  name="hallname"
                   value={this.state.hallname}
                   onChange={this.onChange}
                 />
