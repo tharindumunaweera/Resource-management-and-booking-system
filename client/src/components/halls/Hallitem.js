@@ -44,7 +44,7 @@ class Hallitem extends Component {
 
                                         }
                                     }}>
-                                        <h3>Hall Name: {hallreg.hallname} </h3>
+                                        <h3>Hall Name:<strong> {hallreg.hallname}</strong> </h3>
                                     </Link>
 
                                     {/* <button
@@ -57,16 +57,16 @@ class Hallitem extends Component {
                                         Add Social Network Links
                                         </button> */}
                                     <p>
-                                        Number of seats: {hallreg.seat}
+                                        Number of seats: <strong> {hallreg.seat}</strong>
                                     </p>
                                     <p>
-                                        Location: {hallreg.location}
+                                        Location: <strong> {hallreg.location}</strong>
                                     </p>
                                     <p>
-                                        Number of Projectors: {hallreg.projecter}
+                                        Number of Projectors:  <strong>{hallreg.projecter}</strong>
                                     </p>
                                     <p>
-                                        Number of Whiteboards: {hallreg.whiteboard}
+                                        Number of Whiteboards: <strong> {hallreg.whiteboard}</strong>
                                     </p>
 
                                 </div>
