@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { getCurrentNine, deleteAccount } from "../../actions/nineActions";
-import CreateBooking from "./CreateBooking";
 
 class Example extends Component {
   constructor(props) {
@@ -15,12 +15,13 @@ class Example extends Component {
       // displaySocialInputs: false,
       dayofweek: "",
       hallname: "",
-      btnclick: false
+      lat: ""
+
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.bookingload = this.bookingload.bind(this);
+
   }
 
   onSubmit(e) {
@@ -29,12 +30,7 @@ class Example extends Component {
 
 
 
-  bookingload() {
-    this.setState({
 
-      btnclick: !this.state.btnclick
-    });
-  }
 
   componentDidMount() {
     this.props.getCurrentNine()////////////////////////////////////////////////////////////////
@@ -44,10 +40,11 @@ class Example extends Component {
 
     // const { handle } = this.props.match.params
 
-    const { name } = this.props.location.state
+    const { name, cal } = this.props.location.state
 
     this.setState({
-      hallname: name
+      hallname: name,
+      lat: cal
     });
   }
 
@@ -183,7 +180,21 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">08.00 a.m-09.00 a.m</th>
-                    <td><button type="button" onClick={this.bookingload}>Avaialable</button></td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "08.00 a.m-09.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -202,7 +213,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">09.00 a.m-10.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "09.00 a.m-10.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -221,7 +245,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">10.00 a.m-11.00 a.m</th>
-                    <td>Available</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "10.00 a.m-11.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -3742,6 +3779,8 @@ class Example extends Component {
 
     }
 
+
+
     const options = [
       { label: "* Select Day", value: 0 },
       { label: "Monday", value: "Monday" },
@@ -3757,7 +3796,7 @@ class Example extends Component {
           <div className="row">
             <div className="col-sm-4 style">
               <form onSubmit={this.onSubmit}>
-                {/* <h1>{this.state.lat}</h1> */}
+                <h1>{this.state.lat}</h1>
                 <h6>You Selected Hall</h6>
                 <TextFieldGroup
                   placeholder=""

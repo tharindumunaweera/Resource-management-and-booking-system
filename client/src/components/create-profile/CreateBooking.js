@@ -13,6 +13,7 @@ class CreateBooking extends Component {
     super(props);
     this.state = {
       hallname: "",
+      lat: "",
       bookdate: "",
       booktime: "",
       reason: "",
@@ -25,6 +26,26 @@ class CreateBooking extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+
+  componentDidMount() {
+    ////////////////////////////////////////////////////////////////
+
+
+    const { handle } = this.props.match.params
+
+    // const { handle } = this.props.match.params
+
+    const { hallnamebook, bkdate, bktime } = this.props.location.state
+
+    this.setState({
+
+      hallname: hallnamebook,
+      bookdate: bkdate,
+      booktime: bktime
+    });
+  }
+
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -72,6 +93,7 @@ class CreateBooking extends Component {
               </p>
 
               <form onSubmit={this.onSubmit}>
+                {/* <h1>{this.state.lat}</h1> */}
                 <TextFieldGroup
                   placeholder="Hall name"
                   name="hallname"
