@@ -164,7 +164,7 @@ class App extends Component {
             </Switch> */}
              <Switch>
               <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
-            </Switch>    */}
+            </Switch>    
             <Switch>
               <PrivateRoute exact path="/Admin" component={Admin} />
             </Switch>

@@ -32,6 +32,7 @@ import EditNine from "../edit-profile/EditNine";
 import ViewNine from "../edit-profile/ViewNine";
 import Hallitem from "../halls/Hallitem";
 import Halls from "../halls/Halls";
+import Form from "../commonpages/Form";
 
 
 
@@ -69,6 +70,7 @@ import Halls from "../halls/Halls";
           <Route exact path="/Hallitem" component={ Hallitem }/>
           <Route exact path="/Halls" component={ Halls }/>
           <Route exact path="/Hallreg" component={ Hallreg }/>
+          <Route exact path="/Form" component={ Form }/>
 
           
 

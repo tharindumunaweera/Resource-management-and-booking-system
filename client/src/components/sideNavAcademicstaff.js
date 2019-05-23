@@ -48,6 +48,20 @@ const TopNavigation = () => {
           </MDBListGroupItem>
         </NavLink>
       </MDBListGroup>
+
+      <NavLink to="/Form" activeClassName="activeClass">
+          <MDBListGroupItem>
+            <MDBIcon icon="far fa-registered" className="mr-3" />
+            Hall Register
+          </MDBListGroupItem>
+        </NavLink>
+
+      
+              
+      
+
+
+      
     </div>
   );
 };
