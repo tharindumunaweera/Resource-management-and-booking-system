@@ -607,7 +607,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -622,7 +635,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -637,7 +663,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -652,7 +691,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -667,7 +719,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -682,7 +747,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -697,7 +775,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -712,7 +803,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -727,7 +831,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -742,7 +859,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -758,7 +888,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -773,7 +916,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -788,7 +944,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -803,7 +972,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -818,7 +1000,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -833,7 +1028,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -849,7 +1057,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -864,7 +1085,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -879,7 +1113,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -894,7 +1141,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -909,7 +1169,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -925,7 +1198,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -940,7 +1226,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -955,7 +1254,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -970,7 +1282,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -985,7 +1310,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1000,7 +1338,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1015,7 +1366,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1031,7 +1395,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1046,7 +1423,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1062,7 +1452,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">03.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "03.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1085,7 +1488,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">08.00 a.m-09.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "08.00 a.m-09.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1103,7 +1519,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">09.00 a.m-10.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "09.00 a.m-10.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1121,7 +1550,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">10.00 a.m-11.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "10.00 a.m-11.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1139,7 +1581,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">11.00 a.m-12.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "11.00 a.m-12.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1157,7 +1612,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">12.00 p.m-01.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "12.00 p.m-01.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1175,7 +1643,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">01.00 p.m-02.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "01.00 p.m-02.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1193,7 +1674,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">02.00 p.m-03.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "02.00 p.m-03.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1211,7 +1705,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">03.00 p.m-04.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "03.00 p.m-04.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1229,7 +1736,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">04.00 p.m-05.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "04.00 p.m-05.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1245,7 +1765,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-10.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 p.m-10.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1260,7 +1793,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1275,7 +1821,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 p.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1290,7 +1849,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1305,7 +1877,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1320,7 +1905,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1335,7 +1933,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1350,7 +1961,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1365,7 +1989,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1380,7 +2017,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1395,7 +2045,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1410,7 +2073,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1425,7 +2101,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1440,7 +2129,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1455,7 +2157,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1471,7 +2186,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1486,7 +2214,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1501,7 +2242,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1516,7 +2270,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1531,7 +2298,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1546,7 +2326,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1562,7 +2355,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1577,7 +2383,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1592,7 +2411,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1607,7 +2439,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1622,7 +2467,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1638,7 +2496,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1653,7 +2524,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1668,7 +2552,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1683,7 +2580,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1698,7 +2608,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1713,7 +2636,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1728,7 +2664,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1744,7 +2693,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1759,7 +2721,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1775,7 +2750,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">03.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "03.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1797,7 +2785,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">08.00 a.m-09.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "08.00 a.m-09.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1815,7 +2816,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">09.00 a.m-10.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "09.00 a.m-10.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1833,7 +2847,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">10.00 a.m-11.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "010.00 a.m-11.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1851,7 +2878,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">11.00 a.m-12.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "11.00 a.m-12.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1869,7 +2909,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">12.00 p.m-01.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "12.00 p.m-01.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1887,7 +2940,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">01.00 p.m-02.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "01.00 p.m-02.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1905,7 +2971,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">02.00 p.m-03.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "02.00 p.m-03.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1923,7 +3002,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">03.00 p.m-04.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "03.00 p.m-04.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1941,7 +3033,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">04.00 p.m-05.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "04.00 p.m-05.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -1957,7 +3062,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-10.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 p.m-10.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1972,7 +3090,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -1987,7 +3118,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 p.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2002,7 +3146,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2017,7 +3174,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2032,7 +3202,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2047,7 +3230,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2062,7 +3258,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2077,7 +3286,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2092,7 +3314,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2107,7 +3342,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2122,7 +3370,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2137,7 +3398,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2152,7 +3426,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2167,7 +3454,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2183,7 +3483,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2198,7 +3511,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2213,7 +3539,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2228,7 +3567,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2243,7 +3595,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2258,7 +3623,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2274,7 +3652,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2289,7 +3680,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2304,7 +3708,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2319,7 +3736,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2334,7 +3764,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2350,7 +3793,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2365,7 +3821,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2380,7 +3849,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2395,7 +3877,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2410,7 +3905,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2425,7 +3933,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2440,7 +3961,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2456,7 +3990,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2471,7 +4018,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2487,7 +4047,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">03.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "03.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2510,7 +4083,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">08.00 a.m-09.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "08.00 a.m-09.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2528,7 +4114,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">09.00 a.m-10.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "09.00 a.m-10.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2546,7 +4145,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">10.00 a.m-11.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "10.00 a.m-11.00 a.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2564,7 +4176,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">11.00 a.m-12.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "11.00 a.m-12.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2582,7 +4207,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">12.00 p.m-01.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "12.00 p.m-01.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2600,7 +4238,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">01.00 p.m-02.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "01.00 p.m-02.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2618,7 +4269,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">02.00 p.m-03.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "02.00 p.m-03.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2636,7 +4300,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">03.00 p.m-04.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "03.00 p.m-04.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2654,7 +4331,20 @@ class Example extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">04.00 p.m-05.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.dayofweek,
+                          bktime: "04.00 p.m-05.00 p.m"
+
+                        }
+                      }}>
+                        Available
+                      </Link>
+
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -2670,7 +4360,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-10.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 p.m-10.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2685,7 +4388,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2700,7 +4416,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 p.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2715,7 +4444,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2730,7 +4472,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2745,7 +4500,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2760,7 +4528,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2775,7 +4556,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2790,7 +4584,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2805,7 +4612,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2820,7 +4640,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2835,7 +4668,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2850,7 +4696,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2865,7 +4724,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2880,7 +4752,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2896,7 +4781,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2911,7 +4809,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2926,7 +4837,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2941,7 +4865,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2956,7 +4893,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2971,7 +4921,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -2987,7 +4950,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3002,7 +4978,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3017,7 +5006,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3032,7 +5034,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3047,7 +5062,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3063,7 +5091,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3078,7 +5119,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3093,7 +5147,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3108,7 +5175,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3123,7 +5203,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3138,7 +5231,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3153,7 +5259,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3169,7 +5288,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3184,7 +5316,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3200,7 +5345,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">03.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "03.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3382,7 +5540,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-10.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 p.m-10.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3397,7 +5568,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3412,7 +5596,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 p.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3427,7 +5624,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3442,7 +5652,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3457,7 +5680,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3472,7 +5708,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3487,7 +5736,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">08.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "08.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3502,7 +5764,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-11.00 a.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3517,7 +5792,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3532,7 +5820,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3547,7 +5848,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3562,7 +5876,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3577,7 +5904,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3592,7 +5932,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">09.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "09.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3608,7 +5961,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-12.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3623,7 +5989,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3638,7 +6017,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3653,7 +6045,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3668,7 +6073,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3683,7 +6101,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">10.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "10.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3699,7 +6130,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-01.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-01.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3714,7 +6158,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3729,7 +6186,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3744,7 +6214,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3759,7 +6242,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">11.00 a.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "11.00 a.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3775,7 +6271,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-02.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-02.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3790,7 +6299,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3805,7 +6327,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3820,7 +6355,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">12.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "12.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3835,7 +6383,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-03.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3850,7 +6411,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3865,7 +6439,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">01.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "01.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3881,7 +6468,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-04.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3896,7 +6496,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">02.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "02.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
@@ -3912,7 +6525,20 @@ class Example extends Component {
               <tbody>
                 <tr>
                   <th scope="row">03.00 p.m-05.00 p.m</th>
-                  <td>Avaialable</td>
+                  <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.dayofweek,
+                        bktime: "03.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                      Available
+                      </Link>
+
+                  </div></td>
                 </tr>
               </tbody>
             </table>
