@@ -111,13 +111,28 @@ createAndDownloadPdf = () => {
         <div className="col-sm-3" />
           <MDBCol md="4">
             <MDBCard className="mt-5">
-              <MDBView className="gradient-card-header black">
-                <h4 className="h4-responsive text-white">
-                <strong>  Date </strong>
-                </h4>
-              </MDBView>
-              <MDBCardBody style={{width: '100%', height: '900px'}} className="text-center">
-               
+              
+              <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
+
+              <li className="list-group-item">
+                <TextFieldGroup
+                    editable= "false"
+                    placeholder="StudentId / LecturerId"
+                    name="studentid"
+                    value={this.state.studentid}
+                    onChange={this.handleChange}
+                />
+              </li>
+
+            <li className="list-group-item">
+                <TextFieldGroup
+                  editable= "false"
+                  placeholder="StudentId / LecturerId"
+                  name="studentid"
+                  value={this.state.studentid}
+                  onChange={this.handleChange}
+                />
+            </li>
 
 
 
