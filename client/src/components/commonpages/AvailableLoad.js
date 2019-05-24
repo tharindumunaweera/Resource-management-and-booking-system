@@ -62,7 +62,7 @@ class AvailableLoad extends Component {
 
     this.setState({
       hallname: name,
-      lat: cal
+      // dayofweek: moment().format(' dddd ')
     });
   }
 
@@ -6590,6 +6590,7 @@ class AvailableLoad extends Component {
               
               <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
               <form onSubmit={this.onSubmit}>
+             
                 <li className="list-group-item">
                 <TextFieldGroup
                     placeholder="Hall Name"
@@ -6598,8 +6599,15 @@ class AvailableLoad extends Component {
                     onChange={this.onChange}
                   />
                 </li>
-
                 <li className="list-group-item">
+                <TextFieldGroup
+                    placeholder="Hall Name"
+                    name="dayofweek"
+                    value={this.state.dayofweek}
+                    onChange={this.onChange}
+                  />
+                </li>
+                {/* <li className="list-group-item">
                 <SelectListGroup
                   placeholder="Day"
                   name="dayofweek"
@@ -6607,7 +6615,7 @@ class AvailableLoad extends Component {
                   onChange={this.onChange}
                   options={options}
                 />
-            </li>
+            </li> */}
             </form>
 
 
@@ -6694,7 +6702,7 @@ class AvailableLoad extends Component {
               <MDBCol md="4">
               <MDBCard className="mt-4">
                   <MDBView className="gradient-card-header black darken-2">
-                  <h4 className="h4-responsive text-white">Calender               {moment().format('MMMM D YYYY')}</h4>
+                  <h4 className="h4-responsive text-white">Calender               {moment().format(' dddd ')}</h4>
                   </MDBView>
                   <MDBCardBody style={{width: '100%', height: '380px'}} className="text-center">
                   <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />

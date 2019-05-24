@@ -16,7 +16,7 @@ export default class Calender extends React.Component {
         super(props);
         this.width = props.width || "350px";
         this.style = props.style || {};
-        this.style.width = this.width; // add this
+        // this.style.width = this.width; // add this
     }
 
 
