@@ -6,6 +6,8 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { createBooking } from "../../actions/bookingActions";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+
 
 
 class CreateBooking extends Component {
@@ -79,19 +81,30 @@ class CreateBooking extends Component {
 
 
     return (
-      <div className="add-experience">
-        <div className="container">
-          <div className="row">
-            <div class="col-sm-3" />
-            <div className="col-md-8 m-auto">
-              <Link to="/dashboard" className="btn btn-light">
-                Go Back
-              </Link>
-              <h1 className="display-4 text-center">Add Bokking</h1>
-              <p className="lead text-center">
-                Add any job or exprience that you had past or current
-              </p>
-
+      // <div className="add-experience">
+      //   <div className="container">
+      //     <div className="row">
+      //       <div class="col-sm-3" />
+      //       <div className="col-md-8 m-auto">
+      //         <Link to="/dashboard" className="btn btn-light">
+      //           Go Back
+      //         </Link>
+      //         <h1 className="display-4 text-center">Add Bokking</h1>
+      //         <p className="lead text-center">
+      //           Add any job or exprience that you had past or current
+      //         </p>
+              <React.Fragment>
+        <MDBRow>
+          <div className="col-sm-4 " />
+          <div className="col-sm-7 ">
+            <MDBCol md="13">
+              <MDBCard className="mt-5">
+                <MDBView className="gradient-card-header black darken-0">
+                  <h4 className="h4-responsive text-white">
+                    <strong>Hall Booking Form</strong>
+                  </h4>
+                </MDBView>
+                <MDBCardBody>
               <form onSubmit={this.onSubmit}>
                 {/* <h1>{this.state.lat}</h1> */}
                 <TextFieldGroup
@@ -147,10 +160,13 @@ class CreateBooking extends Component {
                   className="btn btn-info btn-block mt-4"
                 />
               </form>
-            </div>
+              </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
           </div>
-        </div>
-      </div>
+        </MDBRow>
+      </React.Fragment>
+         
     );
   }
 }
