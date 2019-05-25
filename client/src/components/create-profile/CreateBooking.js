@@ -109,6 +109,7 @@ class CreateBooking extends Component {
                   onChange={this.onChange}
                   error={errors.bookdate}
                 />
+                {/* <h1>{this.state.bookdate.selectedDate.ToString("dddd")}</h1> */}
 
                 <TextFieldGroup
                   placeholder="Booking time"

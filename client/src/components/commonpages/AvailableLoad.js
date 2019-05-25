@@ -10,9 +10,10 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
-import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 import Calender from "../Calender/Calender";
 import { weekdays } from "moment";
+import moment from "moment"
 
 const style = {
   //this for Calender
@@ -21,18 +22,23 @@ const style = {
 };
 
 class AvailableLoad extends Component {
+
+  onDayClick = (e, day) => {
+    alert("the day select:" + day)
+  }
+
   constructor() {
     super();
     this.state = {
-      hallname:"",
-      date:"",
+      hallname: "",
+      date: "",
       starttime: "",
       endtime: "",
       purpose: "",
-      discription:"",
-      name:"",
-      studentid:"",
-      phonenumber:""
+      discription: "",
+      name: "",
+      studentid: "",
+      phonenumber: ""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -41,26 +47,26 @@ class AvailableLoad extends Component {
   componentDidMount() {
     this.props.getCurrentNine()
 
-    const { handle } = this.props.match.params
-    const { name } = this.props.location.state
+    // const { handle } = this.props.match.params
+    // const { name } = this.props.location.state
 
-    this.setState({
-      hallname: name
-    });
+    // this.setState({
+    //   hallname: name
+    // });
   }
 
-//pdf creation
-handleChange = ({ target: { value , name }}) => this.setState({ [name]: value}) ;
+  //pdf creation
+  handleChange = ({ target: { value, name } }) => this.setState({ [name]: value });
 
-createAndDownloadPdf = () => {
-  axios.post('/create-pdf' , this.state)
-     .then(() => axios.get('fetch-pdf', {responseType: 'blob'}))
-     .then((res) =>{
-       const pdfBlob = new Blob([res.data] , {type:'application/pdf'});
+  createAndDownloadPdf = () => {
+    axios.post('/create-pdf', this.state)
+      .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
+      .then((res) => {
+        const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-       saveAs(pdfBlob , 'BookingForm.pdf');
-     })
-}
+        saveAs(pdfBlob, 'BookingForm.pdf');
+      })
+  }
 
 
   onChange(e) {
@@ -113,37 +119,37 @@ createAndDownloadPdf = () => {
     ];
     return (
       <React.Fragment>
-      
+
         <MDBRow>
-        <div className="col-sm-4" />
+          <div className="col-sm-4" />
           <MDBCol md="4">
             <MDBCard className="mt-4">
-              
-              <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
 
-              <li className="list-group-item">
-                <TextFieldGroup
-                    editable= "false"
+              <MDBCardBody style={{ width: '100%', height: '210px' }} className="text-center">
+
+                <li className="list-group-item">
+                  <TextFieldGroup
+                    editable="false"
                     placeholder="StudentId / LecturerId"
                     name="studentid"
                     value={this.state.studentid}
                     onChange={this.handleChange}
-                />
-              </li>
+                  />
+                </li>
 
-            <li className="list-group-item">
-                <TextFieldGroup
-                  editable= "false"
-                  placeholder="StudentId / LecturerId"
-                  name="studentid"
-                  value={this.state.studentid}
-                  onChange={this.handleChange}
-                />
-            </li>
+                <li className="list-group-item">
+                  <TextFieldGroup
+                    editable="false"
+                    placeholder="StudentId / LecturerId"
+                    name="studentid"
+                    value={this.state.studentid}
+                    onChange={this.handleChange}
+                  />
+                </li>
 
 
 
-              
+
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -156,9 +162,9 @@ createAndDownloadPdf = () => {
                 
                 </h4> */}
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '100px'}} className="text-center">
+              <MDBCardBody style={{ width: '100%', height: '100px' }} className="text-center">
 
-{/* 
+                {/* 
               <li className="list-group-item">
             <TextFieldGroup
                   editable= "false"
@@ -262,24 +268,24 @@ createAndDownloadPdf = () => {
         </MDBRow>
 
         <MDBRow>
-            <div className="col-sm-4" /> 
-              <MDBCol md="4">
-              <MDBCard className="mt-4">
-                  <MDBView className="gradient-card-header black darken-2">
-                  <h4 className="h4-responsive text-white">Calender</h4>
-                  </MDBView>
-                  <MDBCardBody style={{width: '100%', height: '400px'}} className="text-center">
-                  <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
-                  </MDBCardBody>
-                  </MDBCard>
-                
-                  </MDBCol>
+          <div className="col-sm-4" />
+          <MDBCol md="4">
+            <MDBCard className="mt-4">
+              <MDBView className="gradient-card-header black darken-2">
+                <h4 className="h4-responsive text-white">Calender</h4>
+              </MDBView>
+              <MDBCardBody style={{ width: '100%', height: '400px' }} className="text-center">
+                <Calender style={style} width="320px" onDayClick={(e, day) => this.onDayClick(e, day)} />
+              </MDBCardBody>
+            </MDBCard>
 
-                <MDBCol md="5">
-              
-                </MDBCol>
-           </MDBRow>
-       
+          </MDBCol>
+
+          <MDBCol md="5">
+
+          </MDBCol>
+        </MDBRow>
+
       </React.Fragment>
     );
   }

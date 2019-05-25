@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import isEmpty from "../../validation/is-empty";
 import Example from "../create-profile/Example";
+import moment from 'moment';
 
 class Hallitem extends Component {
     // constructor(props) {
@@ -40,7 +41,7 @@ class Hallitem extends Component {
                                         pathname: './example',
                                         state: {
                                             name: hallreg.hallname,
-                                            cal: "tharindu"
+
 
                                         }
                                     }}>

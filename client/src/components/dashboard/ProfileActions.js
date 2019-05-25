@@ -31,6 +31,10 @@ const ProfileActions = () => {
           <i className="fas fa-table text-info mr-2" />
           hallreg
         </Link>
+
+        <div style={{ marginLeft: "20px" }} />
+
+
       </div>
     </div>
   );
