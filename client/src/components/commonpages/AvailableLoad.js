@@ -14,7 +14,11 @@ import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTi
 import Calender from "../Calender/Calender";
 import { weekdays } from "moment"; 
 import moment from 'moment';
-import Sahan from '../../Calander/sahan'
+import InfiniteCalendar from 'react-infinite-calendar';
+import 'react-infinite-calendar/styles.css';
+import format from 'date-fns/format';
+
+//import Sahan from '../../Calander/sahan'
 
 
 const style = {
@@ -35,7 +39,9 @@ class AvailableLoad extends Component {
       // displaySocialInputs: false,
       dayofweek: "",
       hallname: "",
-      lat: ""
+      lat: "",
+      name: "",
+      tha: ""
 
     };
 
@@ -6708,7 +6714,19 @@ class AvailableLoad extends Component {
                   </MDBView>
                   <MDBCardBody style={{width: '100%', height: '380px'}} className="text-center">
                   {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  /> */}
-                  <Sahan/>
+                  <input type="text" value={this.state.name}></input>
+            <input type="text" value={this.state.tha}></input>
+
+                  <InfiniteCalendar
+       onSelect={date =>
+        this.setState({
+            name: format(date, 'ddd, MMM Do YYYY'),
+            dayofweek: format(date, 'dddd')
+        })
+       }
+        
+    />
+
                   </MDBCardBody>
                   </MDBCard>
                 
