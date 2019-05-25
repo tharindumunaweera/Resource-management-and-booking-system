@@ -48,6 +48,7 @@ import CreateTen from "./components/create-profile/CreateTen";
 import CreateEleven from "./components/create-profile/CreateEleven";
 import Example from "./components/create-profile/Example";
 import CreateHallreg from "./components/HallRegister/Hallreg";
+import AvailableLoad from "./components/commonpages/AvailableLoad";
 
 import CreateTha from "./components/create-profile/CreateTha";
 import EditProfile from "./components/edit-profile/EditProfile";
@@ -119,6 +120,7 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
 
+
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
@@ -162,9 +164,9 @@ class App extends Component {
             {/* <Switch>
               <PrivateRoute exact path="/UnionStudent" component={UnionStudent} />
             </Switch> */}
-             <Switch>
+            {/* <Switch>
               <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
-            </Switch>    
+            </Switch>    */} 
             <Switch>
               <PrivateRoute exact path="/Admin" component={Admin} />
             </Switch>

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import isEmpty from "../../validation/is-empty";
 import Example from "../create-profile/Example";
-import {MDBCard,MDBCol,MDBCardHeader,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import { MDBCard, MDBCol, MDBCardHeader, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 
 
 class Hallitem extends Component {
@@ -30,11 +30,12 @@ class Hallitem extends Component {
         return (
             <div>
                 {(this.props.seat1 <= hallreg.seat) && (hallreg.seat < this.props.seat2) ? (
-                    
-                        <div className="row">
-                            {/* <div className="col-2">
+
+                    <div className="row">
+                        {/* <div className="col-2">
              <img src={profile.user.avatar} alt="" className="rounded-circle" />
            </div> */}
+
            <MDBCol col-lg-8 col-md-5 col-10 className="mb-4 " >
                     <MDBCard className="mb-4  border-primary">
                     <MDBCardHeader>
@@ -51,6 +52,8 @@ class Hallitem extends Component {
                     </MDBCardHeader>
                     <MDBCardBody>
                                     <p>  
+
+                        
                                         Number of seats: <strong> {hallreg.seat}</strong>
                                     </p>
                                     <p>
@@ -63,13 +66,13 @@ class Hallitem extends Component {
                                         Number of Whiteboards: <strong> {hallreg.whiteboard}</strong>
                                     </p>
 
-                        
-                    </MDBCardBody>
-                    </MDBCard>
-                </MDBCol>
-                           
-                        </div>
-                   
+
+                                </MDBCardBody>
+                            </MDBCard>
+                        </MDBCol>
+
+                    </div>
+
                 ) : null}
             </div>
         );

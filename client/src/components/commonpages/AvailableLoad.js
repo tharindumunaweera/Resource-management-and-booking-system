@@ -1,4 +1,5 @@
 
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
@@ -6737,5 +6738,4 @@ export default connect(
   mapStateToProps,
   { getCurrentNine }
 )(withRouter(AvailableLoad));
-
 
