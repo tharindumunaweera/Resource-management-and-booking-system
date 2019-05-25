@@ -8,7 +8,8 @@ import {
   MDBNavItem,
   MDBNavLink,
   MDBRow,
-  MDBIcon
+  MDBIcon,
+  MDBFormInline, MDBBtn
 } from "mdbreact";
 
 
@@ -54,6 +55,8 @@ class TopNavLecturer extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+      
+
           {user.role === "Ref" ? (
             <Link className="nav-link" to="/refdashboard">
               {/* Ref Dashboard */}
@@ -85,6 +88,7 @@ class TopNavLecturer extends Component {
             Dashboard
           </Link> */}
         </li>
+       
         <li className="nav-item">
           <a  className="border border-light rounded mr-1 nav-link Ripple-parent"
             href="#"  
