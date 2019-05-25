@@ -14,6 +14,8 @@ import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTi
 import Calender from "../Calender/Calender";
 import { weekdays } from "moment"; 
 import moment from 'moment';
+import Sahan from '../../Calander/sahan'
+
 
 const style = {
   //this for Calender
@@ -6705,7 +6707,8 @@ class AvailableLoad extends Component {
                   <h4 className="h4-responsive text-white">Calender               {moment().format(' dddd ')}</h4>
                   </MDBView>
                   <MDBCardBody style={{width: '100%', height: '380px'}} className="text-center">
-                  <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
+                  {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  /> */}
+                  <Sahan/>
                   </MDBCardBody>
                   </MDBCard>
                 
