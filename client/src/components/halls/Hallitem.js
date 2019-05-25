@@ -35,21 +35,25 @@ class Hallitem extends Component {
                         {/* <div className="col-2">
              <img src={profile.user.avatar} alt="" className="rounded-circle" />
            </div> */}
-                        <MDBCol col-lg-8 col-md-5 col-10 className="mb-4">
-                            <MDBCard className="mb-4">
-                                <MDBCardHeader><Link to={{
-                                    pathname: './example',
-                                    state: {
-                                        name: hallreg.hallname,
 
+           <MDBCol col-lg-8 col-md-5 col-10 className="mb-4 " >
+                    <MDBCard className="mb-4  border-primary">
+                    <MDBCardHeader>
+                                    <Link to={{
+                                            pathname: './available',
+                                            state: {
+                                                name: hallreg.hallname,
+                                                cal: "tharindu"
 
-                                    }
-                                }}>
-                                    Hall Name:<strong> {hallreg.hallname}</strong>
-                                </Link>
-                                </MDBCardHeader>
-                                <MDBCardBody>
-                                    <p>
+                                            }
+                                        }}>
+                                            Hall Name:<strong ><font  size="4"> {hallreg.hallname}</font></strong> 
+                                    </Link>
+                    </MDBCardHeader>
+                    <MDBCardBody>
+                                    <p>  
+
+                        
                                         Number of seats: <strong> {hallreg.seat}</strong>
                                     </p>
                                     <p>

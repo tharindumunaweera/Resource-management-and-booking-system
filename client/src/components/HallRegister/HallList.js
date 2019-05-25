@@ -6,12 +6,12 @@ import './index.css';
 
 const Todo = props => (
     <tr>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.hallname}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.location}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.seat}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.projecter}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.whiteboard}</td>
-        <td className={props.todo.todo_completed ? 'completed' : ''}>{props.todo.other}</td> 
+        <td className={props.todo.todo_completed ? 'completed' : ''}><font  size="3">{props.todo.hallname}</font></td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}><font  size="3">{props.todo.seat}</font></td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}><font  size="3">{props.todo.location}</font></td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}><font  size="3">{props.todo.projecter}</font></td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}><font  size="3">{props.todo.whiteboard}</font></td>
+        <td className={props.todo.todo_completed ? 'completed' : ''}><font  size="3">{props.todo.other}</font></td> 
 
 
         <td>
