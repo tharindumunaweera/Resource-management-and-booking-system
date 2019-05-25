@@ -6593,9 +6593,9 @@ class AvailableLoad extends Component {
       <React.Fragment>
       
         <MDBRow>
-        <div className="col-sm-4" />
+        <div className="col-sm-3" />
           <MDBCol md="4">
-            <MDBCard className="mt-4">
+            <MDBCard className="mt-3">
               
               <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
               <form onSubmit={this.onSubmit}>
@@ -6616,15 +6616,6 @@ class AvailableLoad extends Component {
                     onChange={this.onChange}
                   />
                 </li>
-                {/* <li className="list-group-item">
-                <SelectListGroup
-                  placeholder="Day"
-                  name="dayofweek"
-                  value={this.state.dayofweek}
-                  onChange={this.onChange}
-                  options={options}
-                />
-            </li> */}
             </form>
 
 
@@ -6707,16 +6698,13 @@ class AvailableLoad extends Component {
         </MDBRow>
 
         <MDBRow>
-            <div className="col-sm-4" /> 
+            <div className="col-sm-3" /> 
               <MDBCol md="4">
-              <MDBCard className="mt-4">
-                  <MDBView className="gradient-card-header black darken-2">
-                  <h4 className="h4-responsive text-white">Calender               {moment().format(' dddd ')}</h4>
-                  </MDBView>
-                  <MDBCardBody style={{width: '100%', height: '380px'}} className="text-center">
+             
+                 
                   {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  /> */}
-                  <input type="text" value={this.state.name}></input>
-            <input type="text" value={this.state.tha}></input>
+                  {/* <input type="text" value={this.state.name}></input>
+            <input type="text" value={this.state.tha}></input> */}
 
                   <InfiniteCalendar
        onSelect={date =>
@@ -6728,8 +6716,8 @@ class AvailableLoad extends Component {
         
     />
 
-                  </MDBCardBody>
-                  </MDBCard>
+                
+                 
                 
                   </MDBCol>
 
