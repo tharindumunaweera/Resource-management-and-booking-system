@@ -23,9 +23,9 @@ class Login extends Component {
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
       const { user } = this.props.auth;
-      if (user.role === "Ref") {
-        this.props.history.push("/refdashboard");
-      }
+      // if (user.role === "Ref") {
+      //   this.props.history.push("/refdashboard");
+      // }
       // if (user.role === "Acadamic") {
       //   this.props.history.push("/dashboard");
       // }
