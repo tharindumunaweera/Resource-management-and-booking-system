@@ -11,9 +11,11 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
+
 import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
 import Calender from "../Calender/Calender";
 import { weekdays } from "moment"; 
+
 import moment from 'moment';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
@@ -30,7 +32,9 @@ const style = {
 
 class AvailableLoad extends Component {
 
+
   onDayClick = (e ,day) => {
+
     alert("The Day You Select Is : " + day);
   }
 
@@ -291,6 +295,9 @@ class AvailableLoad extends Component {
                        <button type="submit" className="btn btn-primary">
                       <strong> Available</strong>
                         </button>
+
+                   
+
                       </Link>
 
                     </div></td>
@@ -7155,6 +7162,7 @@ class AvailableLoad extends Component {
       { label: "Friday", value: "Friday" }
     ];
 
+
    
     return (
       <React.Fragment>
@@ -7202,12 +7210,16 @@ class AvailableLoad extends Component {
               </MDBCardBody>
             </MDBCard> */}
             </MDBCardBody>
+
+
+   
             </MDBCard>
           </MDBCol>
 
           <MDBCol md="4">
             <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black">
+
                  <h4 className="h4-responsive text-white">
                 <strong> {this.state.hallname} </strong>
                 </h4> 
@@ -7231,7 +7243,7 @@ class AvailableLoad extends Component {
                 {ninetwelve}
                 {nineone}
                 {ninetwo}
-                {ninethree}
+                  {ninethree}
                 {ninefour}
 
                 {tenInputs}
@@ -7269,12 +7281,14 @@ class AvailableLoad extends Component {
                 {fourInputs}
             
 
+             
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         </MDBRow>
 
         <MDBRow>
+
             <div className="col-sm-3" /> 
               <MDBCol md="4">
              
@@ -7295,6 +7309,7 @@ class AvailableLoad extends Component {
                 </MDBCol>
            </MDBRow>
        
+
       </React.Fragment>
     );
   }
@@ -7313,4 +7328,5 @@ export default connect(
   mapStateToProps,
   { getCurrentNine }
 )(withRouter(AvailableLoad));
+
 

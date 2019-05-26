@@ -19,13 +19,13 @@ class Navbar extends Component {
         <li className="nav-item">
           {user.role === "Ref" ? (
             <Link className="nav-link" to="/refdashboard">
-              {/* Ref Dashboard */}
+              Ref Dashboard
             </Link>
           ) : null}
 
           {user.role === "Acadamic" ? (
             <Link className="nav-link" to="/dashboard">
-              {/* Acadamic Dashboard */}
+              Acadamic Dashboard
             </Link>
           ) : null}
 
@@ -92,7 +92,7 @@ class Navbar extends Component {
           <div className="col-sm-2" />
           <div className="container" >
             <div className="col-sm-1" />
-            <Link  className="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/">
               <strong> RM&IS </strong>
             </Link>
             <button
