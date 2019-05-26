@@ -117,7 +117,7 @@ class CreateBooking extends Component {
                 <h6>Book Date</h6>
                 <TextFieldGroup
                   name="bookdate"
-                  type="date"
+                  
                   value={this.state.bookdate}
                   onChange={this.onChange}
                   error={errors.bookdate}
