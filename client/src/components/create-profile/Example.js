@@ -192,8 +192,9 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
-                          bktime: "08.00 a.m-09.00 a.m"
+                          bkdate: this.state.bookdate,
+                          bktime: "08.00 a.m-09.00 a.m",
+
 
                         }
                       }}>
@@ -225,7 +226,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
@@ -257,7 +258,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "10.00 a.m-11.00 a.m"
 
                         }
@@ -291,7 +292,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
@@ -324,7 +325,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
@@ -357,7 +358,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
@@ -388,7 +389,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
@@ -419,7 +420,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
@@ -450,7 +451,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
@@ -479,7 +480,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
@@ -507,7 +508,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
@@ -535,7 +536,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
@@ -563,7 +564,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
@@ -591,7 +592,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
@@ -619,7 +620,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
@@ -647,7 +648,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
@@ -675,7 +676,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
@@ -703,7 +704,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
@@ -731,7 +732,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
@@ -759,7 +760,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
@@ -787,7 +788,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
@@ -815,7 +816,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
@@ -843,7 +844,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
@@ -871,7 +872,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
@@ -900,7 +901,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
@@ -928,7 +929,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
@@ -956,7 +957,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
@@ -984,7 +985,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
@@ -1012,7 +1013,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
@@ -1040,7 +1041,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
@@ -1069,7 +1070,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
@@ -1097,7 +1098,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
@@ -1125,7 +1126,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
@@ -1153,7 +1154,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
@@ -1181,7 +1182,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
@@ -1210,7 +1211,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
@@ -1238,7 +1239,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
@@ -1266,7 +1267,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
@@ -1294,7 +1295,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
@@ -1322,7 +1323,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
@@ -1350,7 +1351,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
@@ -1378,7 +1379,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
@@ -1407,7 +1408,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
@@ -1435,7 +1436,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
@@ -1464,7 +1465,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
@@ -1500,7 +1501,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "08.00 a.m-09.00 a.m"
 
                         }
@@ -1531,7 +1532,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
@@ -1562,7 +1563,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "10.00 a.m-11.00 a.m"
 
                         }
@@ -1593,7 +1594,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
@@ -1624,7 +1625,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
@@ -1655,7 +1656,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
@@ -1686,7 +1687,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
@@ -1717,7 +1718,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
@@ -1748,7 +1749,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
@@ -1777,7 +1778,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
@@ -1805,7 +1806,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
@@ -1833,7 +1834,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
@@ -1861,7 +1862,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
@@ -1889,7 +1890,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
@@ -1917,7 +1918,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
@@ -1945,7 +1946,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
@@ -1973,7 +1974,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
@@ -2001,7 +2002,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
@@ -2029,7 +2030,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
@@ -2057,7 +2058,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
@@ -2085,7 +2086,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
@@ -2113,7 +2114,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
@@ -2141,7 +2142,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
@@ -2169,7 +2170,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
@@ -2198,7 +2199,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
@@ -2226,7 +2227,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
@@ -2254,7 +2255,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
@@ -2282,7 +2283,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
@@ -2310,7 +2311,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
@@ -2338,7 +2339,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
@@ -2367,7 +2368,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
@@ -2395,7 +2396,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
@@ -2423,7 +2424,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
@@ -2451,7 +2452,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
@@ -2479,7 +2480,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
@@ -2508,7 +2509,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
@@ -2536,7 +2537,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
@@ -2564,7 +2565,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
@@ -2592,7 +2593,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
@@ -2620,7 +2621,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
@@ -2648,7 +2649,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
@@ -2676,7 +2677,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
@@ -2705,7 +2706,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
@@ -2733,7 +2734,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
@@ -2762,7 +2763,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
@@ -2797,7 +2798,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "08.00 a.m-09.00 a.m"
 
                         }
@@ -2828,7 +2829,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
@@ -2859,7 +2860,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "010.00 a.m-11.00 a.m"
 
                         }
@@ -2890,7 +2891,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
@@ -2921,7 +2922,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
@@ -2952,7 +2953,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
@@ -2983,7 +2984,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
@@ -3014,7 +3015,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
@@ -3045,7 +3046,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
@@ -3074,7 +3075,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
@@ -3102,7 +3103,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
@@ -3130,7 +3131,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
@@ -3158,7 +3159,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
@@ -3186,7 +3187,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
@@ -3214,7 +3215,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
@@ -3242,7 +3243,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
@@ -3270,7 +3271,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
@@ -3298,7 +3299,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
@@ -3326,7 +3327,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
@@ -3354,7 +3355,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
@@ -3382,7 +3383,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
@@ -3410,7 +3411,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
@@ -3438,7 +3439,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
@@ -3466,7 +3467,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
@@ -3495,7 +3496,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
@@ -3523,7 +3524,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
@@ -3551,7 +3552,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
@@ -3579,7 +3580,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
@@ -3607,7 +3608,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
@@ -3635,7 +3636,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
@@ -3664,7 +3665,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
@@ -3692,7 +3693,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
@@ -3720,7 +3721,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
@@ -3748,7 +3749,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
@@ -3776,7 +3777,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
@@ -3805,7 +3806,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
@@ -3833,7 +3834,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
@@ -3861,7 +3862,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
@@ -3889,7 +3890,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
@@ -3917,7 +3918,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
@@ -3945,7 +3946,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
@@ -3973,7 +3974,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
@@ -4002,7 +4003,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
@@ -4030,7 +4031,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
@@ -4059,7 +4060,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
@@ -4095,7 +4096,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "08.00 a.m-09.00 a.m"
 
                         }
@@ -4126,7 +4127,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
@@ -4157,7 +4158,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "10.00 a.m-11.00 a.m"
 
                         }
@@ -4188,7 +4189,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
@@ -4219,7 +4220,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
@@ -4250,7 +4251,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
@@ -4281,7 +4282,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
@@ -4312,7 +4313,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
@@ -4343,7 +4344,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
@@ -4372,7 +4373,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
@@ -4400,7 +4401,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
@@ -4428,7 +4429,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
@@ -4456,7 +4457,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
@@ -4484,7 +4485,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
@@ -4512,7 +4513,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
@@ -4540,7 +4541,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
@@ -4568,7 +4569,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
@@ -4596,7 +4597,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
@@ -4624,7 +4625,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
@@ -4652,7 +4653,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
@@ -4680,7 +4681,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
@@ -4708,7 +4709,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
@@ -4736,7 +4737,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
@@ -4764,7 +4765,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
@@ -4793,7 +4794,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
@@ -4821,7 +4822,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
@@ -4849,7 +4850,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
@@ -4877,7 +4878,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
@@ -4905,7 +4906,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
@@ -4933,7 +4934,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
@@ -4962,7 +4963,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
@@ -4990,7 +4991,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
@@ -5018,7 +5019,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
@@ -5046,7 +5047,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
@@ -5074,7 +5075,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
@@ -5103,7 +5104,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
@@ -5131,7 +5132,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
@@ -5159,7 +5160,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
@@ -5187,7 +5188,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
@@ -5215,7 +5216,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
@@ -5243,7 +5244,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
@@ -5271,7 +5272,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
@@ -5300,7 +5301,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
@@ -5328,7 +5329,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
@@ -5357,7 +5358,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
@@ -5392,7 +5393,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "08.00 p.m-09.00 p.m"
 
                         }
@@ -5423,7 +5424,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
@@ -5454,7 +5455,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "10.00 a.m-11.00 a.m"
 
                         }
@@ -5485,7 +5486,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
@@ -5516,7 +5517,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
@@ -5547,7 +5548,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
@@ -5578,7 +5579,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
@@ -5609,7 +5610,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
@@ -5640,7 +5641,7 @@ class Example extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
@@ -5669,7 +5670,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
@@ -5697,7 +5698,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
@@ -5725,7 +5726,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
@@ -5753,7 +5754,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
@@ -5781,7 +5782,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
@@ -5809,7 +5810,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
@@ -5837,7 +5838,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
@@ -5865,7 +5866,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
@@ -5893,7 +5894,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
@@ -5921,7 +5922,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
@@ -5949,7 +5950,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
@@ -5977,7 +5978,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
@@ -6005,7 +6006,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
@@ -6033,7 +6034,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
@@ -6061,7 +6062,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
@@ -6090,7 +6091,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
@@ -6118,7 +6119,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
@@ -6146,7 +6147,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
@@ -6174,7 +6175,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
@@ -6202,7 +6203,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
@@ -6230,7 +6231,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
@@ -6259,7 +6260,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
@@ -6287,7 +6288,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
@@ -6315,7 +6316,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
@@ -6343,7 +6344,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
@@ -6371,7 +6372,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
@@ -6400,7 +6401,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
@@ -6428,7 +6429,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
@@ -6456,7 +6457,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
@@ -6484,7 +6485,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
@@ -6512,7 +6513,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
@@ -6540,7 +6541,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
@@ -6568,7 +6569,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
@@ -6597,7 +6598,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
@@ -6625,7 +6626,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
@@ -6654,7 +6655,7 @@ class Example extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
@@ -6690,7 +6691,7 @@ class Example extends Component {
             <div className="col-sm-4 style">
               <form onSubmit={this.onSubmit}>
                 {/* <h1>{this.state.lat}</h1> */}
-                <h1>{this.state.dayofweek}</h1>
+
                 <h6>You Selected Hall</h6>
                 <TextFieldGroup
                   placeholder=""
@@ -6699,6 +6700,17 @@ class Example extends Component {
                   onChange={this.onChange}
                 />
                 <h6>Put Your Booking Date</h6>
+
+
+                <InfiniteCalendar
+                  onSelect={date =>
+                    this.setState({
+                      bookdate: format(date, 'YYYY/MM/DD'),
+                      dayofweek: format(date, 'dddd')
+                    })
+                  }
+
+                />
                 <TextFieldGroup
                   placeholder=""
                   name="dayofweek"////////////////////////////////////////////////////////////////////////
@@ -6711,15 +6723,6 @@ class Example extends Component {
                   value={this.state.bookdate}
                   onChange={this.onChange}
                 />
-                <InfiniteCalendar
-                  onSelect={date =>
-                    this.setState({
-                      bookdate: format(date, 'ddd, MMM Do YYYY'),
-                      dayofweek: format(date, 'dddd')
-                    })
-                  }
-
-                />
                 {/* <SelectListGroup
                   placeholder=""
                   name="dayofweek"
@@ -6729,6 +6732,7 @@ class Example extends Component {
                 />  */}
               </form>
             </div>
+            <div className="col-sm-1 style"></div>
             {/* <div className="mb-3">
                   <button
                     type="button"
