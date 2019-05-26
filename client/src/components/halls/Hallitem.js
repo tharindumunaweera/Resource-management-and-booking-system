@@ -39,20 +39,22 @@ class Hallitem extends Component {
                         <MDBCol col-lg-8 col-md-5 col-10 className="mb-4 " >
                             <MDBCard className="mb-4  border-primary">
                                 <MDBCardHeader>
-                                    <Link to={{
-                                        pathname: './example',
+                                Hall Name:<Link to={{
+                                        pathname: './available',
                                         state: {
                                             name: hallreg.hallname,
                                             cal: "tharindu"
 
                                         }
                                     }}>
-                                        Hall Name:<strong ><font size="4"> {hallreg.hallname}</font></strong>
+                                       <button type="submit" className="btn btn-primary"><strong ><font size="4"> {hallreg.hallname}</font></strong></button>
                                     </Link>
                                 </MDBCardHeader>
                                 <MDBCardBody>
                                     <p>
-
+                                   
+                     
+                        
 
                                         Number of seats: <strong> {hallreg.seat}</strong>
                                     </p>
