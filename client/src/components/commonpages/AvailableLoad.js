@@ -11,9 +11,11 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
-import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
+
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
 import Calender from "../Calender/Calender";
-import { weekdays } from "moment";
+import { weekdays } from "moment"; 
+
 import moment from 'moment';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
@@ -30,7 +32,9 @@ const style = {
 
 class AvailableLoad extends Component {
 
-  onDayClick = (e, day) => {
+
+  onDayClick = (e ,day) => {
+
     alert("The Day You Select Is : " + day);
   }
 
@@ -284,7 +288,13 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                        Available
+
+                      <button type="submit" className="btn btn-info">
+                       Available
+                        </button>
+
+                   
+
                       </Link>
 
                     </div></td>
@@ -6589,142 +6599,152 @@ class AvailableLoad extends Component {
     ];
 
 
+   
     return (
       <React.Fragment>
-
+      
         <MDBRow>
-          <div className="col-sm-3" />
+        <div className="col-sm-3" />
           <MDBCol md="4">
-            <MDBCard className="mt-3">
+          <MDBCard className="mt-5">
+          <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
+          <InfiniteCalendar
+       onSelect={date =>
+        this.setState({
+            name: format(date, 'ddd, MMM Do YYYY'),
+            dayofweek: format(date, 'dddd')
+        })
+       }
+        
+    />
+            {/* <MDBCard className="mt-3">
+              
+              <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
+              <form onSubmit={this.onSubmit}>
+             
+                <li className="list-group-item">
+                <TextFieldGroup
+                    placeholder="Hall Name"
+                    name="hallname"
+                    value={this.state.hallname}
+                    onChange={this.onChange}
+                  />
+                </li>
+                <li className="list-group-item">
+                <TextFieldGroup
+                    placeholder="Hall Name"
+                    name="dayofweek"
+                    value={this.state.dayofweek}
+                    onChange={this.onChange}
+                  />
+                </li>
+            </form>
 
-              <MDBCardBody style={{ width: '100%', height: '210px' }} className="text-center">
-                <form onSubmit={this.onSubmit}>
-
-                  <li className="list-group-item">
-                    <TextFieldGroup
-                      placeholder="Hall Name"
-                      name="hallname"
-                      value={this.state.hallname}
-                      onChange={this.onChange}
-                    />
-                  </li>
-                  <li className="list-group-item">
-                    <TextFieldGroup
-                      placeholder="Hall Name"
-                      name="dayofweek"
-                      value={this.state.dayofweek}
-                      onChange={this.onChange}
-                    />
-                  </li>
-                </form>
 
 
-
-
+              
               </MDBCardBody>
+            </MDBCard> */}
+            </MDBCardBody>
+
+
+   
             </MDBCard>
           </MDBCol>
 
           <MDBCol md="4">
             <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black">
-                {/* <h4 className="h4-responsive text-white">
-                <strong> Make Booking </strong>
-                
-                </h4> */}
+
+                 <h4 className="h4-responsive text-white">
+                <strong> {this.state.hallname} </strong>
+                </h4> 
               </MDBView>
-              <MDBCardBody style={{ width: '100%', height: '100px' }} className="text-center">
+              <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
 
-                <div className="col-sm-10 style">
-                  <div className="card card-body bg-light mb-10">
-                    {eightInputs}
-                    {eightnine}
-                    {eightten}
-                    {eighteleven}
-                    {eighttwelve}
-                    {eightone}
-                    {eighttwo}
-                    {eightthree}
-                    {eightfour}
+             
+                {eightInputs}
+                {eightnine}
+                {eightten}
+                {eighteleven}
+                {eighttwelve}
+                {eightone}
+                {eighttwo}
+                {eightthree}
+                {eightfour}
 
-                    {nineInputs}
-                    {nineten}
-                    {nineeleven}
-                    {ninetwelve}
-                    {nineone}
-                    {ninetwo}
-                    {ninethree}
-                    {ninefour}
+                {nineInputs}
+                {nineten}
+                {nineeleven}
+                {ninetwelve}
+                {nineone}
+                {ninetwo}
+                  {ninethree}
+                {ninefour}
 
-                    {tenInputs}
-                    {teneleven}
-                    {tentwelve}
-                    {tenone}
-                    {tentwo}
-                    {tenthree}
-                    {tenfour}
+                {tenInputs}
+                {teneleven}
+                {tentwelve}
+                {tenone}
+                {tentwo}
+                {tenthree}
+                {tenfour}
 
-                    {elevenInputs}
-                    {eleventwelve}
-                    {elevenone}
-                    {eleventwo}
-                    {eleventhree}
-                    {elevenfour}
+                {elevenInputs}
+                {eleventwelve}
+                {elevenone}
+                {eleventwo}
+                {eleventhree}
+                {elevenfour}
 
-                    {twelveInputs}
-                    {twelveone}
-                    {twelvetwo}
-                    {twelvethree}
-                    {twelvefour}
+                {twelveInputs}
+                {twelveone}
+                {twelvetwo}
+                {twelvethree}
+                {twelvefour}
 
-                    {oneInputs}
-                    {onetwo}
-                    {onethree}
-                    {onefour}
+                {oneInputs}
+                {onetwo}
+                {onethree}
+                {onefour}
 
-                    {twoInputs}
-                    {twothree}
-                    {twofour}
+                {twoInputs}
+                {twothree}
+                {twofour}
 
-                    {threeInputs}
-                    {threefour}
-                    {fourInputs}
-                  </div>
-                </div>
+                {threeInputs}
+                {threefour}
+                {fourInputs}
+            
 
+             
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         </MDBRow>
 
         <MDBRow>
-          <div className="col-sm-3" />
-          <MDBCol md="4">
 
-
-            {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  /> */}
-            {/* <input type="text" value={this.state.name}></input>
+            <div className="col-sm-3" /> 
+              <MDBCol md="4">
+             
+                 
+                  {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  /> */}
+                  {/* <input type="text" value={this.state.name}></input>
             <input type="text" value={this.state.tha}></input> */}
 
-            <InfiniteCalendar
-              onSelect={date =>
-                this.setState({
-                  name: format(date, 'ddd, MMM Do YYYY'),
-                  dayofweek: format(date, 'dddd')
-                })
-              }
+                
 
-            />
+                
+                 
+                
+                  </MDBCol>
 
-
-
-
-          </MDBCol>
-
-          <MDBCol md="5">
-
-          </MDBCol>
-        </MDBRow>
+                <MDBCol md="5">
+              
+                </MDBCol>
+           </MDBRow>
+       
 
       </React.Fragment>
     );
@@ -6744,4 +6764,5 @@ export default connect(
   mapStateToProps,
   { getCurrentNine }
 )(withRouter(AvailableLoad));
+
 
