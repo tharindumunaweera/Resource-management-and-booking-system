@@ -8,6 +8,9 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import { getCurrentNine, deleteAccount } from "../../actions/nineActions";
 import moment from 'moment';
+import InfiniteCalendar from 'react-infinite-calendar';
+import 'react-infinite-calendar/styles.css';
+import format from 'date-fns/format';
 
 class Example extends Component {
   constructor(props) {
@@ -15,6 +18,7 @@ class Example extends Component {
     this.state = {
       // displaySocialInputs: false,
       dayofweek: "",
+      bookdate: "",
       hallname: "",
       lat: ""
 
@@ -6700,6 +6704,21 @@ class Example extends Component {
                   name="dayofweek"////////////////////////////////////////////////////////////////////////
                   value={this.state.dayofweek}
                   onChange={this.onChange}
+                />
+                <TextFieldGroup
+                  placeholder=""
+                  name="bookdate"////////////////////////////////////////////////////////////////////////
+                  value={this.state.bookdate}
+                  onChange={this.onChange}
+                />
+                <InfiniteCalendar
+                  onSelect={date =>
+                    this.setState({
+                      bookdate: format(date, 'ddd, MMM Do YYYY'),
+                      dayofweek: format(date, 'dddd')
+                    })
+                  }
+
                 />
                 {/* <SelectListGroup
                   placeholder=""
