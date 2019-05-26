@@ -284,7 +284,9 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                        Available
+                      <button type="submit" className="btn btn-info">
+                       Available
+                        </button>
                       </Link>
 
                     </div></td>
@@ -6595,7 +6597,18 @@ class AvailableLoad extends Component {
         <MDBRow>
         <div className="col-sm-3" />
           <MDBCol md="4">
-            <MDBCard className="mt-3">
+          <MDBCard className="mt-5">
+          <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
+          <InfiniteCalendar
+       onSelect={date =>
+        this.setState({
+            name: format(date, 'ddd, MMM Do YYYY'),
+            dayofweek: format(date, 'dddd')
+        })
+       }
+        
+    />
+            {/* <MDBCard className="mt-3">
               
               <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
               <form onSubmit={this.onSubmit}>
@@ -6622,21 +6635,21 @@ class AvailableLoad extends Component {
 
               
               </MDBCardBody>
+            </MDBCard> */}
+            </MDBCardBody>
             </MDBCard>
           </MDBCol>
 
           <MDBCol md="4">
             <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black">
-                {/* <h4 className="h4-responsive text-white">
-                <strong> Make Booking </strong>
-                
-                </h4> */}
+                 <h4 className="h4-responsive text-white">
+                <strong> {this.state.hallname} </strong>
+                </h4> 
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '100px'}} className="text-center">
+              <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
 
-              <div className="col-sm-10 style">
-              <div className="card card-body bg-light mb-10">
+             
                 {eightInputs}
                 {eightnine}
                 {eightten}
@@ -6689,8 +6702,7 @@ class AvailableLoad extends Component {
                 {threeInputs}
                 {threefour}
                 {fourInputs}
-              </div>
-            </div>
+            
 
               </MDBCardBody>
             </MDBCard>
@@ -6706,15 +6718,7 @@ class AvailableLoad extends Component {
                   {/* <input type="text" value={this.state.name}></input>
             <input type="text" value={this.state.tha}></input> */}
 
-                  <InfiniteCalendar
-       onSelect={date =>
-        this.setState({
-            name: format(date, 'ddd, MMM Do YYYY'),
-            dayofweek: format(date, 'dddd')
-        })
-       }
-        
-    />
+                
 
                 
                  
