@@ -33,11 +33,7 @@ const style = {
 class AvailableLoad extends Component {
 
 
-  onDayClick = (e ,day) => {
-
-    alert("The Day You Select Is : " + day);
-  }
-
+ 
   constructor(props) {
     super(props);
     this.state = {
