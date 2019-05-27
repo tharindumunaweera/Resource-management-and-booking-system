@@ -107,7 +107,7 @@ class CreateBooking extends Component {
                   placeholder="Hall name"
                   name="hallname"
                   value={this.state.hallname}
-                  onChange={this.onChange}
+                  // onChange={this.onChange}
                 />
 
                 <h6>Book Date</h6>
@@ -115,7 +115,7 @@ class CreateBooking extends Component {
                   name="bookdate"
                   
                   value={this.state.bookdate}
-                  onChange={this.onChange}
+                  // onChange={this.onChange}
                   
                 />
                 {/* <h1>{this.state.bookdate.selectedDate.ToString("dddd")}</h1> */}
@@ -124,7 +124,7 @@ class CreateBooking extends Component {
                   placeholder="Booking time"
                   name="booktime"
                   value={this.state.booktime}
-                  onChange={this.onChange}
+                  // onChange={this.onChange}
                 />
                 <h6>Reason</h6>
                 <TextAreaFieldGroup
