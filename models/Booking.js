@@ -14,10 +14,22 @@ const BookingSchema = new Schema({
   bookdate: {
     type: String
   },
-  //   book: {
-  //     type: Boolean,
-  //     default: false
-  //   },
+  booktime: {
+    type: String
+  },
+  reason: {
+    type: String
+  },
+  nameofapplicant: {
+    type: String
+  },
+  indexnostudent: {
+    type: String
+  },
+  teacherid: {
+    type: String
+  },
+  
 
   date: {
     type: Date,
@@ -26,3 +38,5 @@ const BookingSchema = new Schema({
 });
 
 module.exports = Booking = mongoose.model("booking", BookingSchema);
+
+      

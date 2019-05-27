@@ -22,7 +22,7 @@ class CreateBooking extends Component {
       nameofapplicant: "",
       indexnostudent: "",
       teacherid: "",
-      errors: {}
+      
     };
 
     this.onChange = this.onChange.bind(this);
@@ -49,11 +49,7 @@ class CreateBooking extends Component {
 
 
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
-  }
+  
 
   onSubmit(e) {
     e.preventDefault();
@@ -76,7 +72,7 @@ class CreateBooking extends Component {
   }
 
   render() {
-    const { errors } = this.state;
+    
 
 
 
@@ -120,35 +116,38 @@ class CreateBooking extends Component {
                   
                   value={this.state.bookdate}
                   onChange={this.onChange}
-                  error={errors.bookdate}
+                  
                 />
                 {/* <h1>{this.state.bookdate.selectedDate.ToString("dddd")}</h1> */}
-
+                <h6>Book Time</h6>
                 <TextFieldGroup
                   placeholder="Booking time"
                   name="booktime"
                   value={this.state.booktime}
                   onChange={this.onChange}
                 />
-
+                <h6>Reason</h6>
                 <TextAreaFieldGroup
                   placeholder="Reason"
                   name="reason"
                   value={this.state.reason}
                   onChange={this.onChange}
                 />
+                <h6>Name of Applicant</h6>
                 <TextAreaFieldGroup
                   placeholder="Name Of Applicant"
                   name="nameofapplicant"
                   value={this.state.nameofapplicant}
                   onChange={this.onChange}
                 />
+                <h6>Student Id</h6>
                 <TextAreaFieldGroup
                   placeholder="Id of Student Applicant"
                   name="indexnostudent"
                   value={this.state.indexnostudent}
                   onChange={this.onChange}
                 />
+                <h6>Lecturer Id</h6>
                 <TextAreaFieldGroup
                   placeholder="Lecturer ID"
                   name="teacherid"

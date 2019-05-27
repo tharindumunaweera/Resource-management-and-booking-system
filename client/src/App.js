@@ -69,6 +69,7 @@ import TimetableActions from "./components/timetable/TimetableActions";
 import Thadashboard from "./components/timetable/Thadashboard";
 import Template from "./components/layout/Template";
 
+
 import "./App.css";
 import Profiles from "./components/profiles/Profiles";
 
@@ -256,6 +257,9 @@ class App extends Component {
 
             <Switch>
               <PrivateRoute exact path="/example" component={Example} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/available" component={AvailableLoad} />
             </Switch>
 
             <Switch>
