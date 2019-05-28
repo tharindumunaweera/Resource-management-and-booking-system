@@ -5,7 +5,8 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { addExperience } from "../../actions/profileActions";
-import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
+
 
 
 class AddExperience extends Component {
@@ -27,6 +28,8 @@ class AddExperience extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.onCheck = this.onCheck.bind(this);
   }
+
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -61,102 +64,105 @@ class AddExperience extends Component {
     });
   }
 
+
   render() {
     const { errors } = this.state;
 
     return (
 
       <React.Fragment>
-      <MDBRow>
-        <div className="col-sm-4 " />
-        <div className="col-sm-7 ">
-          <MDBCol md="12">
-          <Link to="/dashboard" className="btn btn-light">
-                 Go Back
+        <MDBRow>
+          <div className="col-sm-4 " />
+          <div className="col-sm-7 ">
+            <MDBCol md="12">
+              <Link to="/dashboard" className="btn btn-light">
+                Go Back
           </Link>
-            <MDBCard className="mt-5">
-              <MDBView className="gradient-card-header black darken-0">
-                <h4 className="h4-responsive text-white">
-                  <strong>Add Experience</strong>
-                  <p className="lead text-center">
-                       Add any job or exprience that you had past or current
+              <MDBCard className="mt-5">
+                <MDBView className="gradient-card-header black darken-0">
+                  <h4 className="h4-responsive text-white">
+                    <strong>Add Experience</strong>
+                    <p className="lead text-center">
+                      Add any job or exprience that you had past or current
                   </p>
-                </h4>
-              </MDBView>
-              <MDBCardBody>
-              <form onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="* Company"
-                  name="company"
-                  value={this.state.company}
-                  onChange={this.onChange}
-                  error={errors.company}
-                />
-                <TextFieldGroup
-                  placeholder="* Job Title"
-                  name="title"
-                  value={this.state.title}
-                  onChange={this.onChange}
-                  error={errors.title}
-                />
-                <TextFieldGroup
-                  placeholder="Location "
-                  name="location"
-                  value={this.state.location}
-                  onChange={this.onChange}
-                  error={errors.location}
-                />
-                <h6>From Date</h6>
-                <TextFieldGroup
-                  name="from"
-                  type="date"
-                  value={this.state.from}
-                  onChange={this.onChange}
-                  error={errors.from}
-                />
-                <h6>To Date</h6>
-                <TextFieldGroup
-                  name="to"
-                  type="date"
-                  value={this.state.to}
-                  onChange={this.onChange}
-                  error={errors.to}
-                  disabled={this.state.disabled ? "disabled" : ""}
-                />
-                <div className="form-check mb-4">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    name="current"
-                    value={this.state.current}
-                    checked={this.state.current}
-                    onChange={this.onCheck}
-                    id="current"
-                  />
-                  <label htmlFor="current" className="form-check-label">
-                    Current Job
+                  </h4>
+                </MDBView>
+                <MDBCardBody>
+                  <form onSubmit={this.onSubmit}>
+                    <TextFieldGroup
+                      placeholder="* Company"
+                      name="company"
+                      value={this.state.company}
+                      onChange={this.onChange}
+                      error={errors.company}
+                    />
+
+                    <TextFieldGroup
+                      placeholder="* Job Title"
+                      name="title"
+                      value={this.state.title}
+                      onChange={this.onChange}
+                      error={errors.title}
+                    />
+                    <TextFieldGroup
+                      placeholder="Location "
+                      name="location"
+                      value={this.state.location}
+                      onChange={this.onChange}
+                      error={errors.location}
+                    />
+                    <h6>From Date</h6>
+                    <TextFieldGroup
+                      name="from"
+                      type="date"
+                      value={this.state.from}
+                      onChange={this.onChange}
+                      error={errors.from}
+                    />
+
+                    <h6>To Date</h6>
+                    <TextFieldGroup
+                      name="to"
+                      type="date"
+                      value={this.state.to}
+                      onChange={this.onChange}
+                      error={errors.to}
+                      disabled={this.state.disabled ? "disabled" : ""}
+                    />
+                    <div className="form-check mb-4">
+                      <input
+                        type="checkbox"
+                        className="form-check-input"
+                        name="current"
+                        value={this.state.current}
+                        checked={this.state.current}
+                        onChange={this.onCheck}
+                        id="current"
+                      />
+                      <label htmlFor="current" className="form-check-label">
+                        Current Job
                   </label>
-                </div>
-                <TextAreaFieldGroup
-                  placeholder="Job Description"
-                  name="description"
-                  value={this.state.description}
-                  onChange={this.onChange}
-                  error={errors.description}
-                  info="Tell us about the position"
-                />
-                <input
-                  type="submit"
-                  value="submit"
-                  className="btn btn-info btn-block mt-4"
-                />
-              </form>
-              </MDBCardBody>
-            </MDBCard>
-          </MDBCol>
-        </div>
-      </MDBRow>
-    </React.Fragment>
+                    </div>
+                    <TextAreaFieldGroup
+                      placeholder="Job Description"
+                      name="description"
+                      value={this.state.description}
+                      onChange={this.onChange}
+                      error={errors.description}
+                      info="Tell us about the position"
+                    />
+                    <input
+                      type="submit"
+                      value="submit"
+                      className="btn btn-info btn-block mt-4"
+                    />
+                  </form>
+                </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
+          </div>
+        </MDBRow>
+      </React.Fragment>
 
 
 

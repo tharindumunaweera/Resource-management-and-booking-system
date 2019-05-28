@@ -13,16 +13,10 @@ const TopNavigation = () => {
             <MDBListGroup className="list-group-flush">
                 
 
-                <NavLink to="/profile" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="user" className="mr-3"/>
-                        Time Tables
-                    </MDBListGroupItem>
-                </NavLink>
-
+              
                 <NavLink to="/ViewNine" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="map" className="mr-3"/>
+                        <MDBIcon icon="far fa-clock" className="mr-3"/>
                         Time Table
                     </MDBListGroupItem>
                 </NavLink>

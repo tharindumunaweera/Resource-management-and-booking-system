@@ -20,7 +20,7 @@ const TopNavigation = () => {
                 </NavLink> */}
         
 
-        <NavLink to="/ViewNine" activeClassName="activeClass">
+        <NavLink to="/EditNine" activeClassName="activeClass">
           <MDBListGroupItem>
             <MDBIcon icon="far fa-clock" className="mr-3" />
             Time Tables
@@ -49,12 +49,7 @@ const TopNavigation = () => {
         </NavLink>
       </MDBListGroup>
 
-      <NavLink to="/Form" activeClassName="activeClass">
-          <MDBListGroupItem>
-            <MDBIcon icon="far fa-registered" className="mr-3" />
-            Hall Register
-          </MDBListGroupItem>
-        </NavLink>
+      
 
       
               

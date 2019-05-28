@@ -34,7 +34,7 @@ router.post(
 
     //Get fields
     const profileFields = {};
-    profileFields.user = req.user.id;
+
 
     // if (req.body.Mninetoten)
     //   profileFields.Mninetoten = req.body.Mninetoten.split(",");
@@ -262,11 +262,10 @@ router.post(
 
     // Skills - Split into array
 
-    Nine.findOne({ user: req.user.id }).then(nine => {
+    Nine.findOne().then(nine => {
       if (nine) {
         //update
-        Nine.findOneAndUpdate(
-          { user: req.user.id },
+        Nine.findOneAndUpdate(req.params.nineId,
           { $set: profileFields },
           { new: true }
         ).then(nine => res.json(nine));

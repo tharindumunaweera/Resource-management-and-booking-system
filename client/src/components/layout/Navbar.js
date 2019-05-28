@@ -52,7 +52,7 @@ class Navbar extends Component {
           </Link> */}
         </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a
             href="#"
             onClick={this.onLogoutClick.bind(this)}
@@ -65,9 +65,9 @@ class Navbar extends Component {
               style={{ width: "25px", marginRight: "5 PX" }}
               title="You must have a Gravatar connected to ypur email to dispaly image"
             />{" "}
-            Logout
+             Logout 
           </a>
-        </li>
+        </li> */}
       </ul>
     );
 
@@ -90,10 +90,10 @@ class Navbar extends Component {
       <div style={{ marginLeft: "0px" }}>
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4 ">
           <div className="col-sm-2" />
-          <div className="container">
+          <div className="container" >
             <div className="col-sm-1" />
             <Link className="navbar-brand" to="/">
-              <strong> RMIS </strong>
+              <strong> RM&IS </strong>
             </Link>
             <button
               className="navbar-toggler"
@@ -107,10 +107,10 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/profiles">
+                  {/* <Link className="nav-link" to="/profiles">
                     {" "}
-                    Profiles
-                  </Link>
+                     Profiles 
+                  </Link> */}
                 </li>
               </ul>
               {isAuthenticated ? authLinks : guestLinks}

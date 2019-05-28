@@ -360,9 +360,9 @@ onCheck4(e) {
     <React.Fragment>
      
 <MDBRow>
-  <div className="col-sm-4" /> 
+  <div className="col-sm-3" /> 
           <MDBCol md="4">
-            <MDBCard className="mt-4">
+            <MDBCard className="mt-3">
               <MDBView className="gradient-card-header black darken-2">
               <h4 className="h4-responsive text-white">Available Seats</h4>
               </MDBView>

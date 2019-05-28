@@ -1,4 +1,5 @@
 
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
@@ -10,10 +11,18 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
+
 import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
 import Calender from "../Calender/Calender";
 import { weekdays } from "moment"; 
+
 import moment from 'moment';
+import InfiniteCalendar from 'react-infinite-calendar';
+import 'react-infinite-calendar/styles.css';
+import format from 'date-fns/format';
+
+//import Sahan from '../../Calander/sahan'
+
 
 const style = {
   //this for Calender
@@ -23,17 +32,17 @@ const style = {
 
 class AvailableLoad extends Component {
 
-  onDayClick = (e ,day) => {
-    alert("The Day You Select Is : " + day);
-  }
 
+ 
   constructor(props) {
     super(props);
     this.state = {
       // displaySocialInputs: false,
       dayofweek: "",
       hallname: "",
-      lat: ""
+      lat: "",
+      bookdate: "",
+      tha: ""
 
     };
 
@@ -62,7 +71,7 @@ class AvailableLoad extends Component {
 
     this.setState({
       hallname: name,
-      lat: cal
+      // dayofweek: moment().format(' dddd ')
     });
   }
 
@@ -205,12 +214,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "08.00 a.m-09.00 a.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div>
@@ -238,12 +249,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -270,12 +283,17 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "10.00 a.m-11.00 a.m"
 
                         }
                       }}>
-                        Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+
+                   
+
                       </Link>
 
                     </div></td>
@@ -304,12 +322,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -337,12 +357,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -370,12 +392,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -401,12 +425,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -432,12 +458,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -463,12 +491,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -492,12 +522,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -520,12 +552,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -548,12 +582,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -576,12 +612,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -604,12 +642,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -632,12 +672,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -660,12 +702,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -688,12 +732,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -716,12 +762,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -744,12 +792,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -772,12 +822,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -800,12 +852,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -828,12 +882,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -856,12 +912,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -884,12 +942,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -913,12 +973,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -941,12 +1003,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -969,12 +1033,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -997,12 +1063,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1025,12 +1093,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1053,12 +1123,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1082,12 +1154,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1110,12 +1184,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1138,12 +1214,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1166,12 +1244,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1194,12 +1274,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1223,12 +1305,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1251,12 +1335,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1279,12 +1365,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1307,12 +1395,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1335,12 +1425,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1363,12 +1455,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1391,12 +1485,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1420,12 +1516,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1448,12 +1546,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1477,12 +1577,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1513,12 +1615,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "08.00 a.m-09.00 a.m"
 
                         }
                       }}>
-                        Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1544,12 +1648,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1575,12 +1681,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "10.00 a.m-11.00 a.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1606,12 +1714,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1637,12 +1747,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
                       }}>
-                        Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1668,12 +1780,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1699,12 +1813,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1730,12 +1846,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1761,12 +1879,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
                       }}>
-                        Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -1790,12 +1910,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1818,12 +1940,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1846,12 +1970,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1874,12 +2000,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1902,12 +2030,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1930,12 +2060,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1958,12 +2090,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -1986,12 +2120,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2014,12 +2150,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2042,12 +2180,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2070,12 +2210,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2098,12 +2240,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2126,12 +2270,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2154,12 +2300,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2182,12 +2330,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2211,12 +2361,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2239,12 +2391,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2267,12 +2421,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2295,12 +2451,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2323,12 +2481,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2351,12 +2511,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2380,12 +2542,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2408,12 +2572,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2436,12 +2602,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2464,12 +2632,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2492,12 +2662,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2521,12 +2693,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2549,12 +2723,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2577,12 +2753,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2605,12 +2783,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2633,12 +2813,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2661,12 +2843,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2689,12 +2873,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2718,12 +2904,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2746,12 +2934,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2775,12 +2965,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -2810,12 +3002,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "08.00 a.m-09.00 a.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -2841,12 +3035,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -2872,12 +3068,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "010.00 a.m-11.00 a.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -2903,12 +3101,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -2934,12 +3134,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -2965,12 +3167,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -2996,12 +3200,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
                       }}>
-                        Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -3027,12 +3233,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -3058,12 +3266,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -3087,12 +3297,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3115,12 +3327,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3143,12 +3357,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3171,12 +3387,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3199,12 +3417,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3227,12 +3447,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3255,12 +3477,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3283,12 +3507,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3311,12 +3537,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3339,12 +3567,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3367,12 +3597,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3395,12 +3627,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3423,12 +3657,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3451,12 +3687,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3479,12 +3717,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3508,12 +3748,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3536,12 +3778,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3564,12 +3808,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3592,12 +3838,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3620,12 +3868,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3648,12 +3898,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3677,12 +3929,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3705,12 +3959,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3733,12 +3989,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3761,12 +4019,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                    <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3789,12 +4049,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3818,12 +4080,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3846,12 +4110,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3874,12 +4140,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3902,12 +4170,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3930,12 +4200,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3958,12 +4230,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -3986,12 +4260,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4015,12 +4291,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4043,12 +4321,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4072,12 +4352,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4108,12 +4390,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "08.00 a.m-09.00 a.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4139,12 +4423,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "09.00 a.m-10.00 a.m"
 
                         }
                       }}>
-                        Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4170,12 +4456,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "10.00 a.m-11.00 a.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4201,12 +4489,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "11.00 a.m-12.00 p.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4232,12 +4522,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "12.00 p.m-01.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4263,12 +4555,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "01.00 p.m-02.00 p.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4294,12 +4588,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "02.00 p.m-03.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4325,12 +4621,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "03.00 p.m-04.00 p.m"
 
                         }
                       }}>
-                        Available
+                         <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4356,12 +4654,14 @@ class AvailableLoad extends Component {
                         pathname: './createbooking',
                         state: {
                           hallnamebook: this.state.hallname,
-                          bkdate: this.state.dayofweek,
+                          bkdate: this.state.bookdate,
                           bktime: "04.00 p.m-05.00 p.m"
 
                         }
                       }}>
-                        Available
+                        <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                     </div></td>
@@ -4385,12 +4685,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4413,12 +4715,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4441,12 +4745,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4469,12 +4775,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4497,12 +4805,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                    <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4525,12 +4835,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4553,12 +4865,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4581,12 +4895,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4609,12 +4925,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4637,12 +4955,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4665,12 +4985,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4693,12 +5015,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4721,12 +5045,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4749,12 +5075,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4777,12 +5105,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4806,12 +5136,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4834,12 +5166,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4862,12 +5196,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4890,12 +5226,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4918,12 +5256,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4946,12 +5286,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -4975,12 +5317,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5003,12 +5347,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5031,12 +5377,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5059,12 +5407,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5087,12 +5437,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5116,12 +5468,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5144,12 +5498,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5172,12 +5528,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                    <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5200,12 +5558,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5228,12 +5588,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5256,12 +5618,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5284,12 +5648,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5313,12 +5679,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5341,12 +5709,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5370,12 +5740,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5400,7 +5772,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">08.00 a.m-09.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "08.00 a.m-09.00 a.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5418,7 +5805,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">09.00 a.m-10.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "09.00 a.m-10.00 a.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5436,7 +5838,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">10.00 a.m-11.00 a.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "10.00 a.m-11.00 a.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5454,7 +5871,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">11.00 a.m-12.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "11.00 a.m-12.00 p.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5472,7 +5904,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">12.00 p.m-01.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "12.00 p.m-01.00 p.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5490,7 +5937,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">01.00 p.m-02.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "01.00 p.m-02.00 p.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5508,7 +5970,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">02.00 p.m-03.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "02.00 p.m-03.00 p.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5526,7 +6003,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">03.00 p.m-04.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "03.00 p.m-04.00 p.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5544,7 +6036,22 @@ class AvailableLoad extends Component {
                 <tbody>
                   <tr>
                     <th scope="row">04.00 p.m-05.00 p.m</th>
-                    <td>Avaialable</td>
+                    <td><div>
+                    <Link to={{
+                      pathname: './createbooking',
+                      state: {
+                        hallnamebook: this.state.hallname,
+                        bkdate: this.state.bookdate,
+                        bktime: "04.00 p.m-05.00 p.m"
+
+                      }
+                    }}>
+                       <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
+                      </Link>
+
+                  </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5565,12 +6072,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-10.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5593,12 +6102,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5621,12 +6132,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 p.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5649,12 +6162,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5677,12 +6192,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5705,12 +6222,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5733,12 +6252,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5761,12 +6282,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "08.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5789,12 +6312,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-11.00 a.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5817,12 +6342,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5845,12 +6372,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5873,12 +6402,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5901,12 +6432,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5929,12 +6462,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5957,12 +6492,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "09.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -5986,12 +6523,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-12.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6014,12 +6553,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6042,12 +6583,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                    <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6070,12 +6613,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                    <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6098,12 +6643,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6126,12 +6673,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "10.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6155,12 +6704,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-01.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6183,12 +6734,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6211,12 +6764,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6239,12 +6794,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6267,12 +6824,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "11.00 a.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6296,12 +6855,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-02.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6324,12 +6885,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6352,12 +6915,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6380,12 +6945,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "12.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                    <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6408,12 +6975,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-03.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6436,12 +7005,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                    <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6464,12 +7035,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "01.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6493,12 +7066,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-04.00 p.m"
 
                       }
                     }}>
-                      Available
+                      <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6521,12 +7096,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "02.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6550,12 +7127,14 @@ class AvailableLoad extends Component {
                       pathname: './createbooking',
                       state: {
                         hallnamebook: this.state.hallname,
-                        bkdate: this.state.dayofweek,
+                        bkdate: this.state.bookdate,
                         bktime: "03.00 p.m-05.00 p.m"
 
                       }
                     }}>
-                      Available
+                     <button type="submit" className="btn btn-primary">
+                      <strong> Available</strong>
+                        </button>
                       </Link>
 
                   </div></td>
@@ -6579,17 +7158,30 @@ class AvailableLoad extends Component {
       { label: "Friday", value: "Friday" }
     ];
 
+
    
     return (
       <React.Fragment>
       
         <MDBRow>
-        <div className="col-sm-4" />
+        <div className="col-sm-3" />
           <MDBCol md="4">
-            <MDBCard className="mt-4">
+          <MDBCard className="mt-5">
+          <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
+          <InfiniteCalendar
+       onSelect={date =>
+        this.setState({
+            bookdate: format(date,'YYYY/MM/DD'),
+            dayofweek: format(date, 'dddd')
+        })
+       }
+        
+    />
+            {/* <MDBCard className="mt-3">
               
               <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
               <form onSubmit={this.onSubmit}>
+             
                 <li className="list-group-item">
                 <TextFieldGroup
                     placeholder="Hall Name"
@@ -6598,37 +7190,39 @@ class AvailableLoad extends Component {
                     onChange={this.onChange}
                   />
                 </li>
-
                 <li className="list-group-item">
-                <SelectListGroup
-                  placeholder="Day"
-                  name="dayofweek"
-                  value={this.state.dayofweek}
-                  onChange={this.onChange}
-                  options={options}
-                />
-            </li>
+                <TextFieldGroup
+                    placeholder="Hall Name"
+                    name="dayofweek"
+                    value={this.state.dayofweek}
+                    onChange={this.onChange}
+                  />
+                </li>
             </form>
 
 
 
               
               </MDBCardBody>
+            </MDBCard> */}
+            </MDBCardBody>
+
+
+   
             </MDBCard>
           </MDBCol>
 
           <MDBCol md="4">
             <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black">
-                {/* <h4 className="h4-responsive text-white">
-                <strong> Make Booking </strong>
-                
-                </h4> */}
-              </MDBView>
-              <MDBCardBody style={{width: '100%', height: '100px'}} className="text-center">
 
-              <div className="col-sm-10 style">
-              <div className="card card-body bg-light mb-10">
+                 <h4 className="h4-responsive text-white">
+                <strong> {this.state.hallname} </strong>
+                </h4> 
+              </MDBView>
+              <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
+
+             
                 {eightInputs}
                 {eightnine}
                 {eightten}
@@ -6645,7 +7239,7 @@ class AvailableLoad extends Component {
                 {ninetwelve}
                 {nineone}
                 {ninetwo}
-                {ninethree}
+                  {ninethree}
                 {ninefour}
 
                 {tenInputs}
@@ -6681,25 +7275,28 @@ class AvailableLoad extends Component {
                 {threeInputs}
                 {threefour}
                 {fourInputs}
-              </div>
-            </div>
+            
 
+             
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
         </MDBRow>
 
         <MDBRow>
-            <div className="col-sm-4" /> 
+
+            <div className="col-sm-3" /> 
               <MDBCol md="4">
-              <MDBCard className="mt-4">
-                  <MDBView className="gradient-card-header black darken-2">
-                  <h4 className="h4-responsive text-white">Calender               {moment().format('MMMM D YYYY')}</h4>
-                  </MDBView>
-                  <MDBCardBody style={{width: '100%', height: '380px'}} className="text-center">
-                  <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  />
-                  </MDBCardBody>
-                  </MDBCard>
+             
+                 
+                  {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  /> */}
+                  {/* <input type="text" value={this.state.name}></input>
+            <input type="text" value={this.state.tha}></input> */}
+
+                
+
+                
+                 
                 
                   </MDBCol>
 
@@ -6708,6 +7305,7 @@ class AvailableLoad extends Component {
                 </MDBCol>
            </MDBRow>
        
+
       </React.Fragment>
     );
   }
