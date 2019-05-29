@@ -1,5 +1,5 @@
 
-module.exports = ({ hallname, date, starttime, endtime, purpose, discription ,name , studentid , phonenumber }) => {
+module.exports = ({ hallname,bookdate,booktime, reason, discription ,nameofapplicant , studentid , indexnostudent,teacherid, phonenumber }) => {
     const today = new Date();
 return `
     <!doctype html>
@@ -109,16 +109,13 @@ return `
                    <td><strong>Hall Name :</strong> ${hallname}</td>
                 </tr>
                 <tr class="item">
-                   <td><strong>Booking Date : </strong>${date}</td>
+                   <td><strong>Booking Date : </strong>${bookdate}</td>
                 </tr>
                 <tr class="item">
-                   <td><strong>Start Time :</strong> ${starttime}</td>
+                   <td><strong>Booking Time :</strong> ${booktime}</td>
                 </tr>
                 <tr class="item">
-                  <td><strong>End Time :</strong> ${endtime}</td>
-                </tr>
-                <tr class="item">
-                  <td><strong>Purpose : </strong> ${purpose}</td>
+                  <td><strong>Purpose : </strong> ${reason}</td>
                 </tr>
                 <tr class="item">
                   <td><strong>Discription :</strong> ${discription}</td>
@@ -131,9 +128,9 @@ return `
              <td>I undertake the responsibility of booking and will take care of all assets in the room during the booking.I will not change assets in the hall (technical settings or physical locations) without permission.I agree to pay compensation to UCSC due to the damages.</td>
              <br />
              <br />
-             <td><strong>Name Of Applicant :</strong> ${name}</td>
+             <td><strong>Name Of Applicant :</strong> ${nameofapplicant}</td>
              <br />
-             <td><strong>Registration Number :</strong> ${studentid}</td>
+             <td><strong>Registration Number :</strong> ${ indexnostudent }</td>
              <br />
              <td><strong>Phone Number :</strong> ${phonenumber}</td>
              <br />
