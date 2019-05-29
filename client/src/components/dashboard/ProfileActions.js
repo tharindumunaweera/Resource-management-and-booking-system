@@ -67,7 +67,7 @@ const ProfileActions = () => {
 
           </div>
           <MDBCardBody>
-            <Link to="/add-education" className="btn btn-light"><strong>Add Education</strong> </Link>
+            <Link to="/timetableactions" className="btn btn-light"><strong>Add Education</strong> </Link>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

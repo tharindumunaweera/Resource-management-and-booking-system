@@ -21,3 +21,6 @@ export const ELEVEN_LOADING = "ELEVEN_LOADING";
 export const GET_HALLREG = "GET_HALLREG";
 export const HALLREG_LOADING = "HALLREG_LOADING";
 export const GET_HALLREGS = "GET_HALLREGS";
+export const GET_BOOKING = "GET_BOOKING";
+export const BOOKING_LOADING = "BOOKING_LOADING";
+export const GET_BOOKINGS = "GET_BOOKINGS";

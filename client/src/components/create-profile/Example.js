@@ -11,6 +11,10 @@ import moment from 'moment';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 import format from 'date-fns/format';
+import Example1 from './Example1';
+import { getBookings } from "../../actions/bookingActions";
+import Spinner from "../common/Spinner";
+
 
 class Example extends Component {
   constructor(props) {
@@ -20,7 +24,6 @@ class Example extends Component {
       dayofweek: "",
       bookdate: "",
       hallname: "",
-      lat: ""
 
     };
 
@@ -39,7 +42,7 @@ class Example extends Component {
 
   componentDidMount() {
     this.props.getCurrentNine()////////////////////////////////////////////////////////////////
-
+    this.props.getBookings();
 
     const { handle } = this.props.match.params
 
@@ -156,10 +159,13 @@ class Example extends Component {
     let three = false;
     let four = false;
     let five = false;
-
+    let i;
 
 
     const { nine } = this.props.nine;
+    const { bookings, loading } = this.props.booking;
+
+    let profileItems;
 
     // if (this.state.dayofweek == "Monday") {
     //   socialInputs = (
@@ -174,42 +180,91 @@ class Example extends Component {
     //   );
     // }
 
+
+
     if (this.state.dayofweek == "Monday") {
-      let i;
 
 
       for (i = 0; i <= nine.Meighttonine.length; i++) {
         if (nine.Meighttonine[i] == this.state.hallname) {
-          eight = true;
-          eightInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">08.00 a.m-09.00 a.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "08.00 a.m-09.00 a.m",
+          if (bookings === null || loading) {
+            eightInputs = <Spinner />;
+          } else {
+            let em = 0;
+            if (bookings.length > 0) {
+              eightInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) || (this.state.bookdate === booking.bookdate) && (this.state.dayofweek === booking.dayofweek) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">08.00 a.m-09.00 a.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './createbooking',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "08.00 a.m-09.00 a.m",
 
 
-                        }
-                      }}>
-                        Available
+                              }
+                            }}>
+                              Booking
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              eight = true;
+              eightInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-09.00 a.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-09.00 a.m",
+
+
+                            }
+                          }}>
+                            Available
                       </Link>
 
-                    </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
+
+
+
         }
       }
+
+
 
 
       for (i = 0; i <= nine.Mninetoten.length; i++) {
@@ -6671,6 +6726,7 @@ class Example extends Component {
         );
       }
 
+
     }
 
 
@@ -6683,6 +6739,13 @@ class Example extends Component {
       { label: "Thursday", value: "Thursday" },
       { label: "Friday", value: "Friday" }
     ];
+
+    let item1;
+    item1 = (
+      <div>
+        <Example1 hallname1={this.state.hallname} dayofweek1={this.state.dayofweek} bookdate1={this.state.bookdate} />
+      </div>
+    );
 
     return (
       <div className="Example">
@@ -6749,6 +6812,8 @@ class Example extends Component {
                 </div> */}
             <div className="col-sm-4 style">
               <div className="card card-body bg-light mb-3">
+
+
                 {eightInputs}
                 {eightnine}
                 {eightten}
@@ -6818,14 +6883,19 @@ class Example extends Component {
 
 Example.propTypes = {
   getCurrentNine: PropTypes.func.isRequired,
-  nine: PropTypes.object.isRequired
+  getBookings: PropTypes.func.isRequired,
+  booking: PropTypes.object.isRequired,
+  nine: PropTypes.object.isRequired,
+
 };
 
 const mapStateToProps = state => ({
-  nine: state.nine
+  nine: state.nine,
+  booking: state.booking
+
 });
 
 export default connect(
   mapStateToProps,
-  { getCurrentNine }
+  { getCurrentNine, getBookings }
 )(withRouter(Example));

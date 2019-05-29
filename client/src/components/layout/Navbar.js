@@ -52,7 +52,7 @@ class Navbar extends Component {
           </Link> */}
         </li>
 
-        {/* <li className="nav-item">
+         <li className="nav-item">
           <a
             href="#"
             onClick={this.onLogoutClick.bind(this)}
@@ -67,7 +67,7 @@ class Navbar extends Component {
             />{" "}
              Logout 
           </a>
-        </li> */}
+        </li> 
       </ul>
     );
 
@@ -107,10 +107,10 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  {/* <Link className="nav-link" to="/profiles">
+                   <Link className="nav-link" to="/profiles">
                     {" "}
                      Profiles 
-                  </Link> */}
+                  </Link> 
                 </li>
               </ul>
               {isAuthenticated ? authLinks : guestLinks}

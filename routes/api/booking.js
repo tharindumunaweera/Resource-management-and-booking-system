@@ -19,16 +19,32 @@ router.get(
 
     Booking.findOne()
       .populate("user", ["name", "avatar"])
-      .then(Booking => {
+      .then(booking => {
         if (!booking) {
-          errors.nonine = "There is no Booking from this user";
+          errors.nobooking = "There is no Booking from this user";
           return res.status(404).json(errors);
         }
-        res.json(nine);
+        res.json(booking);
       })
       .catch(err => res.status(404).json(err));
   }
 );
+
+router.get("/all", passport.authenticate("jwt", { session: false }), (req, res) => {
+  const errors = {};
+
+  Booking.find()
+    .populate("user", ["name", "avatar"])
+    .then(booking => {
+      if (!booking) {
+        errors.nobooking = "There are no Booking";
+        return res.status(404).json(errors);
+      }
+
+      res.json(booking);
+    })
+    .catch(err => res.status(404).json({ Booking: "There are no Booking " }));
+});
 
 
 
@@ -39,7 +55,7 @@ router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    
+
 
     const profileFields = {};
     profileFields.user = req.user.id;
@@ -50,7 +66,7 @@ router.post(
     if (req.body.nameofapplicant) profileFields.nameofapplicant = req.body.nameofapplicant;
     if (req.body.indexnostudent) profileFields.indexnostudent = req.body.indexnostudent;
     if (req.body.teacherid) profileFields.teacherid = req.body.teacherid;
-    
+
     Booking.findOne({ user: req.user.id }).then(booking => {
       if (booking) {
         //update
@@ -63,17 +79,17 @@ router.post(
         //create
 
         // check if handle exists
-        
 
-          // save Profile
-          new Booking(profileFields).save().then(booking => res.json(booking));
-       
+
+        // save Profile
+        new Booking(profileFields).save().then(booking => res.json(booking));
+
       }
     });
 
 
 
-    
+
   }
 );
 
