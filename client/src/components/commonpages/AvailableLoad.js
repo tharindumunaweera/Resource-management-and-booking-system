@@ -229,8 +229,10 @@ class AvailableLoad extends Component {
 
                               }
                             }}>
-                              Booking
-                  </Link>
+                             <button type="submit" className="btn btn-danger">
+                          <strong> Booking</strong>
+                        </button>
+                            </Link>
 
                           </div>
                           </td>
@@ -264,7 +266,9 @@ class AvailableLoad extends Component {
 
                             }
                           }}>
-                            Available
+                           <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
+                        </button>
                       </Link>
 
                         </div>
