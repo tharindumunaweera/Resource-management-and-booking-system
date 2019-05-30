@@ -12,12 +12,7 @@ const TopNavigation = () => {
         <img alt="MDB React Logo" className="img-fluid" src={logo} />
       </a>
       <MDBListGroup className="list-group-flush">
-                {/* <NavLink exact={true} to="/" activeClassName="activeClass">
-                    <MDBListGroupItem>
-                        <MDBIcon icon="chart-pie" className="mr-3"/>
-                        Dashboard 
-                    </MDBListGroupItem>
-                </NavLink> */}
+               
         
 
         <NavLink to="/EditNine" activeClassName="activeClass">
