@@ -194,7 +194,7 @@ class Example extends Component {
             if (bookings.length > 0) {
               eightInputs = bookings.map(booking => (
                 <div>
-                  {(this.state.hallname === booking.hallname) || (this.state.bookdate === booking.bookdate) || (this.state.dayofweek === booking.dayofweek) ? (
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate)  ? (
                     em = 1,
                     <table class="table table-light table-striped">
                       <tbody>
