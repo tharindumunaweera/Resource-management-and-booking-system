@@ -267,8 +267,7 @@ export default class Calender extends React.Component {
 
 
                     </tbody>
-                    {/* <h1>{this.xxx()}</h1>
-                    <h1>{this.currentDay()}</h1> */}
+                    
                 </table>
 
             </div>
