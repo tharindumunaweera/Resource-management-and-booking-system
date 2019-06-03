@@ -582,32 +582,77 @@ class Example extends Component {
 
       for (i = 0; i <= nine.Monetotwo.length; i++) {
         if (nine.Monetotwo[i] == this.state.hallname) {
-          one = true;
-          oneInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">01.00 p.m-02.00 p.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "01.00 p.m-02.00 p.m"
+          if (bookings === null || loading) {
+            oneInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "01.00 p.m-02.00 p.m";
+            if (bookings.length > 0) {
+              oneInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">01.00 p.m-02.00 p.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './createbooking',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "01.00 p.m-02.00 p.m",
 
-                        }
-                      }}>
-                        Available
+
+                              }
+                            }}>
+                              Booking
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              one = true;
+              oneInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">01.00 p.m-02.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "01.00 p.m-02.00 p.m",
+
+
+                            }
+                          }}>
+                            Available
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
         }
       }
 
