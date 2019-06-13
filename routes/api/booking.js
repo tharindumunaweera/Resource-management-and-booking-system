@@ -70,16 +70,16 @@ router.post(
     Booking.findOne({ user: req.user.id }).then(booking => {
       if (booking) {
         //update
-        booking.findOneAndUpdate(
-          { user: req.user.id },
-          { $set: profileFields },
-          { new: true }
-        ).then(booking => res.json(booking));
-      } else {
-        //create
+      //   booking.findOneAndUpdate(
+      //     { user: req.user.id },
+      //     { $set: profileFields },
+      //     { new: true }
+      //   ).then(booking => res.json(booking));
+      // } else {
+      //   //create
 
-        // check if handle exists
-
+      //   // check if handle exists
+      // }
 
         // save Profile
         new Booking(profileFields).save().then(booking => res.json(booking));
