@@ -68,8 +68,13 @@ router.post(
     if (req.body.teacherid) profileFields.teacherid = req.body.teacherid;
 
     Booking.findOne({ user: req.user.id }).then(booking => {
+<<<<<<< HEAD
       if (booking) {
         //update
+=======
+      // if (booking) {
+      //   //update
+>>>>>>> 49e6e40d06327c025812d6e3b10b13811daa4f18
       //   booking.findOneAndUpdate(
       //     { user: req.user.id },
       //     { $set: profileFields },
@@ -84,7 +89,7 @@ router.post(
         // save Profile
         new Booking(profileFields).save().then(booking => res.json(booking));
 
-      }
+      
     });
 
 
