@@ -48,7 +48,6 @@ import CreateTen from "./components/create-profile/CreateTen";
 import CreateEleven from "./components/create-profile/CreateEleven";
 import Example from "./components/create-profile/Example";
 import CreateHallreg from "./components/HallRegister/Hallreg";
-import AvailableLoad from "./components/commonpages/AvailableLoad";
 
 import CreateTha from "./components/create-profile/CreateTha";
 import EditProfile from "./components/edit-profile/EditProfile";
@@ -68,7 +67,6 @@ import CreateTimetable from "./components/timetable/CreateTimetable";
 import TimetableActions from "./components/timetable/TimetableActions";
 import Thadashboard from "./components/timetable/Thadashboard";
 import Template from "./components/layout/Template";
-
 
 import "./App.css";
 import Profiles from "./components/profiles/Profiles";
@@ -113,14 +111,13 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-             {/* <Navbar />  */}
+            {/* <Navbar /> */}
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
 
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
-
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
@@ -162,12 +159,12 @@ class App extends Component {
               <PrivateRoute exact path="/Director" component={Director} />
             </Switch>
 
-            <Switch>
+            {/* <Switch>gi
               <PrivateRoute exact path="/UnionStudent" component={UnionStudent} />
-            </Switch>
+            </Switch> */}
              <Switch>
               <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
-            </Switch>  
+            </Switch>    
             <Switch>
               <PrivateRoute exact path="/Admin" component={Admin} />
             </Switch>
@@ -257,9 +254,6 @@ class App extends Component {
 
             <Switch>
               <PrivateRoute exact path="/example" component={Example} />
-            </Switch>
-            <Switch>
-              <PrivateRoute exact path="/available" component={AvailableLoad} />
             </Switch>
 
             <Switch>
