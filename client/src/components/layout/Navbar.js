@@ -19,13 +19,13 @@ class Navbar extends Component {
         <li className="nav-item">
           {user.role === "Ref" ? (
             <Link className="nav-link" to="/refdashboard">
-              Ref Dashboard
+              {/* Ref Dashboard */}
             </Link>
           ) : null}
 
           {user.role === "Acadamic" ? (
             <Link className="nav-link" to="/dashboard">
-              Acadamic Dashboard
+              {/* Acadamic Dashboard */}
             </Link>
           ) : null}
 
@@ -52,36 +52,36 @@ class Navbar extends Component {
           </Link> */}
         </li>
 
-        {/* <li className="nav-item">
+         <li className="nav-item">
           <a
             href="#"
             onClick={this.onLogoutClick.bind(this)}
             className="nav-link"
           >
-            <img
+            {/* <img
               className="rounded-circle"
               src={user.avatar}
               alt={user.name}
               style={{ width: "25px", marginRight: "5 PX" }}
               title="You must have a Gravatar connected to ypur email to dispaly image"
             />{" "}
-             Logout 
+             Logout  */}
           </a>
-        </li> */}
+        </li> 
       </ul>
     );
 
     const guestLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <Link className="nav-link" to="/register">
+          {/* <Link className="nav-link" to="/register">
             <strong>Sign Up</strong>
-          </Link>
+          </Link> */}
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/login">
+          {/* <Link className="nav-link" to="/login">
             <strong>Sign In</strong>
-          </Link>
+          </Link> */}
         </li>
       </ul>
     );
@@ -92,7 +92,7 @@ class Navbar extends Component {
           <div className="col-sm-2" />
           <div className="container" >
             <div className="col-sm-1" />
-            <Link className="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/" >
               <strong> RM&IS </strong>
             </Link>
             <button
@@ -107,10 +107,10 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  {/* <Link className="nav-link" to="/profiles">
+                   {/* <Link className="nav-link" to="/profiles">
                     {" "}
                      Profiles 
-                  </Link> */}
+                  </Link>  */}
                 </li>
               </ul>
               {isAuthenticated ? authLinks : guestLinks}

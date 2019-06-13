@@ -111,7 +111,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            {/* <Navbar /> */}
+            {/* <Navbar />   */}
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
 
@@ -159,9 +159,9 @@ class App extends Component {
               <PrivateRoute exact path="/Director" component={Director} />
             </Switch>
 
-            {/* <Switch>gi
+            <Switch>
               <PrivateRoute exact path="/UnionStudent" component={UnionStudent} />
-            </Switch> */}
+            </Switch>  
              <Switch>
               <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
             </Switch>    
@@ -288,9 +288,9 @@ class App extends Component {
               />
             </Switch>
 
-            {/* </div> */}
 
-            {/* <Footer /> */}
+
+            {/* <Footer />  */}
           </div>
         </Router>
       </Provider>

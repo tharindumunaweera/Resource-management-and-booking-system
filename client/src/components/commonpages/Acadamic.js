@@ -45,14 +45,7 @@ class Acadamic extends Component {
           <div className="col-sm-0">
             <br />
 
-            {/* <div class="card ">
-              <div class="card-header">
-                <a href="#" onClick={this._onButtonClick} className="nav-link">
-                  <i class="fas fa-bell " />
-                </a>
-                {this.state.showComponent ? <AcadamicNoti /> : null}
-              </div>
-            </div> */}
+           
             <input
               type="button"
               className="btn btn-block btn-primary "

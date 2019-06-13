@@ -6,11 +6,18 @@ import Profileitem from "./Profileitem";
 import { getProfiles } from "../../actions/profileActions";
 
 class Profiles extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      i: "tharindu"
+    };
+  }
   componentDidMount() {
     this.props.getProfiles();
   }
 
   render() {
+
     const { profiles, loading } = this.props.profile;
     let profileItems;
 
@@ -26,6 +33,30 @@ class Profiles extends Component {
       }
     }
 
+    if (profiles === null || loading) {
+      profileItems = <Spinner />;
+    } else {
+      let xx = 0; let name = "tharindu"
+
+      if (profiles.length > 0 || profiles.length === 0) {
+        profileItems = profiles.map(profile => (
+          <div>
+          
+            <h1>{profile.status}</h1>
+
+          </div>
+
+
+        ));
+
+      }
+      
+    }
+
+
+
+
+
     return (
       <div className="profiles">
         <div className="container">
@@ -38,6 +69,7 @@ class Profiles extends Component {
               {profileItems}
             </div>
           </div>
+
         </div>
       </div>
     );

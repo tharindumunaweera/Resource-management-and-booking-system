@@ -12,14 +12,16 @@ import PropTypes from "prop-types";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
 
-import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 import Calender from "../Calender/Calender";
-import { weekdays } from "moment"; 
+import { weekdays } from "moment";
 
 import moment from 'moment';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 import format from 'date-fns/format';
+import { getBookings } from "../../actions/bookingActions";
+import Spinner from "../common/Spinner";
 
 //import Sahan from '../../Calander/sahan'
 
@@ -33,7 +35,7 @@ const style = {
 class AvailableLoad extends Component {
 
 
- 
+
   constructor(props) {
     super(props);
     this.state = {
@@ -61,7 +63,7 @@ class AvailableLoad extends Component {
 
   componentDidMount() {
     this.props.getCurrentNine()////////////////////////////////////////////////////////////////
-
+    this.props.getBookings();
 
     const { handle } = this.props.match.params
 
@@ -182,6 +184,7 @@ class AvailableLoad extends Component {
 
 
     const { nine } = this.props.nine;
+    const { bookings, loading } = this.props.booking;
 
     // if (this.state.dayofweek == "Monday") {
     //   socialInputs = (
@@ -202,35 +205,84 @@ class AvailableLoad extends Component {
 
       for (i = 0; i <= nine.Meighttonine.length; i++) {
         if (nine.Meighttonine[i] == this.state.hallname) {
-          eight = true;
-          eightInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">08.00 a.m-09.00 a.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "08.00 a.m-09.00 a.m"
+          if (bookings === null || loading) {
+            eightInputs = <Spinner />;
+          } else {
+            let em = 0;
+            if (bookings.length > 0) {
+              eightInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) || (this.state.bookdate === booking.bookdate) && (this.state.dayofweek === booking.dayofweek) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">08.00 a.m-09.00 a.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './createbooking',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "08.00 a.m-09.00 a.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+
+                              }
+                            }}>
+                             <button type="submit" className="btn btn-danger">
+                          <strong> Booking</strong>
+                        </button>
+                            </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              eight = true;
+              eightInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-09.00 a.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-09.00 a.m",
+
+
+                            }
+                          }}>
+                           <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                    </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
+
+
+
         }
       }
 
@@ -255,7 +307,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -288,11 +340,11 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
 
-                   
+
 
                       </Link>
 
@@ -328,7 +380,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -362,8 +414,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -397,8 +449,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -431,7 +483,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -464,7 +516,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -496,8 +548,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -528,9 +580,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -558,9 +610,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -588,9 +640,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -618,9 +670,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -648,9 +700,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -678,9 +730,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -708,9 +760,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -738,9 +790,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -768,9 +820,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -798,9 +850,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -828,9 +880,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -858,9 +910,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -888,9 +940,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -918,9 +970,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -948,9 +1000,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -979,9 +1031,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1009,9 +1061,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1038,10 +1090,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1069,9 +1121,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1098,10 +1150,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1129,9 +1181,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1160,9 +1212,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1190,9 +1242,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1219,10 +1271,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1249,10 +1301,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1280,9 +1332,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1311,9 +1363,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1341,9 +1393,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1371,9 +1423,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1401,9 +1453,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1431,9 +1483,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1460,10 +1512,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1490,10 +1542,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1521,10 +1573,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1552,9 +1604,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1583,9 +1635,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1620,8 +1672,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1654,7 +1706,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1686,8 +1738,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1720,7 +1772,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1752,8 +1804,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1786,7 +1838,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1819,7 +1871,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1852,7 +1904,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1884,8 +1936,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -1915,10 +1967,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1946,9 +1998,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -1976,9 +2028,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2006,9 +2058,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2036,9 +2088,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2065,10 +2117,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2095,10 +2147,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2126,9 +2178,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2155,10 +2207,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2185,10 +2237,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2215,10 +2267,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2246,9 +2298,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2276,9 +2328,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2305,10 +2357,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2336,9 +2388,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2367,9 +2419,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2397,9 +2449,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2426,10 +2478,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2456,10 +2508,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2487,9 +2539,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2517,9 +2569,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2547,10 +2599,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2578,9 +2630,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2608,9 +2660,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2638,9 +2690,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2667,10 +2719,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2698,10 +2750,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2728,10 +2780,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2758,10 +2810,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2788,10 +2840,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2819,9 +2871,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2849,9 +2901,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2879,9 +2931,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2909,10 +2961,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2939,10 +2991,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -2970,10 +3022,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3008,7 +3060,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3040,8 +3092,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3074,7 +3126,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3107,7 +3159,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3140,7 +3192,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3172,8 +3224,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3205,8 +3257,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3238,8 +3290,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3272,7 +3324,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -3302,10 +3354,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3332,10 +3384,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3363,9 +3415,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3393,9 +3445,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3422,10 +3474,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3453,9 +3505,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3482,10 +3534,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3513,9 +3565,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3543,9 +3595,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3573,9 +3625,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3603,9 +3655,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3633,9 +3685,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3663,9 +3715,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3693,9 +3745,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3723,9 +3775,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3754,9 +3806,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3784,9 +3836,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3813,10 +3865,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3843,10 +3895,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3874,9 +3926,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3903,10 +3955,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3935,9 +3987,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3965,9 +4017,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -3995,9 +4047,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4024,10 +4076,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                    <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4055,9 +4107,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4086,9 +4138,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4115,10 +4167,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4145,10 +4197,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4176,9 +4228,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4206,9 +4258,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4235,10 +4287,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4266,9 +4318,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4297,9 +4349,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4326,10 +4378,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4358,9 +4410,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4396,7 +4448,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4428,8 +4480,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4462,7 +4514,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4494,8 +4546,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4528,7 +4580,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4560,8 +4612,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4594,7 +4646,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4626,8 +4678,8 @@ class AvailableLoad extends Component {
 
                         }
                       }}>
-                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4660,7 +4712,7 @@ class AvailableLoad extends Component {
                         }
                       }}>
                         <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
@@ -4691,9 +4743,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4720,10 +4772,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4750,10 +4802,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4781,9 +4833,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4810,10 +4862,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                    <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4841,9 +4893,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4871,9 +4923,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4901,9 +4953,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4931,9 +4983,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4961,9 +5013,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -4991,9 +5043,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5021,9 +5073,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5050,10 +5102,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5081,9 +5133,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5111,9 +5163,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5142,9 +5194,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5171,10 +5223,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5201,10 +5253,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5231,10 +5283,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5262,9 +5314,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5292,9 +5344,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5322,10 +5374,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5352,10 +5404,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5383,9 +5435,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5412,10 +5464,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5443,9 +5495,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5474,9 +5526,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5503,10 +5555,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5533,10 +5585,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                    <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5564,9 +5616,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5593,10 +5645,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5624,9 +5676,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5654,9 +5706,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5684,10 +5736,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5715,9 +5767,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5745,10 +5797,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -5773,21 +5825,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">08.00 a.m-09.00 a.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 a.m-09.00 a.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "08.00 a.m-09.00 a.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5806,21 +5858,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">09.00 a.m-10.00 a.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "09.00 a.m-10.00 a.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "09.00 a.m-10.00 a.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5839,21 +5891,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">10.00 a.m-11.00 a.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "10.00 a.m-11.00 a.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "10.00 a.m-11.00 a.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5872,21 +5924,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">11.00 a.m-12.00 p.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "11.00 a.m-12.00 p.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "11.00 a.m-12.00 p.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5905,21 +5957,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">12.00 p.m-01.00 p.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "12.00 p.m-01.00 p.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "12.00 p.m-01.00 p.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5938,21 +5990,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">01.00 p.m-02.00 p.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "01.00 p.m-02.00 p.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "01.00 p.m-02.00 p.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -5971,21 +6023,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">02.00 p.m-03.00 p.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "02.00 p.m-03.00 p.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "02.00 p.m-03.00 p.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -6004,21 +6056,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">03.00 p.m-04.00 p.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "03.00 p.m-04.00 p.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "03.00 p.m-04.00 p.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -6037,21 +6089,21 @@ class AvailableLoad extends Component {
                   <tr>
                     <th scope="row">04.00 p.m-05.00 p.m</th>
                     <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "04.00 p.m-05.00 p.m"
+                      <Link to={{
+                        pathname: './createbooking',
+                        state: {
+                          hallnamebook: this.state.hallname,
+                          bkdate: this.state.bookdate,
+                          bktime: "04.00 p.m-05.00 p.m"
 
-                      }
-                    }}>
-                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
+                        }
+                      }}>
+                        <button type="submit" className="btn btn-primary">
+                          <strong> Available</strong>
                         </button>
                       </Link>
 
-                  </div></td>
+                    </div></td>
                   </tr>
                 </tbody>
               </table>
@@ -6077,10 +6129,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6108,9 +6160,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6137,10 +6189,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6167,10 +6219,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6197,10 +6249,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6227,10 +6279,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6257,10 +6309,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6287,10 +6339,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6317,10 +6369,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6347,10 +6399,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6377,10 +6429,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6408,9 +6460,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6437,10 +6489,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6468,9 +6520,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6497,10 +6549,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6529,9 +6581,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6558,10 +6610,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6588,10 +6640,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                    <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6618,10 +6670,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                    <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6648,10 +6700,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6678,10 +6730,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6709,10 +6761,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6739,10 +6791,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6770,9 +6822,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6799,10 +6851,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6829,10 +6881,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6861,9 +6913,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6890,10 +6942,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6920,10 +6972,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6950,10 +7002,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                    <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -6980,10 +7032,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -7010,10 +7062,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                    <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -7040,10 +7092,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -7072,9 +7124,9 @@ class AvailableLoad extends Component {
                       }
                     }}>
                       <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -7101,10 +7153,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -7132,10 +7184,10 @@ class AvailableLoad extends Component {
 
                       }
                     }}>
-                     <button type="submit" className="btn btn-primary">
-                      <strong> Available</strong>
-                        </button>
-                      </Link>
+                      <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
+                    </Link>
 
                   </div></td>
                 </tr>
@@ -7159,25 +7211,25 @@ class AvailableLoad extends Component {
     ];
 
 
-   
+
     return (
       <React.Fragment>
-      
+
         <MDBRow>
-        <div className="col-sm-3" />
+          <div className="col-sm-3" />
           <MDBCol md="4">
-          <MDBCard className="mt-5">
-          <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
-          <InfiniteCalendar
-       onSelect={date =>
-        this.setState({
-            bookdate: format(date,'YYYY/MM/DD'),
-            dayofweek: format(date, 'dddd')
-        })
-       }
-        
-    />
-            {/* <MDBCard className="mt-3">
+            <MDBCard className="mt-5">
+              <MDBCardBody style={{ width: '100%', height: '700px' }} className="text-center">
+                <InfiniteCalendar
+                  onSelect={date =>
+                    this.setState({
+                      bookdate: format(date, 'YYYY/MM/DD'),
+                      dayofweek: format(date, 'dddd')
+                    })
+                  }
+
+                />
+                {/* <MDBCard className="mt-3">
               
               <MDBCardBody style={{width: '100%', height: '210px'}} className="text-center">
               <form onSubmit={this.onSubmit}>
@@ -7205,10 +7257,10 @@ class AvailableLoad extends Component {
               
               </MDBCardBody>
             </MDBCard> */}
-            </MDBCardBody>
+              </MDBCardBody>
 
 
-   
+
             </MDBCard>
           </MDBCol>
 
@@ -7216,13 +7268,13 @@ class AvailableLoad extends Component {
             <MDBCard className="mt-5">
               <MDBView className="gradient-card-header black">
 
-                 <h4 className="h4-responsive text-white">
-                <strong> {this.state.hallname} </strong>
-                </h4> 
+                <h4 className="h4-responsive text-white">
+                  <strong> {this.state.hallname} </strong>
+                </h4>
               </MDBView>
-              <MDBCardBody style={{width: '100%', height: '700px'}} className="text-center">
+              <MDBCardBody style={{ width: '100%', height: '700px' }} className="text-center">
 
-             
+
                 {eightInputs}
                 {eightnine}
                 {eightten}
@@ -7239,7 +7291,7 @@ class AvailableLoad extends Component {
                 {ninetwelve}
                 {nineone}
                 {ninetwo}
-                  {ninethree}
+                {ninethree}
                 {ninefour}
 
                 {tenInputs}
@@ -7275,9 +7327,9 @@ class AvailableLoad extends Component {
                 {threeInputs}
                 {threefour}
                 {fourInputs}
-            
 
-             
+
+
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
@@ -7285,26 +7337,26 @@ class AvailableLoad extends Component {
 
         <MDBRow>
 
-            <div className="col-sm-3" /> 
-              <MDBCol md="4">
-             
-                 
-                  {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  /> */}
-                  {/* <input type="text" value={this.state.name}></input>
+          <div className="col-sm-3" />
+          <MDBCol md="4">
+
+
+            {/* <Calender style= {style} width="320px" onDayClick={(e, day)=> this.onDayClick(e,day)}  /> */}
+            {/* <input type="text" value={this.state.name}></input>
             <input type="text" value={this.state.tha}></input> */}
 
-                
 
-                
-                 
-                
-                  </MDBCol>
 
-                <MDBCol md="5">
-              
-                </MDBCol>
-           </MDBRow>
-       
+
+
+
+          </MDBCol>
+
+          <MDBCol md="5">
+
+          </MDBCol>
+        </MDBRow>
+
 
       </React.Fragment>
     );
@@ -7313,16 +7365,19 @@ class AvailableLoad extends Component {
 
 AvailableLoad.propTypes = {
   getCurrentNine: PropTypes.func.isRequired,
+  getBookings: PropTypes.func.isRequired,
+  booking: PropTypes.object.isRequired,
   nine: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  nine: state.nine
+  nine: state.nine,
+  booking: state.booking
 });
 
 export default connect(
   mapStateToProps,
-  { getCurrentNine }
+  { getCurrentNine, getBookings }
 )(withRouter(AvailableLoad));
 
 

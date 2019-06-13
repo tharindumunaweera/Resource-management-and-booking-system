@@ -40,7 +40,7 @@ class Hallitem extends Component {
                             <MDBCard className="mb-4  border-primary">
                                 <MDBCardHeader>
                                 Hall Name:<Link to={{
-                                        pathname: './available',
+                                        pathname: './example',
                                         state: {
                                             name: hallreg.hallname,
                                             cal: "tharindu"
