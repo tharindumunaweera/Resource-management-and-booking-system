@@ -155,8 +155,9 @@ class HallRegister extends Component {
     const option4 = [
       { label: "Other Resources", value: 0 },
       { label: "Computer", value: "Computer" },
-      { label: "Podium", value: "Podium" },
-      { label: "Sound System", value: "Sound System" }
+      { label: "Sound System", value: "Sound System" },
+      { label: "Podium", value: "Podium" }
+
     ];
 
     const option5 = [

@@ -201,18 +201,16 @@ class AvailableLoad extends Component {
 
     if (this.state.dayofweek == "Monday") {
       let i;
-
-
       for (i = 0; i <= nine.Meighttonine.length; i++) {
         if (nine.Meighttonine[i] == this.state.hallname) {
           if (bookings === null || loading) {
             eightInputs = <Spinner />;
           } else {
-            let em = 0;
+            let em = 0; let time = "08.00 a.m-09.00 a.m"
             if (bookings.length > 0) {
               eightInputs = bookings.map(booking => (
                 <div>
-                  {(this.state.hallname === booking.hallname) || (this.state.bookdate === booking.bookdate) && (this.state.dayofweek === booking.dayofweek) ? (
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
                     em = 1,
                     <table class="table table-light table-striped">
                       <tbody>
@@ -220,7 +218,7 @@ class AvailableLoad extends Component {
                           <th scope="row">08.00 a.m-09.00 a.m</th>
                           <td><div>
                             <Link to={{
-                              pathname: './createbooking',
+                              pathname: './available',
                               state: {
                                 hallnamebook: this.state.hallname,
                                 bkdate: this.state.bookdate,
@@ -229,10 +227,10 @@ class AvailableLoad extends Component {
 
                               }
                             }}>
-                             <button type="submit" className="btn btn-danger">
-                          <strong> Booking</strong>
-                        </button>
-                            </Link>
+                              <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
 
                           </div>
                           </td>
@@ -267,8 +265,8 @@ class AvailableLoad extends Component {
                             }
                           }}>
                            <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
                         </div>
@@ -287,73 +285,167 @@ class AvailableLoad extends Component {
       }
 
 
+
+
       for (i = 0; i <= nine.Mninetoten.length; i++) {
         if (nine.Mninetoten[i] == this.state.hallname) {
-          nines = true;
-          nineInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">09.00 a.m-10.00 a.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "09.00 a.m-10.00 a.m"
+          if (bookings === null || loading) {
+            nineInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "09.00 a.m-10.00 a.m";
+            if (bookings.length > 0) {
+              nineInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">09.00 a.m-10.00 a.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './available',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "09.00 a.m-10.00 a.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+
+                              }
+                            }}>
+                              <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              nines = true;
+              nineInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">09.00 a.m-10.00 a.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "09.00 a.m-10.00 a.m",
+
+
+                            }
+                          }}>
+                          <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
+
         }
       }
 
 
       for (i = 0; i <= nine.Mtentoeleven.length; i++) {
         if (nine.Mtentoeleven[i] == this.state.hallname) {
-          ten = true;
-          tenInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">10.00 a.m-11.00 a.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "10.00 a.m-11.00 a.m"
+          if (bookings === null || loading) {
+            tenInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "10.00 a.m-11.00 a.m";
+            if (bookings.length > 0) {
+              tenInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">10.00 a.m-11.00 a.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './available',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "10.00 a.m-11.00 a.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+
+                              }
+                            }}>
+                               <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
 
 
+                </div>
 
+              ));
+            }
+
+            if (em === 0) {
+              ten = true;
+              tenInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">10.00 a.m-11.00 a.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "10.00 a.m-11.00 a.m",
+
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
         }
       }
 
@@ -362,34 +454,81 @@ class AvailableLoad extends Component {
 
       for (i = 0; i <= nine.Meleventotwelve.length; i++) {
         if (nine.Meleventotwelve[i] == this.state.hallname) {
-          eleven = true;
-          elevenInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">11.00 a.m-12.00 p.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "11.00 a.m-12.00 p.m"
+          if (bookings === null || loading) {
+            elevenInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "11.00 a.m-12.00 p.m";
+            if (bookings.length > 0) {
+              elevenInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">11.00 a.m-12.00 p.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './available',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "11.00 a.m-12.00 p.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+
+                              }
+                            }}>
+                              <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              eleven = true;
+              elevenInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">11.00 a.m-12.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "11.00 a.m-12.00 p.m",
+
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
         }
       }
 
@@ -397,34 +536,81 @@ class AvailableLoad extends Component {
 
       for (i = 0; i <= nine.Mtwelvetoone.length; i++) {
         if (nine.Mtwelvetoone[i] == this.state.hallname) {
-          twelve = true;
-          twelveInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">12.00 p.m-01.00 p.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "12.00 p.m-01.00 p.m"
+          if (bookings === null || loading) {
+            twelveInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "12.00 p.m-01.00 p.m";
+            if (bookings.length > 0) {
+              twelveInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">12.00 p.m-01.00 p.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './available',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "12.00 p.m-01.00 p.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+
+                              }
+                            }}>
+                              <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              twelve = true;
+              twelveInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">12.00 p.m-01.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "12.00 p.m-01.00 p.m",
+
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
         }
       }
 
@@ -432,464 +618,1191 @@ class AvailableLoad extends Component {
 
       for (i = 0; i <= nine.Monetotwo.length; i++) {
         if (nine.Monetotwo[i] == this.state.hallname) {
-          one = true;
-          oneInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">01.00 p.m-02.00 p.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "01.00 p.m-02.00 p.m"
+          if (bookings === null || loading) {
+            oneInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "01.00 p.m-02.00 p.m";
+            if (bookings.length > 0) {
+              oneInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">01.00 p.m-02.00 p.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './available',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "01.00 p.m-02.00 p.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+
+                              }
+                            }}>
+                              <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              one = true;
+              oneInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">01.00 p.m-02.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "01.00 p.m-02.00 p.m",
+
+
+                            }
+                          }}>
+                           <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
         }
       }
 
       for (i = 0; i <= nine.Mtwotothree.length; i++) {
         if (nine.Mtwotothree[i] == this.state.hallname) {
-          two = true;
-          twoInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">02.00 p.m-03.00 p.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "02.00 p.m-03.00 p.m"
+          if (bookings === null || loading) {
+            twoInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "02.00 p.m-03.00 p.m";
+            if (bookings.length > 0) {
+              twoInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">02.00 p.m-03.00 p.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './available',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "02.00 p.m-03.00 p.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+
+                              }
+                            }}>
+                               <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              two = true;
+              twoInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">02.00 p.m-03.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "02.00 p.m-03.00 p.m",
+
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
         }
       }
 
       for (i = 0; i <= nine.Mthreetofour.length; i++) {
         if (nine.Mthreetofour[i] == this.state.hallname) {
-          three = true;
-          threeInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">03.00 p.m-04.00 p.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "03.00 p.m-04.00 p.m"
+          if (bookings === null || loading) {
+            threeInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "03.00 p.m-04.00 p.m";
+            if (bookings.length > 0) {
+              threeInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">03.00 p.m-04.00 p.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './available',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "03.00 p.m-04.00 p.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+
+                              }
+                            }}>
+                              <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              three = true;
+              threeInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">03.00 p.m-04.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "03.00 p.m-04.00 p.m",
+
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
         }
       }
 
       for (i = 0; i <= nine.Mfourtofive.length; i++) {
         if (nine.Mfourtofive[i] == this.state.hallname) {
-          four = true
-          fourInputs = (
-            <div>
-              <table class="table table-light table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row">04.00 p.m-05.00 p.m</th>
-                    <td><div>
-                      <Link to={{
-                        pathname: './createbooking',
-                        state: {
-                          hallnamebook: this.state.hallname,
-                          bkdate: this.state.bookdate,
-                          bktime: "04.00 p.m-05.00 p.m"
+          if (bookings === null || loading) {
+            fourInputs = <Spinner />;
+          } else {
+            let em = 0; let time = "04.00 p.m-05.00 p.m";
+            if (bookings.length > 0) {
+              fourInputs = bookings.map(booking => (
+                <div>
+                  {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                    em = 1,
+                    <table class="table table-light table-striped">
+                      <tbody>
+                        <tr>
+                          <th scope="row">04.00 p.m-05.00 p.m</th>
+                          <td><div>
+                            <Link to={{
+                              pathname: './available',
+                              state: {
+                                hallnamebook: this.state.hallname,
+                                bkdate: this.state.bookdate,
+                                bktime: "04.00 p.m-05.00 p.m",
 
-                        }
-                      }}>
-                        <button type="submit" className="btn btn-primary">
-                          <strong> Available</strong>
-                        </button>
+
+                              }
+                            }}>
+                              <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                  </Link>
+
+                          </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  ) : null}
+
+
+                </div>
+
+              ));
+            }
+
+            if (em === 0) {
+              four = true;
+              fourInputs = (
+                <div>
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">04.00 p.m-05.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "04.00 p.m-05.00 p.m",
+
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-primary">
+                        <strong> Available</strong>
+                      </button>
                       </Link>
 
-                    </div></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          );
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              );
+            }
+          }
         }
       }
 
       if ((eight === true) && (nines === true)) {
-        eightnine = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-10.00 a.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 p.m-10.00 p.m"
+        if (bookings === null || loading) {
+          eightnine = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "08.00 a.m-10.00 a.m";
+          if (bookings.length > 0) {
+            eightnine = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-10.00 a.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-10.00 a.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            eightnine = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">08.00 a.m-10.00 a.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "08.00 a.m-10.00 a.m",
+
+
+                          }
+                        }}>
+                         <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((eight === true) && (nines === true) && (ten === true)) {
-        eightten = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-11.00 a.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 a.m-11.00 a.m"
+        if (bookings === null || loading) {
+          eightten = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "08.00 a.m-11.00 a.m";
+          if (bookings.length > 0) {
+            eightten = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-11.00 a.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-11.00 a.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            eightten = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">08.00 a.m-11.00 a.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "08.00 a.m-11.00 a.m",
+
+
+                          }
+                        }}>
+                         <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((eight === true) && (nines === true) && (ten === true) && (eleven === true)) {
-        eighteleven = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-12.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 p.m-12.00 p.m"
+        if (bookings === null || loading) {
+          eighteleven = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "08.00 a.m-12.00 p.m";
+          if (bookings.length > 0) {
+            eighteleven = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-12.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-12.00 p.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            eighteleven = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">08.00 a.m-12.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "08.00 a.m-12.00 p.m",
+
+
+                          }
+                        }}>
+                         <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true)) {
-        eighttwelve = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-01.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 a.m-01.00 p.m"
+        if (bookings === null || loading) {
+          eighttwelve = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "08.00 a.m-01.00 p.m";
+          if (bookings.length > 0) {
+            eighttwelve = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-01.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-01.00 p.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                           <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            eighttwelve = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">08.00 a.m-01.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "08.00 a.m-01.00 p.m",
+
+
+                          }
+                        }}>
+                         <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true)) {
-        eightone = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-02.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 a.m-02.00 p.m"
+        if (bookings === null || loading) {
+          eightone = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "08.00 a.m-02.00 p.m";
+          if (bookings.length > 0) {
+            eightone = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-02.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-02.00 p.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            eightone = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">08.00 a.m-02.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "08.00 a.m-02.00 p.m",
+
+
+                          }
+                        }}>
+                          <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true) && (two === true)) {
-        eighttwo = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-03.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 a.m-03.00 p.m"
+        if (bookings === null || loading) {
+          eighttwo = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "08.00 a.m-03.00 p.m";
+          if (bookings.length > 0) {
+            eighttwo = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-03.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-03.00 p.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            eighttwo = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">08.00 a.m-03.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "08.00 a.m-03.00 p.m",
+
+
+                          }
+                        }}>
+                         <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true) && (two === true) && (three === true)) {
-        eightthree = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-04.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 a.m-04.00 p.m"
+        if (bookings === null || loading) {
+          eightthree = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "08.00 a.m-04.00 p.m";
+          if (bookings.length > 0) {
+            eightthree = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 a.m-04.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-04.00 p.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            eightthree = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">08.00 a.m-04.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "08.00 a.m-04.00 p.m",
+
+
+                          }
+                        }}>
+                          <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((eight === true) && (nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true) && (two === true) && (three === true) && (four === true)) {
-        eightfour = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">08.00 a.m-05.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "08.00 a.m-05.00 p.m"
+        if (bookings === null || loading) {
+          eightfour = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "08.00 a.m-05.00 p.m";
+          if (bookings.length > 0) {
+            eightfour = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">08.00 <a href="" className="m-05"></a>.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "08.00 a.m-05.00 p.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                            <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            eightfour = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">08.00 a.m-05.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "08.00 a.m-05.00 p.m",
+
+
+                          }
+                        }}>
+                          <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((nines === true) && (ten === true)) {
-        nineten = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">09.00 a.m-11.00 a.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "09.00 a.m-11.00 a.m"
+        if (bookings === null || loading) {
+          nineten = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "09.00 a.m-11.00 a.m";
+          if (bookings.length > 0) {
+            nineten = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">09.00 a.m-11.00 a.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "09.00 a.m-11.00 a.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                           <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            nineten = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">09.00 a.m-11.00 a.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "09.00 a.m-11.00 a.m",
+
+
+                          }
+                        }}>
+                          <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((nines === true) && (ten === true) && (eleven === true)) {
-        nineeleven = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">09.00 a.m-12.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "09.00 a.m-12.00 p.m"
+        if (bookings === null || loading) {
+          nineeleven = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "09.00 a.m-12.00 p.m";
+          if (bookings.length > 0) {
+            nineten = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">09.00 a.m-12.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "09.00 a.m-12.00 p.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                             <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            nineeleven = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">09.00 a.m-12.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "09.00 a.m-12.00 p.m",
+
+
+                          }
+                        }}>
+                          <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((nines === true) && (ten === true) && (eleven === true) && (twelve === true)) {
-        ninetwelve = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">09.00 a.m-01.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "09.00 a.m-01.00 p.m"
+        if (bookings === null || loading) {
+          ninetwelve = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "09.00 a.m-01.00 p.m";
+          if (bookings.length > 0) {
+            ninetwelve = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">09.00 a.m-01.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './available',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "09.00 a.m-01.00 p.m",
 
-                      }
-                    }}>
-                      <button type="submit" className="btn btn-primary">
+
+                            }
+                          }}>
+                           <button type="submit" className="btn btn-danger">
+                        <strong> Booking</strong>
+                      </button>
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            ninetwelve = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">09.00 a.m-01.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "09.00 a.m-01.00 p.m",
+
+
+                          }
+                        }}>
+                         <button type="submit" className="btn btn-primary">
                         <strong> Available</strong>
                       </button>
                     </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((nines === true) && (ten === true) && (eleven === true) && (twelve === true) && (one === true)) {
