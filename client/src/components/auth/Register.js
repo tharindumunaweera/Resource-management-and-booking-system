@@ -7,6 +7,8 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+
 
 class Register extends Component {
   constructor() {
@@ -26,7 +28,7 @@ class Register extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
+      this.props.history.push("/register");
     }
   }
   
@@ -71,15 +73,27 @@ class Register extends Component {
 
     return (
      
+      
       <div className="register  ">
-        <div className=" landing-inner">
+        {/* <div className=" landing-inner">
         <div className="  container">
         <div className="card mb-5 border-10">
         <Navbar />
           <div className=" row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center"><strong>Sign Up</strong></h1>
-              <p className="lead text-center"><strong>Create Your RMIS Account</strong></p>
+              <p className="lead text-center"><strong>Create Your RMIS Account</strong></p> */}
+               <MDBRow>
+          <div className="col-sm-4 " />
+          <div className="col-sm-7 ">
+            <MDBCol md="13">
+              <MDBCard className="mt-5">
+                <MDBView className="gradient-card-header black darken-0">
+                  <h4 className="h4-responsive text-white">
+                    <strong>Sign Up Form</strong>
+                  </h4>
+                </MDBView>
+                <MDBCardBody>
               <form noValidate onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="Name"
@@ -123,13 +137,11 @@ class Register extends Component {
                 />
                 <input type="submit" className="btn btn-info btn-block mt-4" />
               </form>
-            </div>
+              </MDBCardBody>
+              </MDBCard>
+            </MDBCol>
           </div>
-          <Footer/>
-        </div>
-       
-      </div>
-     </div>
+        </MDBRow>
       </div>
 
     );

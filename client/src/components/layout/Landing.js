@@ -16,11 +16,11 @@ class Landing extends Component {
                 </h1>
                 <p className="lead"> Most Convienient Way For Booking</p>
                 <hr />
-                <Link to="/register" className="btn btn-lg btn-info mr-2">
+                {/* <Link to="/register" className="btn btn-lg btn-info mr-2">
                   Sign Up
-                </Link>
-                <Link to="/login" className="btn btn-lg btn-light">
-                  Sign In
+                </Link> */}
+                <Link to="/login" className="btn btn-lg btn-primary mr-2">
+                 <strong> Sign In </strong>
                 </Link>
               </div>
             </div>

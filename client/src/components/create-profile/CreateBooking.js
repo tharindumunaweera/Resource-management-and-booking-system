@@ -74,15 +74,15 @@ class CreateBooking extends Component {
 
   handleChange = ({ target: { value , name }}) => this.setState({ [name]: value}) ;
 
-  createAndDownloadPdf = () => {
-    axios.post('/create-pdf' , this.state)
-       .then(() => axios.get('fetch-pdf', {responseType: 'blob'}))
-       .then((res) =>{
-         const pdfBlob = new Blob([res.data] , {type:'application/pdf'});
+  // createAndDownloadPdf = () => {
+  //   axios.post('/create-pdf' , this.state)
+  //      .then(() => axios.get('fetch-pdf', {responseType: 'blob'}))
+  //      .then((res) =>{
+  //        const pdfBlob = new Blob([res.data] , {type:'application/pdf'});
 
-         saveAs(pdfBlob , 'BookingForm.pdf');
-       })
-  }
+  //        saveAs(pdfBlob , 'BookingForm.pdf');
+  //      })
+  // }
 
   render() {
     
@@ -120,7 +120,7 @@ class CreateBooking extends Component {
                   placeholder="Hall name"
                   name="hallname"
                   value={this.state.hallname}
-                  onChange={this. handleChange}
+                  onChange={this. onChange}
                 />
 
                 <h6>Book Date</h6>
@@ -128,7 +128,7 @@ class CreateBooking extends Component {
                   name="bookdate"
                   
                   value={this.state.bookdate}
-                  onChange={this. handleChange}
+                  onChange={this. onChange}
                   
                 />
                 {/* <h1>{this.state.bookdate.selectedDate.ToString("dddd")}</h1> */}
@@ -137,21 +137,21 @@ class CreateBooking extends Component {
                   placeholder="Booking time"
                   name="booktime"
                   value={this.state.booktime}
-                   onChange={this. handleChange}
+                   onChange={this. onChange}
                 />
                 <h6>Reason</h6>
                 <TextAreaFieldGroup
                   placeholder="Reason"
                   name="reason"
                   value={this.state.reason}
-                  onChange={this. handleChange}
+                  onChange={this. onChange}
                 />
                 <h6>Name of Applicant</h6>
                 <TextAreaFieldGroup
                   placeholder="Name Of Applicant"
                   name="nameofapplicant"
                   value={this.state.nameofapplicant}
-                  onChange={this. handleChange}
+                  onChange={this. onChange}
                 />
                 <h6>Student Id</h6>
                 <TextAreaFieldGroup
@@ -160,23 +160,23 @@ class CreateBooking extends Component {
                   value={this.state.indexnostudent}
                   onChange={this.onChange}
                 />
-                <h6>Lecturer Id</h6>
+                {/* <h6>Lecturer Id</h6>
                 <TextAreaFieldGroup
                   placeholder="Lecturer ID"
                   name="teacherid"
                   value={this.state.teacherid}
-                  onChange={this. handleChange}
-                />
+                  onChange={this. onChange}
+                /> */}
                 <input
                   type="submit"
                   value="submit"
                   className="btn btn-info btn-block mt-4"
                 />
-                  <input onClick= {this.createAndDownloadPdf}
+                  {/* <input onClick= {this.createAndDownloadPdf}
                   type="submit"
                   value="submit"
                   className="btn btn-success btn-block mt-4"
-                />
+                /> */}
               </form>
               </MDBCardBody>
               </MDBCard>
