@@ -283,7 +283,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Meighttonine"
                     value={this.state.Meighttonine}
-                    onChange={this.onChange}
+                    
                   
                   />
                 </td>
@@ -292,7 +292,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Teighttonine"
                     value={this.state.Teighttonine}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -301,7 +301,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Weighttonine"
                     value={this.state.Weighttonine}
-                    onChange={this.onChange}
+                    
                     
                   />
                 </td>
@@ -310,7 +310,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THeighttonine"
                     value={this.state.THeighttonine}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -319,7 +319,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Feighttonine"
                     value={this.state.Feighttonine}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -331,7 +331,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Mninetoten"
                     value={this.state.Mninetoten}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -340,7 +340,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Tninetoten"
                     value={this.state.Tninetoten}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -349,7 +349,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Wninetoten"
                     value={this.state.Wninetoten}
-                    onChange={this.onChange}
+                    
                     
                   />
                 </td>
@@ -358,7 +358,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THninetoten"
                     value={this.state.THninetoten}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -367,7 +367,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Fninetoten"
                     value={this.state.Fninetoten}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -379,7 +379,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Mtentoeleven"
                     value={this.state.Mtentoeleven}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -388,7 +388,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Ttentoeleven"
                     value={this.state.Ttentoeleven}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -397,7 +397,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Wtentoeleven"
                     value={this.state.Wtentoeleven}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -406,7 +406,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THtentoeleven"
                     value={this.state.THtentoeleven}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -415,7 +415,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Ftentoeleven"
                     value={this.state.Ftentoeleven}
-                    onChange={this.onChange}
+                    
                   
                   />
                 </td>
@@ -427,7 +427,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Meleventotwelve"
                     value={this.state.Meleventotwelve}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -436,7 +436,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Televentotwelve"
                     value={this.state.Televentotwelve}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -445,7 +445,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Weleventotwelve"
                     value={this.state.Weleventotwelve}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -454,7 +454,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THeleventotwelve"
                     value={this.state.THeleventotwelve}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -463,7 +463,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Feleventotwelve"
                     value={this.state.Feleventotwelve}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -475,7 +475,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Mtwelvetoone"
                     value={this.state.Mtwelvetoone}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -484,7 +484,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Ttwelvetoone"
                     value={this.state.Ttwelvetoone}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -493,7 +493,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Wtwelvetoone"
                     value={this.state.Wtwelvetoone}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -502,7 +502,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THtwelvetoone"
                     value={this.state.THtwelvetoone}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -511,7 +511,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Ftwelvetoone"
                     value={this.state.Ftwelvetoone}
-                    onChange={this.onChange}
+                    
                   
                   />
                 </td>
@@ -523,7 +523,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Monetotwo"
                     value={this.state.Monetotwo}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -532,7 +532,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Tonetotwo"
                     value={this.state.Tonetotwo}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -541,7 +541,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Wonetotwo"
                     value={this.state.Wonetotwo}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -550,7 +550,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THonetotwo"
                     value={this.state.THonetotwo}
-                    onChange={this.onChange}
+                    
                   
                   />
                 </td>
@@ -559,7 +559,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Fonetotwo"
                     value={this.state.Fonetotwo}
-                    onChange={this.onChange}
+                    
                     
                   />
                 </td>
@@ -571,7 +571,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Mtwotothree"
                     value={this.state.Mtwotothree}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -580,7 +580,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Ttwotothree"
                     value={this.state.Ttwotothree}
-                    onChange={this.onChange}
+                    
                   
                   />
                 </td>
@@ -589,7 +589,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Wtwotothree"
                     value={this.state.Wtwotothree}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -598,7 +598,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THtwotothree"
                     value={this.state.THtwotothree}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -607,7 +607,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Ftwotothree"
                     value={this.state.Ftwotothree}
-                    onChange={this.onChange}
+                    
                     
                   />
                 </td>
@@ -619,7 +619,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Mthreetofour"
                     value={this.state.Mthreetofour}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -628,7 +628,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Tthreetofour"
                     value={this.state.Tthreetofour}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -637,7 +637,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Wthreetofour"
                     value={this.state.Wthreetofour}
-                    onChange={this.onChange}
+                    
                     
                   />
                 </td>
@@ -646,7 +646,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THthreetofour"
                     value={this.state.THthreetofour}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -655,7 +655,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Fthreetofour"
                     value={this.state.Fthreetofour}
-                    onChange={this.onChange}
+                    
                     
                   />
                 </td>
@@ -668,7 +668,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Mfourtofive"
                     value={this.state.Mfourtofive}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -677,7 +677,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Tfourtofive"
                     value={this.state.Tfourtofive}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -686,7 +686,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Wfourtofive"
                     value={this.state.Wfourtofive}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -695,7 +695,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="THfourtofive"
                     value={this.state.THfourtofive}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>
@@ -704,7 +704,7 @@ class CreateNine extends Component {
                     placeholder=""
                     name="Ffourtofive"
                     value={this.state.Ffourtofive}
-                    onChange={this.onChange}
+                    
                    
                   />
                 </td>

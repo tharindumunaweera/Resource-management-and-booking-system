@@ -22,12 +22,12 @@ const TopNavigation = () => {
           </MDBListGroupItem>
         </NavLink>
 
-        <NavLink to="/HallSelect" activeClassName="activeClass">
+        {/* <NavLink to="/HallSelect" activeClassName="activeClass">
           <MDBListGroupItem>
             <MDBIcon icon="far fa-check-circle" className="mr-3" />
             Hall Booking
           </MDBListGroupItem>
-        </NavLink>
+        </NavLink> */}
 
         <NavLink to="/Hallregister" activeClassName="activeClass">
           <MDBListGroupItem>

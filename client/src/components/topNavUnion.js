@@ -123,9 +123,9 @@ class TopNavLecturer extends Component {
         <MDBNavbarToggler onClick={this.onClick} />
         <MDBCollapse isOpen={this.state.collapse} navbar>
           <MDBNavbarNav left>
-            <MDBNavItem active>
+            {/* <MDBNavItem active>
               <MDBNavLink to="#">Home</MDBNavLink>
-            </MDBNavItem>
+            </MDBNavItem> */}
           </MDBNavbarNav>
           <MDBNavbarNav right>
             <MDBNavItem>
