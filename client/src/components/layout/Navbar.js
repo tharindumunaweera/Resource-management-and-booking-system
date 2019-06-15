@@ -20,17 +20,12 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           {user.role === "Ref" ? (
-<<<<<<< HEAD
             <div>
               <Link className="nav-link" to="/refdashboard">
                 Ref Dashboard
             </Link>
               <Link className="nav-link" to="/register">
                 Register component
-=======
-            <Link className="nav-link" to="/refdashboard">
-              {/* Ref Dashboard */}
->>>>>>> 49e6e40d06327c025812d6e3b10b13811daa4f18
             </Link>
             </div>
           ) : null}
@@ -124,9 +119,9 @@ class Navbar extends Component {
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
 <<<<<<< HEAD
-                  <Link className="nav-link" to="/profiles">
-                    {" "}
-                    Profiles
+                <Link className="nav-link" to="/profiles">
+                  {" "}
+                  Profiles
                   </Link>
 =======
                    {/* <Link className="nav-link" to="/profiles">
@@ -136,11 +131,11 @@ class Navbar extends Component {
 >>>>>>> 49e6e40d06327c025812d6e3b10b13811daa4f18
                 </li>
               </ul>
-              {isAuthenticated ? authLinks : guestLinks}
-            </div>
+            {isAuthenticated ? authLinks : guestLinks}
+          </div>
           </div>
         </nav>
-      </div>
+      </div >
     );
   }
 }
