@@ -2311,31 +2311,78 @@ class Example extends Component {
       }
 
       if ((ten === true) && (eleven === true) && (twelve === true) && (one === true) && (two === true) && (three === true)) {
-        tenthree = (
-          <div>
-            <table class="table table-light table-striped">
-              <tbody>
-                <tr>
-                  <th scope="row">10.00 a.m-04.00 p.m</th>
-                  <td><div>
-                    <Link to={{
-                      pathname: './createbooking',
-                      state: {
-                        hallnamebook: this.state.hallname,
-                        bkdate: this.state.bookdate,
-                        bktime: "10.00 a.m-04.00 p.m"
+        if (bookings === null || loading) {
+          tenthree = <Spinner />;
+        }
+        else {
+          let em = 0; let time = "10.00 a.m-04.00 p.m";
+          if (bookings.length > 0) {
+            tenthree = bookings.map(booking => (
+              <div>
+                {(this.state.hallname === booking.hallname) && (this.state.bookdate === booking.bookdate) && (time === booking.booktime) ? (
+                  em = 1,
+                  <table class="table table-light table-striped">
+                    <tbody>
+                      <tr>
+                        <th scope="row">10.00 a.m-04.00 p.m</th>
+                        <td><div>
+                          <Link to={{
+                            pathname: './createbooking',
+                            state: {
+                              hallnamebook: this.state.hallname,
+                              bkdate: this.state.bookdate,
+                              bktime: "10.00 a.m-03.00 p.m",
 
-                      }
-                    }}>
-                      Available
-                      </Link>
 
-                  </div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        );
+                            }
+                          }}>
+                            Booking
+                </Link>
+
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                ) : null}
+
+
+              </div>
+
+            ));
+          }
+
+          if (em === 0) {
+
+            tenthree = (
+              <div>
+                <table class="table table-light table-striped">
+                  <tbody>
+                    <tr>
+                      <th scope="row">10.00 a.m-04.00 p.m</th>
+                      <td><div>
+                        <Link to={{
+                          pathname: './createbooking',
+                          state: {
+                            hallnamebook: this.state.hallname,
+                            bkdate: this.state.bookdate,
+                            bktime: "10.00 a.m-04.00 p.m",
+
+
+                          }
+                        }}>
+                          Available
+                    </Link>
+
+                      </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+        }
       }
 
       if ((ten === true) && (eleven === true) && (twelve === true) && (one === true) && (two === true) && (three === true) && (four === true)) {
