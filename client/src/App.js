@@ -21,6 +21,7 @@ import Login from "./components/auth/Login";
 import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
+import StudentTime from "./components/create-profile/StudentTime" 
 
 import Lecturer from "./components/actors/Lecturer";
 import AcademicStaff from "./components/actors/AcademicStaff";
@@ -118,6 +119,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
+            <Route exact path="/view" component={StudentTime} />
 
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
