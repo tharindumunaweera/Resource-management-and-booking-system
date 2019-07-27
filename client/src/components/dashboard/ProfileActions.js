@@ -60,7 +60,7 @@ const ProfileActions = () => {
           </MDBCardBody>
         </MDBCard>
       </MDBCol>
-      <MDBCol xl="4" md="6" className="mb-r">
+      {/* <MDBCol xl="4" md="6" className="mb-r">
         <MDBCard className="cascading-admin-card">
           <div className="admin-up">
             <MDBIcon icon="fas fa-table  mr-2" className="light-blue lighten-1" />
@@ -70,7 +70,7 @@ const ProfileActions = () => {
             <Link to="/timetableactions" className="btn btn-light"><strong>Add Education</strong> </Link>
           </MDBCardBody>
         </MDBCard>
-      </MDBCol>
+      </MDBCol> */}
       {/* <MDBCol xl="3" md="6" className="mb-r">
           <MDBCard className="cascading-admin-card">
               <div className="admin-up">

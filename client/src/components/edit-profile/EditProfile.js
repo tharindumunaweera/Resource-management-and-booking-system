@@ -239,7 +239,7 @@ class CreateProfile extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center">Edit Your Profile</h1>
 
-              <small className="d-block pb-3">* = required fields</small>
+              {/* <small className="d-block pb-3">* = required fields</small> */}
               <form onSubmit={this.onSubmit}>
                 {dashboardContent}
                 <input
