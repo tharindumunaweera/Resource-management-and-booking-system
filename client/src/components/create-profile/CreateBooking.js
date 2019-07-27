@@ -6,7 +6,7 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { createBooking } from "../../actions/bookingActions";
-import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
 
@@ -23,7 +23,7 @@ class CreateBooking extends Component {
       nameofapplicant: "",
       indexnostudent: "",
       teacherid: "",
-      
+
     };
 
     this.onChange = this.onChange.bind(this);
@@ -50,7 +50,7 @@ class CreateBooking extends Component {
 
 
 
-  
+
 
   onSubmit(e) {
     e.preventDefault();
@@ -72,20 +72,20 @@ class CreateBooking extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  handleChange = ({ target: { value , name }}) => this.setState({ [name]: value}) ;
+  handleChange = ({ target: { value, name } }) => this.setState({ [name]: value });
 
   // createAndDownloadPdf = () => {
-  //   axios.post('/create-pdf' , this.state)
-  //      .then(() => axios.get('fetch-pdf', {responseType: 'blob'}))
-  //      .then((res) =>{
-  //        const pdfBlob = new Blob([res.data] , {type:'application/pdf'});
+  //   axios.post('/create-pdf', this.state)
+  //     .then(() => axios.get('fetch-pdf', { responseType: 'blob' }))
+  //     .then((res) => {
+  //       const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
-  //        saveAs(pdfBlob , 'BookingForm.pdf');
-  //      })
+  //       saveAs(pdfBlob, 'BookingForm.pdf');
+  //     })
   // }
 
   render() {
-    
+
 
 
 
@@ -102,7 +102,7 @@ class CreateBooking extends Component {
       //         <p className="lead text-center">
       //           Add any job or exprience that you had past or current
       //         </p>
-              <React.Fragment>
+      <React.Fragment>
         <MDBRow>
           <div className="col-sm-4 " />
           <div className="col-sm-7 ">
@@ -114,77 +114,77 @@ class CreateBooking extends Component {
                   </h4>
                 </MDBView>
                 <MDBCardBody>
-              <form onSubmit={this.onSubmit}>
-                {/* <h1>{this.state.lat}</h1> */}
-                <TextFieldGroup
-                  placeholder="Hall name"
-                  name="hallname"
-                  value={this.state.hallname}
-                  onChange={this. onChange}
-                />
+                  <form onSubmit={this.onSubmit}>
+                    {/* <h1>{this.state.lat}</h1> */}
+                    <TextFieldGroup
+                      placeholder="Hall name"
+                      name="hallname"
+                      value={this.state.hallname}
+                      onChange={this.onChange}
+                    />
 
-                <h6>Book Date</h6>
-                <TextFieldGroup
-                  name="bookdate"
-                  
-                  value={this.state.bookdate}
-                  onChange={this. onChange}
-                  
-                />
-                {/* <h1>{this.state.bookdate.selectedDate.ToString("dddd")}</h1> */}
-                <h6>Book Time</h6>
-                <TextFieldGroup
-                  placeholder="Booking time"
-                  name="booktime"
-                  value={this.state.booktime}
-                   onChange={this. onChange}
-                />
-                <h6>Reason</h6>
-                <TextAreaFieldGroup
-                  placeholder="Reason"
-                  name="reason"
-                  value={this.state.reason}
-                  onChange={this. onChange}
-                />
-                <h6>Name of Applicant</h6>
-                <TextAreaFieldGroup
-                  placeholder="Name Of Applicant"
-                  name="nameofapplicant"
-                  value={this.state.nameofapplicant}
-                  onChange={this. onChange}
-                />
-                <h6>Student Id</h6>
-                <TextAreaFieldGroup
-                  placeholder="Id of Student Applicant"
-                  name="indexnostudent"
-                  value={this.state.indexnostudent}
-                  onChange={this.onChange}
-                />
-                {/* <h6>Lecturer Id</h6>
-                <TextAreaFieldGroup
-                  placeholder="Lecturer ID"
-                  name="teacherid"
-                  value={this.state.teacherid}
-                  onChange={this. onChange}
-                /> */}
-                <input
-                  type="submit"
-                  value="submit"
-                  className="btn btn-info btn-block mt-4"
-                />
-                  {/* <input onClick= {this.createAndDownloadPdf}
-                  type="submit"
-                  value="submit"
-                  className="btn btn-success btn-block mt-4"
-                /> */}
-              </form>
-              </MDBCardBody>
+                    <h6>Book Date</h6>
+                    <TextFieldGroup
+                      name="bookdate"
+
+                      value={this.state.bookdate}
+                      onChange={this.onChange}
+
+                    />
+                    {/* <h1>{this.state.bookdate.selectedDate.ToString("dddd")}</h1> */}
+                    <h6>Book Time</h6>
+                    <TextFieldGroup
+                      placeholder="Booking time"
+                      name="booktime"
+                      value={this.state.booktime}
+                      onChange={this.onChange}
+                    />
+                    <h6>Reason</h6>
+                    <TextAreaFieldGroup
+                      placeholder="Reason"
+                      name="reason"
+                      value={this.state.reason}
+                      onChange={this.onChange}
+                    />
+                    <h6>Name of Applicant</h6>
+                    <TextAreaFieldGroup
+                      placeholder="Name Of Applicant"
+                      name="nameofapplicant"
+                      value={this.state.nameofapplicant}
+                      onChange={this.onChange}
+                    />
+                    <h6>Student Id</h6>
+                    <TextAreaFieldGroup
+                      placeholder="Id of Student Applicant"
+                      name="indexnostudent"
+                      value={this.state.indexnostudent}
+                      onChange={this.onChange}
+                    />
+                    <h6>Lecturer Id</h6>
+                    <TextAreaFieldGroup
+                      placeholder="Lecturer ID"
+                      name="teacherid"
+                      value={this.state.teacherid}
+                      onChange={this.onChange}
+                    />
+                    <input
+                      type="submit"
+                      value="submit"
+                      className="btn btn-info btn-block mt-4"
+                    />
+                    {/* <input onClick={this.createAndDownloadPdf}
+                      type="submit"
+                      value="submit"
+                      className="btn btn-success btn-block mt-4"
+                    /> */}
+                  </form>
+                </MDBCardBody>
               </MDBCard>
             </MDBCol>
           </div>
         </MDBRow>
       </React.Fragment>
-         
+
     );
   }
 }

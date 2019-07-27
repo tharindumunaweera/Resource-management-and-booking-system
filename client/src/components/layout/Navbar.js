@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { clearCurrentProfile } from "../../actions/profileActions";
 
+
+
 class Navbar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
@@ -18,9 +20,14 @@ class Navbar extends Component {
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           {user.role === "Ref" ? (
-            <Link className="nav-link" to="/refdashboard">
-              {/* Ref Dashboard */}
+            <div>
+              <Link className="nav-link" to="/refdashboard">
+                Ref Dashboard
             </Link>
+              <Link className="nav-link" to="/register">
+                Register component
+            </Link>
+            </div>
           ) : null}
 
           {user.role === "Acadamic" ? (
@@ -52,7 +59,7 @@ class Navbar extends Component {
           </Link> */}
         </li>
 
-         <li className="nav-item">
+        <li className="nav-item">
           <a
             href="#"
             onClick={this.onLogoutClick.bind(this)}
@@ -65,9 +72,13 @@ class Navbar extends Component {
               style={{ width: "25px", marginRight: "5 PX" }}
               title="You must have a Gravatar connected to ypur email to dispaly image"
             />{" "}
+<<<<<<< HEAD
+            Logout
+=======
              Logout  */}
+>>>>>>> 49e6e40d06327c025812d6e3b10b13811daa4f18
           </a>
-        </li> 
+        </li>
       </ul>
     );
 
@@ -107,17 +118,24 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
+<<<<<<< HEAD
+                <Link className="nav-link" to="/profiles">
+                  {" "}
+                  Profiles
+                  </Link>
+=======
                    {/* <Link className="nav-link" to="/profiles">
                     {" "}
                      Profiles 
                   </Link>  */}
+>>>>>>> 49e6e40d06327c025812d6e3b10b13811daa4f18
                 </li>
               </ul>
-              {isAuthenticated ? authLinks : guestLinks}
-            </div>
+            {isAuthenticated ? authLinks : guestLinks}
+          </div>
           </div>
         </nav>
-      </div>
+      </div >
     );
   }
 }
