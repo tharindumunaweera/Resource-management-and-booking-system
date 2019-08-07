@@ -16,7 +16,10 @@ class CreateHallreg extends Component {
             projecter: 0,
             whiteboard: 0,
             other: '',
-            // errors: {}
+
+           
+
+
         };
 
         this.onChange = this.onChange.bind(this);
@@ -73,50 +76,51 @@ class CreateHallreg extends Component {
                                     name="hallname"
                                     value={this.state.hallname}
                                     onChange={this.onChange}
-
-
                                 />
+                                <div>{this.state.hallnameerror}</div>
+
                                 <TextFieldGroup
                                     placeholder="location"
                                     name="location"
                                     value={this.state.location}
                                     onChange={this.onChange}
-
-
                                 />
+                                <div>{this.state.locationerror}</div>
+
                                 <TextFieldGroup
                                     placeholder="seat"
                                     type="number"
                                     name="seat"
                                     value={this.state.seat}
                                     onChange={this.onChange}
-
                                 />
+                                <div>{this.state.numofseaterror}</div>
+
                                 <TextFieldGroup
                                     placeholder="projecter"
                                     type="number"
                                     name="projecter"
                                     value={this.state.projecter}
                                     onChange={this.onChange}
-
-
                                 />
+                                 <div>{this.state.numofprojectererror}</div>
+
                                 <TextFieldGroup
                                     placeholder="whiteboard"
                                     type="number"
                                     name="whiteboard"
                                     value={this.state.whiteboard}
                                     onChange={this.onChange}
-
-
                                 />
+                                 <div>{this.state.numofwhiteboarderror}</div>
+
                                 <TextFieldGroup
                                     placeholder="other"
                                     name="other"
                                     value={this.state.other}
                                     onChange={this.onChange}
-
                                 />
+                                 <div>{this.state.numofothererror}</div>
 
                                 <input
                                     type="submit"

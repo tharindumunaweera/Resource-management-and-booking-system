@@ -72,11 +72,7 @@ class Navbar extends Component {
               style={{ width: "25px", marginRight: "5 PX" }}
               title="You must have a Gravatar connected to ypur email to dispaly image"
             />{" "}
-<<<<<<< HEAD
-            Logout
-=======
              Logout  */}
->>>>>>> 49e6e40d06327c025812d6e3b10b13811daa4f18
           </a>
         </li>
       </ul>
@@ -118,17 +114,10 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-<<<<<<< HEAD
-                <Link className="nav-link" to="/profiles">
-                  {" "}
-                  Profiles
-                  </Link>
-=======
                    {/* <Link className="nav-link" to="/profiles">
                     {" "}
                      Profiles 
                   </Link>  */}
->>>>>>> 49e6e40d06327c025812d6e3b10b13811daa4f18
                 </li>
               </ul>
             {isAuthenticated ? authLinks : guestLinks}

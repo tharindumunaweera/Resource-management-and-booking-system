@@ -8,7 +8,27 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import InputGroup from "../common/InputGroup";
 import PropTypes from "prop-types";
 
+const initialState = {
+      hallname: "",
+      location: "",
+      seat: "",
+      projecter: "",
+      whiteboard: "",
+      other: "",
+
+      hallnameerror: ' ',
+      locationerror: ' ',
+      numofseaterror: ' ',
+      numofprojectererror: '',
+      numofwhiteboarderror: '',
+      numofothererror: ''
+
+     
+}
+
 class HallRegister extends Component {
+
+  state = initialState
   constructor(props) {
     super(props);
 
@@ -22,15 +42,7 @@ class HallRegister extends Component {
 
     this.onChange = this.onChange.bind(this);
 
-    this.state = {
-      hallname: "",
-      location: "",
-      seat: "",
-      projecter: "",
-      whiteboard: "",
-      other: "",
-      todo_completed: false
-    };
+    this.state = initialState;
   }
 
   //   onChangeHallName(e) {
@@ -69,10 +81,63 @@ class HallRegister extends Component {
   //     });
   //   }
 
+  validate = () => {
+    let hallnameerror = '';
+    let locationerror = '';
+    let numofseaterror = ' ';
+    let numofprojectererror = '';
+    let numofwhiteboarderror = '';
+    let numofothererror = '';
+
+    if(!this.state.hallname){
+      hallnameerror = "Hall name Field Cannot Be Blank";
+    }
+    if(!this.state.location){
+      locationerror = "Location Field Cannot Be Blank";
+    }
+    if(!this.state.seat){
+      numofseaterror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.whiteboard){
+      numofwhiteboarderror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.projecter){
+      numofprojectererror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.other){
+      numofothererror = "This Field Cannot Be Blank";
+    }
+
+
+
+
+    if (hallnameerror || locationerror || numofothererror || numofprojectererror || numofseaterror || numofwhiteboarderror){
+      this.setState({hallnameerror , locationerror , numofothererror , numofprojectererror , numofseaterror , numofwhiteboarderror });
+      return false;
+    }
+
+    return true;
+  };
+
+
+
   onSubmit(e) {
     e.preventDefault();
+    const isValid = this.validate();
 
-    console.log("submit");
+    if(isValid){
+      console.log("submit");
+      console.log(`HallName: ${this.state.hallname}`);
+      console.log(`Location: ${this.state.location}`);
+      console.log(`Seat: ${this.state.seat}`);
+      console.log(`Projecter: ${this.state.projecter}`);
+      console.log(`Whiteboard: ${this.state.whiteboard}`);
+      console.log(`Other: ${this.state.other}`);
+      console.log(`Completed: ${this.state.todo_completed}`);
+      //clear form
+      this.setState(initialState);
+    }
+    
     //  console.log(`HallName: ${this.state.hallname}`);
     //  console.log(`Location: ${this.state.location}`);
     //  console.log(`Seat: ${this.state.seat}`);
@@ -80,13 +145,7 @@ class HallRegister extends Component {
     //  console.log(`Whiteboard: ${this.state.whiteboard}`);
     //  console.log(`Other: ${this.state.other}`);
     //  console.log(`Completed: ${this.state.todo_completed}`);
-    console.log(`HallName: ${this.state.hallname}`);
-    console.log(`Location: ${this.state.location}`);
-    console.log(`Seat: ${this.state.seat}`);
-    console.log(`Projecter: ${this.state.projecter}`);
-    console.log(`Whiteboard: ${this.state.whiteboard}`);
-    console.log(`Other: ${this.state.other}`);
-    console.log(`Completed: ${this.state.todo_completed}`);
+  
 
     const newTodo = {
       hallname: this.state.hallname,
@@ -102,24 +161,24 @@ class HallRegister extends Component {
       .post("http://localhost:5000/todos/add", newTodo)
       .then(res => console.log(res.data));
 
-    this.setState({
-      hallname: "",
-      location: "",
-      seat: "",
-      projecter: "",
-      whiteboard: "",
-      other: "",
-      todo_completed: false
-    });
-    this.setState({
-      hallname: "",
-      location: "",
-      seat: "",
-      projecter: "",
-      whiteboard: "",
-      other: "",
-      todo_completed: false
-    });
+    //  this.setState({
+    //    hallname: "",
+    //    location: "",
+    //    seat: "",
+    //    projecter: "",
+    //    whiteboard: "",
+    //    other: "",
+    //    todo_completed: false
+    //  });
+    // this.setState({
+    //   hallname: "",
+    //   location: "",
+    //   seat: "",
+    //   projecter: "",
+    //   whiteboard: "",
+    //   other: "",
+    //   todo_completed: false
+    // });
   }
 
   onChange(e) {
@@ -145,7 +204,7 @@ class HallRegister extends Component {
     ];
 
     const option3 = [
-      { label: "Number White Boards", value: 0 },
+      { label: "Number Of White Boards", value: 0 },
       { label: "0", value: "0" },
       { label: "1", value: "1" },
       { label: "2", value: "2" },
@@ -174,7 +233,7 @@ class HallRegister extends Component {
         <MDBRow>
           <div className="col-sm-4 " />
           <div className="col-sm-7 ">
-            <MDBCol md="13">
+            <MDBCol md="15">
               <MDBCard className="mt-5">
                 <MDBView className="gradient-card-header black darken-0">
                   <h4 className="h4-responsive text-white">
@@ -195,8 +254,12 @@ class HallRegister extends Component {
                           onChange={this.onChange}
                           //error={errors.handle}
                         />
+                         {this.state.hallnameerror ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.hallnameerror}</div> ):null}
                       </div>
+                     
+                      
                     </div>
+                   
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
@@ -210,8 +273,11 @@ class HallRegister extends Component {
                           onChange={this.onChange}
                           //error={errors.handle}
                         />
+                           <div style={{fontSize: 15 , color: "red"}}>{this.state.numofseaterror}</div>
                       </div>
+                    
                     </div>
+                  
 
 
                     <div className="form-group row">
@@ -227,8 +293,11 @@ class HallRegister extends Component {
                           options={option5}
                           //error={errors.handle}
                         />
+                           <div style={{fontSize: 15 , color: "red"}}>{this.state.locationerror}</div>
                       </div>
+                     
                     </div>
+                  
 
                    
                     {/* <div className="form-group row">
@@ -253,15 +322,18 @@ class HallRegister extends Component {
                       </label>
                       <div className="col-sm-10">
                         <SelectListGroup
-                          placeholder=""
+                          placeholder="Number Of Projecters"
                           name="projecter"
                           value={this.state.projecter}
                           onChange={this.onChange}
                           options={option2}
                           //error={errors.status}
                         />
+                         <div style={{fontSize: 15 , color: "red"}}>{this.state.numofprojectererror}</div>
                       </div>
+                     
                     </div>
+                    
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
@@ -269,15 +341,18 @@ class HallRegister extends Component {
                       </label>
                       <div className="col-sm-10">
                         <SelectListGroup
-                          placeholder=""
+                          placeholder="Number Of Whiteboards"
                           name="whiteboard"
                           value={this.state.whiteboard}
                           onChange={this.onChange}
                           options={option3}
                           //error={errors.status}
                         />
+                          <div style={{fontSize: 15 , color: "red"}}>{this.state.numofwhiteboarderror}</div>
                       </div>
+                      
                     </div>
+                  
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
@@ -285,15 +360,19 @@ class HallRegister extends Component {
                       </label>
                       <div className="col-sm-10">
                         <SelectListGroup
-                          placeholder=""
+                          placeholder="Other Resources"
                           name="other"
                           value={this.state.other}
                           onChange={this.onChange}
                           options={option4}
                           //error={errors.status}
                         />
+                       
+                       <div style={{fontSize: 15 , color: "red"}}>{this.state.numofothererror}</div>
                       </div>
+                      
                     </div>
+                    
 
                     <div className="card text-right">
                       <button type="submit" className="btn btn-primary">
