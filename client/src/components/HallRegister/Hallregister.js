@@ -7,6 +7,7 @@ import SelectListGroup from "../common/SelectListGroup";
 import TextFieldGroup from "../common/TextFieldGroup";
 import InputGroup from "../common/InputGroup";
 import PropTypes from "prop-types";
+import { Alert } from 'reactstrap';
 
 const initialState = {
       hallname: "",
@@ -27,6 +28,15 @@ const initialState = {
 }
 
 class HallRegister extends Component {
+  state = {
+    visible : false,
+    is_success : false
+  }
+  toggle(){
+    this.setState({
+      visible: !this.state.visible
+    });
+  }
 
   state = initialState
   constructor(props) {
@@ -159,7 +169,18 @@ class HallRegister extends Component {
 
     axios
       .post("http://localhost:5000/todos/add", newTodo)
-      .then(res => console.log(res.data));
+      .then(res =>{ 
+        this.setState({
+          is_success:true
+        })
+        console.log(res.data)
+      }
+        )
+        .catch((err)=>{
+          this.setState({
+            is_success:false
+          })
+        })
 
     //  this.setState({
     //    hallname: "",
@@ -223,7 +244,7 @@ class HallRegister extends Component {
       { label: "Floor", value: 0 },
       { label: "1 Floor", value: "1 Floor" },
       { label: "2 Floor", value: "2 Floor" },
-      { label: "3 Floor", value: "3 Floor" },
+      { label: "3 Floor", value: "3 Floor" }, 
       { label: "4 Floor", value: "4 Floor" },
       { label: "5 Floor", value: "5 Floor" }
     ];
@@ -241,11 +262,15 @@ class HallRegister extends Component {
                   </h4>
                 </MDBView>
                 <MDBCardBody>
+               {this.state.is_success ? <Alert color="success" isOpen={this.state.visible} toggle={this.toggle.bind(this)} >Successfully Data Aded</Alert> : null } 
+                
                   <form onSubmit={this.onSubmit}>
+                 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
                        <strong> Hall Name</strong>
                       </label>
+                     
                       <div className="col-sm-10">
                         <TextFieldGroup
                           placeholder="Hall Name"
@@ -375,7 +400,7 @@ class HallRegister extends Component {
                     
 
                     <div className="card text-right">
-                      <button type="submit" className="btn btn-primary">
+                      <button type="submit" className="btn btn-primary" outline= {true} onClick={this.toggle.bind(this)}>
                         <strong>Submit</strong>
                       </button>
                     </div>
