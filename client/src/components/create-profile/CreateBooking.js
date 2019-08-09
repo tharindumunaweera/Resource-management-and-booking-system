@@ -9,26 +9,82 @@ import { createBooking } from "../../actions/bookingActions";
 import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
+import { Alert } from 'reactstrap';
+
+const initialState = {
+  hallname: "",
+  lat: "",
+  bookdate: "",
+  booktime: "",
+  reason: "",
+  nameofapplicant: "",
+  indexnostudent: "",
+  teacherid: "",
+
+
+  reasonerror: '',
+  nameofapplicanterror: '',
+  indexofstudenterror:'',
+  teacheriderror:''
+ 
+}
 
 
 class CreateBooking extends Component {
+  state = {
+    visible : false,
+    is_success : false
+  }
+
+  toggle(){
+    this.setState({
+      visible: !this.state.visible
+    });
+  }
+
+  state = initialState
+
   constructor(props) {
     super(props);
-    this.state = {
-      hallname: "",
-      lat: "",
-      bookdate: "",
-      booktime: "",
-      reason: "",
-      nameofapplicant: "",
-      indexnostudent: "",
-      teacherid: "",
-
-    };
-
+    
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.state = initialState;
   }
+
+  validate = () => {
+    
+    let reasonerror = ' ';
+    let nameofapplicanterror = '';
+    let indexofstudenterror = '';
+    let teacheriderror = '';
+
+    if(!this.state.reason){
+      reasonerror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.nameofapplicant){
+      nameofapplicanterror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.indexnostudent){
+      indexofstudenterror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.teacherid){
+      teacheriderror = "This Field Cannot Be Blank";
+    }
+   
+
+
+
+
+    if (reasonerror || nameofapplicanterror || indexofstudenterror || teacheriderror ){
+      this.setState({reasonerror , nameofapplicanterror , indexofstudenterror , teacheriderror });
+      return false;
+    }
+
+    return true;
+  };
+
+
 
   componentDidMount() {
     ////////////////////////////////////////////////////////////////
@@ -54,7 +110,14 @@ class CreateBooking extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    const isValid = this.validate();
 
+    if(isValid){
+     
+      //clear form
+      this.setState(initialState);
+    }
+    
     const bookingData = {
       hallname: this.state.hallname,
       bookdate: this.state.bookdate,
@@ -65,7 +128,14 @@ class CreateBooking extends Component {
       teacherid: this.state.teacherid
     };
 
-    this.props.createBooking(bookingData, this.props.history);
+
+
+       this.props.createBooking(bookingData, this.setState({
+        is_success:true
+      }));
+    
+   
+
   }
 
   onChange(e) {
@@ -114,64 +184,126 @@ class CreateBooking extends Component {
                   </h4>
                 </MDBView>
                 <MDBCardBody>
+                {this.state.is_success ? <Alert color="success" isOpen={this.state.visible} toggle={this.toggle.bind(this)} >Successfully Data Added</Alert> : null } 
+              
                   <form onSubmit={this.onSubmit}>
                     {/* <h1>{this.state.lat}</h1> */}
-                    <TextFieldGroup
-                      placeholder="Hall name"
-                      name="hallname"
-                      value={this.state.hallname}
-                      onChange={this.onChange}
-                    />
 
-                    <h6>Book Date</h6>
-                    <TextFieldGroup
-                      name="bookdate"
+                    <div className="form-group row">
+                      <label className="col-sm-2 col-form-label">
+                       <strong> Hall Name</strong>
+                      </label>
+                      <div className="col-sm-10">
+                        <TextFieldGroup
+                          placeholder="Hall name"
+                          name="hallname"
+                          value={this.state.hallname}
+                          onChange={this.onChange}
+                        />
+                        </div>
+                     </div>
 
-                      value={this.state.bookdate}
-                      onChange={this.onChange}
-
-                    />
+                     <div className="form-group row">
+                      <label className="col-sm-2 col-form-label">
+                       <strong> Booking Date</strong>
+                      </label>
+                      <div className="col-sm-10">
+                        <TextFieldGroup
+                          name="bookdate"
+                          value={this.state.bookdate}
+                          onChange={this.onChange}
+                        />
+                      </div>
+                     </div>
                     {/* <h1>{this.state.bookdate.selectedDate.ToString("dddd")}</h1> */}
-                    <h6>Book Time</h6>
-                    <TextFieldGroup
-                      placeholder="Booking time"
-                      name="booktime"
-                      value={this.state.booktime}
-                      onChange={this.onChange}
-                    />
-                    <h6>Reason</h6>
-                    <TextAreaFieldGroup
-                      placeholder="Reason"
-                      name="reason"
-                      value={this.state.reason}
-                      onChange={this.onChange}
-                    />
-                    <h6>Name of Applicant</h6>
-                    <TextAreaFieldGroup
-                      placeholder="Name Of Applicant"
-                      name="nameofapplicant"
-                      value={this.state.nameofapplicant}
-                      onChange={this.onChange}
-                    />
-                    <h6>Student Id</h6>
-                    <TextAreaFieldGroup
-                      placeholder="Id of Student Applicant"
-                      name="indexnostudent"
-                      value={this.state.indexnostudent}
-                      onChange={this.onChange}
-                    />
-                    <h6>Lecturer Id</h6>
-                    <TextAreaFieldGroup
-                      placeholder="Lecturer ID"
-                      name="teacherid"
-                      value={this.state.teacherid}
-                      onChange={this.onChange}
-                    />
-                    <input
+                    
+                    <div className="form-group row">
+                      <label className="col-sm-2 col-form-label">
+                       <strong> Booking Time</strong>
+                      </label>
+                      <div className="col-sm-10">
+                        <TextFieldGroup
+                          placeholder="Booking time"
+                          name="booktime"
+                          value={this.state.booktime}
+                          onChange={this.onChange}
+                        />
+                       </div>
+                     </div>
+
+                     <div className="form-group row">
+                      <label className="col-sm-2 col-form-label">
+                       <strong> Reasson</strong>
+                      </label>
+                      <div className="col-sm-10">
+                        <TextAreaFieldGroup
+                          placeholder="Reason"
+                          name="reason"
+                          value={this.state.reason}
+                          onChange={this.onChange}
+                        />
+                     {this.state.reasonerror ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.reasonerror}</div> ):null}
+                     </div>
+                     </div>
+                    
+                     <div className="form-group row">
+                      <label className="col-sm-2 col-form-label">
+                       <strong> Applicant Name</strong>
+                      </label>
+                      <div className="col-sm-10">
+                          <TextAreaFieldGroup
+                            placeholder="Name Of Applicant"
+                            name="nameofapplicant"
+                            value={this.state.nameofapplicant}
+                            onChange={this.onChange}
+                          />
+                      {this.state.nameofapplicanterror ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.nameofapplicanterror}</div> ):null}
+                      </div>
+                     </div>
+
+
+                     <div className="form-group row">
+                      <label className="col-sm-2 col-form-label">
+                       <strong>Student ID</strong>
+                      </label>
+                      <div className="col-sm-10">
+                        <TextAreaFieldGroup
+                          placeholder="Id of Student Applicant"
+                          name="indexnostudent"
+                          value={this.state.indexnostudent}
+                          onChange={this.onChange}
+                        />
+                     {this.state. indexofstudenterror  ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.indexofstudenterror }</div> ):null}
+                     </div>
+                     </div>
+
+
+                     <div className="form-group row">
+                      <label className="col-sm-2 col-form-label">
+                       <strong> Lecturer ID</strong>
+                      </label>
+                      <div className="col-sm-10">
+                        <TextAreaFieldGroup
+                          placeholder="Lecturer ID"
+                          name="teacherid"
+                          value={this.state.teacherid}
+                          onChange={this.onChange}
+                        />
+                     {this.state.teacheriderror  ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.teacheriderror }</div> ):null}
+                     </div>
+                     </div>
+
+                    {/* <input
                       type="submit"
                       value="submit"
                       className="btn btn-info btn-block mt-4"
-                    />
+                    /> */}
+
+                    <div className="card text-right">
+                      <button type="submit" className="btn btn-primary" outline= {true} onClick={this.toggle.bind(this)}>
+                        <strong>Submit</strong>
+                      </button>
+                    </div>
                     {/* <input onClick={this.createAndDownloadPdf}
                       type="submit"
                       value="submit"

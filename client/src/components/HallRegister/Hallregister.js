@@ -262,7 +262,7 @@ class HallRegister extends Component {
                   </h4>
                 </MDBView>
                 <MDBCardBody>
-               {this.state.is_success ? <Alert color="success" isOpen={this.state.visible} toggle={this.toggle.bind(this)} >Successfully Data Aded</Alert> : null } 
+               {this.state.is_success ? <Alert color="success" isOpen={this.state.visible} toggle={this.toggle.bind(this)} >Successfully Data Aded</Alert> : null} 
                 
                   <form onSubmit={this.onSubmit}>
                  
@@ -279,8 +279,8 @@ class HallRegister extends Component {
                           onChange={this.onChange}
                           //error={errors.handle}
                         />
-                         {this.state.hallnameerror ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.hallnameerror}</div> ):null}
-                      </div>
+                         <div style={{fontSize: 15 , color: "red"}}>{this.state. hallnameerror}</div>                      
+                         </div>
                      
                       
                     </div>
