@@ -10,6 +10,7 @@ import tenReducer from "./tenReducer";
 import elevenReducer from "./elevenReducer";
 import hallregReducer from "./hallregReducer";
 import bookingReducer from "./bookingReducer";
+import acadamicbookingReducer from "./acadamicbookingReducer";
 
 export default combineReducers({
   auth: authReducer,
@@ -22,5 +23,6 @@ export default combineReducers({
   ten: tenReducer,
   eleven: elevenReducer,
   hallreg: hallregReducer,
-  booking: bookingReducer
+  booking: bookingReducer,
+  acadamicbooking: acadamicbookingReducer
 });

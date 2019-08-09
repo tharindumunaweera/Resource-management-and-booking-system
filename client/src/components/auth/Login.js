@@ -30,7 +30,7 @@ class Login extends Component {
       //   this.props.history.push("/dashboard");
       // }
       if (user.role == "Acadamic") {
-        this.props.history.push("/AcademicStaff");
+        this.props.history.push("/dashboard");
       }
       if (user.role === "Director") {
         this.props.history.push("/Director");
@@ -53,9 +53,9 @@ class Login extends Component {
       if (user.role == "Ref") {
         this.props.history.push("/UnionStudent");
       }
-    
+
       if (user.role == "Acadamic") {
-        this.props.history.push("/AcademicStaff");
+        this.props.history.push("/dashboard");
       }
       if (user.role == "Director") {
         this.props.history.push("/Director");
