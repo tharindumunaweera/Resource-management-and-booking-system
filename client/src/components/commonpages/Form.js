@@ -10,24 +10,82 @@ import { getCurrentNine, deleteAccount } from "../../actions/nineActions";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
+const initialState = {
+  hallname:"",
+  date:"",
+  starttime: "",
+  endtime: "",
+  purpose: "",
+  discription:"",
+  applicantname:"",
+  studentid:"",
+  phonenumber:"",
+
+  puposeerror: '',
+  discriptionerror: '',
+  applicantnameerror: '',
+  studentiderror:'',
+  phonenumbererror: ''
+
+}
+
 
 class Form extends Component {
+  state = {
+    visible : false,
+    is_success : false
+  }
+  toggle(){
+    this.setState({
+      visible: !this.state.visible
+    });
+  }
+
+  state = initialState
+
   constructor() {
     super();
-    this.state = {
-      hallname:"",
-      date:"",
-      starttime: "",
-      endtime: "",
-      purpose: "",
-      discription:"",
-      applicantname:"",
-      studentid:"",
-      phonenumber:""
-    };
-
+  
     this.onChange = this.onChange.bind(this);
+    this.state = initialState;
   }
+
+  
+  validate = () => {
+
+   let puposeerror= '';
+   let discriptionerror= '';
+   let applicantnameerror= '';
+   let studentiderror='';
+   let phonenumbererror= '';
+
+    if(!this.state. purpose){
+      puposeerror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.discription){
+      discriptionerror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.applicantname){
+      applicantnameerror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.studentid){
+      studentiderror = "This Field Cannot Be Blank";
+    }
+    if(!this.state.phonenumber){
+      phonenumbererror = "This Field Cannot Be Blank";
+    }
+    
+
+
+
+    if (puposeerror || discriptionerror || applicantnameerror || studentiderror ||  phonenumbererror ){
+      this.setState({puposeerror , discriptionerror , applicantnameerror , studentiderror , phonenumbererror });
+      return false;
+    }
+
+    return true;
+  };
+
 
   componentDidMount() {
     this.props.getCurrentNine()
@@ -39,6 +97,9 @@ class Form extends Component {
       hallname: name
     });
   }
+
+
+
 
 //pdf creation
 handleChange = ({ target: { value , name }}) => this.setState({ [name]: value}) ;
@@ -68,7 +129,7 @@ createAndDownloadPdf = () => {
               <MDBCard className="mt-5">
                 <MDBView className="gradient-card-header black darken-0">
                   <h4 className="h4-responsive text-white">
-                    <strong>Hall Booking Form</strong>
+                    <strong>Hall </strong>
                   </h4>
                 </MDBView>
                 <MDBCardBody>

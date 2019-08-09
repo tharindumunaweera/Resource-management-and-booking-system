@@ -55,7 +55,7 @@ import Form from "../commonpages/Form";
           <Route exact path="/AcademicStaff" component={Lecturerprofile} />
 
           <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/editprofile" component={EditProfile} />
+          <Route exact path="/edit-profile" component={EditProfile} />
           <Route exact path="/createbooking" component={CreateBooking} />
           <Route exact path="/add-experience" component={AddExperience} />
           <Route exact path="/add-education" component={AddEducation} />

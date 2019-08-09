@@ -22,6 +22,9 @@ class Landing extends Component {
                 <Link to="/login" className="btn btn-lg btn-primary mr-2">
                  <strong> Sign In </strong>
                 </Link>
+                {/* <Link to="/view" className="btn btn-lg btn-primary mr-2">
+                 <strong> View Time Table </strong>
+                </Link> */}
               </div>
             </div>
           </div>

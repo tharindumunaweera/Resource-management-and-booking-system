@@ -23,7 +23,7 @@ export const getCurrentNine = () => dispatch => {
 export const createNine = (profileData, history) => dispatch => {
   axios
     .post("/api/nine", profileData)
-    .then(res => history.push("/ninedashboard"));
+    .then(res => history.push("/AcademicStaff"));
 };
 
 export const setNineLoading = () => {

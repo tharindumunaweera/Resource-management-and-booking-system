@@ -3,11 +3,20 @@ import axios from 'axios';
 import { MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
 import SelectListGroup from "../common/SelectListGroup";
 import TextFieldGroup from "../common/TextFieldGroup";
-
+import { Alert } from 'reactstrap';
 
 
 export default class HallEdit extends Component{
-
+ 
+    state = {
+    visible : false,
+    is_success : false
+  }
+  toggle(){
+    this.setState({
+      visible: !this.state.visible
+    });
+  }
     constructor(props){
         super(props);
 
@@ -86,10 +95,23 @@ export default class HallEdit extends Component{
           other: this.state.other,
           todo_completed: this.state.todo_completed
         };
+
+
         axios.post('http://localhost:5000/todos/update/'+this.props.match.params.id , obj)
-            .then(res => console.log(res.data));
+            .then(res =>{ 
+        this.setState({
+          is_success:true
+        })
+        console.log(res.data)
+      }
+        )
+        .catch((err)=>{
+          this.setState({
+            is_success:false
+          })
+        });
         
-        this.props.history.push('/');
+        // this.props.history.push('/');
     }
 
     
@@ -152,6 +174,8 @@ export default class HallEdit extends Component{
                     </h4>
                   </MDBView>
                   <MDBCardBody>
+                  {this.state.is_success ? <Alert color="primary" isOpen={this.state.visible} toggle={this.toggle.bind(this)} >Successfully Update The Data</Alert> : null} 
+               
                     <form onSubmit={this.onSubmit}>
                       <div className="form-group row">
                         <label className="col-sm-2 col-form-label">
@@ -264,10 +288,12 @@ export default class HallEdit extends Component{
                       </div>
   
                       <div className="card text-right">
-                        <button type="submit" className="btn btn-info">
+                        <button type="submit" className="btn btn-info" onClick={this.toggle.bind(this)}>
                           <strong>Update</strong>
                         </button>
                       </div>
+
+                     
   
                      
                     </form>
