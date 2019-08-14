@@ -8,7 +8,7 @@ import ProfileActions from "./ProfileActions";
 import Experience from "./Experience";
 import allbook from "../allbook/allbookings";
 import { Model } from "mongoose";
-import { Modal, Button, ModalBody, ModalFooter } from 'react-bootstrap';
+
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -31,18 +31,17 @@ class Dashboard extends Component {
       if (Object.keys(profile).length > 0) {
         dashboardContent = (
           <div>
-            <Modal isOpen={true}>
-              <ModalBody>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur at commodi, cum itaque laudantium id inventore saepe. Possimus, quae corrupti illo aut quod doloribus quis id inventore consequuntur. Sunt, facere.
-              </ModalBody>
-
-
-              <h1>bvbbbbbbbbbbbbbbb</h1>
-            </Modal>
+            
             <li className="nav-item">
               <Link className="nav-link" to="/allbooking">
                 {" "}
                 booking
+                  </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/dirnotification">
+                {" "}
+                dir notification
                   </Link>
             </li>
             <p className="lead text-muted">

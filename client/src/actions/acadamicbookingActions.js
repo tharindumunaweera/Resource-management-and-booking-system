@@ -32,7 +32,7 @@ export const createAcadamicbooking = (profileData, history) => dispatch => {
 export const getAcadamicBookings = id => dispatch => {
     dispatch(setAcadamicbookingLoading());
     axios
-        .get("/api/booking/acadamicbooking")
+        .get("/api/acadamicbooking/all")
         .then(res =>
             dispatch({
                 type: GET_ACADAMICBOOKINGS,

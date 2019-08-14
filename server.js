@@ -18,8 +18,11 @@ const nine = require("./routes/api/nine");
 const ten = require("./routes/api/ten");
 const eleven = require("./routes/api/eleven");
 const booking = require("./routes/api/booking");
+const booking1 = require("./routes/api/booking1");
 const hallreg = require("./routes/api/hallreg");
-const acadamicbooking = require("./routes/api/acadamicbooking")
+const acadamicbooking = require("./routes/api/acadamicbooking");
+
+const Booking1 = require("./models/Booking1");
 
 const pdfTemplate = require('./documents');
 
@@ -59,6 +62,7 @@ app.use("/api/nine", nine);
 app.use("/api/ten", ten);
 app.use("/api/eleven", eleven);
 app.use("/api/booking", booking);
+app.use("/api/booking1", booking1);
 app.use("/api/hallreg", hallreg);
 app.use("/api/acadamicbooking", acadamicbooking);
 
@@ -154,5 +158,13 @@ app.get('/fetch-pdf', (req, res) => {
 })
 
 
+app.delete('/remove/:id', (req,res) => {
+
+  Booking1.findOneAndRemove({_id: req.params.id}).then(data => {
+    console.log("deekted")
+    res.send(data)
+  })
+
+})
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

@@ -89,4 +89,25 @@ router.post(
   }
 );
 
+router.delete(
+  "/booking/:book_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Booking.findOne({ user: req.user.id })
+      .then(profile => {
+        //Get remove index
+        const removeIndex = profile.experience
+          .map(item => item.id)
+          .indexOf(req.params.exp_id);
+
+        //splice out of array
+        profile.experience.splice(removeIndex, 1);
+
+        //save
+        profile.save().then(profile => res.json(profile));
+      })
+      .catch(err => res.status(404).json(err));
+  }
+);
+
 module.exports = router;

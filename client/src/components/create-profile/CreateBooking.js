@@ -6,6 +6,7 @@ import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { createBooking } from "../../actions/bookingActions";
+import { createBooking1 } from "../../actions/booking1Actions";
 import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 import axios from 'axios'
 import { saveAs } from 'file-saver'
@@ -128,11 +129,13 @@ class CreateBooking extends Component {
       teacherid: this.state.teacherid
     };
 
-
+    this.props.createBooking1(bookingData)
 
     this.props.createBooking(bookingData, this.setState({
       is_success: true
     }));
+
+
 
 
 
@@ -333,5 +336,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { createBooking }
+  { createBooking, createBooking1 }
 )(withRouter(CreateBooking));

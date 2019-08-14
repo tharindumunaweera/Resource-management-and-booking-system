@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Spinner from "../common/Spinner";
-import { getBookings } from "../../actions/bookingActions";
+import { getBookings1 } from "../../actions/booking1Actions";
 import Allbookingitem from "./allbookingitem";
 
 
@@ -16,23 +16,23 @@ class allbookings extends Component {
     };
   }
   componentDidMount() {
-    this.props.getBookings();
+    this.props.getBookings1();
   }
 
   render() {
-    
-    const { bookings, loading } = this.props.booking;
-    let bookingItems;
 
-    if (bookings === null || loading) {
-      bookingItems = <Spinner />;
+    const { bookings1, loading } = this.props.booking1;
+    let booking1Items;
+
+    if (bookings1 === null || loading) {
+      booking1Items = <Spinner />;
     } else {
-      if (bookings.length > 0) {
-        bookingItems = bookings.map(booking => (
-          <Allbookingitem key={booking._id} booking={booking} />
+      if (bookings1.length > 0) {
+        booking1Items = bookings1.map(booking1 => (
+          <Allbookingitem key={booking1._id} booking={booking1} />
         ));
       } else {
-        bookingItems = <h4>No profiles found...</h4>;
+        booking1Items = <h4>No profiles found...</h4>;
       }
     }
 
@@ -51,7 +51,7 @@ class allbookings extends Component {
               <p className="lead text-center">
                 Browse and connect with profiles
                 </p>
-              {bookingItems}
+              {booking1Items}
             </div>
           </div>
 
@@ -62,15 +62,15 @@ class allbookings extends Component {
 }
 
 allbookings.propTypes = {
-  getBookings: PropTypes.func.isRequired,
-  booking: PropTypes.object.isRequired
+  getBookings1: PropTypes.func.isRequired,
+  booking1: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  booking: state.booking
+  booking1: state.booking1
 });
 
 export default connect(
   mapStateToProps,
-  { getBookings }
+  { getBookings1 }
 )(allbookings);

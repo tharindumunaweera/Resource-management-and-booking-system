@@ -36,7 +36,7 @@ class TopNavLecturer extends Component {
   };
 
   onLogoutClick(e) {
-    alert("Do You Want To LogOut ?  "  );
+    alert("Do You Want To LogOut ?  ");
     e.preventDefault();
     this.props.clearCurrentProfile();
     this.props.logoutUser();
@@ -81,10 +81,10 @@ class TopNavLecturer extends Component {
           </Link> */}
         </li>
         <li className="nav-item">
-          <a  className="border border-light rounded mr-1 nav-link Ripple-parent"
-            href="#"  
+          <a className="border border-light rounded mr-1 nav-link Ripple-parent"
+            href="#"
             onClick={this.onLogoutClick.bind(this)}
-            // className="nav-link"
+          // className="nav-link"
           >
             <img
               className="rounded-circle"
@@ -93,7 +93,7 @@ class TopNavLecturer extends Component {
               style={{ width: "25px", marginRight: "5 PX" }}
               title="You must have a Gravatar connected to ypur email to dispaly image"
             />{" "}
-             <strong>Logout</strong>
+            <strong>Logout</strong>
           </a>
         </li>
       </ul>
@@ -120,6 +120,10 @@ class TopNavLecturer extends Component {
         <MDBNavbarBrand href="/Director">
           <strong>Director Dashboard</strong>
         </MDBNavbarBrand>
+        <MDBNavbarBrand href="/dirnotification">
+          <strong>Notification</strong>
+        </MDBNavbarBrand>
+
         <MDBNavbarToggler onClick={this.onClick} />
         <MDBCollapse isOpen={this.state.collapse} navbar>
           <MDBNavbarNav left>
@@ -129,44 +133,44 @@ class TopNavLecturer extends Component {
           </MDBNavbarNav>
           <MDBNavbarNav right>
             <MDBNavItem>
-            <MDBRow>
-            <a
-                className="border border-light rounded mr-1 nav-link Ripple-parent"
-                rel="noopener noreferrer"
-                target="_blank"
-            >
-              <i className="far fa-bell"></i>
-            </a>
-            
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#mobile-nav"
-            >
-              <span className="navbar-toggler-icon" />
-            </button>
+              <MDBRow>
+                <a
+                  className="border border-light rounded mr-1 nav-link Ripple-parent"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <i className="far fa-bell"></i>
+                </a>
 
-            <div className="collapse navbar-collapse" id="mobile-nav">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
-                  {/* <Link className="nav-link" to="/profiles">
+                <button
+                  className="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#mobile-nav"
+                >
+                  <span className="navbar-toggler-icon" />
+                </button>
+
+                <div className="collapse navbar-collapse" id="mobile-nav">
+                  <ul className="navbar-nav mr-auto">
+                    <li className="nav-item">
+                      {/* <Link className="nav-link" to="/profiles">
                     {" "}
                     Lecture Time Table
                   </Link> */}
-                </li>
-              </ul>
-              {isAuthenticated ? authLinks : guestLinks}
-            </div>
+                    </li>
+                  </ul>
+                  {isAuthenticated ? authLinks : guestLinks}
+                </div>
 
               </MDBRow>
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
-      
+
       </MDBNavbar>
 
-      
+
     );
   }
 }
@@ -183,5 +187,5 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logoutUser, clearCurrentProfile }
-)( TopNavLecturer);
+)(TopNavLecturer);
 

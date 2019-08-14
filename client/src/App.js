@@ -21,7 +21,7 @@ import Login from "./components/auth/Login";
 import Calender from "./components/Calender/Calender";
 import Availabilitytable from "./components/Tables/Availabilitytable";
 import BookingForm from "./components/BookingForm/BookingForm";
-import StudentTime from "./components/create-profile/StudentTime" 
+import StudentTime from "./components/create-profile/StudentTime"
 
 import Lecturer from "./components/actors/Lecturer";
 import AcademicStaff from "./components/actors/AcademicStaff";
@@ -71,7 +71,9 @@ import Template from "./components/layout/Template";
 
 import "./App.css";
 import Profiles from "./components/profiles/Profiles";
-import allbookings from "./components/allbook/allbookings"
+import allbookings from "./components/allbook/allbookings";
+import allbookdir from "./components/allbook/allbookdir"
+
 
 //check for token
 if (localStorage.jwtToken) {
@@ -113,7 +115,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            {/* <Navbar /> */}
+            <Navbar />
             <Route exact path="/" component={Landing} />
             {/* <div className="container "> */}
 
@@ -122,11 +124,14 @@ class App extends Component {
             <Route exact path="/profiles" component={Profiles} />
             <Route exact path="/view" component={StudentTime} />
 
-            <Switch>
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
+            {/* <Switch>
+              <PrivateRoute exact path="/dirdashboard" component={Dirdashboard} />
+            </Switch> */}
             <Switch>
               <PrivateRoute exact path="/allbooking" component={allbookings} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path="/dirnotification" component={allbookdir} />
             </Switch>
             <Switch>
               <PrivateRoute exact path="/handle" component={halls} />
@@ -167,10 +172,10 @@ class App extends Component {
 
             <Switch>
               <PrivateRoute exact path="/UnionStudent" component={UnionStudent} />
-            </Switch>  
-             <Switch>
+            </Switch>
+            <Switch>
               <PrivateRoute exact path="/AcademicStaff" component={AcademicStaff} />
-            </Switch>    
+            </Switch>
             <Switch>
               <PrivateRoute exact path="/Admin" component={Admin} />
             </Switch>

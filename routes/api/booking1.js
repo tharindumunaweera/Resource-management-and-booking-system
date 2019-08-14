@@ -8,7 +8,7 @@ const passport = require("passport");
 
 // Load User model
 const User = require("../../models/User");
-const Acadamicbooking = require("../../models/Acadamicbooking");
+const Booking1 = require("../../models/Booking1");
 
 
 router.get(
@@ -17,14 +17,14 @@ router.get(
     (req, res) => {
         const errors = {};
 
-        Acadamicbooking.findOne()
+        Booking1.findOne()
             .populate("user", ["name", "avatar"])
-            .then(acadamicbooking => {
-                if (!acadamicbooking) {
-                    errors.nobooking = "There is no Booking from this user";
+            .then(booking1 => {
+                if (!booking1) {
+                    errors.nobooking1 = "There is no Booking from this user";
                     return res.status(404).json(errors);
                 }
-                res.json(acadamicbooking);
+                res.json(booking1);
             })
             .catch(err => res.status(404).json(err));
     }
@@ -33,15 +33,15 @@ router.get(
 router.get("/all", passport.authenticate("jwt", { session: false }), (req, res) => {
     const errors = {};
 
-    Acadamicbooking.find()
+    Booking1.find()
         .populate("user", ["name", "avatar"])
-        .then(acadamicbooking => {
-            if (!acadamicbooking) {
-                errors.nobooking = "There are no Booking";
+        .then(booking1 => {
+            if (!booking1) {
+                errors.nobooking1 = "There are no Booking";
                 return res.status(404).json(errors);
             }
 
-            res.json(acadamicbooking);
+            res.json(booking1);
         })
         .catch(err => res.status(404).json({ Booking: "There are no Booking " }));
 });
@@ -66,10 +66,9 @@ router.post(
         if (req.body.nameofapplicant) profileFields.nameofapplicant = req.body.nameofapplicant;
         if (req.body.indexnostudent) profileFields.indexnostudent = req.body.indexnostudent;
         if (req.body.teacherid) profileFields.teacherid = req.body.teacherid;
-        if (req.body.recommend) profileFields.recommend = req.body.recommend;
 
-        Acadamicbooking.findOne({ user: req.user.id }).then(acadamicbooking => {
-            if (acadamicbooking) {
+        Booking1.findOne({ user: req.user.id }).then(booking1 => {
+            if (booking1) {
                 //update
                 //  booking.findOneAndUpdate(
                 //    { user: req.user.id },
@@ -78,15 +77,26 @@ router.post(
                 //  ).then(booking => res.json(booking));
             }
 
-            // save acadsamicbooking  
-            new Acadamicbooking(profileFields).save().then(acadamicbooking => res.json(acadamicbooking));
+            // save Profile
+            new Booking1(profileFields).save().then(booking1 => res.json(booking1));
 
 
         });
 
 
 
+    }
+);
 
+router.delete(
+    "/",
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Booking1.findOneAndRemove({ _id: req.id }).then(() => {
+
+            res.json({ success: true });
+
+        });
     }
 );
 

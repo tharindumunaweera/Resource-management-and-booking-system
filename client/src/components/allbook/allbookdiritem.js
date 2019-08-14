@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import isEmpty from "../../validation/is-empty";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { createAcadamicbooking } from "../../actions/acadamicbookingActions";
-import TextFieldGroup from "../common/TextFieldGroup";
-import { deleteBook } from "../../actions/booking1Actions"
 
-class Allbookingitem extends Component {
+import TextFieldGroup from "../common/TextFieldGroup";
+
+
+class Allbookdiritem extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,86 +21,87 @@ class Allbookingitem extends Component {
             isOpen: false,
             mywishes: [{ _id: 1, wish: "loading" }],
             abc: "",
+            recommend: "",
 
             errors: {}
         };
 
 
-        this.onSubmit = this.onSubmit.bind(this);
-        this.onSubmit2 = this.onSubmit2.bind(this);
+        // this.onSubmit = this.onSubmit.bind(this);
+        // this.onSubmit2 = this.onSubmit2.bind(this);
 
 
     }
 
-    onSubmit(e) {
-        const { booking } = this.props;
-        e.preventDefault();
+    // onSubmit(e) {
+    //     const { booking } = this.props;
+    //     e.preventDefault();
 
-        const bookingData = {
-
-
-            hallname: booking.hallname,
-            bookdate: booking.bookdate,
-            booktime: booking.booktime,
-            reason: booking.reason,
-            recommend: "Recooamnd by Acadamic Branch"
-
-        };
+    //     const bookingData = {
 
 
-        this.props.createAcadamicbooking(bookingData);
+    //         hallname: booking.hallname,
+    //         bookdate: booking.bookdate,
+    //         booktime: booking.booktime,
+    //         reason: booking.reason,
+    //         recommend: "Recooamnd by Acadamic Branch"
+
+    //     };
 
 
-
-
-
-    }
-
-
-    onSubmit2(e) {
-        const { booking } = this.props;
-        e.preventDefault();
-
-        const bookingData = {
-            hallname: booking.hallname,
-            bookdate: booking.bookdate,
-            booktime: booking.booktime,
-            reason: booking.reason,
-            recommend: "Unrecooamnd by Acadamic Branch",
-
-        };
-
-
-
-        this.props.createAcadamicbooking(bookingData);
+    //     this.props.createAcadamicbooking(bookingData);
 
 
 
 
 
-    }
+    // }
 
 
-    deleteUser = (id) => {
-        fetch('/remove/' + id, { method: "delete" })
-            .then(res => res.json())
-            .then(res2 => {
-                console.log(res2)
-                const newWishes = this.state.mywishes.filter(item => {
-                    return item._id !== res2._id
-                })
-                this.setState({
-                    mywishes: newWishes
-                })
-            }).then(
-                this.setState({
-                    abc: "gfygfyufgyu"
+    // onSubmit2(e) {
+    //     const { booking } = this.props;
+    //     e.preventDefault();
 
-                }),
-                console.log(this.state.abc)
-            )
+    //     const bookingData = {
+    //         hallname: booking.hallname,
+    //         bookdate: booking.bookdate,
+    //         booktime: booking.booktime,
+    //         reason: booking.reason,
+    //         recommend: "Unrecooamnd by Acadamic Branch",
 
-    }
+    //     };
+
+
+
+    //     this.props.createAcadamicbooking(bookingData);
+
+
+
+
+
+    // }
+
+
+    // deleteUser = (id) => {
+    //     fetch('/remove/' + id, { method: "delete" })
+    //         .then(res => res.json())
+    //         .then(res2 => {
+    //             console.log(res2)
+    //             const newWishes = this.state.mywishes.filter(item => {
+    //                 return item._id !== res2._id
+    //             })
+    //             this.setState({
+    //                 mywishes: newWishes
+    //             })
+    //         }).then(
+    //             this.setState({
+    //                 abc: "gfygfyufgyu"
+
+    //             }),
+    //             console.log(this.state.abc)
+    //         )
+
+    // }
 
 
     render() {
@@ -109,7 +110,7 @@ class Allbookingitem extends Component {
 
 
         return (
-            <div className="card card-body bg-light mb-3" onSubmit={this.onSubmit} onSubmit1={this.onSubmit1}>
+            <div className="card card-body bg-light mb-3" >
                 <div className="row">
 
                     <div className="col-4">
@@ -117,12 +118,13 @@ class Allbookingitem extends Component {
                         <h4>{booking.bookdate}</h4>
                         <h4>{booking.booktime}</h4>
                         <h4>{booking.reason}</h4>
-                        <button
+                        <h4>{booking.recommend}</h4>
+                        {/* <button
                             onClick={() => this.deleteUser(booking._id)}
                             className="btn btn-danger"
                         >
                             Delete My Account
-            </button>
+            </button> */}
 
 
 
@@ -152,7 +154,7 @@ class Allbookingitem extends Component {
                         />
                     </form> */}
 
-                    <button type="button" class="btn btn-primary" onClick={this.onSubmit}
+                    {/* <button type="button" class="btn btn-primary" onClick={this.onSubmit}
                     >
                         Recoomand
                     </button>
@@ -160,7 +162,7 @@ class Allbookingitem extends Component {
                     <button type="button" class="btn btn-success" onClick={this.onSubmit2}
                     >
                         Unrecommand
-                    </button>
+                    </button> */}
 
 
 
@@ -170,7 +172,7 @@ class Allbookingitem extends Component {
         );
     }
 }
-Allbookingitem.propTypes = {
+Allbookdiritem.propTypes = {
     profile: PropTypes.object.isRequired,
     createAcadamicbooking: PropTypes.func.isRequired,
 };
@@ -180,6 +182,6 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    { createAcadamicbooking, deleteBook }
-)(withRouter(Allbookingitem));
+    
+)(withRouter(Allbookdiritem));
 

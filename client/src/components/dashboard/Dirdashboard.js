@@ -23,7 +23,7 @@ class Dashboard extends Component {
     let dashboardContent;
 
     if (profile === null || loading) {
-      dashboardContent = <Spinner/>;
+      dashboardContent = <Spinner />;
     } else {
       // check if log in user has profile data
       if (Object.keys(profile).length > 0) {
@@ -36,6 +36,12 @@ class Dashboard extends Component {
                 {user.name}
               </Link>
             </p>
+            <li className="nav-item">
+              <Link className="nav-link" to="/dirnotification">
+                {" "}
+                booking
+                  </Link>
+            </li>
             <ProfileActions />
             <Experience experience={profile.experience} />
             <div style={{ marginBottom: "60px" }} />
