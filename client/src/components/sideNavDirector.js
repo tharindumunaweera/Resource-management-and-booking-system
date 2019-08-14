@@ -20,7 +20,7 @@ const TopNavigation = () => {
                         Time Table
                     </MDBListGroupItem>
                 </NavLink>
-                <NavLink to="/maps" activeClassName="activeClass">
+                <NavLink to="/Graphgeneration " activeClassName="activeClass">
                     <MDBListGroupItem>
                         <MDBIcon icon="map" className="mr-3"/>
                         Hall Usage

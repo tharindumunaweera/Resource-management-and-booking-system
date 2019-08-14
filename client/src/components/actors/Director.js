@@ -15,7 +15,7 @@ import CreateProfile from "../create-profile/CreateProfile";
 import TimetableActions from "../timetable/TimetableActions";
 import ViewHallList from "../HallRegister/ViewHallList";
 import ViewNine from "../edit-profile/ViewNine";
-import { Link } from "react-router-dom";
+import Graphgeneration from "../Graphgeneration/Graphgeneration";
 
 
 const Director = () => {
@@ -34,12 +34,7 @@ const Director = () => {
           <Route exact path="/add-experience" component={AddExperience} />
           <Route exact path="/add-education" component={AddEducation} />
           <Route exact path="/CreateProfile" component={CreateProfile} />
-          <li className="nav-item">
-            <Link className="nav-link" to="/dirnotification">
-              {" "}
-              booking
-                  </Link>
-          </li>
+
           <Route exact path="/timetableactions" component={TimetableActions} />
           <Route exact path="/ViewHallList" component={ViewHallList} />
           <Route exact path="/ViewNine" component={ViewNine} />
