@@ -65,14 +65,14 @@ class Navbar extends Component {
             onClick={this.onLogoutClick.bind(this)}
             className="nav-link"
           >
-            {/* <img
+            <img
               className="rounded-circle"
               src={user.avatar}
               alt={user.name}
               style={{ width: "25px", marginRight: "5 PX" }}
               title="You must have a Gravatar connected to ypur email to dispaly image"
             />{" "}
-             Logout  */}
+            Logout
           </a>
         </li>
       </ul>
@@ -114,14 +114,14 @@ class Navbar extends Component {
             <div className="collapse navbar-collapse" id="mobile-nav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                   {/* <Link className="nav-link" to="/profiles">
+                  <Link className="nav-link" to="/profiles">
                     {" "}
-                     Profiles 
-                  </Link>  */}
+                    Profiles
+                  </Link>
                 </li>
               </ul>
-            {isAuthenticated ? authLinks : guestLinks}
-          </div>
+              {isAuthenticated ? authLinks : guestLinks}
+            </div>
           </div>
         </nav>
       </div >

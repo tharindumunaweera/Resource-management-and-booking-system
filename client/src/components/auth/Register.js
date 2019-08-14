@@ -7,7 +7,7 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import SelectListGroup from "../common/SelectListGroup";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
-import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 
 
 class Register extends Component {
@@ -72,8 +72,8 @@ class Register extends Component {
     ];
 
     return (
-     
-      
+
+
       <div className="register  ">
         {/* <div className=" landing-inner">
         <div className="  container">
@@ -83,7 +83,7 @@ class Register extends Component {
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center"><strong>Sign Up</strong></h1>
               <p className="lead text-center"><strong>Create Your RMIS Account</strong></p> */}
-               <MDBRow>
+        <MDBRow>
           <div className="col-sm-4 " />
           <div className="col-sm-7 ">
             <MDBCol md="13">
@@ -94,50 +94,50 @@ class Register extends Component {
                   </h4>
                 </MDBView>
                 <MDBCardBody>
-              <form noValidate onSubmit={this.onSubmit}>
-                <TextFieldGroup
-                  placeholder="Name"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.onChange}
-                  error={errors.name}
-                />
-                <TextFieldGroup
-                  placeholder="Email Address"
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  error={errors.email}
-                 
-                />
-                <SelectListGroup
-                  placeholder="Actor"
-                  name="role"
-                  value={this.state.role}
-                  onChange={this.onChange}
-                  options={options}
-                  error={errors.role}
-                />
-                <TextFieldGroup
-                  placeholder="Password"
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  error={errors.password}
-                />
-                <TextFieldGroup
-                  placeholder="Conform Password"
-                  name="password2"
-                  type="password"
-                  value={this.state.password2}
-                  onChange={this.onChange}
-                  error={errors.password2}
-                />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
-              </form>
-              </MDBCardBody>
+                  <form noValidate onSubmit={this.onSubmit}>
+                    <TextFieldGroup
+                      placeholder="Name"
+                      name="name"
+                      value={this.state.name}
+                      onChange={this.onChange}
+                      error={errors.name}
+                    />
+                    <TextFieldGroup
+                      placeholder="Email Address"
+                      name="email"
+                      type="email"
+                      value={this.state.email}
+                      onChange={this.onChange}
+                      error={errors.email}
+
+                    />
+                    <SelectListGroup
+                      placeholder="Actor"
+                      name="role"
+                      value={this.state.role}
+                      onChange={this.onChange}
+                      options={options}
+                      error={errors.role}
+                    />
+                    <TextFieldGroup
+                      placeholder="Password"
+                      name="password"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.onChange}
+                      error={errors.password}
+                    />
+                    <TextFieldGroup
+                      placeholder="Conform Password"
+                      name="password2"
+                      type="password"
+                      value={this.state.password2}
+                      onChange={this.onChange}
+                      error={errors.password2}
+                    />
+                    <input type="submit" className="btn btn-info btn-block mt-4" />
+                  </form>
+                </MDBCardBody>
               </MDBCard>
             </MDBCol>
           </div>

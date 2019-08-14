@@ -46,7 +46,7 @@ class CreateProfile extends Component {
   }
 
   onSubmit(e) {
-    const { user } = this.props.auth;
+
     e.preventDefault();
 
     const profileData = {
@@ -65,12 +65,7 @@ class CreateProfile extends Component {
       // instagram: this.state.instagram
     };
 
-    if (user.role == "Acadamic") {
-      this.props.createProfile(profileData, this.props.history);
-    }
-    if (user.role == "Ref") {
-      this.props.createProfileref(profileData, this.props.history);
-    }
+
 
 
   }

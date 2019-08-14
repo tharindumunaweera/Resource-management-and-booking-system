@@ -71,6 +71,7 @@ import Template from "./components/layout/Template";
 
 import "./App.css";
 import Profiles from "./components/profiles/Profiles";
+import allbookings from "./components/allbook/allbookings"
 
 //check for token
 if (localStorage.jwtToken) {
@@ -125,6 +126,9 @@ class App extends Component {
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
             <Switch>
+              <PrivateRoute exact path="/allbooking" component={allbookings} />
+            </Switch>
+            <Switch>
               <PrivateRoute exact path="/handle" component={halls} />
             </Switch>
             <Switch>
@@ -135,13 +139,13 @@ class App extends Component {
               />
             </Switch>
 
-            {/* <Switch>
+            <Switch>
               <PrivateRoute
                 exact
                 path="/academicdashboard"
                 component={Dashboard}
               />
-            </Switch> */}
+            </Switch>
             {/* <Switch>
               <PrivateRoute
                 exact

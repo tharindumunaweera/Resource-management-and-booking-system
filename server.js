@@ -19,8 +19,9 @@ const ten = require("./routes/api/ten");
 const eleven = require("./routes/api/eleven");
 const booking = require("./routes/api/booking");
 const hallreg = require("./routes/api/hallreg");
+const acadamicbooking = require("./routes/api/acadamicbooking")
 
-const pdfTemplate = require('./documents'); 
+const pdfTemplate = require('./documents');
 
 //hallregistration model
 const HallRegisterSchema = require("./models/Hallreg");
@@ -59,6 +60,7 @@ app.use("/api/ten", ten);
 app.use("/api/eleven", eleven);
 app.use("/api/booking", booking);
 app.use("/api/hallreg", hallreg);
+app.use("/api/acadamicbooking", acadamicbooking);
 
 const port = process.env.PORT || 5000;
 
@@ -137,17 +139,17 @@ if (process.env.NODE_ENV === 'production') {
 // pdf create routs
 
 //POST -PDF generation and fetching of the data
-app.post('/create-pdf' , (req , res) => {
-  pdf.create(pdfTemplate(req.body) , {} ).toFile('result.pdf' , (err) =>{
-      if(err){
-          res.send(Promise.reject());
-      }
-      res.send(Promise.resolve());
+app.post('/create-pdf', (req, res) => {
+  pdf.create(pdfTemplate(req.body), {}).toFile('result.pdf', (err) => {
+    if (err) {
+      res.send(Promise.reject());
+    }
+    res.send(Promise.resolve());
   });
 });
 
 //GET -send the generated pdf to the client
-app.get('/fetch-pdf' , (req , res) => {
+app.get('/fetch-pdf', (req, res) => {
   res.sendFile(`${__dirname}/result.pdf`)
 })
 

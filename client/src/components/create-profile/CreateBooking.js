@@ -24,19 +24,19 @@ const initialState = {
 
   reasonerror: '',
   nameofapplicanterror: '',
-  indexofstudenterror:'',
-  teacheriderror:''
- 
+  indexofstudenterror: '',
+  teacheriderror: ''
+
 }
 
 
 class CreateBooking extends Component {
   state = {
-    visible : false,
-    is_success : false
+    visible: false,
+    is_success: false
   }
 
-  toggle(){
+  toggle() {
     this.setState({
       visible: !this.state.visible
     });
@@ -46,38 +46,38 @@ class CreateBooking extends Component {
 
   constructor(props) {
     super(props);
-    
+
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = initialState;
   }
 
   validate = () => {
-    
+
     let reasonerror = ' ';
     let nameofapplicanterror = '';
     let indexofstudenterror = '';
     let teacheriderror = '';
 
-    if(!this.state.reason){
+    if (!this.state.reason) {
       reasonerror = "This Field Cannot Be Blank";
     }
-    if(!this.state.nameofapplicant){
+    if (!this.state.nameofapplicant) {
       nameofapplicanterror = "This Field Cannot Be Blank";
     }
-    if(!this.state.indexnostudent){
+    if (!this.state.indexnostudent) {
       indexofstudenterror = "This Field Cannot Be Blank";
     }
-    if(!this.state.teacherid){
+    if (!this.state.teacherid) {
       teacheriderror = "This Field Cannot Be Blank";
     }
-   
 
 
 
 
-    if (reasonerror || nameofapplicanterror || indexofstudenterror || teacheriderror ){
-      this.setState({reasonerror , nameofapplicanterror , indexofstudenterror , teacheriderror });
+
+    if (reasonerror || nameofapplicanterror || indexofstudenterror || teacheriderror) {
+      this.setState({ reasonerror, nameofapplicanterror, indexofstudenterror, teacheriderror });
       return false;
     }
 
@@ -112,12 +112,12 @@ class CreateBooking extends Component {
     e.preventDefault();
     const isValid = this.validate();
 
-    if(isValid){
-     
+    if (isValid) {
+
       //clear form
       this.setState(initialState);
     }
-    
+
     const bookingData = {
       hallname: this.state.hallname,
       bookdate: this.state.bookdate,
@@ -130,11 +130,11 @@ class CreateBooking extends Component {
 
 
 
-       this.props.createBooking(bookingData, this.setState({
-        is_success:true
-      }));
-    
-   
+    this.props.createBooking(bookingData, this.setState({
+      is_success: true
+    }));
+
+
 
   }
 
@@ -184,14 +184,14 @@ class CreateBooking extends Component {
                   </h4>
                 </MDBView>
                 <MDBCardBody>
-                {this.state.is_success ? <Alert color="success" isOpen={this.state.visible} toggle={this.toggle.bind(this)} >Successfully Data Added</Alert> : null } 
-              
+                  {this.state.is_success ? <Alert color="success" isOpen={this.state.visible} toggle={this.toggle.bind(this)} >Successfully Data Added</Alert> : null}
+
                   <form onSubmit={this.onSubmit}>
                     {/* <h1>{this.state.lat}</h1> */}
 
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                       <strong> Hall Name</strong>
+                        <strong> Hall Name</strong>
                       </label>
                       <div className="col-sm-10">
                         <TextFieldGroup
@@ -200,12 +200,12 @@ class CreateBooking extends Component {
                           value={this.state.hallname}
                           onChange={this.onChange}
                         />
-                        </div>
-                     </div>
+                      </div>
+                    </div>
 
-                     <div className="form-group row">
+                    <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                       <strong> Booking Date</strong>
+                        <strong> Booking Date</strong>
                       </label>
                       <div className="col-sm-10">
                         <TextFieldGroup
@@ -214,12 +214,12 @@ class CreateBooking extends Component {
                           onChange={this.onChange}
                         />
                       </div>
-                     </div>
+                    </div>
                     {/* <h1>{this.state.bookdate.selectedDate.ToString("dddd")}</h1> */}
-                    
+
                     <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                       <strong> Booking Time</strong>
+                        <strong> Booking Time</strong>
                       </label>
                       <div className="col-sm-10">
                         <TextFieldGroup
@@ -228,12 +228,12 @@ class CreateBooking extends Component {
                           value={this.state.booktime}
                           onChange={this.onChange}
                         />
-                       </div>
-                     </div>
+                      </div>
+                    </div>
 
-                     <div className="form-group row">
+                    <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                       <strong> Reasson</strong>
+                        <strong> Reasson</strong>
                       </label>
                       <div className="col-sm-10">
                         <TextAreaFieldGroup
@@ -242,29 +242,29 @@ class CreateBooking extends Component {
                           value={this.state.reason}
                           onChange={this.onChange}
                         />
-                     {this.state.reasonerror ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.reasonerror}</div> ):null}
-                     </div>
-                     </div>
-                    
-                     <div className="form-group row">
+                        {this.state.reasonerror ? (<div style={{ fontSize: 15, color: "red" }}>{this.state.reasonerror}</div>) : null}
+                      </div>
+                    </div>
+
+                    <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                       <strong> Applicant Name</strong>
+                        <strong> Applicant Name</strong>
                       </label>
                       <div className="col-sm-10">
-                          <TextAreaFieldGroup
-                            placeholder="Name Of Applicant"
-                            name="nameofapplicant"
-                            value={this.state.nameofapplicant}
-                            onChange={this.onChange}
-                          />
-                      {this.state.nameofapplicanterror ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.nameofapplicanterror}</div> ):null}
+                        <TextAreaFieldGroup
+                          placeholder="Name Of Applicant"
+                          name="nameofapplicant"
+                          value={this.state.nameofapplicant}
+                          onChange={this.onChange}
+                        />
+                        {this.state.nameofapplicanterror ? (<div style={{ fontSize: 15, color: "red" }}>{this.state.nameofapplicanterror}</div>) : null}
                       </div>
-                     </div>
+                    </div>
 
 
-                     <div className="form-group row">
+                    <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                       <strong>Student ID</strong>
+                        <strong>Student ID</strong>
                       </label>
                       <div className="col-sm-10">
                         <TextAreaFieldGroup
@@ -273,14 +273,14 @@ class CreateBooking extends Component {
                           value={this.state.indexnostudent}
                           onChange={this.onChange}
                         />
-                     {this.state. indexofstudenterror  ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.indexofstudenterror }</div> ):null}
-                     </div>
-                     </div>
+                        {this.state.indexofstudenterror ? (<div style={{ fontSize: 15, color: "red" }}>{this.state.indexofstudenterror}</div>) : null}
+                      </div>
+                    </div>
 
 
-                     <div className="form-group row">
+                    <div className="form-group row">
                       <label className="col-sm-2 col-form-label">
-                       <strong> Lecturer ID</strong>
+                        <strong> Lecturer ID</strong>
                       </label>
                       <div className="col-sm-10">
                         <TextAreaFieldGroup
@@ -289,9 +289,9 @@ class CreateBooking extends Component {
                           value={this.state.teacherid}
                           onChange={this.onChange}
                         />
-                     {this.state.teacheriderror  ? (<div style={{fontSize: 15 , color: "red"}}>{this.state.teacheriderror }</div> ):null}
-                     </div>
-                     </div>
+                        {this.state.teacheriderror ? (<div style={{ fontSize: 15, color: "red" }}>{this.state.teacheriderror}</div>) : null}
+                      </div>
+                    </div>
 
                     {/* <input
                       type="submit"
@@ -300,7 +300,7 @@ class CreateBooking extends Component {
                     /> */}
 
                     <div className="card text-right">
-                      <button type="submit" className="btn btn-primary" outline= {true} onClick={this.toggle.bind(this)}>
+                      <button type="submit" className="btn btn-primary" outline={true} onClick={this.toggle.bind(this)}>
                         <strong>Submit</strong>
                       </button>
                     </div>
