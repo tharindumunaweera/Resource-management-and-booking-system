@@ -10,6 +10,7 @@ import {
   MDBRow,
   MDBIcon
 } from "mdbreact";
+import swal from "sweetalert";
 
 
 import { Link } from "react-router-dom";
@@ -41,6 +42,12 @@ class TopNavLecturer extends Component {
     this.props.clearCurrentProfile();
     this.props.logoutUser();
   }
+
+   
+
+
+
+
 
   render() {
 
@@ -118,7 +125,7 @@ class TopNavLecturer extends Component {
     return (
       <MDBNavbar className="flexible-navbar" light expand="md" scrolling>
         <MDBNavbarBrand href="/Director">
-          <strong>Director Dashboard</strong>
+          <strong>{user.name}</strong>
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={this.onClick} />
         <MDBCollapse isOpen={this.state.collapse} navbar>

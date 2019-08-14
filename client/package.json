@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "chart.js": "^2.8.0",
     "classnames": "^2.2.6",
     "file-saver": "^2.0.2",
     "google-map-react": "^1.1.4",
@@ -12,7 +13,9 @@
     "mdbreact": "^4.14.0",
     "moment": "^2.24.0",
     "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.10",
+
+    "react-chartjs-2": "^2.7.6",
+
     "react-dom": "^16.8.6",
     "react-infinite-calendar": "^2.3.1",
     "react-moment": "^0.8.4",
@@ -22,7 +25,8 @@
     "reactstrap": "^8.0.1",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "scripts": "^0.1.0"
+    "scripts": "^0.1.0",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

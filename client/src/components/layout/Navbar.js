@@ -100,7 +100,7 @@ class Navbar extends Component {
           <div className="container" >
             <div className="col-sm-1" />
             <Link className="navbar-brand" to="/" >
-              <strong> RM&IS </strong>
+              <strong></strong>
             </Link>
             <button
               className="navbar-toggler"

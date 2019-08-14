@@ -15,6 +15,7 @@ import CreateProfile from "../create-profile/CreateProfile";
 import TimetableActions from "../timetable/TimetableActions";
 import ViewHallList from "../HallRegister/ViewHallList";
 import ViewNine from "../edit-profile/ViewNine";
+import Graphgeneration from "../Graphgeneration/Graphgeneration";
 
 
 const Director =  () => {
@@ -36,6 +37,7 @@ const Director =  () => {
           <Route exact path="/timetableactions" component={TimetableActions}/>
           <Route exact path="/ViewHallList" component={ViewHallList}/>
           <Route exact path="/ViewNine" component={ ViewNine }/>
+          <Route exact path="/Graphgeneration " component={ Graphgeneration }/>
 
             <main id="content" className="p-5">
             
