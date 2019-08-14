@@ -8,6 +8,7 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import InputGroup from "../common/InputGroup";
 import PropTypes from "prop-types";
 import { Alert } from 'reactstrap';
+import swal from "sweetalert";
 
 const initialState = {
       hallname: "",

@@ -24,7 +24,7 @@ class Graphgeneration extends Component {
 
   sweetalertfunction(){
     console.log("button clicks");
-    swal("Successfully Added To The Database!" , "You click the button","success");
+    swal("Successfully Added To The Database!" , "You click the button","warning");
   }
 
   componentWillMount(){
@@ -35,17 +35,19 @@ class Graphgeneration extends Component {
     // Ajax calls here
     this.setState({
       chartData:{
-        labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+        labels: ['W001', 'W002', 'S104', 'S203', 'E401', 'E205', 'E202', 'S202'],
         datasets:[
           {
             label:'Population',
             data:[
-              617594,
-              181045,
-              153060,
-              106519,
-              105162,
-              95072
+              12,
+              18,
+              15,
+              10,
+              20,
+              9,
+              8,
+              7
             ],
             backgroundColor:[
               'rgba(255, 99, 132, 0.6)',
@@ -54,7 +56,8 @@ class Graphgeneration extends Component {
               'rgba(75, 192, 192, 0.6)',
               'rgba(153, 102, 255, 0.6)',
               'rgba(255, 159, 64, 0.6)',
-              'rgba(255, 99, 132, 0.6)'
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(210, 130 , 200, 0.6)'
             ]
           }
         ]
