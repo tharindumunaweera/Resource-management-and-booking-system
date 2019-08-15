@@ -8,32 +8,38 @@ const TopNavigation = () => {
     return (
         <div className="sidebar-fixed position-fixed">
             <a href="#!" className="logo-wrapper waves-effect">
-                <img alt="MDB React Logo" className="img-fluid" src={logo}/>
+                <img alt="MDB React Logo" className="img-fluid" src={logo} />
             </a>
             <MDBListGroup className="list-group-flush">
-                
+
                 <NavLink to="/ViewNine" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="user" className="mr-3"/>
+                        <MDBIcon icon="user" className="mr-3" />
                         Time Tables
                     </MDBListGroupItem>
                 </NavLink>
-               
+
                 <NavLink to="/HallSelect" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="far fa-check-circle" className="mr-3"/>
+                        <MDBIcon icon="far fa-check-circle" className="mr-3" />
                         Hall Booking
                     </MDBListGroupItem>
                 </NavLink>
-              
+
                 <NavLink to="/ViewHallList" activeClassName="activeClass">
                     <MDBListGroupItem>
-                        <MDBIcon icon="far fa-check-circle" className="mr-3"/>
+                        <MDBIcon icon="far fa-check-circle" className="mr-3" />
                         Hall List
                     </MDBListGroupItem>
                 </NavLink>
-              
-               
+                <NavLink to="/unionnoti" activeClassName="activeClass">
+                    <MDBListGroupItem>
+                        <MDBIcon icon="far fa-check-circle" className="mr-3" />
+                        notification
+                    </MDBListGroupItem>
+                </NavLink>
+
+
             </MDBListGroup>
         </div>
     );

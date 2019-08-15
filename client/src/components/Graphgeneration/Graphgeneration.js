@@ -1,47 +1,76 @@
 import React, { Component } from "react";
-import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+import { MDBCard, MDBCol, MDBRow, MDBView, MDBMask, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardFooter, MDBBtn, MDBIcon } from "mdbreact";
 import axios from "axios";
 import Chart from './Chart';
 import swal from "sweetalert";
+import { connect } from "react-redux";
+import { getBookings1 } from "../../actions/booking1Actions";
+import PropTypes from "prop-types";
+import Spinner from "../common/Spinner";
+import { Link } from "react-router-dom";
 
 
-     
 
 class Graphgeneration extends Component {
 
-    // constructor(){
+  // constructor(){
   //   super();
   //   this.state = {
   //     chartData:{}
   //   }
   // }
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.sweetalertfunction = this.sweetalertfunction.bind(this);
-    
+
   }
 
-  sweetalertfunction(){
+  sweetalertfunction() {
     console.log("button clicks");
-    swal("Successfully Added To The Database!" , "You click the button","warning");
+    swal("Successfully Added To The Database!", "You click the button", "warning");
   }
 
-  componentWillMount(){
+  componentWillMount() {
     this.getChartData();
   }
 
-  getChartData(){
+  getChartData() {
+    let i = 0;
+    let x = 0;
+    let v = 0;
+
+    const { bookings1, loading } = this.props.booking1;
+
+    let booking1Items;
+
+    if (bookings1 === null || loading) {
+      booking1Items = <Spinner />;
+    } else {
+      if (bookings1.length > 0) {
+        booking1Items = bookings1.map(booking1 => (
+          booking1.hallname === "Lecturer" ? (
+            <Link className="nav-link" to="/lecdashboard">
+
+            </Link>
+          ) : null
+        ));
+      } else {
+        booking1Items = <h4>No profiles found...</h4>;
+      }
+    }
+
+
     // Ajax calls here
     this.setState({
-      chartData:{
-        labels: ['W001', 'W002', 'S104', 'S203', 'E401', 'E205', 'E202', 'S202'],
-        datasets:[
+      chartData: {
+        labels: ['W001', 'E205', 'S104', 'S203', 'E401', 'E205', 'E202', 'S202'],
+        datasets: [
           {
-            label:'Population',
-            data:[
-              12,
-              18,
+            label: 'Population',
+            data: [
+              i,
+              x,
               15,
               10,
               20,
@@ -49,7 +78,7 @@ class Graphgeneration extends Component {
               8,
               7
             ],
-            backgroundColor:[
+            backgroundColor: [
               'rgba(255, 99, 132, 0.6)',
               'rgba(54, 162, 235, 0.6)',
               'rgba(255, 206, 86, 0.6)',
@@ -65,9 +94,11 @@ class Graphgeneration extends Component {
     });
   }
 
-  
+
   render() {
-   
+
+
+
     return (
       <React.Fragment>
         <MDBRow>
@@ -82,10 +113,10 @@ class Graphgeneration extends Component {
                 </MDBView>
                 <MDBCardBody>
 
-                        
-                     <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom"/>
 
-                     <button onClick={this.sweetalertfunction}><span>My Sweet</span></button>
+                  <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom" />
+
+                  <button onClick={this.sweetalertfunction}><span>My Sweet</span></button>
 
                 </MDBCardBody>
               </MDBCard>
@@ -97,4 +128,12 @@ class Graphgeneration extends Component {
   }
 }
 
-export default Graphgeneration;
+const mapStateToProps = state => ({
+  getBookings1: PropTypes.func.isRequired,
+  booking1: state.booking1
+});
+
+export default connect(
+  mapStateToProps,
+  { getBookings1 }
+)(Graphgeneration);

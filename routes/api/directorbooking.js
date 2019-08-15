@@ -8,7 +8,7 @@ const passport = require("passport");
 
 // Load User model
 const User = require("../../models/User");
-const Booking1 = require("../../models/Booking1");
+const Directorbooking = require("../../models/Directorbooking");
 
 
 router.get(
@@ -17,14 +17,14 @@ router.get(
     (req, res) => {
         const errors = {};
 
-        Booking1.findOne()
+        Directorbooking.findOne()
             .populate("user", ["name", "avatar"])
-            .then(booking1 => {
-                if (!booking1) {
-                    errors.nobooking1 = "There is no Booking from this user";
+            .then(directorbooking => {
+                if (!directorbooking) {
+                    errors.nobooking = "There is no Booking request from any one";
                     return res.status(404).json(errors);
                 }
-                res.json(booking1);
+                res.json(directorbooking);
             })
             .catch(err => res.status(404).json(err));
     }
@@ -33,17 +33,17 @@ router.get(
 router.get("/all", passport.authenticate("jwt", { session: false }), (req, res) => {
     const errors = {};
 
-    Booking1.find()
+    Directorbooking.find()
         .populate("user", ["name", "avatar"])
-        .then(booking1 => {
-            if (!booking1) {
-                errors.nobooking1 = "There are no Booking";
+        .then(directorbooking => {
+            if (!directorbooking) {
+                errors.nobooking = "There are no hall booking request";
                 return res.status(404).json(errors);
             }
 
-            res.json(booking1);
+            res.json(directorbooking);
         })
-        .catch(err => res.status(404).json({ Booking: "There are no Booking " }));
+        .catch(err => res.status(404).json({ Booking: "There are no Bookings " }));
 });
 
 
@@ -66,9 +66,10 @@ router.post(
         if (req.body.nameofapplicant) profileFields.nameofapplicant = req.body.nameofapplicant;
         if (req.body.indexnostudent) profileFields.indexnostudent = req.body.indexnostudent;
         if (req.body.teacherid) profileFields.teacherid = req.body.teacherid;
+        if (req.body.acceptance) profileFields.acceptance = req.body.acceptance;
 
-        Booking1.findOne({ user: req.user.id }).then(booking1 => {
-            if (booking1) {
+        Directorbooking.findOne({ user: req.user.id }).then(directorbooking => {
+            if (directorbooking) {
                 //update
                 //  booking.findOneAndUpdate(
                 //    { user: req.user.id },
@@ -77,27 +78,16 @@ router.post(
                 //  ).then(booking => res.json(booking));
             }
 
-            // save Profile
-            new Booking1(profileFields).save().then(booking1 => res.json(booking1));
+            // save acadsamicbooking  
+            new Directorbooking(profileFields).save().then(directorbooking => res.json(directorbooking));
 
 
         });
+
 
 
 
     }
 );
-
-router.delete(
-    "/",
-    passport.authenticate("jwt", { session: false }),
-    (req, res) => {
-      
-        Booking1.findOneAndRemove({ _id: req.params.id }).then(() => {
-          res.json({ success: true });
-        });
-      
-    }
-  );
 
 module.exports = router;

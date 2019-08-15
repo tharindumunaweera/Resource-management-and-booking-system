@@ -72,7 +72,9 @@ import Template from "./components/layout/Template";
 import "./App.css";
 import Profiles from "./components/profiles/Profiles";
 import allbookings from "./components/allbook/allbookings";
-import allbookdir from "./components/allbook/allbookdir"
+import allbookdir from "./components/allbook/allbookdir";
+import Graphgeneration from "./components/Graphgeneration/Graphgeneration";
+import unionnotification from "./components/allbook/unionnotification"
 
 
 //check for token
@@ -130,9 +132,16 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/allbooking" component={allbookings} />
             </Switch>
+            {/* <Switch>
+              <PrivateRoute exact path="/graph" component={Graphgeneration} />
+            </Switch>  */}
             <Switch>
               <PrivateRoute exact path="/dirnotification" component={allbookdir} />
             </Switch>
+            <Switch>
+              <PrivateRoute exact path="/unionnotification" component={unionnotification} />
+            </Switch>
+
             <Switch>
               <PrivateRoute exact path="/handle" component={halls} />
             </Switch>
