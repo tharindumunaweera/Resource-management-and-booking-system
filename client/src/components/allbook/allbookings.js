@@ -15,9 +15,7 @@ class allbookings extends Component {
       i: "tharindu"
     };
   }
-  componentDidMount() {
-    this.props.getBookings1();
-  }
+
 
   render() {
 

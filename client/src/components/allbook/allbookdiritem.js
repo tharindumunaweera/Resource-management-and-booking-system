@@ -83,26 +83,81 @@ class Allbookdiritem extends Component {
     }
 
 
-    // deleteUser = (id) => {
-    //     fetch('/remove/' + id, { method: "delete" })
-    //         .then(res => res.json())
-    //         .then(res2 => {
-    //             console.log(res2)
-    //             const newWishes = this.state.mywishes.filter(item => {
-    //                 return item._id !== res2._id
-    //             })
-    //             this.setState({
-    //                 mywishes: newWishes
-    //             })
-    //         }).then(
-    //             this.setState({
-    //                 abc: "gfygfyufgyu"
+    deleteUser1 = (id) => {
 
-    //             }),
-    //             console.log(this.state.abc)
-    //         )
+        const { booking } = this.props;
 
-    // }
+        const bookingData = {
+            hallname: booking.hallname,
+            bookdate: booking.bookdate,
+            booktime: booking.booktime,
+            reason: booking.reason,
+            acceptance: "Rejected by Director",
+
+        };
+
+
+
+        this.props.createDirectorbooking(bookingData);
+
+        fetch('/removeaca/' + id, { method: "delete" })
+            .then(res => res.json())
+            .then(res2 => {
+                console.log(res2)
+                const newWishes = this.state.mywishes.filter(item => {
+                    return item._id !== res2._id
+                })
+                this.setState({
+                    mywishes: newWishes
+                })
+                window.location.reload()
+            }).then(
+                this.setState({
+                    abc: "gfygfyufgyu"
+
+                }),
+                console.log(this.state.abc)
+            )
+
+    }
+
+    deleteUser = (id) => {
+
+        const { booking } = this.props;
+
+        const bookingData = {
+            hallname: booking.hallname,
+            bookdate: booking.bookdate,
+            booktime: booking.booktime,
+            reason: booking.reason,
+            acceptance: "Accepted by Director",
+
+        };
+
+
+
+        this.props.createDirectorbooking(bookingData);
+
+        fetch('/removeaca/' + id, { method: "delete" })
+            .then(res => res.json())
+            .then(res2 => {
+                console.log(res2)
+                const newWishes = this.state.mywishes.filter(item => {
+                    return item._id !== res2._id
+                })
+                this.setState({
+                    mywishes: newWishes
+                })
+                window.location.reload()
+            }).then(
+                this.setState({
+                    abc: "gfygfyufgyu"
+
+                }),
+                console.log(this.state.abc)
+            )
+
+    }
 
 
     render() {
@@ -120,12 +175,19 @@ class Allbookdiritem extends Component {
                         <h4>{booking.booktime}</h4>
                         <h4>{booking.reason}</h4>
                         <h4>{booking.recommend}</h4>
-                        {/* <button
+                        <button
                             onClick={() => this.deleteUser(booking._id)}
                             className="btn btn-danger"
                         >
-                            Delete My Account
-            </button> */}
+                            Accept
+                        </button>
+
+                        <button
+                            onClick={() => this.deleteUser1(booking._id)}
+                            className="btn btn-danger"
+                        >
+                            Reject
+                        </button>
 
 
 
@@ -155,7 +217,7 @@ class Allbookdiritem extends Component {
                         />
                     </form> */}
 
-                    <button type="button" class="btn btn-primary" onClick={this.onSubmit}
+                    {/* <button type="button" class="btn btn-primary" onClick={this.onSubmit}
                     >
                         Accept
                     </button>
@@ -163,7 +225,7 @@ class Allbookdiritem extends Component {
                     <button type="button" class="btn btn-success" onClick={this.onSubmit2}
                     >
                         Reject
-                    </button>
+                    </button> */}
 
 
 

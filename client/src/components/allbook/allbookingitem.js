@@ -6,7 +6,8 @@ import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { createAcadamicbooking } from "../../actions/acadamicbookingActions";
 import TextFieldGroup from "../common/TextFieldGroup";
-import { deleteBook } from "../../actions/booking1Actions"
+import { deleteBook } from "../../actions/booking1Actions";
+import { getBookings1 } from "../../actions/booking1Actions";
 
 class Allbookingitem extends Component {
     constructor(props) {
@@ -32,6 +33,8 @@ class Allbookingitem extends Component {
 
     }
 
+
+
     onSubmit(e) {
         const { booking } = this.props;
         e.preventDefault();
@@ -49,6 +52,8 @@ class Allbookingitem extends Component {
 
 
         this.props.createAcadamicbooking(bookingData);
+
+
 
 
 
@@ -82,6 +87,23 @@ class Allbookingitem extends Component {
 
 
     deleteUser = (id) => {
+        const { booking } = this.props;
+
+        const bookingData = {
+
+
+            hallname: booking.hallname,
+            bookdate: booking.bookdate,
+            booktime: booking.booktime,
+            reason: booking.reason,
+            recommend: "Recooamnd by Acadamic Branch"
+
+        };
+
+
+        this.props.createAcadamicbooking(bookingData);
+
+
         fetch('/remove/' + id, { method: "delete" })
             .then(res => res.json())
             .then(res2 => {
@@ -92,6 +114,7 @@ class Allbookingitem extends Component {
                 this.setState({
                     mywishes: newWishes
                 })
+                window.location.reload()
             }).then(
                 this.setState({
                     abc: "gfygfyufgyu"
@@ -103,13 +126,57 @@ class Allbookingitem extends Component {
     }
 
 
+
+
+
+    deleteUser1 = (id) => {
+        const { booking } = this.props;
+
+        const bookingData = {
+
+
+            hallname: booking.hallname,
+            bookdate: booking.bookdate,
+            booktime: booking.booktime,
+            reason: booking.reason,
+            recommend: "Unrecooamnd by Acadamic Branch"
+
+        };
+
+
+        this.props.createAcadamicbooking(bookingData);
+
+
+        fetch('/remove/' + id, { method: "delete" })
+            .then(res => res.json())
+            .then(res2 => {
+                console.log(res2)
+                const newWishes = this.state.mywishes.filter(item => {
+                    return item._id !== res2._id
+                })
+                this.setState({
+                    mywishes: newWishes
+                })
+                window.location.reload()
+            }).then(
+                this.setState({
+                    abc: "gfygfyufgyu"
+
+                }),
+                console.log(this.state.abc)
+            )
+
+    }
+
+
+
     render() {
         const { booking } = this.props;
 
 
 
         return (
-            <div className="card card-body bg-light mb-3" onSubmit={this.onSubmit} onSubmit1={this.onSubmit1}>
+            <div className="card card-body bg-light mb-3" >
                 <div className="row">
 
                     <div className="col-4">
@@ -121,10 +188,16 @@ class Allbookingitem extends Component {
                             onClick={() => this.deleteUser(booking._id)}
                             className="btn btn-danger"
                         >
-                            Delete My Account
-            </button>
+                            Recommand
+                        </button>
 
 
+                        <button
+                            onClick={() => this.deleteUser1(booking._id)}
+                            className="btn btn-danger"
+                        >
+                            UnRecommand
+                    </button>
 
 
                     </div>

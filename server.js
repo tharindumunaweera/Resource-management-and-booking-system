@@ -25,6 +25,7 @@ const directorbooking = require("./routes/api/directorbooking");
 
 
 const Booking1 = require("./models/Booking1");
+const Acadamicbooking = require("./models/Acadamicbooking");
 
 const pdfTemplate = require('./documents');
 
@@ -166,6 +167,15 @@ app.delete('/remove/:id', (req, res) => {
 
   Booking1.findOneAndRemove({ _id: req.params.id }).then(data => {
     console.log("deekted")
+    res.send(data)
+  })
+
+})
+
+app.delete('/removeaca/:id', (req, res) => {
+
+  Acadamicbooking.findOneAndRemove({ _id: req.params.id }).then(data => {
+    console.log("deekted acadamic")
     res.send(data)
   })
 
