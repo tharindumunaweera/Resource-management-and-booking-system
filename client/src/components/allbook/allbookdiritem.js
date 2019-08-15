@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import isEmpty from "../../validation/is-empty";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { createDirectorbooking } from "../../actions/directorbookingActions";
 
 import TextFieldGroup from "../common/TextFieldGroup";
 
@@ -21,65 +22,65 @@ class Allbookdiritem extends Component {
             isOpen: false,
             mywishes: [{ _id: 1, wish: "loading" }],
             abc: "",
-            recommend: "",
+            acceptance: "",
 
             errors: {}
         };
 
 
-        // this.onSubmit = this.onSubmit.bind(this);
-        // this.onSubmit2 = this.onSubmit2.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+        this.onSubmit2 = this.onSubmit2.bind(this);
 
 
     }
 
-    // onSubmit(e) {
-    //     const { booking } = this.props;
-    //     e.preventDefault();
+    onSubmit(e) {
+        const { booking } = this.props;
+        e.preventDefault();
 
-    //     const bookingData = {
-
-
-    //         hallname: booking.hallname,
-    //         bookdate: booking.bookdate,
-    //         booktime: booking.booktime,
-    //         reason: booking.reason,
-    //         recommend: "Recooamnd by Acadamic Branch"
-
-    //     };
+        const bookingData = {
 
 
-    //     this.props.createAcadamicbooking(bookingData);
+            hallname: booking.hallname,
+            bookdate: booking.bookdate,
+            booktime: booking.booktime,
+            reason: booking.reason,
+            acceptance: "Accepted by Director"
 
+        };
 
-
-
-
-    // }
-
-
-    // onSubmit2(e) {
-    //     const { booking } = this.props;
-    //     e.preventDefault();
-
-    //     const bookingData = {
-    //         hallname: booking.hallname,
-    //         bookdate: booking.bookdate,
-    //         booktime: booking.booktime,
-    //         reason: booking.reason,
-    //         recommend: "Unrecooamnd by Acadamic Branch",
-
-    //     };
-
-
-
-    //     this.props.createAcadamicbooking(bookingData);
+        this.props.createDirectorbooking(bookingData);
 
 
 
 
 
-    // }
+
+    }
+
+
+    onSubmit2(e) {
+        const { booking } = this.props;
+        e.preventDefault();
+
+        const bookingData = {
+            hallname: booking.hallname,
+            bookdate: booking.bookdate,
+            booktime: booking.booktime,
+            reason: booking.reason,
+            acceptance: "Rejected by Director",
+
+        };
+
+
+
+        this.props.createDirectorbooking(bookingData);
+
+
+
+
+
+    }
 
 
     // deleteUser = (id) => {
@@ -154,15 +155,15 @@ class Allbookdiritem extends Component {
                         />
                     </form> */}
 
-                    {/* <button type="button" class="btn btn-primary" onClick={this.onSubmit}
+                    <button type="button" class="btn btn-primary" onClick={this.onSubmit}
                     >
-                        Recoomand
+                        Accept
                     </button>
 
                     <button type="button" class="btn btn-success" onClick={this.onSubmit2}
                     >
-                        Unrecommand
-                    </button> */}
+                        Reject
+                    </button>
 
 
 
@@ -174,7 +175,7 @@ class Allbookdiritem extends Component {
 }
 Allbookdiritem.propTypes = {
     profile: PropTypes.object.isRequired,
-    createAcadamicbooking: PropTypes.func.isRequired,
+    createDirectorbooking: PropTypes.func.isRequired,
 };
 const mapStateToProps = state => ({
     errors: state.errors
@@ -182,6 +183,6 @@ const mapStateToProps = state => ({
 
 export default connect(
     mapStateToProps,
-    
+    { createDirectorbooking }
 )(withRouter(Allbookdiritem));
 

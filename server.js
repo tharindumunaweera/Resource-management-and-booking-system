@@ -21,6 +21,8 @@ const booking = require("./routes/api/booking");
 const booking1 = require("./routes/api/booking1");
 const hallreg = require("./routes/api/hallreg");
 const acadamicbooking = require("./routes/api/acadamicbooking");
+const directorbooking = require("./routes/api/directorbooking");
+
 
 const Booking1 = require("./models/Booking1");
 
@@ -65,6 +67,8 @@ app.use("/api/booking", booking);
 app.use("/api/booking1", booking1);
 app.use("/api/hallreg", hallreg);
 app.use("/api/acadamicbooking", acadamicbooking);
+app.use("/api/directorbooking", directorbooking);
+
 
 const port = process.env.PORT || 5000;
 
@@ -158,9 +162,9 @@ app.get('/fetch-pdf', (req, res) => {
 })
 
 
-app.delete('/remove/:id', (req,res) => {
+app.delete('/remove/:id', (req, res) => {
 
-  Booking1.findOneAndRemove({_id: req.params.id}).then(data => {
+  Booking1.findOneAndRemove({ _id: req.params.id }).then(data => {
     console.log("deekted")
     res.send(data)
   })

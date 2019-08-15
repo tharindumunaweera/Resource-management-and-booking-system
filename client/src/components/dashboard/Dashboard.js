@@ -44,6 +44,12 @@ class Dashboard extends Component {
                 dir notification
                   </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/graph">
+                {" "}
+                dgraph
+                  </Link>
+            </li>
             <p className="lead text-muted">
               Welcome{" "}
               <Link to={`/profile/${profile.handle}`} className="text-primary">
