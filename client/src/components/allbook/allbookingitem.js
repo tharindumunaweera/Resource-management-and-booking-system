@@ -180,10 +180,15 @@ class Allbookingitem extends Component {
                 <div className="row">
 
                     <div className="col-4">
-                        <h4>{booking.hallname}</h4>
+                        <p>Hall Name : <strong>{booking.hallname}</strong></p>
+                        <p>Booking Date : <strong>{booking.bookdate}</strong></p>
+                        <p>Booking Time : <strong>{booking.booktime}</strong></p>
+                        <p>Reason : <strong>{booking.reason}</strong></p>
+                        {/* <h4>{booking.hallname}</h4>
                         <h4>{booking.bookdate}</h4>
                         <h4>{booking.booktime}</h4>
-                        <h4>{booking.reason}</h4>
+                        <h4>{booking.reason}</h4> */}
+
                         <button
                             onClick={() => this.deleteUser(booking._id)}
                             className="btn btn-danger"

@@ -13,23 +13,25 @@ import { Link } from "react-router-dom";
 
 class Graphgeneration extends Component {
 
-  // constructor(){
-  //   super();
-  //   this.state = {
-  //     chartData:{}
-  //   }
-  // }
 
-  constructor(props) {
-    super(props);
-    this.sweetalertfunction = this.sweetalertfunction.bind(this);
+  //    constructor(){
+  //    super();
+  //    this.state = {
+  //      chartData:{}
+  //    }
+  //  }
 
-  }
+   constructor(props){
+     super(props);
+     this.sweetalertfunction = this.sweetalertfunction.bind(this);
+    
+   }
 
-  sweetalertfunction() {
-    console.log("button clicks");
-    swal("Successfully Added To The Database!", "You click the button", "warning");
-  }
+   sweetalertfunction(){
+     console.log("button clicks");
+     swal("Successfully Added To The Database!" , "You click the button","warning");
+   }
+
 
   componentWillMount() {
     this.getChartData();
@@ -114,9 +116,11 @@ class Graphgeneration extends Component {
                 <MDBCardBody>
 
 
-                  <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom" />
+                        
+                     <Chart chartData={this.state.chartData} location="Massachusetts" legendPosition="bottom"/>
+ 
+                     {/* <button onClick={this.sweetalertfunction}><span>My Sweet</span></button>  */}
 
-                  <button onClick={this.sweetalertfunction}><span>My Sweet</span></button>
 
                 </MDBCardBody>
               </MDBCard>
