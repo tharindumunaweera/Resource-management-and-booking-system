@@ -139,6 +139,8 @@ class TopNavLecturer extends Component {
           <MDBNavbarNav right>
             <MDBNavItem>
             <MDBRow>
+           
+
             <a
                 className="border border-light rounded mr-1 nav-link Ripple-parent"
                 rel="noopener noreferrer"

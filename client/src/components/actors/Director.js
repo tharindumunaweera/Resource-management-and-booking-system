@@ -16,6 +16,8 @@ import TimetableActions from "../timetable/TimetableActions";
 import ViewHallList from "../HallRegister/ViewHallList";
 import ViewNine from "../edit-profile/ViewNine";
 import Graphgeneration from "../Graphgeneration/Graphgeneration";
+import allbookdir from "../allbook/allbookdir";
+
 
 
 const Director = () => {
@@ -38,7 +40,11 @@ const Director = () => {
           <Route exact path="/timetableactions" component={TimetableActions} />
           <Route exact path="/ViewHallList" component={ViewHallList} />
           <Route exact path="/ViewNine" component={ViewNine} />
-
+          <Route exact path="/Graphgeneration" component={Graphgeneration} />
+          <Route exact path="/dirnotification" component={allbookdir} />
+          
+            
+            
           <main id="content" className="p-5">
 
           </main>

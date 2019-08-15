@@ -71,7 +71,7 @@ import Form from "../commonpages/Form";
           <Route exact path="/Halls" component={ Halls }/>
           <Route exact path="/Hallreg" component={ Hallreg }/>
           <Route exact path="/Form" component={ Form }/>
-
+          
           
 
           {/* <Route exact path="/time-table" component={TimeTable}/> */}

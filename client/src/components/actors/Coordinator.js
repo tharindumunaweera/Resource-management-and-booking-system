@@ -20,7 +20,7 @@ import CreateNine from "../create-profile/CreateNine";
 import EditNine from "../edit-profile/EditNine";
 import Example from "../create-profile/Example";
 import ProfileActions from "../dashboard/ProfileActions";
-
+import allbookings from "../allbook/allbookings";
 
 const Coordinator =  () => {
   return (
@@ -47,6 +47,7 @@ const Coordinator =  () => {
           <Route exact path="/Example" component={Example}/>
           <Route exact path="/ProfileActions" component={ProfileActions}/>
           <Route exact path="/EditNine" component={ EditNine}/>
+          <Route exact path="/allbooking" component={allbookings} />
 
             <main id="content" className="p-5">
             

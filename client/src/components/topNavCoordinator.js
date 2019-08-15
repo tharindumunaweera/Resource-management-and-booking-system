@@ -130,13 +130,20 @@ class TopNavLecturer extends Component {
           <MDBNavbarNav right>
             <MDBNavItem>
             <MDBRow>
-            <a
+            
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/allbooking">
+              <a
                 className="border border-light rounded mr-1 nav-link Ripple-parent"
                 rel="noopener noreferrer"
                 target="_blank"
+                to="/allbooking"
             >
               <i className="far fa-bell"></i>
             </a>
+                  </Link>
+            </li>
             
             <button
               className="navbar-toggler"
