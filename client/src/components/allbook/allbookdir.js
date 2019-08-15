@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import Spinner from "../common/Spinner";
 import { getAcadamicBookings } from "../../actions/acadamicbookingActions";
 import Allbookdiritem from "./allbookdiritem";
+import {MDBCard,MDBCol,MDBRow,MDBView,MDBMask,MDBCardImage,MDBCardBody,MDBCardTitle,MDBCardText,MDBCardFooter,MDBBtn,MDBIcon} from "mdbreact";
+
 
 
 
@@ -43,20 +45,26 @@ class allbookdir extends Component {
 
 
     return (
-      <div className="profiles">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h1 className="display-4 text-center">Developer profile</h1>
-              <p className="lead text-center">
-                Browse and connect with profiles
-                </p>
+     
+      <React.Fragment>
+      <MDBRow>
+        <div className="col-sm-4 " />
+        <div className="col-sm-7 ">
+          <MDBCol md="15">
+            <MDBCard className="mt-5">
+              <MDBView className="gradient-card-header black darken-0">
+                <h4 className="h4-responsive text-white">
+                  <strong>Hall Booking Requests</strong>
+                </h4>
+              </MDBView>
+              <MDBCardBody>
               {acadamicbookingItems}
-            </div>
-          </div>
-
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
         </div>
-      </div>
+      </MDBRow>
+    </React.Fragment>
     );
   }
 }

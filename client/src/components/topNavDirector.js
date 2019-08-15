@@ -127,9 +127,7 @@ class TopNavLecturer extends Component {
         <MDBNavbarBrand href="/Director">
           <strong>{user.name}</strong>
         </MDBNavbarBrand>
-        <MDBNavbarBrand href="/dirnotification">
-          <strong>Notification</strong>
-        </MDBNavbarBrand>
+        
 
         <MDBNavbarToggler onClick={this.onClick} />
         <MDBCollapse isOpen={this.state.collapse} navbar>
@@ -141,13 +139,18 @@ class TopNavLecturer extends Component {
           <MDBNavbarNav right>
             <MDBNavItem>
               <MDBRow>
-                <a
+               
+                <li className="nav-item">
+              <Link className="nav-link" to="/dirnotification">
+              <a
                   className="border border-light rounded mr-1 nav-link Ripple-parent"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
                   <i className="far fa-bell"></i>
                 </a>
+                  </Link>
+            </li>
 
                 <button
                   className="navbar-toggler"

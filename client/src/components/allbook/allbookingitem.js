@@ -109,20 +109,33 @@ class Allbookingitem extends Component {
 
 
         return (
-            <div className="card card-body bg-light mb-3" onSubmit={this.onSubmit} onSubmit1={this.onSubmit1}>
-                <div className="row">
+
+            // <div class="card w-75">
+            // <div class="card-body">
+            //     <h5 class="card-title">Card title</h5>
+            //     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            //     <a href="#" class="btn btn-primary">Button</a>
+            // </div>
+            // </div>
+            <div className="card w-100" onSubmit={this.onSubmit} onSubmit1={this.onSubmit1}>
+                <div className="card-body">
 
                     <div className="col-4">
-                        <h4>{booking.hallname}</h4>
+                    <p>Hall Name : <strong>{booking.hallname}</strong></p>
+                    <p>Booking Date : <strong>{booking.bookdate}</strong></p>
+                    <p>Booking Time : <strong>{booking.booktime}</strong></p>
+                    <p>Reason : <strong>{booking.reason}</strong></p>
+                        {/* <h4>{booking.hallname}</h4>
                         <h4>{booking.bookdate}</h4>
                         <h4>{booking.booktime}</h4>
-                        <h4>{booking.reason}</h4>
-                        <button
+                        <h4>{booking.reason}</h4> */}
+
+                        {/* <button
                             onClick={() => this.deleteUser(booking._id)}
                             className="btn btn-danger"
                         >
                             Delete My Account
-            </button>
+                        </button> */}
 
 
 
